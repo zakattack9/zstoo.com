@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HomeBack = (props) => {
+const HomeBack = props => {
   return (
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 555 256">
       <defs>
