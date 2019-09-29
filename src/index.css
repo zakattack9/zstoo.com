@@ -1,13 +1,46 @@
-body {
+html, body {
+  font-size: 12pt;
+  font-family: "ObjectSansRegular";
+  background-color: rgb(24, 24, 24);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#root {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "HelveticaBoldOutline";
+  src: url("./Fonts/HelveticaBoldOutline.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansSlanted.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansHeavy.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansHeavySlanted.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
 }
