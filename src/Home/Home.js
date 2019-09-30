@@ -11,13 +11,13 @@ function App() {
       <Overlay></Overlay>
 
       <div className="titleWrapper">
-        <div className="svgWrapper">
-          <img className="backGlow" alt="" src={Glow}></img>
+        <div id="svgWrapper">
+          <img id="backGlow" alt="" src={Glow}></img>
           <BackSVG className="backSvg"></BackSVG>
           <div className="fadeIn">
-            <img className="zakSvg" alt="" src={HomeZak}></img>
+            <img id="zakSvg" alt="" src={HomeZak}></img>
           </div>
-          <img className="frontGlow" alt="" src={Glow}></img>
+          <img id="frontGlow" alt="" src={Glow}></img>
           <BackSVG className="frontSvg"></BackSVG>
         </div>
 

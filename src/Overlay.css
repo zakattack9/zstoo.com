@@ -140,11 +140,9 @@
 
 @keyframes drawBackground {
   0% {
-    /* opacity: 0.5; */
     stroke-dashoffset: -700;
   }
   100% {
-    /* opacity: 1; */
     stroke-dashoffset: 0;
   }
 }

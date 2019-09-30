@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import animationPause from './Utils/animationPause';
 import OverlayBack from './SVGs/OverlayBack';
 import Icons from './SVGs/Icons';
 import './Overlay.css'
@@ -14,17 +15,20 @@ class Overlay extends React.Component {
   animateOverlay() {
     const overlayNav = document.getElementById("overlayNav");
     overlayNav.classList.toggle("overlayAppear");
+    
+    const navLink = [...document.getElementsByClassName("navLink")];
+    navLink.map(navLink => { navLink.classList.toggle("fadeInNavLink") });
 
     const drawBackground = document.getElementById("overlayBackPath");
     drawBackground.classList.toggle("drawBackground");
-
-    const navLink = [...document.getElementsByClassName("navLink")];
-    navLink.map(navLink => { navLink.classList.toggle("fadeInNavLink") });
   }
 
   componentDidUpdate() {
     if (this.state.overlayOpen) {
+      animationPause(this.props.location.pathname, true);
       this.animateOverlay();
+    } else {
+      animationPause(this.props.location.pathname, false);
     }
   }
 
@@ -71,4 +75,4 @@ class Overlay extends React.Component {
   }
 }
 
-export default Overlay;
+export default withRouter(Overlay);

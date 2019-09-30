@@ -10,7 +10,7 @@
   transform: translateY(-50%);
 }
 
-.svgWrapper {
+#svgWrapper {
   margin: 0 auto;
   position: relative;
   left: 1%;
@@ -22,19 +22,19 @@
   animation: float 2.5s cubic-bezier(0.7, 0.22, 0.78, 0.93) 1s infinite alternate backwards;
 }
 
-.backGlow,
-.frontGlow {
+#backGlow,
+#frontGlow {
   width: 111%;
   position: absolute;
   animation: glow 3s cubic-bezier(0.7, 0.22, 0.78, 0.93) 1.3s infinite both;
 }
 
-.backGlow {
+#backGlow {
   top: -3%;
   left: -5%;
 }
 
-.frontGlow {
+#frontGlow {
   top: 36%;
   left: -10%;
 }
@@ -50,7 +50,7 @@
   left: -5.5%;
 }
 
-.zakSvg {
+#zakSvg {
   width: 80%;
   position: absolute;
   left: 9%;
