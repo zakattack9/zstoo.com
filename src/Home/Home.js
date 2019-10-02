@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BackSVG from '../SVGs/HomeBack';
 import HomeZak from '../SVGs/HomeZak.svg';
 import Glow from '../SVGs/HomeBackGlow.svg';
@@ -23,6 +24,21 @@ function App() {
 
         <div className="title fadeIn">
           I design and develop websites and applications.
+        </div>
+      </div>
+
+      <div className="home-nav_wrapper">
+        <div className="home-link_project">
+          <Link to="/projects">Projects</Link>
+          <hr />
+        </div>
+        <div className="home-link_about">
+          <Link to="/about">About</Link>
+          <hr />
+        </div>
+        <div className="home-link_contact">
+          <Link to="/contact">Contact</Link>
+          <hr />
         </div>
       </div>
     </div>

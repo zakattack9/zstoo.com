@@ -9,25 +9,25 @@
   right: 0.5rem;
 }
 
-.btnTop,
-.btnBtm {
+#btnTop,
+#btnBtm {
   position: relative;
   z-index: 10;
   width: 1.5rem;
   height: 0.35rem;
-  background-color: rgb(119, 119, 119);
-  transition: 0.2s;
+  background-color: rgb(97, 97, 97);
+  transition: 0.2s ease-out;
 }
 
-.btnTop {
+#btnTop {
   right: 0.3rem;
 }
 
-.btnBtm {
+#btnBtm {
   top: 0.3rem;
 }
 
-.overlayBtn:hover .btnTop {
+.overlayBtn:hover #btnTop {
   right: 0;
 }
 
@@ -103,8 +103,18 @@
 
 .navIcon {
   width: 1.5rem;
-  margin: 0 0.3rem;
+  margin: 0 0.35rem;
   fill: #464646;
+}
+
+/* animation classes for overlay icon */
+.animateOverlayIconTop {
+  right: 0 !important;
+  transform: translate3d(0, 0.5em, 0) rotate(45deg);
+}
+
+.animateOverlayIconBtm {
+  transform: translate3d(0, -0.15em, 0) rotate(-45deg);
 }
 
 /* keyframe animations for overlay */
@@ -125,11 +135,11 @@
 
 @keyframes fadeInNavLink {
   0% {
-    transform: translate(0, -10%);
+    transform: translate3d(0, -10%, 0);
     opacity: 0;
   }
   100% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
@@ -148,5 +158,5 @@
 }
 
 .drawBackground {
-  animation: 0.9s drawBackground 0.9s ease-out both;
+  animation: 0.9s drawBackground 0.9s cubic-bezier(.3,.7,.69,.66) both;
 }

@@ -12,23 +12,30 @@ class Overlay extends React.Component {
     this.setState({ overlayOpen: !this.state.overlayOpen });
   }
 
+  animateOverlayIcon() {
+    const btnTop = document.getElementById("btnTop");
+    btnTop.classList.toggle("animateOverlayIconTop");
+
+    const btnBtm = document.getElementById("btnBtm");
+    btnBtm.classList.toggle("animateOverlayIconBtm");
+  }
+
   animateOverlay() {
     const overlayNav = document.getElementById("overlayNav");
     overlayNav.classList.toggle("overlayAppear");
     
     const navLink = [...document.getElementsByClassName("navLink")];
-    navLink.map(navLink => { navLink.classList.toggle("fadeInNavLink") });
+    navLink.forEach(navLink => { navLink.classList.toggle("fadeInNavLink") });
 
     const drawBackground = document.getElementById("overlayBackPath");
     drawBackground.classList.toggle("drawBackground");
   }
 
   componentDidUpdate() {
+    animationPause(this.props.location.pathname, this.state.overlayOpen);
+    this.animateOverlayIcon();
     if (this.state.overlayOpen) {
-      animationPause(this.props.location.pathname, true);
       this.animateOverlay();
-    } else {
-      animationPause(this.props.location.pathname, false);
     }
   }
 
@@ -66,8 +73,8 @@ class Overlay extends React.Component {
     return (
       <div className="Overlay">
         <div className="overlayBtn" onClick={() => this.overlayController()}>
-          <div className="btnTop"></div>
-          <div className="btnBtm"></div>
+          <div id="btnTop"></div>
+          <div id="btnBtm"></div>
         </div>
         {this.renderNav()}
       </div>
