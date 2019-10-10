@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BackSVG from '../SVGs/HomeBack';
-import HomeZak from '../SVGs/HomeZak.svg';
-import Glow from '../SVGs/HomeBackGlow.svg';
+import BackSVG from '../../SVGs/HomeBack';
+import HomeZak from '../../SVGs/HomeZak.svg';
+import Glow from '../../SVGs/HomeBackGlow.svg';
 import Overlay from '../Overlay';
 import './Home.css';
 

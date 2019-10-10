@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import animationPause from './Utils/animationPause';
-import OverlayBack from './SVGs/OverlayBack';
-import Icons from './SVGs/Icons';
+import animationPause from '../Utils/animationPause';
+import OverlayBack from '../SVGs/OverlayBack';
+import Icons from '../SVGs/Icons';
 import './Overlay.css'
 
 class Overlay extends React.Component {
   state = { overlayOpen: false };
 
   overlayController() {
-    this.setState({ overlayOpen: !this.state.overlayOpen });
+    if (this.state.overlayOpen) {
+      this.aniamteOverlayClose();
+      setTimeout(() => {
+        this.setState({ overlayOpen: !this.state.overlayOpen });
+      }, 1200);
+    } else {
+      this.setState({ overlayOpen: !this.state.overlayOpen });
+    }
   }
 
   animateOverlayIcon() {
@@ -20,7 +27,7 @@ class Overlay extends React.Component {
     btnBtm.classList.toggle("animateOverlayIconBtm");
   }
 
-  animateOverlay() {
+  animateOverlayOpen() {
     const overlayNav = document.getElementById("overlayNav");
     overlayNav.classList.toggle("overlayAppear");
     
@@ -31,11 +38,22 @@ class Overlay extends React.Component {
     drawBackground.classList.toggle("drawBackground");
   }
 
+  aniamteOverlayClose() {
+    const drawBackground = document.getElementById("overlayBackPath");
+    drawBackground.classList.toggle("drawBackgroundOut");
+
+    const navLink = [...document.getElementsByClassName("navLink")];
+    navLink.forEach(navLink => { navLink.classList.toggle("fadeOutNavLink") });
+
+    const overlayNav = document.getElementById("overlayNav");
+    overlayNav.classList.toggle("overlayDisappear");
+  }
+
   componentDidUpdate() {
     animationPause(this.props.location.pathname, this.state.overlayOpen);
     this.animateOverlayIcon();
     if (this.state.overlayOpen) {
-      this.animateOverlay();
+      this.animateOverlayOpen();
     }
   }
 
@@ -45,16 +63,16 @@ class Overlay extends React.Component {
         <div id="overlayNav">
           <OverlayBack id="overlayBack" pathId="overlayBackPath"></OverlayBack>
           <div className="navLinkWrapper">
-            <div className="navLink navHome" style={{ "animation-delay": "0.6s" }}>
+            <div className="navLink navHome" style={{ "animation-delay": "0.5s" }}>
               <Link to="/">Home</Link>
             </div>
-            <div className="navLink navProjects" style={{ "animation-delay": "0.7s" }}>
+            <div className="navLink navProjects" style={{ "animation-delay": "0.6s" }}>
               <Link to="/projects">Projects</Link>
             </div>
-            <div className="navLink navAbout" style={{ "animation-delay": "0.8s" }}>
+            <div className="navLink navAbout" style={{ "animation-delay": "0.7s" }}>
               <Link to="/about">About</Link>
             </div>
-            <div className="navLink navContact" style={{ "animation-delay": "0.9s" }}>
+            <div className="navLink navContact" style={{ "animation-delay": "0.8s" }}>
               <Link to="/contact">Contact</Link>
             </div>
           </div>

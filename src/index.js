@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './index.css';
-import Home from './Home/Home';
-import Projects from './Projects/Projects';
-import About from './About/About';
-import Contact from './Contact/Contact';
+import Home from './Components/Home/Home';
+import Projects from './Components/Projects/Projects';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
 
 ReactDOM.render(
   <BrowserRouter>

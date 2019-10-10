@@ -26,6 +26,7 @@
 #frontGlow {
   width: 111%;
   position: absolute;
+  filter: saturate(200%);
   animation: glow 3s cubic-bezier(0.7, 0.22, 0.78, 0.93) 1.3s infinite both;
 }
 
@@ -43,6 +44,7 @@
 .frontSvg {
   width: 100%;
   position: absolute;
+  filter: saturate(180%);
 }
 
 .frontSvg {
@@ -143,14 +145,14 @@
   }
   100% {
     opacity: 1;
-    transform: translate3d(0%, 2%, 0);
+    transform: translate3d(0%, 2.5%, 0);
     /* transform: translate(-50%, -50%); */
   }
 }
 
 @keyframes reverseFloat {
   0% {
-    transform: translate3d(0, -3.5%, 0);
+    transform: translate3d(0, -4.5%, 0);
   }
   100% {
     transform: translate3d(0, 0%, 0);

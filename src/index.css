@@ -1,9 +1,12 @@
 html, body {
   font-size: 12pt;
   font-family: "ObjectSansRegular";
-  background-color: #161616;
   margin: 0;
   height: 100%;
+  background-color: #0D0D0D;
+  background-image: url('./SVGs/Bkg.svg');
+  background-blend-mode: hard-light;
+  background-size: cover;
 }
 
 #root {
