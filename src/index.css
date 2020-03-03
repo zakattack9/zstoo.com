@@ -1,18 +1,3 @@
-html, body {
-  font-size: 12pt;
-  font-family: "ObjectSansRegular";
-  margin: 0;
-  height: 100%;
-  background-color: #0D0D0D;
-  background-image: url('./SVGs/Bkg.svg');
-  background-blend-mode: hard-light;
-  background-size: cover;
-}
-
-#root {
-  height: 100%;
-}
-
 @font-face {
   font-family: "HelveticaBoldOutline";
   src: url("./Fonts/HelveticaBoldOutline.woff") format("woff");
@@ -46,4 +31,19 @@ html, body {
   src: url("./Fonts/ObjectSansHeavySlanted.woff") format("woff");
   font-weight: bold;
   font-style: italic;
+}
+
+html, body {
+  font-size: 12pt;
+  font-family: "ObjectSansRegular";
+  margin: 0;
+  height: 100%;
+  background-color: #0D0D0D;
+  background-image: url('./SVGs/Bkg.svg');
+  background-blend-mode: hard-light;
+  background-size: cover;
+}
+
+#root {
+  height: 100%;
 }
