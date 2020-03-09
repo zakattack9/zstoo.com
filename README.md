@@ -1,6 +1,6 @@
-### ZakSakata.com v2.0 coming soon...
+## ZakSakata.com v2.0 coming soon...
 
-#### Tech Stack
+### Tech Stack
 - [GreenSock (GSAP)](https://greensock.com/docs/v3)
   - animation optimization
   - binding tween to user scrol
@@ -22,13 +22,13 @@
   - DynamoDB for storing contact page form details
   - SNS for pushing contact notifications to email and phone
 
-#### TODO
+### TODO
 - design desktop views and compatibility
 - create pipeline for deployment
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
 - link zaksakata.com/photogrpahy under subdomain (photopgraphy.zaksakata.com)
 
-#### Stretch Goals
+### Stretch Goals
 - preload packages with loading screen
 - rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated
 - UI testing
