@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="426" height="786" viewBox="0 0 426 786">
+  <defs>
+    <linearGradient id="contactglow-a" x1="33.444%" x2="66.374%" y1="41.008%" y2="62.719%">
+      <stop offset="0%" stop-color="#E9E9E9"/>
+      <stop offset="99.908%" stop-color="#232323"/>
+    </linearGradient>
+    <filter id="contactglow-b" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <linearGradient id="contactglow-c" x1="33.444%" x2="66.404%" y1="41.008%" y2="62.739%">
+      <stop offset="0%" stop-color="#E9E9E9"/>
+      <stop offset="99.908%" stop-color="#232323"/>
+    </linearGradient>
+    <filter id="contactglow-d" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-e" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-f" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-g" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-h" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-i" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-j" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-k" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-l" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <filter id="contactglow-m" width="116.5%" height="109.3%" x="-8.3%" y="-4.6%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" stroke-width="2" transform="translate(25 19)">
+    <path stroke="url(#contactglow-a)" d="M0.581168831,1.70530257e-13 C-1.41883117,64.0323561 22.4145022,109.699023 72.0811688,137 C146.581169,177.951466 375.081169,267.443294 375.081169,325.093179 C375.081169,382.743064 383.30838,549.546402 196.081169,522.08245 C71.2630283,503.773149 5.92969496,545.791335 0.0811688312,648.137009" filter="url(#contactglow-b)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,10 C-1.41883117,74.0323561 22.4145022,119.699023 72.0811688,147 C146.581169,187.951466 375.081169,277.443294 375.081169,335.093179 C375.081169,392.743064 383.30838,559.546402 196.081169,532.08245 C71.2630283,513.773149 5.92969496,555.791335 0.0811688312,658.137009" filter="url(#contactglow-d)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,20 C-1.41883117,84.0323561 22.4145022,129.699023 72.0811688,157 C146.581169,197.951466 375.081169,287.443294 375.081169,345.093179 C375.081169,402.743064 383.30838,569.546402 196.081169,542.08245 C71.2630283,523.773149 5.92969496,565.791335 0.0811688312,668.137009" filter="url(#contactglow-e)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,30 C-1.41883117,94.0323561 22.4145022,139.699023 72.0811688,167 C146.581169,207.951466 375.081169,297.443294 375.081169,355.093179 C375.081169,412.743064 383.30838,579.546402 196.081169,552.08245 C71.2630283,533.773149 5.92969496,575.791335 0.0811688312,678.137009" filter="url(#contactglow-f)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,40 C-1.41883117,104.032356 22.4145022,149.699023 72.0811688,177 C146.581169,217.951466 375.081169,307.443294 375.081169,365.093179 C375.081169,422.743064 383.30838,589.546402 196.081169,562.08245 C71.2630283,543.773149 5.92969496,585.791335 0.0811688312,688.137009" filter="url(#contactglow-g)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,50 C-1.41883117,114.032356 22.4145022,159.699023 72.0811688,187 C146.581169,227.951466 375.081169,317.443294 375.081169,375.093179 C375.081169,432.743064 383.30838,599.546402 196.081169,572.08245 C71.2630283,553.773149 5.92969496,595.791335 0.0811688312,698.137009" filter="url(#contactglow-h)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,60 C-1.41883117,124.032356 22.4145022,169.699023 72.0811688,197 C146.581169,237.951466 375.081169,327.443294 375.081169,385.093179 C375.081169,442.743064 383.30838,609.546402 196.081169,582.08245 C71.2630283,563.773149 5.92969496,605.791335 0.0811688312,708.137009" filter="url(#contactglow-i)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,70 C-1.41883117,134.032356 22.4145022,179.699023 72.0811688,207 C146.581169,247.951466 375.081169,337.443294 375.081169,395.093179 C375.081169,452.743064 383.30838,619.546402 196.081169,592.08245 C71.2630283,573.773149 5.92969496,615.791335 0.0811688312,718.137009" filter="url(#contactglow-j)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,80 C-1.41883117,144.032356 22.4145022,189.699023 72.0811688,217 C146.581169,257.951466 375.081169,347.443294 375.081169,405.093179 C375.081169,462.743064 383.30838,629.546402 196.081169,602.08245 C71.2630283,583.773149 5.92969496,625.791335 0.0811688312,728.137009" filter="url(#contactglow-k)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,90 C-1.41883117,154.032356 22.4145022,199.699023 72.0811688,227 C146.581169,267.951466 375.081169,357.443294 375.081169,415.093179 C375.081169,472.743064 383.30838,639.546402 196.081169,612.08245 C71.2630283,593.773149 5.92969496,635.791335 0.0811688312,738.137009" filter="url(#contactglow-l)"/>
+    <path stroke="url(#contactglow-c)" d="M0.581168831,100 C-1.41883117,164.032356 22.4145022,209.699023 72.0811688,237 C146.581169,277.951466 375.081169,367.443294 375.081169,425.093179 C375.081169,482.743064 383.30838,649.546402 196.081169,622.08245 C71.2630283,603.773149 5.92969496,645.791335 0.0811688312,748.137009" filter="url(#contactglow-m)"/>
+  </g>
+</svg>
