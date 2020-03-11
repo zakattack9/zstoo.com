@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "HelveticaBoldOutline";
+  src: url("./Fonts/HelveticaBoldOutline.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansSlanted.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansHeavy.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ObjectSans";
+  src: url("./Fonts/ObjectSansHeavySlanted.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: "ObjectSansRegular";
+  background-color: #0D0D0D;
+  background-image: url('./SVGs/GrainTexture.svg');
+  background-blend-mode: hard-light;
+  background-size: cover;
+}
+
+#root {
+  height: 100%;
+}
