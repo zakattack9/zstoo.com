@@ -1,3 +1,68 @@
 .Home {
+  font-size: 5pt;
   height: 100%;
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__art {
+    margin: 0 auto;
+    position: relative;
+    left: 2em;
+    width: 30em;
+    height: 24em;
+  }
+
+  &__glow {
+    width: 36em;
+    position: absolute;
+    filter: saturate(120%);
+
+    &--back {
+      top: -3.7em;
+      left: -2.7em;
+    }
+
+    &--front {
+      top: 5.5em;
+      left: -4.2em;
+    }
+  }
+
+  &__abstract {
+    width: 30em;
+    position: absolute;
+    filter: saturate(200%);
+
+    &--back {
+      top: 0em;
+      left: 0em;
+    }
+
+    &--front {
+      top: 8.8em;
+      left: -1.6em;
+    }
+  }
+
+  &__zak {
+    width: 23.8em;
+    position: absolute;
+    left: 2.8em;
+    top: 6.8em;
+  }
+
+  &__headline {
+    font-family: "HelveticaBoldOutline";
+    font-size: 3em;
+    color: #a6a6a6;
+    text-transform: uppercase;
+    text-align: center;
+    width: 11em;
+    margin: 0 auto;
+  }
 }
