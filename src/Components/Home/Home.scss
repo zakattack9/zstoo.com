@@ -54,8 +54,7 @@
     width: 23.8em;
     position: absolute;
     left: 2.8em;
-    // top: 6.8em;
-    top: 35em;
+    top: 6.8em;
     transition: 0.3s;
   }
 
@@ -78,10 +77,10 @@
   }
 }
 
-// .Home__path {
-//   stroke-dasharray: 239;
-//   stroke-dashoffset: 0;
-// }
+.Home__path {
+  stroke-dasharray: 239;
+  stroke-dashoffset: 0;
+}
 
 @keyframes fadeOut {
   0% {

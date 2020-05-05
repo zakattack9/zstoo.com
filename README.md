@@ -22,6 +22,11 @@
   - DynamoDB for storing contact page form details
   - SNS for pushing contact notifications to email and phone
 
+### Optimization Issues
+- ScrollMagic lags exponentially when using more abstract glow SVGs/images
+  - This consequently causes laggy GSAP tweens/timelines
+  - *Potentially consider exporting abstract glow graphics as pngs?*
+
 ### TODO
 - design desktop views and compatibility
 - create mixins for css properties with vendor prefixes

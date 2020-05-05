@@ -9,13 +9,13 @@ import './Home.scss';
 class Home extends React.Component {
   componentDidMount () {
     const abstractTimeline = gsap.timeline({ repeatDelay: 0.5 });
-    // const abstractTween = gsap.from('.Home__path', {
-    //   strokeDashoffset: 239,
-    //   ease: 'power3.inOut',
-    //   // duration: 1.5,
-    //   stagger: 0.1
-    // });
-    // abstractTimeline.add(abstractTween);
+    const abstractTween = gsap.from('.Home__path', {
+      strokeDashoffset: 239,
+      ease: 'power3.inOut',
+      // duration: 1.5,
+      stagger: 0.1
+    });
+    abstractTimeline.add(abstractTween);
 
     console.log(this.props.duration);
     const abstractTrigger = document.querySelector('#Home__trigger--abstract');
@@ -23,20 +23,20 @@ class Home extends React.Component {
 
     const scrollScene = new ScrollScene({
       triggerElement: abstractTrigger,
-      toggle: {
-        element: abstract,
-        className: 'fadeOut',
-        reverse: true
-      },
+      // toggle: {
+      //   element: abstract,
+      //   className: 'fadeOut',
+      //   reverse: true
+      // },
       triggerHook: 0.5,
       offset: 400,
       // duration: this.props.duration + '%'
       gsap: {
         timeline: abstractTimeline
       },
-      duration: 1500
+      duration: 400
     })
-    // scrollScene.Scene.setPin('.Home__wrapper');
+    scrollScene.Scene.setPin('.Home__wrapper');
     scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
 
   }
@@ -47,20 +47,19 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <div id="Home__trigger--abstract"></div>
-        <img className="Home__zak" src={Zak} alt="Zak"/>
-        {/* <div className="Home__wrapper">
+        <div className="Home__wrapper">
           <div className="Home__art">
-            <img className="Home__glow Home__glow--back" src={Glow} alt="abstract art glow"/>
+            {/* <img className="Home__glow Home__glow--back" src={Glow} alt="abstract art glow"/> */}
             <Abstract className="Home__abstract Home__abstract--back" />
             <img className="Home__zak" src={Zak} alt="Zak"/>
             <Abstract className="Home__abstract Home__abstract--front" />
-            <img className="Home__glow Home__glow--front" src={Glow} alt="abstract art glow"/>
+            {/* <img className="Home__glow Home__glow--front" src={Glow} alt="abstract art glow"/> */}
           </div>
 
           <div className="Home__headline">
             I design and develop websites and applications.
           </div>
-        </div> */}
+        </div>
       </div>
     );
   }
