@@ -1,5 +1,6 @@
 .Home {
-  font-size: 5pt;
+  // TODO: change font-size to 12pt (requires reconfiguration child element positioning)
+  font-size: 5pt; // modify to scale for screen sizes
   height: 100%;
   position: relative;
 
@@ -54,6 +55,7 @@
     position: absolute;
     left: 2.8em;
     top: 6.8em;
+    transition: 0.3s;
   }
 
   &__headline {
@@ -65,4 +67,26 @@
     width: 11em;
     margin: 0 auto;
   }
+
+  // ScrollMagic Triggers
+  &__trigger {
+
+    &--abstract {
+      // position: absolute;
+      // bottom: 0;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  // animation: fadeOut 1s ease forwards;
+  opacity: 0;
 }
