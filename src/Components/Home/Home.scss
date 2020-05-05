@@ -54,7 +54,8 @@
     width: 23.8em;
     position: absolute;
     left: 2.8em;
-    top: 6.8em;
+    // top: 6.8em;
+    top: 35em;
     transition: 0.3s;
   }
 
@@ -70,13 +71,17 @@
 
   // ScrollMagic Triggers
   &__trigger {
-
     &--abstract {
       // position: absolute;
       // bottom: 0;
     }
   }
 }
+
+// .Home__path {
+//   stroke-dasharray: 239;
+//   stroke-dashoffset: 0;
+// }
 
 @keyframes fadeOut {
   0% {
@@ -88,5 +93,101 @@
 }
 .fadeOut {
   // animation: fadeOut 1s ease forwards;
-  opacity: 0;
+  // opacity: 0;
+  transform: scale(1.2);
 }
+
+/*
+.EWTWphpS_0 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 0ms forwards;
+}
+.EWTWphpS_1 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 40ms forwards;
+}
+.EWTWphpS_2 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 80ms forwards;
+}
+.EWTWphpS_3 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 121ms forwards;
+}
+.EWTWphpS_4 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 161ms forwards;
+}
+.EWTWphpS_5 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 202ms forwards;
+}
+.EWTWphpS_6 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 242ms forwards;
+}
+.EWTWphpS_7 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 283ms forwards;
+}
+.EWTWphpS_8 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 323ms forwards;
+}
+.EWTWphpS_9 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 364ms forwards;
+}
+.EWTWphpS_10 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 404ms forwards;
+}
+.EWTWphpS_11 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 445ms forwards;
+}
+.EWTWphpS_12 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 485ms forwards;
+}
+.EWTWphpS_13 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 526ms forwards;
+}
+.EWTWphpS_14 {
+  stroke-dasharray: 237 239;
+  stroke-dashoffset: 238;
+  animation: EWTWphpS_draw 1133ms ease 566ms forwards;
+}
+
+@keyframes EWTWphpS_draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes EWTWphpS_fade {
+  0% {
+    stroke-opacity: 1;
+  }
+  93.22033898305085% {
+    stroke-opacity: 1;
+  }
+  100% {
+    stroke-opacity: 0;
+  }
+}
+*/

@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <Home duration={sceneDuration.Home} />
+      <Home />
       <Spacer height={sceneDuration.Home} />
 
       <Projects />

@@ -1,16 +1,22 @@
 import React from 'react';
 import { ScrollScene, addIndicators } from 'scrollscene';
+import { gsap } from 'gsap';
 import Zak from '../../SVGs/ZAK.svg';
 import { Home as Abstract } from '../../SVGs/SVG';
 import Glow from '../../SVGs/HomeGlow.svg';
 import './Home.scss';
 
 class Home extends React.Component {
-  constructor (props) {
-    super(props);
-  }
-
   componentDidMount () {
+    const abstractTimeline = gsap.timeline({ repeatDelay: 0.5 });
+    // const abstractTween = gsap.from('.Home__path', {
+    //   strokeDashoffset: 239,
+    //   ease: 'power3.inOut',
+    //   // duration: 1.5,
+    //   stagger: 0.1
+    // });
+    // abstractTimeline.add(abstractTween);
+
     console.log(this.props.duration);
     const abstractTrigger = document.querySelector('#Home__trigger--abstract');
     const abstract = document.querySelector('.Home__zak');
@@ -24,7 +30,11 @@ class Home extends React.Component {
       },
       triggerHook: 0.5,
       offset: 400,
-      duration: '50%'
+      // duration: this.props.duration + '%'
+      gsap: {
+        timeline: abstractTimeline
+      },
+      duration: 1500
     })
     // scrollScene.Scene.setPin('.Home__wrapper');
     scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
@@ -37,7 +47,8 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <div id="Home__trigger--abstract"></div>
-        <div className="Home__wrapper">
+        <img className="Home__zak" src={Zak} alt="Zak"/>
+        {/* <div className="Home__wrapper">
           <div className="Home__art">
             <img className="Home__glow Home__glow--back" src={Glow} alt="abstract art glow"/>
             <Abstract className="Home__abstract Home__abstract--back" />
@@ -49,7 +60,7 @@ class Home extends React.Component {
           <div className="Home__headline">
             I design and develop websites and applications.
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
