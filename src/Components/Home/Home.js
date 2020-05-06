@@ -13,7 +13,10 @@ class Home extends React.Component {
       strokeDashoffset: 239,
       ease: 'power3.inOut',
       // duration: 1.5,
-      stagger: 0.1
+      stagger: {
+        each: 0.01,
+        from: 'center' // 'random' works great also
+      }
     });
     abstractTimeline.add(abstractTween);
 

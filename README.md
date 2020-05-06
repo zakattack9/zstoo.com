@@ -32,7 +32,7 @@
 - create mixins for css properties with vendor prefixes
 - create pipeline for deployment
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
-- link zaksakata.com/photogrpahy under subdomain (photopgraphy.zaksakata.com)
+- link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)
 
 ### Stretch Goals
 - preload packages with loading screen
