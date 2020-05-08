@@ -1,21 +1,21 @@
 .Home {
-  // TODO: change font-size to 12pt (requires reconfiguration child element positioning)
-  font-size: 5pt; // modify to scale for screen sizes
+  font-size: 12pt;
   height: 100%;
-  position: relative;
 
   &__wrapper {
+    font-size: 13pt; // modify to scale for screen sizes
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
   }
 
   &__art {
-    margin: 0 auto;
     position: relative;
-    left: 2em;
-    width: 30em;
-    height: 24em;
+    width: 10em;
+    height: 9.5em;
   }
 
   &__glow {
@@ -35,45 +35,33 @@
   }
 
   &__abstract {
-    width: 30em;
+    width: 12em;
     position: absolute;
     filter: saturate(200%);
 
     &--back {
       top: 0em;
-      left: 0em;
+      left: -0.4em;
     }
 
     &--front {
-      top: 8.8em;
-      left: -1.6em;
+      top: 3.5em;
+      left: -1.1em;
     }
   }
 
   &__zak {
-    width: 23.8em;
+    width: 9.5em;
     position: absolute;
-    left: 2.8em;
-    top: 6.8em;
+    left: 0.65em;
+    top: 2.8em;
     transition: 0.3s;
   }
 
   &__headline {
-    font-family: "HelveticaBoldOutline";
-    font-size: 3em;
-    color: #a6a6a6;
-    text-transform: uppercase;
-    text-align: center;
-    width: 11em;
-    margin: 0 auto;
-  }
-
-  // ScrollMagic Triggers
-  &__trigger {
-    &--abstract {
-      // position: absolute;
-      // bottom: 0;
-    }
+    width: 16em;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 0;
   }
 }
 
@@ -81,112 +69,3 @@
   stroke-dasharray: 239;
   stroke-dashoffset: 0;
 }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.fadeOut {
-  // animation: fadeOut 1s ease forwards;
-  // opacity: 0;
-  transform: scale(1.2);
-}
-
-/*
-.EWTWphpS_0 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 0ms forwards;
-}
-.EWTWphpS_1 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 40ms forwards;
-}
-.EWTWphpS_2 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 80ms forwards;
-}
-.EWTWphpS_3 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 121ms forwards;
-}
-.EWTWphpS_4 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 161ms forwards;
-}
-.EWTWphpS_5 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 202ms forwards;
-}
-.EWTWphpS_6 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 242ms forwards;
-}
-.EWTWphpS_7 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 283ms forwards;
-}
-.EWTWphpS_8 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 323ms forwards;
-}
-.EWTWphpS_9 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 364ms forwards;
-}
-.EWTWphpS_10 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 404ms forwards;
-}
-.EWTWphpS_11 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 445ms forwards;
-}
-.EWTWphpS_12 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 485ms forwards;
-}
-.EWTWphpS_13 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 526ms forwards;
-}
-.EWTWphpS_14 {
-  stroke-dasharray: 237 239;
-  stroke-dashoffset: 238;
-  animation: EWTWphpS_draw 1133ms ease 566ms forwards;
-}
-
-@keyframes EWTWphpS_draw {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes EWTWphpS_fade {
-  0% {
-    stroke-opacity: 1;
-  }
-  93.22033898305085% {
-    stroke-opacity: 1;
-  }
-  100% {
-    stroke-opacity: 0;
-  }
-}
-*/
