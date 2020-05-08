@@ -19,18 +19,18 @@
   }
 
   &__glow {
-    width: 36em;
+    width: 15.8em;
     position: absolute;
     filter: saturate(120%);
 
     &--back {
-      top: -3.7em;
-      left: -2.7em;
+      top: -1.8em;
+      left: -2em;
     }
 
     &--front {
-      top: 5.5em;
-      left: -4.2em;
+      top: 1.9em;
+      left: -2.7em;
     }
   }
 

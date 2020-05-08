@@ -2,44 +2,49 @@ import React from 'react';
 import { ScrollScene, addIndicators } from 'scrollscene';
 import { gsap } from 'gsap';
 import Zak from '../../SVGs/ZAK.svg';
+import Glow from '../../Images/FrontLight.png';
 import { Home as Abstract, Headline } from '../../SVGs/SVG';
-import Glow from '../../SVGs/HomeGlow.svg';
 import './Home.scss';
 
 class Home extends React.Component {
   componentDidMount () {
     const homeTimeline = gsap.timeline({ repeatDelay: 0.5 });
-    const abstractTween = gsap.to('.Home__abstract--path', {
-      strokeDashoffset: 239,
-      // opacity: 0,
+    homeTimeline.to('.Home__abstract--path', {
+      duration: 0.6,
       ease: 'power3.inOut',
-      // duration: 0.8,
+      strokeDashoffset: 239,
       stagger: {
         each: 0.01,
         from: 'edges'
       }
-    });
-    homeTimeline.add(abstractTween);
+    }, 0.1);
 
-    const headlineTween = gsap.to('.Home__headline', {
-      strokeDashoffset: 130,
+    homeTimeline.to('.Home__glow', {
+      duration: 0.5, 
+      ease: 'power2.inOut',
+      opacity: 0,
+      y: 20,
+      scale: 0.84,
+    }, 0);
+
+    homeTimeline.to('.Home__headline', {
+      duration: 1,
       ease: 'power3.inOut',
-      duration: 0.5,
-    });
-    homeTimeline.add(headlineTween, 0);
+      strokeDashoffset: 130,
+    }, 0.3);
 
-    const zakTween = gsap.to('.Home__zak', {
-      y: 70,
+    homeTimeline.to('.Home__zak', {
+      duration: 0.5,
       ease: 'power2.in', 
-      opacity: 0
-    });
-    homeTimeline.add(zakTween, '-=0.5');
+      opacity: 0,
+      y: 70,
+    }, 0.8);
+    console.log("TOTAL TIMELINE DURATION:", homeTimeline.duration());
 
     const abstractTrigger = document.querySelector('#Home__trigger');
     const scrollScene = new ScrollScene({
       triggerElement: abstractTrigger,
       triggerHook: 0,
-      // offset: 150,
       gsap: {
         timeline: homeTimeline
       },
@@ -60,11 +65,11 @@ class Home extends React.Component {
         <div id="Home__trigger"></div>
         <div className="Home__wrapper">
           <div className="Home__art">
-            {/* <img className="Home__glow Home__glow--back" src={Glow} alt="abstract art glow"/> */}
+            <img className="Home__glow Home__glow--back" src={Glow} alt="abstract glow art"/>
             <Abstract className="Home__abstract Home__abstract--back" pathName="Home__abstract--path" />
             <img className="Home__zak" src={Zak} alt="Zak"/>
+            <img className="Home__glow Home__glow--front" src={Glow} alt="abstract glow art"/>
             <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
-            {/* <img className="Home__glow Home__glow--front" src={Glow} alt="abstract art glow"/> */}
           </div>
 
           <Headline className="Home__headline" />
