@@ -28,6 +28,8 @@
   - *Potentially consider exporting abstract glow graphics as pngs?*
 
 ### TODO
+- implement cleanup for gsap timelines and scrollscene objects
+- remove all `addIndicators` from scrollscene imports before prod deploy
 - design desktop views and compatibility
 - create mixins for css properties with vendor prefixes
 - create pipeline for deployment

@@ -1,4 +1,32 @@
 .Projects {
   font-size: 12pt;
   height: 100%;
+
+  &__art {
+    font-size: 15pt;
+    height: 35em;
+    width: 10em;
+    position: relative;
+    left: 3em;
+  }
+
+  &__abstract {
+    height: 35em;
+    position: absolute;
+  }
+
+  &__glow {
+    height: 40em;
+    position: absolute;
+    top: -2.5em;
+    left: -2.5em;
+  }
+
+  &__wrapper {
+    width: 65%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+  }
 }

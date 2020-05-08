@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollScene, addIndicators } from 'scrollscene';
 import { gsap } from 'gsap';
 import Zak from '../../SVGs/ZAK.svg';
-import Glow from '../../Images/FrontLight.png';
+import Glow from '../../Images/HomeGlow.png';
 import { Home as Abstract, Headline } from '../../SVGs/SVG';
 import './Home.scss';
 

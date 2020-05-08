@@ -9,7 +9,7 @@ import './App.scss';
 function App() {
   // used to add scroll space for scroll animations between scenes
   const sceneDuration = { // units in vh
-    Home: 200,
+    Home: 80,
     Projects: 0,
     About: 0,
     Contact: 0

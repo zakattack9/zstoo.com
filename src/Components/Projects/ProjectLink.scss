@@ -1,0 +1,51 @@
+.ProjectLink {
+  margin-bottom: 1.7em;
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: 35px auto;
+  column-gap: 15px;
+  grid-template-areas: 
+    "id name"
+    "id desc";
+
+  &__name {
+    font-size: 30pt;
+    font-family: "ObjectSans";
+    font-weight: bold;
+    font-style: italic;
+    color: #E3E3E3;
+    grid-area: name;
+  }
+
+  &__shortDesc {
+    font-size: 10pt;
+    font-family: "ObjectSans";
+    font-style: italic;
+    color: #D3D3D3;
+    margin-top: 0.4em;
+    line-height: 1.2em;
+    grid-area: desc;
+  }
+
+  &__wrapper {
+    width: 100%;
+    margin-top: 0.4em;
+    grid-area: id;
+    justify-self: center;
+  }
+
+  &__line {
+    border-top: solid #999999 1px;
+    height: 1px;
+  }
+
+  &__id {
+    font-size: 35pt;
+    font-family: "HelveticaBoldOutline";
+    color: #AAAAAA;
+    text-align: center;
+    line-height: 1em;
+    margin-top: 0.1em;
+  }
+
+}
