@@ -9,9 +9,9 @@ import './Home.scss';
 class Home extends React.Component {
   componentDidMount () {
     const homeTimeline = gsap.timeline({ repeatDelay: 0.5 });
-    const abstractTween = gsap.to('.Home__path', {
+    const abstractTween = gsap.to('.Home__abstract--path', {
       strokeDashoffset: 239,
-      opacity: 0,
+      // opacity: 0,
       ease: 'power3.inOut',
       // duration: 0.8,
       stagger: {
@@ -28,6 +28,13 @@ class Home extends React.Component {
     });
     homeTimeline.add(headlineTween, 0);
 
+    const zakTween = gsap.to('.Home__zak', {
+      y: 70,
+      ease: 'power2.in', 
+      opacity: 0
+    });
+    homeTimeline.add(zakTween, '-=0.5');
+
     const abstractTrigger = document.querySelector('#Home__trigger');
     const scrollScene = new ScrollScene({
       triggerElement: abstractTrigger,
@@ -36,7 +43,7 @@ class Home extends React.Component {
       gsap: {
         timeline: homeTimeline
       },
-      duration: 900
+      duration: 800
     })
     scrollScene.Scene.setPin('.Home__wrapper');
     scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
@@ -51,17 +58,17 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <div id="Home__trigger"></div>
-          <div className="Home__wrapper">
-            <div className="Home__art">
-              {/* <img className="Home__glow Home__glow--back" src={Glow} alt="abstract art glow"/> */}
-              <Abstract className="Home__abstract Home__abstract--back" />
-              <img className="Home__zak" src={Zak} alt="Zak"/>
-              <Abstract className="Home__abstract Home__abstract--front" />
-              {/* <img className="Home__glow Home__glow--front" src={Glow} alt="abstract art glow"/> */}
-            </div>
-
-            <Headline className="Home__headline" />
+        <div className="Home__wrapper">
+          <div className="Home__art">
+            {/* <img className="Home__glow Home__glow--back" src={Glow} alt="abstract art glow"/> */}
+            <Abstract className="Home__abstract Home__abstract--back" pathName="Home__abstract--path" />
+            <img className="Home__zak" src={Zak} alt="Zak"/>
+            <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
+            {/* <img className="Home__glow Home__glow--front" src={Glow} alt="abstract art glow"/> */}
           </div>
+
+          <Headline className="Home__headline" />
+        </div>
       </div>
     );
   }

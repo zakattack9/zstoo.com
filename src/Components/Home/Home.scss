@@ -48,6 +48,11 @@
       top: 3.5em;
       left: -1.1em;
     }
+
+    &--path {
+      stroke-dasharray: 239;
+      stroke-dashoffset: 0;
+    }
   }
 
   &__zak {
@@ -59,13 +64,8 @@
   }
 
   &__headline {
-    width: 16em;
+    width: 14em;
     stroke-dasharray: 130;
     stroke-dashoffset: 0;
   }
-}
-
-.Home__path {
-  stroke-dasharray: 239;
-  stroke-dashoffset: 0;
 }
