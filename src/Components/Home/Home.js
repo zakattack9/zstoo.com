@@ -39,15 +39,12 @@ class Home extends React.Component {
       opacity: 0,
       y: 70,
     }, 0.8);
-    console.log("TOTAL TIMELINE DURATION:", homeTimeline.duration());
 
     const abstractTrigger = document.querySelector('#Home__trigger');
     const scrollScene = new ScrollScene({
       triggerElement: abstractTrigger,
       triggerHook: 0,
-      gsap: {
-        timeline: homeTimeline
-      },
+      gsap: { timeline: homeTimeline },
       duration: 800
     })
     scrollScene.Scene.setPin('.Home__wrapper');
@@ -71,7 +68,6 @@ class Home extends React.Component {
             <img className="Home__glow Home__glow--front" src={Glow} alt="abstract glow art"/>
             <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
           </div>
-
           <Headline className="Home__headline" />
         </div>
       </div>

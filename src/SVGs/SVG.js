@@ -1,7 +1,6 @@
 import React from 'react';
 
 // React handler for svgs
-// contains only abstract line art svgs (no glow)
 
 export const Error404 = props => {
   return (
