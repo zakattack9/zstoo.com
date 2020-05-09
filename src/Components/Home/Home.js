@@ -8,7 +8,7 @@ import './Home.scss';
 
 class Home extends React.Component {
   componentDidMount () {
-    const homeTimeline = gsap.timeline({ repeatDelay: 0.5 });
+    const homeTimeline = gsap.timeline({ paused: true });
     homeTimeline.to('.Home__abstract--path', {
       duration: 0.6,
       ease: 'power3.inOut',
@@ -40,9 +40,9 @@ class Home extends React.Component {
       y: 70,
     }, 0.8);
 
-    const abstractTrigger = document.querySelector('#Home__trigger');
+    const homeTrigger = document.querySelector('#Home__trigger');
     const scrollScene = new ScrollScene({
-      triggerElement: abstractTrigger,
+      triggerElement: homeTrigger,
       triggerHook: 0,
       gsap: { timeline: homeTimeline },
       duration: 800

@@ -7,7 +7,7 @@ const ProjectLink = props => {
     <div className="ProjectLink">
       <div className="ProjectLink__name">{props.name}</div>
       <div className="ProjectLink__shortDesc">{props.desc}</div>
-      <div className="ProjectLink__wrapper">
+      <div className={"ProjectLink__wrapper ProjectLink__wrapper--" + props.index}>
         <div className="ProjectLink__line"></div>
         <div className="ProjectLink__id">{props.id}</div>
       </div>

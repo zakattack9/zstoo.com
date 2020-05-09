@@ -1,25 +1,34 @@
 .Projects {
   font-size: 12pt;
-  height: 100%;
+  height: 500%;
+  position: relative;
 
   &__art {
-    font-size: 15pt;
-    height: 35em;
-    width: 10em;
-    position: relative;
-    left: 3em;
+    font-size: 17pt;
+    height: 38em;
+    width: 8em;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
   }
-
+  
   &__abstract {
     height: 35em;
     position: absolute;
+    left: 2.4em;
+    filter: saturate(200%);
+    
+    &--path {
+      stroke-dasharray: 740;
+      stroke-dashoffset: -740;
+    }
   }
 
   &__glow {
     height: 40em;
     position: absolute;
-    top: -2.5em;
-    left: -2.5em;
+    top: -2.6em;
+    filter: saturate(120%);
   }
 
   &__wrapper {

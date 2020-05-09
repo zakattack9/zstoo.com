@@ -30,13 +30,16 @@
   &__wrapper {
     width: 100%;
     margin-top: 0.4em;
+    transition: 0.3s;
     grid-area: id;
     justify-self: center;
   }
-
+  
   &__line {
     border-top: solid #999999 1px;
     height: 1px;
+    transform: translateX(-100%);
+    transition: 0.2s;
   }
 
   &__id {
@@ -46,6 +49,12 @@
     text-align: center;
     line-height: 1em;
     margin-top: 0.1em;
+    transform: translateX(-120%);
+    transition: 0.4s;
   }
 
 }
+
+// modifier classes for ProjectLink__wrapper animation
+.slide--line { transform: translateX(0); }
+.slide--id { transform: translateX(0); }
