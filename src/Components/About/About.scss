@@ -1,0 +1,33 @@
+.About {
+  font-size: 12pt;
+  height: 300%;
+  position: relative;
+
+  &__art {
+    font-size: 12pt;
+    position: absolute;
+    // height: 10em;
+    // width: 5em;
+    top: -11em;
+    left: 1.5em;
+  }
+
+  &__abstract {
+    width: 8em;
+    position: absolute;
+    top: 1.8em;
+    left: 1.7em;
+    filter: saturate(200%);
+
+    &--path {
+      stroke-dasharray: 1333;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  &__glow {
+    width: 12em;
+    position: absolute;
+    filter: saturate(120%);
+  }
+}

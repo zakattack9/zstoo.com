@@ -48,8 +48,7 @@ class Home extends React.Component {
       duration: 800
     })
     scrollScene.Scene.setPin('.Home__wrapper');
-    scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
-
+    // scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
   }
 
   componentWillUnmount () {

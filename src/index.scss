@@ -38,10 +38,10 @@ html, body {
   height: 100%;
   font-size: 12pt;
   font-family: "ObjectSansRegular";
-  background-color: rgb(44, 44, 44);
-  background-image: url('./SVGs/GrainTexture.svg');
-  background-blend-mode: hard-light;
-  background-size: cover;
+  background-color: rgb(12, 12, 12);
+  // background-image: url('./SVGs/GrainTexture.svg');
+  // background-blend-mode: hard-light;
+  // background-size: cover;
   // background-attachment: fixed; // super laggy
   color: #C8C8C8;
 }
