@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollScene, addIndicators } from 'scrollscene';
 import { gsap } from 'gsap';
 import Zak from '../../SVGs/ZAK.svg';
@@ -6,8 +6,8 @@ import Glow from '../../Images/HomeGlow.png';
 import { Home as Abstract, Headline } from '../../SVGs/SVG';
 import './Home.scss';
 
-class Home extends React.Component {
-  componentDidMount () {
+const Home = () => {
+  useEffect(() => {
     const homeTimeline = gsap.timeline({ paused: true });
     homeTimeline.to('.Home__abstract--path', {
       duration: 0.6,
@@ -49,29 +49,27 @@ class Home extends React.Component {
     })
     scrollScene.Scene.setPin('.Home__wrapper');
     // scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
-  }
 
-  componentWillUnmount () {
-    // clean up ScrollScene here
-  }
-  
-  render () {
-    return (
-      <div className="Home">
-        <div id="Home__trigger"></div>
-        <div className="Home__wrapper">
-          <div className="Home__art">
-            <img className="Home__glow Home__glow--back" src={Glow} alt="abstract glow art"/>
-            <Abstract className="Home__abstract Home__abstract--back" pathName="Home__abstract--path" />
-            <img className="Home__zak" src={Zak} alt="Zak"/>
-            <img className="Home__glow Home__glow--front" src={Glow} alt="abstract glow art"/>
-            <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
-          </div>
-          <Headline className="Home__headline" />
+    // return () => {
+    //   // clean up ScrollScene here
+    // }
+  }, []);
+
+  return (
+    <div className="Home">
+      <div id="Home__trigger"></div>
+      <div className="Home__wrapper">
+        <div className="Home__art">
+          <img className="Home__glow Home__glow--back" src={Glow} alt="abstract glow art"/>
+          <Abstract className="Home__abstract Home__abstract--back" pathName="Home__abstract--path" />
+          <img className="Home__zak" src={Zak} alt="Zak"/>
+          <img className="Home__glow Home__glow--front" src={Glow} alt="abstract glow art"/>
+          <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
         </div>
+        <Headline className="Home__headline" />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Home;

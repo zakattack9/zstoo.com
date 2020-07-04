@@ -5,7 +5,7 @@ const Spacer = props => {
   let styles = {
     height: props.height + 'vh'
   };
-  return <div className="Spacer" style={ styles }></div>;
+  return <div className="Spacer" style={styles}></div>;
 }
 
 export default Spacer;

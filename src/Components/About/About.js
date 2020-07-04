@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollScene, addIndicators } from 'scrollscene';
 import { gsap } from 'gsap';
 import Glow from '../../Images/AboutGlow.png';
@@ -6,8 +6,8 @@ import { About as Abstract } from '../../SVGs/SVG';
 import Spacer from '../Spacer';
 import './About.scss';
 
-class About extends React.Component {
-  componentDidMount () {
+const About = () => {
+  useEffect(() => {
     const aboutTimeline = gsap.timeline({ paused: true });
     aboutTimeline.from('.About__abstract--path', {
       duration: 0.5,
@@ -36,20 +36,17 @@ class About extends React.Component {
     })
     scrollScene.Scene.setPin('.About__art');
     // scrollScene.Scene.addIndicators({ name: 'about scene', colorEnd: '#FFFFFF' })
+  }, []);
 
-  }
-
-  render () {
-    return (
-      <div className="About">
-        <div id="About__trigger"></div>
-        <div className="About__art">
-          <Abstract className="About__abstract" pathName="About__abstract--path" />
-          {/* <img className="About__glow" src={Glow} alt="abstract glow art"/> */}
-        </div>
+  return (
+    <div className="About">
+      <div id="About__trigger"></div>
+      <div className="About__art">
+        <Abstract className="About__abstract" pathName="About__abstract--path" />
+        {/* <img className="About__glow" src={Glow} alt="abstract glow art"/> */}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default About;

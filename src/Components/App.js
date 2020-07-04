@@ -5,7 +5,7 @@ import About from './About/About';
 import Contact from './Contact/Contact';
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Home />
