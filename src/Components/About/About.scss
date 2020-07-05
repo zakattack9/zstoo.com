@@ -1,6 +1,6 @@
 .About {
   font-size: 12pt;
-  height: 300%;
+  height: 500%;
   position: relative;
 
   &__art {
@@ -16,7 +16,7 @@
     width: 8em;
     position: absolute;
     top: 1.8em;
-    left: 1.7em;
+    left: 0.5em;
     filter: saturate(200%);
 
     &--path {
@@ -30,4 +30,20 @@
     position: absolute;
     filter: saturate(120%);
   }
+
+  &__ZakSakata {
+    font-size: 12pt;
+    width: 15em;
+    position: relative;
+    left: 6em;
+    top: 15em;
+    z-index: 1;
+    filter: saturate(200%);
+
+    &--path {
+      stroke-dasharray: 1545;
+      stroke-dashoffset: 0;
+    }
+  }
+
 }

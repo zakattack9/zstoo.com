@@ -50,9 +50,9 @@ const Home = () => {
     scrollScene.Scene.setPin('.Home__wrapper');
     // scrollScene.Scene.addIndicators({ name: 'home scene', colorEnd: '#FFFFFF' })
 
-    // return () => {
-    //   // clean up ScrollScene here
-    // }
+    return () => {
+      scrollScene.destroy();
+    }
   }, []);
 
   return (

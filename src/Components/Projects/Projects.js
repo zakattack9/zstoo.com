@@ -49,10 +49,11 @@ const Projects = () => {
     scrollScene.Scene.setPin('.Projects__art');
     // scrollScene.Scene.addIndicators({ name: 'projects scene', colorEnd: '#FFFFFF' })
 
+    let projectLinkSS, projectLinkLineSS, projectLinkIdSS;
     document.querySelectorAll('.ProjectLink').forEach((project, i) => {
       const projectLinkTrigger = document.querySelector(`.ProjectLink__wrapper--${i}`);
       const projectLink = project;
-      new ScrollScene({
+      projectLinkSS = new ScrollScene({
         triggerElement: projectLinkTrigger,
         triggerHook: 0.8,
         toggle: {
@@ -61,7 +62,7 @@ const Projects = () => {
         },
       })
       const projectLinkLine = document.querySelector(`.ProjectLink__wrapper--${i} .ProjectLink__line`);
-      new ScrollScene({
+      projectLinkLineSS = new ScrollScene({
         triggerElement: projectLinkTrigger,
         triggerHook: 0.55,
         toggle: {
@@ -70,7 +71,7 @@ const Projects = () => {
         },
       })
       const projectLinkId = document.querySelector(`.ProjectLink__wrapper--${i} .ProjectLink__id`);
-      new ScrollScene({
+      projectLinkIdSS = new ScrollScene({
         triggerElement: projectLinkTrigger,
         triggerHook: 0.5,
         toggle: {
@@ -80,9 +81,12 @@ const Projects = () => {
       })
     })
 
-    // return () => {
-    //   // clean up ScrollScene here
-    // }
+    return () => {
+      scrollScene.destroy();
+      projectLinkSS.destroy();
+      projectLinkLineSS.destroy();
+      projectLinkIdSS.destroy();
+    }
   }, []);
 
   return (
