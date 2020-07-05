@@ -4,7 +4,7 @@
   position: relative;
 
   &__art {
-    font-size: 12pt;
+    font-size: 12pt; // modify for smaller screen sizes
     position: absolute;
     // height: 10em;
     // width: 5em;
@@ -28,22 +28,28 @@
   &__glow {
     width: 12em;
     position: absolute;
-    filter: saturate(120%);
+    left: -1.2em;
+    filter: saturate(150%);
   }
 
   &__ZakSakata {
-    font-size: 12pt;
     width: 15em;
     position: relative;
-    left: 6em;
+    left: 20vw;
     top: 15em;
     z-index: 1;
     filter: saturate(200%);
 
     &--path {
-      stroke-dasharray: 1545;
+      stroke-dasharray: 1540;
       stroke-dashoffset: 0;
     }
+  }
+
+  &__text {
+    width: 45%;
+    position: relative;
+    left: 11em;
   }
 
 }

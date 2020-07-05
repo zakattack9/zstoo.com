@@ -10,9 +10,9 @@ const About = () => {
   useEffect(() => {
     const aboutTimeline = gsap.timeline({ paused: true });
     aboutTimeline.from('.About__abstract--path', {
-      duration: 1.5,
+      duration: 1.3,
       ease: 'power2.inOut',
-      strokeDashoffset: 750,
+      strokeDashoffset: 880,
       stagger: {
         each: 0.02,
         from: 'start'
@@ -22,19 +22,20 @@ const About = () => {
     aboutTimeline.from('.About__ZakSakata--path', {
       duration: 1,
       ease: 'power1.inOut',
-      strokeDashoffset: -1545,
+      strokeDashoffset: -1540,
       stagger: {
         each: 0.02,
         from: 'start'
       }
-    }, 1);
+    }, 0.4);
 
-    // aboutTimeline.from('.About__glow', {
-    //   duration: 0.5, 
-    //   ease: 'power2.inOut',
-    //   opacity: 1,
-    //   scale: 0.84,
-    // }, 0.4);
+    aboutTimeline.from('.About__glow', {
+      duration: 1, 
+      ease: 'power2.inOut',
+      opacity: 0,
+      scale: 0.84,
+      delay: 0.3,
+    }, 0.4);
 
     const aboutTrigger = document.querySelector('#About__trigger');
     const scrollScene = new ScrollScene({
@@ -55,33 +56,6 @@ const About = () => {
     pinScrollScene.Scene.setPin('.About__art');
     pinScrollScene.Scene.addIndicators({ name: 'about pin scene', colorEnd: '#FFFFFF' });
 
-
-    const zakSakataTimeline = gsap.timeline({ paused: true });
-    // zakSakataTimeline.from('.About__ZakSakata--path', {
-    //   duration: 1,
-    //   ease: 'power1.inOut',
-    //   strokeDashoffset: -1545,
-    //   stagger: {
-    //     each: 0.02,
-    //     from: 'start'
-    //   }
-    // }, 0);
-    // const zakSakataSS = new ScrollScene({
-    //   triggerElement: aboutTrigger,
-    //   triggerHook: 0,
-    //   gsap: { timeline: zakSakataTimeline },
-    //   offset: 800,
-    //   duration: 500
-    // })
-    // const pinZakSakataSS = new ScrollScene({
-    //   triggerElement: aboutTrigger,
-    //   triggerHook: 0,
-    //   offset: 100,
-    //   duration: 1000
-    // })
-    // pinZakSakataSS.Scene.setPin('.About__ZakSakata');
-    // zakSakataSS.Scene.addIndicators({ name: 'zak sakata scene', colorEnd: '#FFFFFF' });
-
     return () => {
       scrollScene.destroy();
       pinScrollScene.destroy();
@@ -94,7 +68,11 @@ const About = () => {
       <div className="About__art">
         <ZakSakata className="About__ZakSakata" pathName="About__ZakSakata--path" />
         <Abstract className="About__abstract" pathName="About__abstract--path" />
-        {/* <img className="About__glow" src={Glow} alt="abstract glow art"/> */}
+        <img className="About__glow" src={Glow} alt="abstract glow art"/>
+      </div>
+      <Spacer height={150} />
+      <div className="About__text">
+        After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
       </div>
     </div>
   );
