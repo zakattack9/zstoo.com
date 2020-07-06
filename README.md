@@ -5,13 +5,8 @@
   - animation optimization
   - binding tween to user scrol
   - draw svg animations
-- [ScrollMagic.js](https://scrollmagic.io/docs/index.html)
-  - scroll triggered animations
-  - pinning elements
-- [ScrollScene](https://github.com/jonkwheeler/ScrollScene)
-  - temporary replacement for ScrollMagic until it gets updated to support GSAP v3
-- [Vivus](https://maxwellito.github.io/vivus/)
-  - testing and building svg line animations
+  - [ScrollTrigger?](https://www.williamrchase.com/scroll_trigger_demo/index.html)
+  - [ScrolTrigger Example](https://www.williamrchase.com/post/scrollytelling-with-gsap-scrolltrigger/)
 - [React](https://reactjs.org/docs/getting-started.html)
   - DOM rendering
   - `react-transition-group` library for page transitions
@@ -21,6 +16,14 @@
 - [AWS](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/)
   - DynamoDB for storing contact page form details
   - SNS for pushing contact notifications to email and phone
+- [ScrollMagic.js](https://scrollmagic.io/docs/index.html)*
+  - scroll triggered animations
+  - pinning elements
+- [ScrollScene](https://github.com/jonkwheeler/ScrollScene)*
+  - temporary replacement for ScrollMagic until it gets updated to support GSAP v3
+- [Vivus](https://maxwellito.github.io/vivus/)*
+  - testing and building svg line animations
+**no longer using due to inactive development and the flexibility GSAP*
 
 ### Optimization Issues
 - ScrollMagic lags exponentially when using more abstract glow SVGs/images
