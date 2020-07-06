@@ -1,10 +1,5 @@
 .ProjectLink {
   margin-bottom: 1.7em;
-  transform: translateY(20px) scale(0.97);
-  opacity: 0;
-  transition: 0.5s;
-  transition-timing-function: ease-out;
-
   display: grid;
   grid-template-rows: min-content;
   grid-template-columns: 35px auto;
@@ -43,10 +38,6 @@
   &__line {
     border-top: solid #999999 1px;
     height: 1px;
-    opacity: 0;
-    
-    transform: translateX(-100%);
-    transition: 0.2s;
   }
 
   &__id {
@@ -56,20 +47,5 @@
     text-align: center;
     line-height: 1em;
     margin-top: 0.1em;
-
-    transform: translateX(-120%);
-    transition: 0.4s;
   }
-
-}
-
-// modifier classes for ProjectLink animations
-.fade-in { 
-  opacity: 1; 
-  transform: translateY(0) scale(1); 
-}
-
-.slide { 
-  opacity: 1;
-  transform: translateX(0); 
 }

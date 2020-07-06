@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ScrollScene, addIndicators } from 'scrollscene';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/ProjectsGlow.png';
 import { Projects as Abstract } from '../../SVGs/SVG';
 import PROJECT_DATA from './ProjectData';
@@ -10,28 +10,36 @@ import './Projects.scss';
 
 const Projects = () => {
   useEffect(() => {
-    const projectsTimeline = gsap.timeline({ paused: true });
+    gsap.registerPlugin(ScrollTrigger);
+    const projectsTimeline = gsap.timeline({ 
+      scrollTrigger: {
+        trigger: '.Projects__art',
+        endTrigger: '#Projects__endTrigger', 
+        pin: true,
+        scrub: 1,
+        pinSpacing: false,
+        markers: true,
+      }
+    });
     projectsTimeline.to('.Projects__abstract--path', {
       duration: 1.5,
       ease: 'power1.inOut',
       strokeDashoffset: 0,
-      y: 350,
+      y: 250,
       stagger: {
         each: 0.03,
         from: 'start'
       }
     }, 0);
-
-    projectsTimeline.to('.Projects__abstract--path', {
-      duration: 0.5,
-      ease: 'power1.inOut',
-      strokeDashoffset: 740,
-      stagger: {
-        each: 0.03,
-        from: 'end'
-      }
-    }, 1.5);
-
+    // projectsTimeline.to('.Projects__abstract--path', {
+    //   duration: 0.5,
+    //   ease: 'power1.inOut',
+    //   strokeDashoffset: 0,
+    //   stagger: {
+    //     each: 0.03,
+    //     from: 'end'
+    //   }
+    // }, 1.5);
     // projectsTimeline.from('.Projects__glow', {
     //   duration: 0.5, 
     //   ease: 'power2.inOut',
@@ -39,69 +47,62 @@ const Projects = () => {
     //   scale: 0.84,
     // }, 0.4);
 
-    const projectsTrigger = document.querySelector('#Projects__trigger');
-    const scrollScene = new ScrollScene({
-      triggerElement: projectsTrigger,
-      triggerHook: 0,
-      gsap: { timeline: projectsTimeline },
-      duration: 2500
+    gsap.utils.toArray('.ProjectLink').forEach((project, i) => {
+      gsap.from(project, {
+        opacity: 0,
+        y: 20,
+        scale: 0.97,
+        ease: 'power1.out',
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: project,
+          toggleActions: 'play complete complete reverse',
+          start: 'top 80%',
+          id: 'wrapper',
+          // markers: true,
+        }
+      });
+      gsap.from(`.ProjectLink__wrapper--${i} .ProjectLink__line`, {
+        opacity: 0,
+        xPercent: -100,
+        ease: 'power2.out',
+        duration: 0.2,
+        scrollTrigger: {
+          trigger: project,
+          toggleActions: 'play complete complete reverse',
+          start: 'top 55%',
+          id: 'line',
+          // markers: true,
+        }
+      });
+      gsap.from(`.ProjectLink__wrapper--${i} .ProjectLink__id`, {
+        xPercent: -120,
+        ease: 'power2.out',
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: project,
+          toggleActions: 'play complete complete reverse',
+          start: 'top 50%',
+          id: 'id',
+          // markers: true,
+        }
+      });
     })
-    scrollScene.Scene.setPin('.Projects__art');
-    // scrollScene.Scene.addIndicators({ name: 'projects scene', colorEnd: '#FFFFFF' })
-
-    let projectLinkSS, projectLinkLineSS, projectLinkIdSS;
-    document.querySelectorAll('.ProjectLink').forEach((project, i) => {
-      const projectLinkTrigger = document.querySelector(`.ProjectLink__wrapper--${i}`);
-      const projectLink = project;
-      projectLinkSS = new ScrollScene({
-        triggerElement: projectLinkTrigger,
-        triggerHook: 0.8,
-        toggle: {
-          element: projectLink,
-          className: 'fade-in'
-        },
-      })
-      const projectLinkLine = document.querySelector(`.ProjectLink__wrapper--${i} .ProjectLink__line`);
-      projectLinkLineSS = new ScrollScene({
-        triggerElement: projectLinkTrigger,
-        triggerHook: 0.55,
-        toggle: {
-          element: projectLinkLine,
-          className: 'slide'
-        },
-      })
-      const projectLinkId = document.querySelector(`.ProjectLink__wrapper--${i} .ProjectLink__id`);
-      projectLinkIdSS = new ScrollScene({
-        triggerElement: projectLinkTrigger,
-        triggerHook: 0.5,
-        toggle: {
-          element: projectLinkId,
-          className: 'slide'
-        },
-      })
-    })
-
-    return () => {
-      scrollScene.destroy();
-      projectLinkSS.destroy();
-      projectLinkLineSS.destroy();
-      projectLinkIdSS.destroy();
-    }
   }, []);
 
   return (
     <div className="Projects">
-      <div id="Projects__trigger"></div>
       <div className="Projects__art">
         <Abstract className="Projects__abstract" pathName="Projects__abstract--path" />
         {/* <img className="Projects__glow" src={Glow} alt="abstract glow art"/> */}
       </div>
-      <Spacer height={150} />
+      <Spacer height={100} />
       <div className="Projects__wrapper">
         {PROJECT_DATA.map((project, i) => {
           return <ProjectLink index={i} name={project.name} desc={project.shortDesc} id={project.id} />
         })}
       </div>
+      <div id="Projects__endTrigger"></div>
     </div>
   );
 }

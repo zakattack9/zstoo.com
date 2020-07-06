@@ -24,7 +24,7 @@
 - [ScrollScene](https://github.com/jonkwheeler/ScrollScene)*
   - temporary replacement for ScrollMagic until it gets updated to support GSAP v3
 
-**no longer using due in part to inactive development and the migration GSAP ScrollTrigger*
+**no longer using due in part to inactive development and the migration to GSAP ScrollTrigger*
 
 ### Optimization Issues
 - Weird animation and layout behavior on Safari

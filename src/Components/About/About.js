@@ -44,34 +44,34 @@ const About = () => {
       delay: 1,
     }, 0);
 
-    const aboutTrigger = document.querySelector('#About__trigger');
-    const scrollScene = new ScrollScene({
-      triggerElement: aboutTrigger,
-      triggerHook: 0,
-      gsap: { timeline: aboutTimeline },
-      offset: -70,
-      duration: 1000
-    })
-    // scrollScene.Scene.addIndicators({ name: 'about scene', colorEnd: '#FFFFFF' });
+    // const aboutTrigger = document.querySelector('#About__trigger');
+    // const scrollScene = new ScrollScene({
+    //   triggerElement: aboutTrigger,
+    //   triggerHook: 0,
+    //   gsap: { timeline: aboutTimeline },
+    //   offset: -70,
+    //   duration: 1000
+    // })
+    // // scrollScene.Scene.addIndicators({ name: 'about scene', colorEnd: '#FFFFFF' });
 
-    const pinScrollScene = new ScrollScene({
-      triggerElement: aboutTrigger,
-      triggerHook: 0,
-      offset: -70,
-      duration: 2000
-    })
-    pinScrollScene.Scene.setPin('.About__art');
-    pinScrollScene.Scene.addIndicators({ name: 'about pin scene', colorEnd: '#FFFFFF' });
+    // const pinScrollScene = new ScrollScene({
+    //   triggerElement: aboutTrigger,
+    //   triggerHook: 0,
+    //   offset: -70,
+    //   duration: 2000
+    // })
+    // pinScrollScene.Scene.setPin('.About__art');
+    // pinScrollScene.Scene.addIndicators({ name: 'about pin scene', colorEnd: '#FFFFFF' });
 
     return () => {
-      scrollScene.destroy();
-      pinScrollScene.destroy();
+      // scrollScene.destroy();
+      // pinScrollScene.destroy();
     }
   }, []);
 
   return (
     <div className="About">
-      <div id="About__trigger"></div>
+      {/* <div id="About__trigger"></div>
       <div className="About__art">
         <ZakSakata className="About__ZakSakata" pathName="About__ZakSakata--path" />
         <div className="About__hideText About__hideSkim"></div>
@@ -82,7 +82,7 @@ const About = () => {
       <Spacer height={150} />
       <div className="About__text">
         After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
-      </div>
+      </div> */}
     </div>
   );
 }
