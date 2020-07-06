@@ -2,10 +2,10 @@
 
 ### Tech Stack
 - [GreenSock (GSAP)](https://greensock.com/docs/v3)
-  - animation optimization
-  - binding tween to user scrol
+  - animation optimization and browser compatibility
+  - create tweens and timelines
   - draw svg animations
-  - [ScrollTrigger?](https://www.williamrchase.com/scroll_trigger_demo/index.html)
+  - [ScrollTrigger](https://www.williamrchase.com/scroll_trigger_demo/index.html) for scroll binded animations
   - [ScrolTrigger Example](https://www.williamrchase.com/post/scrollytelling-with-gsap-scrolltrigger/)
 - [React](https://reactjs.org/docs/getting-started.html)
   - DOM rendering
@@ -16,15 +16,15 @@
 - [AWS](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/)
   - DynamoDB for storing contact page form details
   - SNS for pushing contact notifications to email and phone
+- [Vivus](https://maxwellito.github.io/vivus/)
+  - testing and building svg line animations
 - [ScrollMagic.js](https://scrollmagic.io/docs/index.html)*
   - scroll triggered animations
   - pinning elements
 - [ScrollScene](https://github.com/jonkwheeler/ScrollScene)*
   - temporary replacement for ScrollMagic until it gets updated to support GSAP v3
-- [Vivus](https://maxwellito.github.io/vivus/)*
-  - testing and building svg line animations
 
-**no longer using due to inactive development and the flexibility GSAP*
+**no longer using due in part to inactive development and the migration GSAP ScrollTrigger*
 
 ### Optimization Issues
 - Weird animation and layout behavior on Safari
@@ -42,9 +42,9 @@
 - ~link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)~
 - implement cleanup for gsap timelines and scrollscene objects
   - **Solved: use React hook to destroy scrollscene**
-  - *N/A since migration to GSAP scrolltrigger*
+  - *N/A since migration to GSAP ScrollTrigger*
 - remove all `addIndicators` from scrollscene imports before prod deploy
-  - *N/A since migration to GSAP scrolltrigger*
+  - *N/A since migration to GSAP ScrollTrigger*
 
 ### Stretch Goals
 - preload packages with loading screen
