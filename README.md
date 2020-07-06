@@ -27,6 +27,8 @@
 **no longer using due to inactive development and the flexibility GSAP*
 
 ### Optimization Issues
+- Weird animation and layout behavior on Safari
+- Laggy/stuttering animations on Firefox (mobile)
 - ScrollMagic lags exponentially when using more abstract glow SVGs/images
   - This consequently causes laggy GSAP tweens/timelines
   - *Potentially consider exporting abstract glow graphics as pngs?*
