@@ -23,25 +23,30 @@
   - temporary replacement for ScrollMagic until it gets updated to support GSAP v3
 - [Vivus](https://maxwellito.github.io/vivus/)*
   - testing and building svg line animations
-  
+
 **no longer using due to inactive development and the flexibility GSAP*
 
 ### Optimization Issues
 - ScrollMagic lags exponentially when using more abstract glow SVGs/images
   - This consequently causes laggy GSAP tweens/timelines
   - *Potentially consider exporting abstract glow graphics as pngs?*
+  - **Solved: exported abstract glows as web PNGs**
 
 ### TODO
-- implement cleanup for gsap timelines and scrollscene objects
-- remove all `addIndicators` from scrollscene imports before prod deploy
 - design desktop views and compatibility
 - create mixins for css properties with vendor prefixes
 - create pipeline for deployment
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
-- link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)
+- ~link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)~
+- implement cleanup for gsap timelines and scrollscene objects
+  - **Solved: use React hook to destroy scrollscene**
+  - *N/A since migration to GSAP scrolltrigger*
+- remove all `addIndicators` from scrollscene imports before prod deploy
+  - *N/A since migration to GSAP scrolltrigger*
 
 ### Stretch Goals
 - preload packages with loading screen
 - easter eggs
+  - a mode that can be enabled at the end of website
 - rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated
-- UI testing
+- UI testing with Enzyme and Jest
