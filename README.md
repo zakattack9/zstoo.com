@@ -23,6 +23,7 @@
   - temporary replacement for ScrollMagic until it gets updated to support GSAP v3
 - [Vivus](https://maxwellito.github.io/vivus/)*
   - testing and building svg line animations
+  
 **no longer using due to inactive development and the flexibility GSAP*
 
 ### Optimization Issues
