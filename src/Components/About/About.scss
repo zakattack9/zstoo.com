@@ -2,23 +2,22 @@
 
 .About {
   font-size: 12pt;
-  height: 500%;
+  height: 200%;
   position: relative;
 
-  &__art {
+  &__pin {
     font-size: 12pt; // modify for smaller screen sizes
-    position: absolute;
-    // height: 10em;
-    // width: 5em;
-    top: -11em;
-    left: 1.5em;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
   }
 
   &__abstract {
-    width: 8em;
+    width: 35%;
     position: absolute;
-    top: 1.8em;
-    left: 0.5em;
+    top: -15%;
+    left: 7%;
     filter: saturate(200%);
 
     &--path {
@@ -28,19 +27,31 @@
   }
 
   &__glow {
-    width: 12em;
+    width: 51%;
     position: absolute;
-    left: -1.2em;
+    top: -17%;
+    left: 0%;
     filter: saturate(150%);
   }
 
-  &__ZakSakata {
-    width: 15em;
+  &__wrapper {
     position: relative;
-    left: 20vw;
-    top: 15em;
+    height: 35%; // modify to change placement of "ZAK SAKATA" w/skim
+    display: grid;
+    grid-template-rows: auto 30px;
+    grid-template-areas:
+      "main"
+      "skim";
+  }
+
+  &__ZakSakata {
+    width: 63%;
+    position: relative;
+    left: 30%;
     z-index: 2;
     filter: saturate(200%);
+    grid-area: main;
+    align-self: end;
 
     &--path {
       stroke-dasharray: 1540;
@@ -48,27 +59,23 @@
     }
   }
   
-  &__Skim {
-    position: absolute;
-    top: 20em;
-    left: 7em;
+  &__SkimCover {
     z-index: 0;
-  }
-  
-  &__hideText {
-    position: absolute;
-    top: 6.6em;
-    left: 7em;
-    width: 100%;
-    height: 13.5em;
     background-color: $background-color;
+    grid-area: main;
   }
 
+  &__Skim {
+    z-index: 0;
+    grid-area: skim;
+  }
+  
   &__text {
-    width: 48%;
+    font-family: "ObjectSans";
+    width: 50%;
     position: relative;
-    left: 11em;
-    z-index: -1;
+    left: 45%;
+    z-index: -2;
   }
 
 }

@@ -14,11 +14,12 @@ const Projects = () => {
     const projectsTimeline = gsap.timeline({ 
       scrollTrigger: {
         trigger: '.Projects__art',
-        endTrigger: '#Projects__endTrigger', 
+        endTrigger: '.Projects', 
+        end: 'bottom -50%',
         pin: true,
         scrub: 1,
         pinSpacing: false,
-        markers: true,
+        // markers: true,
       }
     });
     projectsTimeline.to('.Projects__abstract--path', {
@@ -31,15 +32,15 @@ const Projects = () => {
         from: 'start'
       }
     }, 0);
-    // projectsTimeline.to('.Projects__abstract--path', {
-    //   duration: 0.5,
-    //   ease: 'power1.inOut',
-    //   strokeDashoffset: 0,
-    //   stagger: {
-    //     each: 0.03,
-    //     from: 'end'
-    //   }
-    // }, 1.5);
+    projectsTimeline.to('.Projects__abstract--path', {
+      duration: 0.5,
+      ease: 'power1.inOut',
+      strokeDashoffset: 745,
+      stagger: {
+        each: 0.03,
+        from: 'end'
+      }
+    }, 1.5);
     // projectsTimeline.from('.Projects__glow', {
     //   duration: 0.5, 
     //   ease: 'power2.inOut',
@@ -102,7 +103,6 @@ const Projects = () => {
           return <ProjectLink index={i} name={project.name} desc={project.shortDesc} id={project.id} />
         })}
       </div>
-      <div id="Projects__endTrigger"></div>
     </div>
   );
 }
