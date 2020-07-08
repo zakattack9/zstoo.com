@@ -29,6 +29,7 @@
 ### Optimization Issues
 - Weird animation and layout behavior on Safari
 - Laggy/stuttering animations on Firefox (mobile)
+- Refreshing about page will "reset" fixed position of `.About__pin`
 - ScrollMagic lags exponentially when using more abstract glow SVGs/images
   - This consequently causes laggy GSAP tweens/timelines
   - *Potentially consider exporting abstract glow graphics as pngs?*
@@ -36,6 +37,7 @@
 
 ### TODO
 - design desktop views and compatibility
+- ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
 - create pipeline for deployment
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket

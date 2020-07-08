@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Zak from '../../SVGs/ZAK.svg';
@@ -7,15 +7,18 @@ import { Home as Abstract, Headline } from '../../SVGs/SVG';
 import './Home.scss';
 
 const Home = () => {
+  const homeRef = useRef(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const homeTimeline = gsap.timeline({ 
       scrollTrigger: {
-        trigger: '.Home',
+        trigger: homeRef.current,
+        // end: 'bottom -10%',
         pin: true,
         scrub: 0.5,
         pinSpacing: false,
-        // markers: true,
+        markers: true,
       }
     });
     homeTimeline.to('.Home__abstract--path', {
@@ -48,7 +51,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="Home">
+    <div className="Home" ref={homeRef}>
       <div className="Home__wrapper">
         <div className="Home__art">
           <img className="Home__glow Home__glow--back" src={Glow} alt="abstract glow art"/>

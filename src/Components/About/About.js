@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/AboutGlow.png';
@@ -8,11 +8,14 @@ import Skim from '../Skim/Skim';
 import './About.scss';
 
 const About = () => {
+  const about = useRef(null);
+  const pinRef = useRef(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
-      trigger: '.About__pin',
-      endTrigger: '.About',
+      trigger: pinRef.current,
+      endTrigger: about.current,
       pin: true,
       pinSpacing: false,
       id: 'pin',
@@ -21,9 +24,9 @@ const About = () => {
 
     const aboutTimeline = gsap.timeline({ 
       scrollTrigger: {
-        trigger: '.About__pin',
-        start: 'top 0%',
-        end: 'bottom 50%',
+        trigger: about.current,
+        start: '-10% 0%',
+        end: '70% 50%', // modify first % for duration of animation
         scrub: 1,
         // markers: true,
       }
@@ -61,8 +64,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="About">
-      <div className="About__pin">
+    <div className="About" ref={about}>
+      <div className="About__pin" ref={pinRef}>
         <div className="About__wrapper">
           <ZakSakata className="About__ZakSakata" pathName="About__ZakSakata--path" />
           <div className="About__SkimCover About__hideSkim"></div>
@@ -72,7 +75,7 @@ const About = () => {
         <Abstract className="About__abstract" pathName="About__abstract--path" />
         <img className="About__glow" src={Glow} alt="abstract glow art"/>
       </div>
-      <Spacer height={30} />
+      <Spacer height={50} />
       <div className="About__text">
         After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
       </div>

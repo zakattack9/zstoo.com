@@ -97,7 +97,7 @@ const Projects = () => {
         <Abstract className="Projects__abstract" pathName="Projects__abstract--path" />
         {/* <img className="Projects__glow" src={Glow} alt="abstract glow art"/> */}
       </div>
-      <Spacer height={100} />
+      <Spacer height={140} />
       <div className="Projects__wrapper">
         {PROJECT_DATA.map((project, i) => {
           return <ProjectLink index={i} name={project.name} desc={project.shortDesc} id={project.id} />
