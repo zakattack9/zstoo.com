@@ -100,8 +100,15 @@ const Projects = () => {
       <Spacer height={140} />
       <div className="Projects__wrapper">
         {PROJECT_DATA.map((project, i) => {
-          return <ProjectLink index={i} name={project.name} desc={project.shortDesc} id={project.id} />
-        })}
+          return (
+            <ProjectLink 
+              index={i} 
+              name={project.name} 
+              desc={project.shortDesc} 
+              id={project.id} 
+              key={i} 
+            />
+        )})}
       </div>
     </div>
   );

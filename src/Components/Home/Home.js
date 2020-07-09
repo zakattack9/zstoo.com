@@ -18,7 +18,7 @@ const Home = () => {
         pin: true,
         scrub: 0.5,
         pinSpacing: false,
-        markers: true,
+        // markers: true,
       }
     });
     homeTimeline.to('.Home__abstract--path', {
