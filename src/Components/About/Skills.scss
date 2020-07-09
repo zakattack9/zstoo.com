@@ -1,0 +1,41 @@
+.Skills {
+  font-size: 11pt;
+
+  &__section {
+    margin-bottom: 2.5em;
+  }
+
+  &__title {
+    font-size: 1.1em;
+    color: #279AB3;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+  }
+
+  &__wrapper {
+    // padding-left: 0.3em;
+  }
+
+  &__skill {
+    line-height: 1.5em;
+  }
+
+  &__subSkills {
+    position: relative;
+    padding-left: 0.2em;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+  }
+  
+  &__subSkillsLine {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(#6FEEFF, #002B5E);
+    filter: saturate(150%);
+  }
+  
+  &__subSkill {
+    padding-left: 0.9em;
+  }
+}

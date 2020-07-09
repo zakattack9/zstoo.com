@@ -317,20 +317,6 @@ export const Skills = props => {
   );
 }
 
-export const SkillsLine = props => {
-  return (
-    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 14">
-      <defs>
-        <linearGradient id="subskillsline-a" x1="50%" x2="50%" y1="0%" y2="100%">
-          <stop offset="0%" stop-color="#6FEEFF"/>
-          <stop offset="100%" stop-color="#002B5E"/>
-        </linearGradient>
-      </defs>
-      <line className={props.pathName} x1="1" x2="1" y1="1.313" y2="13.5" fill="none" stroke="url(#subskillsline-a)" stroke-linecap="square"/>
-    </svg>
-  );
-}
-
 export const Overlay = props => {
   return (
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 615 855">

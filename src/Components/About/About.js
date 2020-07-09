@@ -30,7 +30,7 @@ const About = () => {
       scrollTrigger: {
         trigger: aboutRef.current,
         endTrigger: aboutTextRef.current,
-        start: '-10% 0%',
+        start: '-5% 0%',
         end: 'top 35%', // modify first % for duration of animation
         scrub: 1,
         // markers: true,
@@ -68,11 +68,12 @@ const About = () => {
     const skillsTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: aboutTextRef.current,
+        endTrigger: skillsTextRef.current,
         start: 'bottom 20%',
-        end: 'bottom+=100% 0%',
+        end: 'top 35%',
         toggleActions: 'play complete complete reverse',
         scrub: 1,
-        markers: true,
+        // markers: true,
       }
     });
     skillsTimeline.to('.About__glow', {
@@ -134,7 +135,7 @@ const About = () => {
         <br/><br/>
         After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
       </div>
-      <Spacer height={50} />
+      <Spacer height={100} />
       <div className="About__text About__text--skills" ref={skillsTextRef}>
         <Skills />
       </div>
