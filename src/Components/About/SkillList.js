@@ -2,7 +2,7 @@ const SKILL_LIST = [
   {
     title: 'Languages & Frameworks',
     skills: {
-      'Javascript': [
+      'JavaScript': [
         'TypeScript',
         'Node.js',
         'React',
