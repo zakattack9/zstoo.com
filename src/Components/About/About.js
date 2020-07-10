@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/AboutGlow.png';
@@ -14,6 +14,7 @@ const About = () => {
   const artRef = useRef(null);
   const aboutTextRef = useRef(null);
   const skillsTextRef = useRef(null);
+  const [animateSkills, setAnimateSkills] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -70,10 +71,12 @@ const About = () => {
         trigger: aboutTextRef.current,
         endTrigger: skillsTextRef.current,
         start: 'bottom 20%',
-        end: 'top 35%',
+        end: 'top 45%',
+        onLeave: () => setAnimateSkills(true),
+        onEnterBack: () => setAnimateSkills(false),
         toggleActions: 'play complete complete reverse',
         scrub: 1,
-        // markers: true,
+        markers: true,
       }
     });
     skillsTimeline.to('.About__glow', {
@@ -94,7 +97,7 @@ const About = () => {
       }
     }, 0);
     skillsTimeline.to('.About__ZakSakata--path', {
-      duration: 1.6,
+      duration: 2.2,
       ease: 'power1.inOut',
       strokeDashoffset: 1540,
       stagger: {
@@ -103,7 +106,7 @@ const About = () => {
       }
     }, 0);
     skillsTimeline.to('.About__SkillsTitle--path', {
-      duration: 1.5,
+      duration: 2.1,
       ease: 'power2.inOut',
       strokeDashoffset: 0,
       stagger: {
@@ -135,9 +138,9 @@ const About = () => {
         <br/><br/>
         After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
       </div>
-      <Spacer height={100} />
+      <Spacer height={120} />
       <div className="About__text About__text--skills" ref={skillsTextRef}>
-        <Skills />
+        <Skills animate={animateSkills} />
       </div>
       <Spacer height={200} />
     </div>
