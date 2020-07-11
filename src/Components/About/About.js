@@ -20,6 +20,7 @@ const About = () => {
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: aboutRef.current,
+      end: '150% 0%',
       pin: true,
       pinSpacing: false,
       id: 'pin',
@@ -31,7 +32,7 @@ const About = () => {
         trigger: aboutRef.current,
         endTrigger: aboutTextRef.current,
         start: '-5% 0%',
-        end: 'top 35%', // modify first % for duration of animation
+        end: 'top 35%',
         scrub: 1,
         // markers: true,
       }
@@ -71,9 +72,8 @@ const About = () => {
         endTrigger: skillsTextRef.current,
         start: 'bottom 20%',
         end: 'top 20%',
-        // toggleActions: 'play complete complete reverse',
         scrub: 1,
-        id: 'skills-main',
+        id: 'skills',
         // markers: true,
       }
     });
@@ -115,6 +115,41 @@ const About = () => {
       }
     }, 0.5);
 
+    const aboutTimelineOut = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.Skills',
+        endTrigger: aboutRef.current,
+        start: 'bottom center',
+        end: 'bottom 0%',
+        scrub: 0.8,
+        id: 'skills-out',
+        markers: true,
+      }
+    });
+    aboutTimelineOut.to('.About__SkillsTitle--path', {
+      duration: 3,
+      ease: 'power2.inOut',
+      strokeDashoffset: 850,
+      stagger: {
+        each: 0.03,
+        from: 'center'
+      }
+    }, 0.2);
+    aboutTimelineOut.to('.About__abstract--path', {
+      duration: 4,
+      ease: 'power2.inOut',
+      strokeDasharray: 1333,
+      strokeDashoffset: 1333,
+      stagger: {
+        each: 0.07,
+        from: 'edges'
+      }
+    }, '<');
+    aboutTimelineOut.to('.About__hideSkim', {
+      duration: 0.5,
+      opacity: 0,
+    }, '>');
+
   }, []);
 
   return (
@@ -138,11 +173,11 @@ const About = () => {
         <br/><br/>
         After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
       </div>
-      <Spacer height={100} />
+      <Spacer height={100} /> 
       <div className="About__text About__text--skills" ref={skillsTextRef}>
         <Skills />
       </div>
-      <Spacer height={200} />
+      <Spacer height={30} />
     </div>
   );
 }

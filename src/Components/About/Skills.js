@@ -14,14 +14,15 @@ const Skills = (props) => {
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: skillsRef.current,
-      start: 'top 29%',
+      start: 'top 26%',
       end: 'bottom 0%',
       pin: true,
       pinSpacing: false,
+      id: 'skills-pin',
       // markers: true,
     });
 
-    let skillsSection1 = gsap.timeline({});
+    const skillsSection1 = gsap.timeline({});
     skillsSection1.from('.Skills__section--1 .Skills__title', {
       duration: 0.8,
       ease: 'power1.inOut',
@@ -57,7 +58,7 @@ const Skills = (props) => {
       yPercent: -100,
     }, 'showSkills+=0.9');
 
-    let skillsSection1to2 = gsap.timeline({});
+    const skillsSection1to2 = gsap.timeline({});
     skillsSection1to2.to('.Skills__section--1', {
       duration: 0.9,
       ease: 'power1.inOut',
@@ -72,7 +73,7 @@ const Skills = (props) => {
       yPercent: -185,
     }, 0);
 
-    let skillsSection2 = gsap.timeline({});
+    const skillsSection2 = gsap.timeline({});
     skillsSection2.from('.Skills__section--2 .Skills__title', {
       duration: 0.8,
       ease: 'power1.inOut',
@@ -92,7 +93,7 @@ const Skills = (props) => {
       }
     }, '<0.5');
 
-    let skillsSectionOut = gsap.timeline({});;
+    const skillsSectionOut = gsap.timeline({});;
     skillsSectionOut.to('.Skills__subSkillsLine', {
       duration: 0.9,
       ease: 'power1.inOut',
@@ -111,7 +112,7 @@ const Skills = (props) => {
         from: 'center',
       }
     }, 0.5);
-    skillsSectionOut.to('.Skills__section--2 .Skills__title', {
+    skillsSectionOut.to('.Skills__title', {
       duration: 0.8,
       ease: 'power1.inOut',
       x: -10,
@@ -123,12 +124,11 @@ const Skills = (props) => {
       }
     }, 1.4);
 
-    let skillsSectionMain = gsap.timeline({
+    const skillsSectionMain = gsap.timeline({
       scrollTrigger: {
         trigger: skillsRef.current,
-        start: 'top 28%',
+        start: 'top 26%',
         end: 'bottom 50%',
-        toggleActions: 'play complete complete reverse',
         scrub: 1,
         // markers: true,
       }
@@ -146,12 +146,12 @@ const Skills = (props) => {
         <div className="Skills__wrapper" key={i}>
           <div className="Skills__skill">{skill}</div>
           {subSkills.length > 0
-            ? (<div className="Skills__subSkills">
+            ? <div className="Skills__subSkills">
                 <div className={`Skills__subSkillsLine Skills__subSkillsLine--${skill}`}></div>
                 {subSkills.map((subSkill, i) => {
                   return <div className="Skills__skill Skills__subSkill" key={i}>{subSkill}</div>
                 })}
-              </div>) 
+              </div> 
             : null
           }
         </div>
@@ -173,7 +173,7 @@ const Skills = (props) => {
       <div className="Skills__pin" ref={pinRef}>
         {sections}
       </div>
-      <Spacer height={100} />
+      <Spacer height={50} />
     </div>
   );
 }

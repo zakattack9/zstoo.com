@@ -30,7 +30,8 @@
 - Weird animation and layout behavior on Safari
 - Laggy/stuttering animations on Firefox (mobile)
 - Refreshing about page will "reset" fixed position of `.About__pin`
-- About section abstract glow stays pinned and visible when scrolling too fast
+- ~About section abstract glow stays pinned and visible when scrolling too fast~
+  - Fixed by using `filter: opacity(0%)` to prevent animation of the same `opacity` property
 - Jumping pins on page refresh (can be reset by switching tabs)
   - Consider sequencing all big animations under one timeline and using labels
 - ~ScrollMagic lags exponentially when using more abstract glow SVGs/images~

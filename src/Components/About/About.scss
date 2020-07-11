@@ -95,19 +95,17 @@
     font-family: "ObjectSans";
     font-size: 11pt;
     line-height: 1.3em;
+    position: relative;
+    z-index: -2;
 
     &--about {
       width: 50%;
-      position: relative;
       left: 45%;
-      z-index: -2;
     }
 
     &--skills {
       width: 45%;
-      position: relative;
       left: 50%;
-      z-index: -2;
     }
   }
 
