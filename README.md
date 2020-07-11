@@ -29,19 +29,18 @@
 ### Optimization Issues
 - Weird animation and layout behavior on Safari
 - Laggy/stuttering animations on Firefox (mobile)
-- Refreshing about page will "reset" fixed position of `.About__pin`
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
   - **Solved: used `filter: opacity(0%)` to prevent animation of the same `opacity` property**
-- Jumping pins on page refresh (can be reset by switching tabs)
+- ~Jumping pins on page refresh (can be reset by switching tabs)~
   - Consider sequencing all big animations under one timeline and using labels
-  - **Solved: ensure pinned elements are in a wrapper div that gets pinned with `ScrollTrigger.create()`; additionally, animating pinned elements out of visbility before/after pinning helps minimize the noticeability of this side-effect**
-- ~ScrollMagic lags exponentially when using more abstract glow SVGs/images~
-  - This consequently causes laggy GSAP tweens/timelines
-  - *Potentially consider exporting abstract glow graphics as pngs?*
-  - **Solved: exported abstract glows as web PNGs**
+  - **Solved: ensure pinned elements are in a wrapper div that gets pinned with `ScrollTrigger.create()`, animated elements should not use this wrapper div as a trigger; additionally, animating pinned elements out of visbility before/after pinning helps minimize the noticeability of this side-effect**
+- ~ScrollMagic lags exponentially when using more abstract glow SVGs~
+  - Consequently causes laggy GSAP tweens/timelines
+  - **Solved: exported abstract glow graphics as web PNGs**
 
 ### TODO
 - design desktop views and compatibility
+- UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
 - create pipeline for deployment
@@ -56,6 +55,5 @@
 ### Stretch Goals
 - preload packages with loading screen
 - easter eggs
-  - a mode that can be enabled at the end of website
-- rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated
-- UI testing with Enzyme and Jest
+  - mode that can be enabled at the end of website
+- ~rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated~
