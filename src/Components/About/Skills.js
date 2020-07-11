@@ -14,7 +14,7 @@ const Skills = (props) => {
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: skillsRef.current,
-      start: 'top 28%',
+      start: 'top 29%',
       end: 'bottom 0%',
       pin: true,
       pinSpacing: false,
@@ -47,10 +47,10 @@ const Skills = (props) => {
       yPercent: -100,
     }, 'showSkills+=0.1');
     skillsSection1.from('.Skills__subSkillsLine--CSS', {
-      duration: 0.8,
+      duration: 0.7,
       ease: 'power1.inOut',
       yPercent: -100,
-    }, 'showSkills+=0.6');
+    }, 'showSkills+=0.7');
     skillsSection1.from('.Skills__subSkillsLine--AWS', {
       duration: 0.7,
       ease: 'power1.inOut',
@@ -65,12 +65,12 @@ const Skills = (props) => {
       scale: 0.97,
       transformOrigin: 'center left',
       opacity: 0.5,
-    }, 0.2);
+    }, 0);
     skillsSection1to2.to('.Skills__section--2', {
       duration: 0.7,
       ease: 'power1.inOut',
       yPercent: -185,
-    }, 0.2);
+    }, 0);
 
     let skillsSection2 = gsap.timeline({});
     skillsSection2.from('.Skills__section--2 .Skills__title', {
@@ -134,7 +134,7 @@ const Skills = (props) => {
       }
     });
     skillsSectionMain.add(skillsSection1, '>0.5');
-    skillsSectionMain.add(skillsSection1to2, '>');
+    skillsSectionMain.add(skillsSection1to2, '>0.7');
     skillsSectionMain.add(skillsSection2, '>');
     skillsSectionMain.add(skillsSectionOut, '>');
 

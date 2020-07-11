@@ -59,7 +59,7 @@ const Projects = () => {
         scrollTrigger: {
           trigger: project,
           toggleActions: 'play complete complete reverse',
-          start: 'top 80%',
+          start: 'top 75%',
           id: 'wrapper',
           // markers: true,
         }

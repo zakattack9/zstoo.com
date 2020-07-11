@@ -26,19 +26,20 @@ const Home = () => {
       ease: 'slow.inOut',
       y: -12,
     }, 0);
-    homeLoopAnimation.to('.Home__glow', {
+    homeLoopAnimation.fromTo('.Home__glow', 
+    { filter: 'opacity(100%)' },
+    {
       duration: 1.45, 
       ease: 'slow.inOut',
-      // opacity: 0.6,
+      filter: 'opacity(50%)',
       y: -7,
     }, 0);
-    homeLoopAnimation.addLabel('end', '>')
     const controlAnimation = (progress) => {
       if (progress.toFixed(3) < 0.001) {
         homeLoopAnimation.play();
       }
       if (progress.toFixed(3) >= 0.001) {
-        homeLoopAnimation.tweenTo('end');
+        homeLoopAnimation.tweenTo('start');
       }
     }
 
@@ -50,9 +51,16 @@ const Home = () => {
         pin: true,
         scrub: 0.5,
         pinSpacing: false,
-        markers: true,
+        // markers: true,
       }
     });
+    homeTimeline.to('.Home__glow', {
+      duration: 0.6, 
+      ease: 'power2.inOut',
+      opacity: 0,
+      // y: 20,
+      scale: 0.84,
+    }, 0.3);
     homeTimeline.to('.Home__abstract--path', {
       duration: 0.6,
       ease: 'power3.inOut',
@@ -61,25 +69,18 @@ const Home = () => {
         each: 0.01,
         from: 'edges'
       }
-    }, 0.1);
-    homeTimeline.to('.Home__glow', {
-      duration: 0.5, 
-      ease: 'power2.inOut',
-      opacity: 0,
-      // y: 20,
-      scale: 0.84,
-    }, 0);
+    }, '<0.1');
     homeTimeline.to('.Home__headline', {
       duration: 1,
       ease: 'power3.inOut',
       strokeDashoffset: 130,
-    }, 0.3);
+    }, '<0.3');
     homeTimeline.to('.Home__zak', {
       duration: 0.5,
       ease: 'power2.in', 
       opacity: 0,
       y: 70,
-    }, 0.8);
+    }, '<0.8');
   }, []);
 
   return (

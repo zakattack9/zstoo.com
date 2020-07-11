@@ -77,10 +77,12 @@ const About = () => {
         // markers: true,
       }
     });
-    skillsTimeline.to('.About__glow', {
+    skillsTimeline.fromTo('.About__glow', 
+    { filter: 'opacity(100%)' },
+    {
       duration: 0.5, 
       ease: 'power2.inOut',
-      opacity: 0,
+      filter: 'opacity(0%)',
       scale: 0.84,
     }, 0);
     skillsTimeline.to('.About__abstract--path', {
@@ -95,7 +97,7 @@ const About = () => {
       }
     }, 0);
     skillsTimeline.to('.About__ZakSakata--path', {
-      duration: 2.2,
+      duration: 3,
       ease: 'power1.inOut',
       strokeDashoffset: 1540,
       stagger: {
@@ -104,7 +106,7 @@ const About = () => {
       }
     }, 0);
     skillsTimeline.to('.About__SkillsTitle--path', {
-      duration: 2.1,
+      duration: 3.1,
       ease: 'power2.inOut',
       strokeDashoffset: 0,
       stagger: {
