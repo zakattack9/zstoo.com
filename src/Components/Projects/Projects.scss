@@ -37,5 +37,12 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-content: space-between;
+    position: relative;
+  }
+
+  &__Skim {
+    // filter: invert(100%);
+    position: absolute;
+    z-index: 1;
   }
 }

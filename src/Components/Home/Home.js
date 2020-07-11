@@ -11,14 +11,48 @@ const Home = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const homeLoopAnimation = gsap.timeline({
+      repeat: -1,
+      yoyo: true,
+    });
+    homeLoopAnimation.addLabel('start', 0)
+    homeLoopAnimation.to('.Home__abstract', {
+      duration: 1.7,
+      ease: 'slow.inOut',
+      y: -7,
+    }, 0);
+    homeLoopAnimation.to('.Home__zak', {
+      duration: 1.7,
+      ease: 'slow.inOut',
+      y: -12,
+    }, 0);
+    homeLoopAnimation.to('.Home__glow', {
+      duration: 1.45, 
+      ease: 'slow.inOut',
+      opacity: 0.6,
+      // y: -7,
+    }, 0);
+    homeLoopAnimation.addLabel('end', '>')
+    const controlAnimation = (progress) => {
+      if (progress.toFixed(3) < 0.001) {
+        console.log('play')
+        homeLoopAnimation.play();
+      }
+      if (progress.toFixed(3) >= 0.001) {
+        console.log('pause')
+        homeLoopAnimation.tweenTo('end');
+      }
+    }
+
     const homeTimeline = gsap.timeline({ 
       scrollTrigger: {
         trigger: homeRef.current,
         // end: 'bottom -10%',
+        onUpdate: ({progress}) => controlAnimation(progress),
         pin: true,
         scrub: 0.5,
         pinSpacing: false,
-        // markers: true,
+        markers: true,
       }
     });
     homeTimeline.to('.Home__abstract--path', {

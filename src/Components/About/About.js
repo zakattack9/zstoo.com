@@ -112,7 +112,7 @@ const About = () => {
         from: 'end'
       }
     }, 0.5);
-    
+
   }, []);
 
   return (

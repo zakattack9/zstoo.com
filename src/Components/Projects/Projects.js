@@ -6,6 +6,7 @@ import { Projects as Abstract } from '../../SVGs/SVG';
 import PROJECT_DATA from './ProjectData';
 import ProjectLink from './ProjectLink';
 import Spacer from '../Spacer';
+import Skim from '../Skim/Skim';
 import './Projects.scss';
 
 const Projects = () => {
@@ -88,7 +89,19 @@ const Projects = () => {
           // markers: true,
         }
       });
-    })
+    });
+
+    // gsap.from('.Projects__Skim', { 
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: '.Projects__Skim',
+    //     toggleActions: 'play complete complete reverse',
+    //     end: 'bottom -100%',
+    //     pin: true,
+    //     pinSpacing: false,
+    //     markers: true,
+    //   }
+    // });
   }, []);
 
   return (
@@ -99,6 +112,7 @@ const Projects = () => {
       </div>
       <Spacer height={140} />
       <div className="Projects__wrapper">
+        {/* <Skim className="Projects__Skim" width={100} height={10} /> */}
         {PROJECT_DATA.map((project, i) => {
           return (
             <ProjectLink 
