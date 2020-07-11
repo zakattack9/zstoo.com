@@ -1,0 +1,16 @@
+.Contact {
+  font-size: 12pt;
+
+  &__abstract {
+    // width: 35%;
+    // position: absolute;
+    // top: -15%;
+    // left: 7%;
+    filter: saturate(200%);
+
+    &--path {
+      stroke-dasharray: 1122;
+      stroke-dashoffset: 0;
+    }
+  }
+}

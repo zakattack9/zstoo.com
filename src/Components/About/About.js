@@ -120,9 +120,9 @@ const About = () => {
         trigger: '.Skills',
         endTrigger: aboutRef.current,
         start: 'bottom center',
-        end: 'bottom 0%',
+        end: '120% 60%',
         scrub: 0.8,
-        id: 'skills-out',
+        id: 'about-out',
         markers: true,
       }
     });

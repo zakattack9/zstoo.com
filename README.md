@@ -31,9 +31,10 @@
 - Laggy/stuttering animations on Firefox (mobile)
 - Refreshing about page will "reset" fixed position of `.About__pin`
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
-  - Fixed by using `filter: opacity(0%)` to prevent animation of the same `opacity` property
+  - **Solved: used `filter: opacity(0%)` to prevent animation of the same `opacity` property**
 - Jumping pins on page refresh (can be reset by switching tabs)
   - Consider sequencing all big animations under one timeline and using labels
+  - **Solved: ensure pinned elements are in a wrapper div that gets pinned with `ScrollTrigger.create()`; additionally, animating pinned elements out of visbility before/after pinning helps minimize the noticeability of this side-effect**
 - ~ScrollMagic lags exponentially when using more abstract glow SVGs/images~
   - This consequently causes laggy GSAP tweens/timelines
   - *Potentially consider exporting abstract glow graphics as pngs?*
