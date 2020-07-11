@@ -29,17 +29,15 @@ const Home = () => {
     homeLoopAnimation.to('.Home__glow', {
       duration: 1.45, 
       ease: 'slow.inOut',
-      opacity: 0.6,
-      // y: -7,
+      // opacity: 0.6,
+      y: -7,
     }, 0);
     homeLoopAnimation.addLabel('end', '>')
     const controlAnimation = (progress) => {
       if (progress.toFixed(3) < 0.001) {
-        console.log('play')
         homeLoopAnimation.play();
       }
       if (progress.toFixed(3) >= 0.001) {
-        console.log('pause')
         homeLoopAnimation.tweenTo('end');
       }
     }
@@ -68,7 +66,7 @@ const Home = () => {
       duration: 0.5, 
       ease: 'power2.inOut',
       opacity: 0,
-      y: 20,
+      // y: 20,
       scale: 0.84,
     }, 0);
     homeTimeline.to('.Home__headline', {
