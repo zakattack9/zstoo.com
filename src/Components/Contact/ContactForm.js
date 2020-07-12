@@ -24,7 +24,8 @@ const ContactForm = () => {
 
   return (
     <div className="ContactForm">
-      <form onSubmit={handleFormSubmit}>
+      <form className="ContactForm__form" onSubmit={handleFormSubmit}>
+        <div className="ContactForm__title">Let's<br/>Talk!</div>
         <input 
           className="ContactForm__input ContactForm__input--name"
           type="text" 

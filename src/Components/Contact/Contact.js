@@ -113,16 +113,30 @@ const Contact = () => {
       }
     });
     contactFormTimeline.to('.Contact__art', {
-      duration: 2,
+      duration: 3,
       ease: 'power1.out',
       yPercent: 5,
+      skewY: 10,
       scale: 1.25,
     }, 0);
     contactFormTimeline.to('.Contact__glow', {
-      duration: 2,
+      duration: 3,
       ease: 'power1.out',
       opacity: 1,
     }, 0);
+    contactFormTimeline.from('.ContactForm__input', {
+      duration: 1.8,
+      backgroundImage: 'linear-gradient(#5F5F5F, #000000), linear-gradient(90deg, #000000, #000000)',
+      opacity: 0,
+      y: -10,
+      skewY: -10,
+      skewX: -10,
+      scale: 0.9,
+      stagger: {
+        each: 0.4,
+        from: 'end'
+      },
+    }, '<0.2');
 
   }, []);
 

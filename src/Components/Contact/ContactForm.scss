@@ -1,17 +1,26 @@
 .ContactForm {
-  width: 85%;
+  width: 100%;
+  height: 100%;
 
-  &__inputWrapper {
+  &__form {
+    width: 85%;
+    margin: 0 auto;
     font-size: 11pt;
-    width: 100%;
-    position: relative;
-    margin: 1em 0;
+    display: block;
+  }
+
+  &__title {
+    font-family: "ObjectSans";
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 2.6em;
   }
 
   &__input {
     width: 100%;
+    margin: 0 auto;
     font-family: "ObjectSans";
-    // background-color: #131313;
     color: #C8C8C8;
     border: 1px double transparent;
     border-radius: 3px;
@@ -19,24 +28,17 @@
                       linear-gradient(90deg, #CECECE, #3B3B3B);
     background-origin: border-box;
     background-clip: padding-box, border-box;
+    box-sizing: border-box;
 
-    padding: 1em;
+    padding: 1.2em;
+    margin: 0.5em 0;
     outline: none;
     resize: none;
-    // box-sizing: border-box;
-    position: relative;
-    z-index: 1;
 
-  }
+    box-shadow: 3px 4px 5px #121212;
 
-  &__inputBorder {
-    height: calc(100% + 2px);
-    width: calc(100% + 4px);
-    position: absolute;
-    z-index: 0;
-
-    &--path {
-      stroke-dasharray: 590;
+    &--message {
+      min-height: 5em;
     }
   }
 }
