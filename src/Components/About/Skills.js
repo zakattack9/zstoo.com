@@ -14,7 +14,7 @@ const Skills = (props) => {
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: skillsRef.current,
-      start: 'top 26%',
+      start: 'top 28%',
       end: 'bottom 0%',
       pin: true,
       pinSpacing: false,

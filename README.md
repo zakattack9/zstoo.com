@@ -29,6 +29,7 @@
 ### Optimization Issues
 - Weird animation and layout behavior on Safari
 - Laggy/stuttering animations on Firefox (mobile)
+- Fix spacing between Skills title and first section title
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
   - **Solved: used `filter: opacity(0%)` to prevent animation of the same `opacity` property**
 - ~Jumping pins on page refresh (can be reset by switching tabs)~

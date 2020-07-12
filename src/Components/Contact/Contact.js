@@ -28,7 +28,7 @@ const Contact = () => {
         end: '80% 45%',
         scrub: 1,
         id: 'contact',
-        markers: true,
+        // markers: true,
       }
     });
     contactTimeline.from('.Contact__abstract--path', {
