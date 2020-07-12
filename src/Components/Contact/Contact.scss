@@ -1,16 +1,85 @@
 .Contact {
   font-size: 12pt;
 
+  &__pin {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__art {
+    height: 100vh;
+    position: relative;
+  }
+  
   &__abstract {
-    // width: 35%;
-    // position: absolute;
-    // top: -15%;
-    // left: 7%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     filter: saturate(200%);
 
     &--path {
       stroke-dasharray: 1122;
       stroke-dashoffset: 0;
     }
+  }
+
+  &__glow {
+    width: 120%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -10%;
+    opacity: 0;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: 
+      "icon"
+      "text";
+  }
+
+  &__icon {
+    height: 100%;
+    position: absolute;
+    grid-area: icon;
+    justify-self: center;
+    align-self: end;
+
+    &--LinkedIn {
+      stroke-dasharray: 265;
+      stroke-dashoffset: 0;
+    }
+
+    &--GitHub {
+      stroke-dasharray: 395;
+      stroke-dashoffset: 0;
+    }
+
+    &--Medium {
+      stroke-dasharray: 485;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  &__iconText {
+    color: #9e9e9e;
+    font-family: "ObjectSans";
+    font-size: 11pt;
+    text-align: center;
+    line-height: 1.3em;
+    padding-top: 1.5vh;
+    position: absolute;
+    grid-area: text;
+    justify-self: center;
   }
 }

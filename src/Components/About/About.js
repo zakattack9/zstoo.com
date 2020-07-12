@@ -119,15 +119,15 @@ const About = () => {
       scrollTrigger: {
         trigger: '.Skills',
         endTrigger: aboutRef.current,
-        start: 'bottom center',
-        end: '120% 60%',
+        start: 'bottom 70%',
+        end: '140% 60%',
         scrub: 0.8,
         id: 'about-out',
-        markers: true,
+        // markers: true,
       }
     });
     aboutTimelineOut.to('.About__SkillsTitle--path', {
-      duration: 3,
+      duration: 2.8,
       ease: 'power2.inOut',
       strokeDashoffset: 850,
       stagger: {
@@ -177,7 +177,6 @@ const About = () => {
       <div className="About__text About__text--skills" ref={skillsTextRef}>
         <Skills />
       </div>
-      <Spacer height={30} />
     </div>
   );
 }
