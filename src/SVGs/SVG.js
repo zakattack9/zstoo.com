@@ -1,7 +1,6 @@
 import React from 'react';
 
 // React handler for svgs
-
 export const Error404 = props => {
   return (
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 377 355">
@@ -376,7 +375,6 @@ export const ZakSakata = props => {
 }
 
 // Contact icons
-
 export const LinkedIn = props => {
   return (
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 68">

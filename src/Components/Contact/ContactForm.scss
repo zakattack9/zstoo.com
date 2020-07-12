@@ -1,0 +1,42 @@
+.ContactForm {
+  width: 85%;
+
+  &__inputWrapper {
+    font-size: 11pt;
+    width: 100%;
+    position: relative;
+    margin: 1em 0;
+  }
+
+  &__input {
+    width: 100%;
+    font-family: "ObjectSans";
+    // background-color: #131313;
+    color: #C8C8C8;
+    border: 1px double transparent;
+    border-radius: 3px;
+    background-image: linear-gradient(#131313, #131313),
+                      linear-gradient(90deg, #CECECE, #3B3B3B);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    padding: 1em;
+    outline: none;
+    resize: none;
+    // box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+
+  }
+
+  &__inputBorder {
+    height: calc(100% + 2px);
+    width: calc(100% + 4px);
+    position: absolute;
+    z-index: 0;
+
+    &--path {
+      stroke-dasharray: 590;
+    }
+  }
+}

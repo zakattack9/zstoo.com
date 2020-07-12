@@ -15,7 +15,7 @@ const Home = () => {
       repeat: -1,
       yoyo: true,
     });
-    homeLoopAnimation.addLabel('start', 0)
+    homeLoopAnimation.addLabel('start', 0);
     homeLoopAnimation.to('.Home__abstract', {
       duration: 1.7,
       ease: 'slow.inOut',

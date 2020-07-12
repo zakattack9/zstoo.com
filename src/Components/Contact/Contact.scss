@@ -82,4 +82,10 @@
     grid-area: text;
     justify-self: center;
   }
+
+  &__form {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+  }
 }

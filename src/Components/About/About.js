@@ -20,7 +20,7 @@ const About = () => {
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: aboutRef.current,
-      end: '150% 0%',
+      end: '140% 60%',
       pin: true,
       pinSpacing: false,
       id: 'pin',
