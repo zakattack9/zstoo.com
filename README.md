@@ -30,6 +30,7 @@
 - Weird animation and layout behavior on Safari
 - Laggy/stuttering animations on Firefox (mobile)
 - Fix spacing between Skills title and first section title
+- Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens; consequently this will cause ScrollTrigger to reverse any animatons up to that point
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
   - **Solved: used `filter: opacity(0%)` to prevent animation of the same `opacity` property**
 - ~Jumping pins on page refresh (can be reset by switching tabs)~

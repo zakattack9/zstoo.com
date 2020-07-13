@@ -12,6 +12,11 @@ const ContactForm = () => {
   });
   const [formData, setFormData] = useState(initFormData());
 
+  const handleFormClick = (e) => {
+    console.log('clicked')
+    e.preventDefault();
+  }
+
   const handleFormInput = (e, field) => {
     const value = e.target.value;
     setFormData({ ...formData, [field]: value });
@@ -31,6 +36,7 @@ const ContactForm = () => {
           type="text" 
           placeholder="Name"
           value={formData.name} 
+          onClick={handleFormClick}
           onChange={(e) => handleFormInput(e, 'name')} 
         />
         <input 
@@ -38,6 +44,7 @@ const ContactForm = () => {
           type="text" 
           placeholder="Email"
           value={formData.email} 
+          onClick={handleFormClick}
           onChange={(e) => handleFormInput(e, 'email')} 
         />
         <input 
@@ -45,15 +52,17 @@ const ContactForm = () => {
           type="text" 
           placeholder="Subject"
           value={formData.subject} 
+          onClick={handleFormClick}
           onChange={(e) => handleFormInput(e, 'subject')} 
         />
         <textarea 
           className="ContactForm__input ContactForm__input--message"        
           placeholder="Message"
           value={formData.message} 
+          onClick={handleFormClick}
           onChange={(e) => handleFormInput(e, 'message')} 
         />
-        <input type="submit" value="Submit" />
+        <input className="ContactForm__input--send" type="submit" value="Send" />
       </form>
     </div>
   );

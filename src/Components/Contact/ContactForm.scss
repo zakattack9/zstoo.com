@@ -40,5 +40,18 @@
     &--message {
       min-height: 5em;
     }
+
+    &--send {
+      font-size: 13pt;
+      font-family: "ObjectSans";
+      font-weight: bold;
+      font-style: italic;
+      background: none;
+      color: #9D9D9D;
+      border: none;
+      display: block;
+      margin-left: auto;
+    }
   }
+
 }

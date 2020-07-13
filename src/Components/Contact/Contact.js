@@ -107,20 +107,20 @@ const Contact = () => {
         endTrigger: formEndRef.current,
         start: 'top center',
         end: 'bottom 60%',
-        scrub: 1,
+        scrub: 0.5,
         id: 'contact-form',
-        markers: true,
+        // markers: true,
       }
     });
     contactFormTimeline.to('.Contact__art', {
-      duration: 3,
+      duration: 2.1,
       ease: 'power1.out',
       yPercent: 5,
       skewY: 10,
       scale: 1.25,
     }, 0);
     contactFormTimeline.to('.Contact__glow', {
-      duration: 3,
+      duration: 2.1,
       ease: 'power1.out',
       opacity: 1,
     }, 0);
@@ -128,7 +128,7 @@ const Contact = () => {
       duration: 1.8,
       backgroundImage: 'linear-gradient(#5F5F5F, #000000), linear-gradient(90deg, #000000, #000000)',
       opacity: 0,
-      y: -10,
+      y: 10,
       skewY: -10,
       skewX: -10,
       scale: 0.9,
