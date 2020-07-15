@@ -83,11 +83,39 @@
     justify-self: center;
   }
 
-  &__form {
-    width: 100%;
+  &__info {
+    font-size: 11pt;
+    width: 70%;
     position: absolute;
-    top: 50%;
+    top: 55%;
+    left: 10%;
     transform: translateY(-50%);
-    z-index: 1;
   }
+
+  &__LetsTalk {
+    width: 8em;
+    margin-bottom: 0.5em;
+
+    &--path {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  &__contactText {
+    font-family: "ObjectSans";
+    line-height: 1.3em;
+    color: #B2B2B2;
+  }
+
+  &__ContactButton {
+    margin-top: 0.8em;
+    width: 7.5em;
+
+    &--path {
+      stroke-dasharray: 195;
+      stroke-dashoffset: 0;
+    }
+  }
+
 }

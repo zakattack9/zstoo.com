@@ -2,16 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/ContactGlow.png';
-import { Contact as Abstract, LinkedIn, GitHub, Medium } from '../../SVGs/SVG';
+import { Contact as Abstract, LinkedIn, GitHub, Medium, LetsTalk, ContactButton } from '../../SVGs/SVG';
 import Spacer from '../Spacer';
-import ContactForm from './ContactForm';
 import './Contact.scss';
 
 const Contact = () => {
   const contactRef = useRef(null);
   const pinRef = useRef(null);
-  const formStartRef = useRef(null);
-  const formEndRef = useRef(null);
+  const contactInfoStartRef = useRef(null);
+  const contactInfoEndRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +26,7 @@ const Contact = () => {
     const contactTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: contactRef.current,
-        endTrigger: formStartRef.current,
+        endTrigger: contactInfoStartRef.current,
         start: '5% 0%',
         end: '80% 45%',
         scrub: 1,
@@ -101,42 +100,52 @@ const Contact = () => {
       ...iconTextParams
     }, '<');
 
-    const contactFormTimeline = gsap.timeline({
+    const contactInfoTimeline = gsap.timeline({
       scrollTrigger: {
-        trigger: formStartRef.current,
-        endTrigger: formEndRef.current,
+        trigger: contactInfoStartRef.current,
+        endTrigger: contactInfoEndRef.current,
         start: 'top center',
-        end: 'bottom 60%',
+        end: 'bottom 50%',
         scrub: 0.5,
         id: 'contact-form',
         // markers: true,
       }
     });
-    contactFormTimeline.to('.Contact__art', {
+    contactInfoTimeline.to('.Contact__art', {
       duration: 2.1,
       ease: 'power1.out',
-      yPercent: 5,
+      yPercent: 0,
       skewY: 10,
-      scale: 1.25,
+      scale: 1.5,
     }, 0);
-    contactFormTimeline.to('.Contact__glow', {
-      duration: 2.1,
+    contactInfoTimeline.to('.Contact__glow', {
+      duration: 1,
       ease: 'power1.out',
       opacity: 1,
     }, 0);
-    contactFormTimeline.from('.ContactForm__input', {
-      duration: 1.8,
-      backgroundImage: 'linear-gradient(#5F5F5F, #000000), linear-gradient(90deg, #000000, #000000)',
-      opacity: 0,
-      y: 10,
-      skewY: -10,
-      skewX: -10,
+    contactInfoTimeline.from('.Contact__LetsTalk--path', {
+      duration: 2,
+      ease: 'power2.inOut',
+      strokeDashoffset: 100,
+      y: 5,
+      skewY: -5,
+      skewX: -5,
       scale: 0.9,
-      stagger: {
-        each: 0.4,
-        from: 'end'
-      },
-    }, '<0.2');
+    }, '>-0.1');
+    contactInfoTimeline.from('.Contact__contactText', {
+      duration: 2,
+      ease: 'power2.inOut',
+      opacity: 0,
+      y: 5,
+      skewY: -5,
+      skewX: -5,
+      scale: 0.9,
+    }, '<');
+    contactInfoTimeline.from('.Contact__ContactButton--path', {
+      duration: 2,
+      ease: 'power2.inOut',
+      strokeDashoffset: -195,
+    }, '>-0.9');
 
   }, []);
 
@@ -154,8 +163,10 @@ const Contact = () => {
           <div className="Contact__iconText Contact__iconText--Medium">Check out my<br/>articles on Medium</div>
         </div>
 
-        <div className="Contact__form">
-          <ContactForm />
+        <div className="Contact__info">
+          <LetsTalk className="Contact__LetsTalk" pathName="Contact__LetsTalk--path" />
+          <div className="Contact__contactText">Ready to start a project or currently looking to hire? Send me an email at sakata.zak@gmail.com or head over to my contact page with the button below</div>
+          <ContactButton className="Contact__ContactButton" pathName="Contact__ContactButton--path" />
         </div>
 
         <div className="Contact__art">
@@ -163,11 +174,11 @@ const Contact = () => {
           <img className="Contact__glow" src={Glow} alt="abstract glow art"/>
         </div>
       </div>
-      <Spacer height={300}/>
-      <span className="Contact__trigger--formStart" ref={formStartRef}></span>
-      <Spacer height={100}/>
-      <span className="Contact__trigger--formEnd" ref={formEndRef}></span>
-      <Spacer height={200}/>
+      <Spacer height={300}/> {/* modify for duration of social links animation */}
+      <span className="Contact__trigger--formStart" ref={contactInfoStartRef}></span>
+      <Spacer height={100}/> {/* modify for duration of contact info animation */}
+      <span className="Contact__trigger--formEnd" ref={contactInfoEndRef}></span>
+      <Spacer height={50}/> {/* added space for completion of contact info animation */}
     </div>
   );
 }
