@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/zstoo.com/static/css/main.a8db8a57.chunk.css",
-    "main.js": "/zstoo.com/static/js/main.83676b41.chunk.js",
-    "main.js.map": "/zstoo.com/static/js/main.83676b41.chunk.js.map",
+    "main.css": "/zstoo.com/static/css/main.55ab0b8c.chunk.css",
+    "main.js": "/zstoo.com/static/js/main.1c34ebb9.chunk.js",
+    "main.js.map": "/zstoo.com/static/js/main.1c34ebb9.chunk.js.map",
     "runtime-main.js": "/zstoo.com/static/js/runtime-main.29fef2bd.js",
     "runtime-main.js.map": "/zstoo.com/static/js/runtime-main.29fef2bd.js.map",
-    "static/js/2.65cdf77e.chunk.js": "/zstoo.com/static/js/2.65cdf77e.chunk.js",
-    "static/js/2.65cdf77e.chunk.js.map": "/zstoo.com/static/js/2.65cdf77e.chunk.js.map",
+    "static/js/2.f31106b3.chunk.js": "/zstoo.com/static/js/2.f31106b3.chunk.js",
+    "static/js/2.f31106b3.chunk.js.map": "/zstoo.com/static/js/2.f31106b3.chunk.js.map",
     "index.html": "/zstoo.com/index.html",
-    "precache-manifest.b2dfea3ffd17d8e40a8f9b00f9e1f96b.js": "/zstoo.com/precache-manifest.b2dfea3ffd17d8e40a8f9b00f9e1f96b.js",
+    "precache-manifest.8a949ff463e46b88e4dbc870861e3e3c.js": "/zstoo.com/precache-manifest.8a949ff463e46b88e4dbc870861e3e3c.js",
     "service-worker.js": "/zstoo.com/service-worker.js",
-    "static/css/main.a8db8a57.chunk.css.map": "/zstoo.com/static/css/main.a8db8a57.chunk.css.map",
-    "static/js/2.65cdf77e.chunk.js.LICENSE.txt": "/zstoo.com/static/js/2.65cdf77e.chunk.js.LICENSE.txt",
+    "static/css/main.55ab0b8c.chunk.css.map": "/zstoo.com/static/css/main.55ab0b8c.chunk.css.map",
+    "static/js/2.f31106b3.chunk.js.LICENSE.txt": "/zstoo.com/static/js/2.f31106b3.chunk.js.LICENSE.txt",
     "static/media/AboutGlow.png": "/zstoo.com/static/media/AboutGlow.bf120f7d.png",
+    "static/media/ContactGlow.png": "/zstoo.com/static/media/ContactGlow.dbc36e44.png",
     "static/media/index.scss": "/zstoo.com/static/media/ObjectSansSlanted.e86d10ee.woff",
     "static/media/HomeGlow.png": "/zstoo.com/static/media/HomeGlow.00a27232.png",
     "static/media/ProjectsGlow.png": "/zstoo.com/static/media/ProjectsGlow.c95e3e53.png",
@@ -20,8 +21,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.29fef2bd.js",
-    "static/js/2.65cdf77e.chunk.js",
-    "static/css/main.a8db8a57.chunk.css",
-    "static/js/main.83676b41.chunk.js"
+    "static/js/2.f31106b3.chunk.js",
+    "static/css/main.55ab0b8c.chunk.css",
+    "static/js/main.1c34ebb9.chunk.js"
   ]
 }
