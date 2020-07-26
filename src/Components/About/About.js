@@ -31,16 +31,16 @@ const About = () => {
       scrollTrigger: {
         trigger: aboutRef.current,
         endTrigger: aboutTextRef.current,
-        start: '-5% 0%',
+        start: '-15% 0%',
         end: 'top 35%',
         scrub: 1,
         // markers: true,
       }
     });
     aboutTimeline.from('.About__abstract--path', {
-      duration: 1.3,
+      duration: 1.9,
       ease: 'power2.inOut',
-      strokeDashoffset: 800,
+      strokeDashoffset: 1300,
       stagger: {
         each: 0.02,
         from: 'start'
@@ -54,17 +54,17 @@ const About = () => {
         each: 0.02,
         from: 'start'
       }
-    }, 0.2);
+    }, 0.8);
     aboutTimeline.from('.About__glow', {
       duration: 1, 
       ease: 'power2.inOut',
       opacity: 0,
       scale: 0.84,
-    }, 0.7);
+    }, 1.4);
     aboutTimeline.from('.About__hideSkim', {
       duration: 0.1,
       opacity: 0,
-    }, 1);
+    }, 1.6);
 
     const skillsTimeline = gsap.timeline({
       scrollTrigger: {

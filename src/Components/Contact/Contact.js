@@ -141,11 +141,18 @@ const Contact = () => {
       skewX: -5,
       scale: 0.9,
     }, '<');
-    contactInfoTimeline.from('.Contact__ContactButton--path', {
-      duration: 2,
-      ease: 'power2.inOut',
+
+    gsap.from('.Contact__ContactButton--path', {
+      duration: 0.7,
+      ease: 'power1.inOut',
       strokeDashoffset: -195,
-    }, '>-0.9');
+      scrollTrigger: {
+        trigger: contactInfoEndRef.current,
+        start: '0% 75%',
+        toggleActions: 'play complete complete reverse',
+        markers: true,
+      }
+    });
 
   }, []);
 

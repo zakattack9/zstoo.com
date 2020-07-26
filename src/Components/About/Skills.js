@@ -14,7 +14,7 @@ const Skills = (props) => {
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: skillsRef.current,
-      start: 'top 28%',
+      start: 'top 25%', // second param must be same as ".About__wrapper" height in About.scss
       end: 'bottom 0%',
       pin: true,
       pinSpacing: false,
@@ -60,18 +60,22 @@ const Skills = (props) => {
 
     const skillsSection1to2 = gsap.timeline({});
     skillsSection1to2.to('.Skills__section--1', {
-      duration: 0.9,
+      duration: 1.2,
       ease: 'power1.inOut',
-      yPercent: -50,
+      yPercent: -60,
+    }, 0);
+    skillsSection1to2.to('.Skills__section--1', {
+      duration: 0.7,
+      ease: 'power1.inOut',
       scale: 0.97,
       transformOrigin: 'center left',
       opacity: 0.5,
-    }, 0);
+    }, '>');
     skillsSection1to2.to('.Skills__section--2', {
       duration: 0.7,
       ease: 'power1.inOut',
-      yPercent: -185,
-    }, 0);
+      yPercent: -225,
+    }, '<');
 
     const skillsSection2 = gsap.timeline({});
     skillsSection2.from('.Skills__section--2 .Skills__title', {
@@ -135,8 +139,8 @@ const Skills = (props) => {
     });
     skillsSectionMain.add(skillsSection1, '>0.5');
     skillsSectionMain.add(skillsSection1to2, '>0.7');
-    skillsSectionMain.add(skillsSection2, '>');
-    skillsSectionMain.add(skillsSectionOut, '>');
+    skillsSectionMain.add(skillsSection2, '>-0.2');
+    skillsSectionMain.add(skillsSectionOut, '>1');
 
   }, []);
   
@@ -173,7 +177,7 @@ const Skills = (props) => {
       <div className="Skills__pin" ref={pinRef}>
         {sections}
       </div>
-      <Spacer height={50} />
+      <Spacer height={100} />
     </div>
   );
 }

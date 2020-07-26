@@ -1,0 +1,56 @@
+.ContactForm {
+  width: 100%;
+  height: 100%;
+
+  &__form {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 11pt;
+    display: block;
+  }
+
+  &__title {
+    font-family: "ObjectSans";
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 2.6em;
+  }
+
+  &__input {
+    width: 100%;
+    margin: 0 auto;
+    font-family: "ObjectSans";
+    color: #C8C8C8;
+    border: 1px double transparent;
+    border-radius: 3px;
+    background-image: linear-gradient(#131313, #131313),
+                      linear-gradient(90deg, #CECECE, #3B3B3B);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-sizing: border-box;
+
+    padding: 1.2em;
+    margin: 0.5em 0;
+    outline: none;
+    resize: none;
+    box-shadow: 3px 4px 5px #121212;
+
+    &--message {
+      min-height: 5em;
+    }
+
+    &--send {
+      font-size: 13pt;
+      font-family: "ObjectSans";
+      font-weight: bold;
+      font-style: italic;
+      background: none;
+      color: #9D9D9D;
+      border: none;
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+}
