@@ -1,14 +1,12 @@
 import React from 'react';
 import './Project.scss';
 
-class Project extends React.Component {
-  render () {
-    return (
-      <div className="Project">
+const Project = props => {
+  return (
+    <div className="Project">
 
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Project;
