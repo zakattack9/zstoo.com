@@ -150,7 +150,7 @@ const Contact = () => {
         trigger: contactInfoEndRef.current,
         start: '0% 75%',
         toggleActions: 'play complete complete reverse',
-        markers: true,
+        // markers: true,
       }
     });
 

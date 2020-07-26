@@ -11,7 +11,33 @@ const Home = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const homeLoadAnimation = gsap.timeline();
+    homeLoadAnimation.from('.Home__abstract--path', {
+      duration: 0.6,
+      ease: 'ease.in',
+      opacity: 0,
+      scale: 1.13,
+      skewY: 5,
+      transformOrigin: 'center',
+      stagger: {
+        each: 0.02,
+        from: 'center'
+      }
+    }, 0.4);
+    homeLoadAnimation.from('.Home__headline', {
+      duration: 1.2,
+      ease: 'power1.out',
+      opacity: 0,
+      y: -5,
+    }, 0.7);
+    homeLoadAnimation.from('.Home__zak', {
+      duration: 0.9,
+      ease: 'ease.inOut', 
+      scale: 1.15,
+    }, 0);
+
     const homeLoopAnimation = gsap.timeline({
+      delay: 1,
       repeat: -1,
       yoyo: true,
     });
