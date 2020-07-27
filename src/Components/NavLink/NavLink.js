@@ -18,11 +18,15 @@ const NavLink = props => {
   return props.left ? (
     <div className={`NavLink ${props.className}`} style={leftStyles}>
       <div className="NavLink__line"></div>
-      <div className="NavLink__text NavLink__text--left">{props.text}</div>
+      <Link to={props.href}>
+        <div className="NavLink__text NavLink__text--left">{props.text}</div>
+      </Link>
     </div>
   ) : (
     <div className={`NavLink ${props.className}`} style={styles}>
-      <div className="NavLink__text NavLink__text--right">{props.text}</div>
+      <Link to={props.href}>
+        <div className="NavLink__text NavLink__text--right">{props.text}</div>
+      </Link>
       <div className="NavLink__line"></div>
     </div>
   );
