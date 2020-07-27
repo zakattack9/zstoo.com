@@ -5,7 +5,6 @@ import './NavLink.scss';
 // component used for navigation links
 const NavLink = props => {
   const styles = {
-    height: `${props.height}vh`,
     gridTemplateColumns: `min-content ${props.lineWidth}px`,
     transform: `rotate(${props.rotate}deg)`,
   };

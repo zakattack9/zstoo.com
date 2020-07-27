@@ -13,11 +13,11 @@ const Home = () => {
     gsap.registerPlugin(ScrollTrigger);
     const homeLoadAnimation = gsap.timeline();
     homeLoadAnimation.from('.Home__abstract--path', {
-      duration: 0.6,
+      duration: 0.8,
       ease: 'ease.in',
       opacity: 0,
       scale: 1.13,
-      skewY: 5,
+      skewY: 15,
       transformOrigin: 'center',
       stagger: {
         each: 0.02,
@@ -25,19 +25,26 @@ const Home = () => {
       }
     }, 0.4);
     homeLoadAnimation.from('.Home__headline', {
-      duration: 1.2,
+      duration: 1.3,
       ease: 'power1.out',
       opacity: 0,
-      y: -5,
-    }, 0.7);
+      y: -8,
+    }, 0.9);
     homeLoadAnimation.from('.Home__zak', {
       duration: 0.9,
       ease: 'ease.inOut', 
-      scale: 1.15,
+      scale: 1.17,
+    }, 0);
+    homeLoadAnimation.from('.Home__glow', {
+      duration: 1.6, 
+      ease: 'ease.out',
+      // opacity: 0,
+      filter: 'blur(150px)',
+      // visibility: 'hidden',
     }, 0);
 
     const homeLoopAnimation = gsap.timeline({
-      delay: 1,
+      delay: 1.3,
       repeat: -1,
       yoyo: true,
     });
