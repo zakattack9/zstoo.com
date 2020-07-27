@@ -1,0 +1,29 @@
+.NavLink {
+  font-size: 11pt;
+  height: min-content;
+  display: grid;
+
+  &__line {
+    background-color: #DDDDDD;
+    width: 100%;
+    height: 1px;
+    align-self: center;
+  }
+
+  &__text {
+    color: #C2C2C2;
+    font-family: "ObjectSans";
+    font-style: italic;
+    text-transform: uppercase;
+    white-space: pre-line;
+    align-self: center;
+    
+    &--left {
+      padding-left: 1em;
+    }
+
+    &--right {
+      padding-right: 1em;
+    }
+  }
+}

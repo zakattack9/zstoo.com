@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/ProjectsGlow.png';
 import { Projects as Abstract } from '../../SVGs/SVG';
-import PROJECT_DATA from './ProjectData';
+import PROJECT_DATA from '../../Data/ProjectData';
 import ProjectLink from './ProjectLink';
 import Spacer from '../Spacer';
 import Skim from '../Skim/Skim';

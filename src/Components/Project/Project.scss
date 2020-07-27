@@ -1,0 +1,11 @@
+.Project {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 25% 10% 25% auto;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: 
+    "top top"
+    "middle middle"
+    "photos photos"
+    "github description";
+}
