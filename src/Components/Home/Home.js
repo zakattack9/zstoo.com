@@ -50,13 +50,13 @@ const Home = () => {
     });
     homeLoopAnimation.addLabel('start', 0);
     homeLoopAnimation.to('.Home__abstract', {
-      duration: 1.7,
-      ease: 'slow.inOut',
+      duration: 1.8,
+      ease: 'slow.out',
       y: -7,
-    }, 0);
+    }, 0.1);
     homeLoopAnimation.to('.Home__zak', {
-      duration: 1.7,
-      ease: 'slow.inOut',
+      duration: 1.9,
+      ease: 'ease.inOut',
       y: -12,
     }, 0);
     homeLoopAnimation.fromTo('.Home__glow', 
@@ -66,7 +66,7 @@ const Home = () => {
       ease: 'slow.inOut',
       filter: 'opacity(50%)',
       y: -7,
-    }, 0);
+    }, 0.05);
     const controlAnimation = (progress) => {
       if (progress.toFixed(3) < 0.001) {
         homeLoopAnimation.play();
