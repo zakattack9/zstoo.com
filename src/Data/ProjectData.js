@@ -3,10 +3,11 @@ const PROJECT_DATA = [
     id: 1,
     name: "Stockup",
     shortDesc: "Stock market news web scraper",
-    fullDesc: "",
-    techStack: [],
+    fullDesc: "Stockup is an application leveraging web scraping and APIs to gather stock news from various sources. Stockup is an application leveraging web scraping and APIs to gather stock news from various sources.",
+    techStack: ['React', 'CSS', 'Node.js', 'Heroku'],
     githubLink: "",
-    imageUrls: [] 
+    imageUrls: [],
+    color: '#00D35E',
   },
   {
     id: 2,

@@ -1,11 +1,61 @@
 .Project {
   height: 100%;
-  display: grid;
-  grid-template-rows: 25% 10% 25% auto;
-  grid-template-columns: 40% 60%;
-  grid-template-areas: 
-    "top top"
-    "middle middle"
-    "photos photos"
-    "github description";
+
+  &__info {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 25% 10% 25% auto;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+      "top top"
+      "middle middle"
+      "photos photos"
+      "github description";
+  }
+
+  &__art {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__abstract {
+    height: 120%;
+    position: absolute;
+    top: -6%;
+  }
+
+  &__NavLink {
+    &--AllProjects {
+      grid-area: top;
+    }
+
+    &--NextProject {
+      grid-area: middle;
+      position: relative;
+      right: 0;
+    }
+  }
+
+  &__techStack {
+    grid-area: top;
+    font-size: 10pt;
+  }
+
+  &__techStackText {
+
+    &--title {
+      text-transform: uppercase;
+      font-size: 1.1em;
+      white-space: pre-line;
+    }
+
+    &--tech {
+
+    }
+  }
 }
