@@ -2,5 +2,20 @@
 
 .Skim {
   background-image: linear-gradient($background-color, rgba(0, 0, 0, 0));
-  // background-image: linear-gradient(blue, rgba(0, 0, 0, 0));
+
+  &--toRight {
+    background-image: linear-gradient(to right, $background-color, rgba(0, 0, 0, 0));
+  }
+
+  &--toLeft {
+    background-image: linear-gradient(to left, $background-color, rgba(0, 0, 0, 0));
+  }
+
+  &--toTop {
+    background-image: linear-gradient(to top, $background-color, rgba(0, 0, 0, 0));
+  }
+
+  &--project {
+    background-image: linear-gradient(90deg, rgba(3,3,3,0.00) 0%, rgba(4,4,4,0.89) 46%, rgba(4,4,4,0.47) 100%);
+  }
 }

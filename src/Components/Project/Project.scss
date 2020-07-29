@@ -1,20 +1,8 @@
 .Project {
   height: 100%;
-
-  &__info {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    display: grid;
-    grid-template-rows: 25% 10% 25% auto;
-    grid-template-columns: 40% 60%;
-    grid-template-areas: 
-      "top top"
-      "middle middle"
-      "photos photos"
-      "github description";
-  }
+  font-size: 11pt;
+  overflow-y: hidden;
+  $column-left: 35%;
 
   &__art {
     width: 100vw;
@@ -24,38 +12,132 @@
   }
 
   &__abstract {
-    height: 120%;
+    // height: 120%;
+    width: 100%;
     position: absolute;
-    top: -6%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__info {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 25% 10% 25% auto;
+    grid-template-columns: $column-left 65%;
+    grid-template-areas: 
+      "top top"
+      "middle middle"
+      "gallery gallery"
+      "github description";
   }
 
   &__NavLink {
+    font-size: 10pt;
+
     &--AllProjects {
       grid-area: top;
+      position: relative;
+      top: 1.3em;
     }
 
     &--NextProject {
       grid-area: middle;
+      grid-column: 2;
+      margin-left: auto;
       position: relative;
       right: 0;
+      align-self: center;
     }
   }
 
   &__techStack {
     grid-area: top;
+    grid-column: 1 / 2;
+
     font-size: 10pt;
+    position: absolute;
+    right: 20%;
+    bottom: 4%;
   }
 
   &__techStackText {
-
     &--title {
       text-transform: uppercase;
       font-size: 1.1em;
       white-space: pre-line;
+      padding-bottom: 0.3em;
     }
 
     &--tech {
-
+      line-height: 1.1em;
+      font-style: italic;
+      color: #a5a5a5;
     }
+  }
+
+  &__title {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    align-self: center;
+    padding-left: 1em;
+  }
+
+  &__gallery {
+    grid-area: gallery;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-left: 10%;
+    z-index: 4;
+  }
+
+  &__photo {
+    height: 100%;
+    display: inline-block;
+    margin-right: 10%;
+    box-shadow: 6px 6px 8px 0 rgba(0,0,0,0.67);
+  }
+
+  &__Skim {
+    position: absolute;
+    z-index: 5;
+    
+    &--gallery {
+      grid-area: gallery;
+      right: 0;
+    }
+
+    &--description {
+      z-index: 1;
+      grid-column: 1 / 3;
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__description {
+    grid-area: description;
+    grid-column: 1 / 3;
+    
+    font-size: 11.5pt;
+    white-space: pre-line;
+    overflow-y: auto;
+    padding: 1em 0.5em 2em $column-left;
+    z-index: 3;
+    line-height: 1.25em;
+  }
+
+  &__id {
+    grid-area: description;
+    font-family: 'HelveticaBoldOutline';
+    font-size: 60pt;
+    position: absolute;
+    right: 5%;
+    top: -0.5em;
+    z-index: 2;
+    color: #535353;
   }
 }

@@ -1,12 +1,13 @@
+// imageUrls must be relative to "public" folder
 const PROJECT_DATA = [
   {
     id: 1,
     name: "Stockup",
     shortDesc: "Stock market news web scraper",
-    fullDesc: "Stockup is an application leveraging web scraping and APIs to gather stock news from various sources. Stockup is an application leveraging web scraping and APIs to gather stock news from various sources.",
+    fullDesc: "Stockup is an application leveraging web scraping and APIs to gather stock news from various sources.\n\nStockup is an application leveraging web scraping and APIs to gather stock news from various sources.Stockup is an application leveraging web scraping and APIs to gather stock news from various sources.\n\nStockup is an application leveraging web scraping and APIs to gather stock news from various sources.Stockup is an application leveraging web scraping and APIs to gather stock news from various sources.\n\nStockup is an application leveraging web scraping and APIs to gather stock news from various sources.",
     techStack: ['React', 'CSS', 'Node.js', 'Heroku'],
     githubLink: "",
-    imageUrls: [],
+    imageUrls: ['images/projects/Stockup1.png', 'images/projects/Stockup1.png'],
     color: '#00D35E',
   },
   {
