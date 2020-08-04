@@ -1,31 +1,26 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { Project as Abstract } from '../../SVGs/SVG';
+import { Project as Abstract, GitHub } from '../../SVGs/SVG';
 import Skim from '../Skim/Skim';
 import NavLink from '../NavLink/NavLink';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Project.scss';
 
 const Project = props => {
-  const { projectId = 2 } = props;
+  const { projectId = 1 } = props;
   const project = PROJECT_DATA.find(project => project.id === projectId);
 
   return (
     <div className="Project">
-      <div className="Project__info">
+      <div className="Project__data">
         {/* TOP SECTION */}
-        <NavLink className="Project__NavLink Project__NavLink--AllProjects" text={`All\nProjects`} lineWidth={110} href='/' left />
-        <div className="Project__techStack">
-          <div className="Project__techStackText Project__techStackText--title" style={{color: project.color}}>
-            {`Tech\nStack`}
-          </div>
-          {project.techStack.map((tech, i) => {
-            return <div className="Project__techStackText--tech" key={i}>{tech}</div>
-          })}
-        </div>
+        <NavLink className="Project__NavLink Project__NavLink--AllProjects" text={`All\nProjects`} lineWidth={25} href='/' left />
+        
         {/* MIDDLE SECTION */}
         <div className="Project__title">{project.name}</div>
         <NavLink className="Project__NavLink Project__NavLink--NextProject" text={`Next\nProject`} lineWidth={15} />
+        <div className="Project__id">0{project.id}</div>
+       
         {/* GALLERY SECTION */}
         <Skim className="Project__Skim Project__Skim--gallery" type='toLeft' width={10} height={100} />
         <div className="Project__gallery">
@@ -33,10 +28,39 @@ const Project = props => {
             return <img className="Project__photo" key={i} src={`${process.env.PUBLIC_URL}/${imgUrl}`} alt="sample project" />
           })}
         </div>
+        
         {/* BOTTOM SECTION */}
         <Skim className="Project__Skim Project__Skim--description" type='project' width={85} height={100} />
-        <div className="Project__description">{project.fullDesc}</div>
-        {/* <div className="Project__id">0{project.id}</div> */}
+        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" />
+        <div className="Project__info">
+          <div className="Project__description">{project.fullDesc}</div>
+          <div className="Project__details">
+            <div className="Project__techStack">
+              <div className="Project__detailsText Project__detailsText--title" style={{color: project.color}}>
+                {`Tech\nStack`}
+              </div>
+              {project.techStack.map((tech, i) => {
+                return <div className="Project__detailsText Project__detailsText--text" key={i}>{tech}</div>
+              })}
+            </div>
+            <div className="Project__year">
+              <div className="Project__detailsText Project__detailsText--title" style={{color: project.color}}>
+                Year
+              </div>
+              <div className="Project__detailsText Project__detailsText--text">
+                {project.year}
+              </div>
+            </div>
+            <div className="Project__role">
+              <div className="Project__detailsText Project__detailsText--title" style={{color: project.color}}>
+                Role
+              </div>
+              <div className="Project__detailsText Project__detailsText--text">
+                {project.role}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="Project__art">

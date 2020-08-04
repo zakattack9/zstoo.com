@@ -8,6 +8,8 @@ const PROJECT_DATA = [
     techStack: ['React', 'CSS', 'Node.js', 'Heroku'],
     githubLink: "",
     imageUrls: ['images/projects/Stockup1.png', 'images/projects/Stockup1.png'],
+    year: 2019,
+    role: 'Full Stack',
     color: '#00D35E',
   },
   {
