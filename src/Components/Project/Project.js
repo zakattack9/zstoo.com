@@ -30,7 +30,7 @@ const Project = props => {
         </div>
         
         {/* BOTTOM SECTION */}
-        <Skim className="Project__Skim Project__Skim--description" type='project' width={85} height={100} />
+        <Skim className="Project__Skim Project__Skim--art" type='project' width={85} height={100} />
         <GitHub className="Project__GitHub" pathName="Project__GitHub--path" />
         <div className="Project__info">
           <div className="Project__description">{project.fullDesc}</div>
@@ -58,6 +58,9 @@ const Project = props => {
               <div className="Project__detailsText Project__detailsText--text">
                 {project.role}
               </div>
+            </div>
+            <div className="Project__link">
+              <div className="Project__linkText">Visit {project.name} &gt; </div>
             </div>
           </div>
         </div>

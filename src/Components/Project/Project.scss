@@ -64,15 +64,16 @@
       right: 0;
     }
 
-    &--description {
+    &--art {
       z-index: 1;
       grid-column: 1 / 3;
-      grid-row: 4 / 5;
+      grid-row: 1 / 5;
     }
   }
 
   &__title {
     grid-area: middle;
+    z-index: 2;
     font-size: 22pt;
     font-weight: bold;
     font-style: italic;
@@ -115,11 +116,11 @@
     grid-area: github;
     z-index: 5;
     width: 20%;
-    padding: 17% 0 0 17%;
+    padding: 17% 0 0 21%;
 
     &--path {
       stroke: url('#1');
-      stroke-width: 3;
+      stroke-width: 2;
       filter: saturate(200%);
     }
   }
@@ -129,17 +130,19 @@
     grid-column: 1 / 3;
     z-index: 3;
     overflow-y: auto;
-    padding: 1.3em 1em 2em $column-left;
+    padding: 1.3em 0em 2em $column-left;
   }
 
   &__description {
     font-size: 11.5pt;
     white-space: pre-line;
     line-height: 1.25em;
+    padding-right: 1em;
   }
 
   &__details {
     padding-top: 1.5em;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -150,7 +153,14 @@
 
   &__techStack { grid-area: tech; }
   &__year { grid-area: year; }
-  &__role { grid-area: role; }
+  &__role { 
+    grid-area: role;
+    padding-right: 1em;
+  }
+  &__link { 
+    grid-area: link; 
+    position: relative;
+  }
 
   &__detailsText {
     font-size: 10pt;
@@ -166,5 +176,22 @@
       font-style: italic;
       color: #a5a5a5;
     }
+  }
+
+  &__linkText {
+    font-size: 10.5pt;
+    font-style: italic;
+    line-height: 1.7em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 110%;
+    position: absolute;
+    bottom: 10%;
+    padding-top: 0.22em;
+    color: #AFD560;
+    border: 1px solid #49CC59;
+    box-shadow: -1px 0px 8px #067c14;
+    text-shadow: -1px 0px 5px #769434;
+    border-radius: 50px;
   }
 }
