@@ -16,7 +16,6 @@ const Project = props => {
   useEffect(() => {
     const { projectId } = location.state;
     const projectData = PROJECT_DATA.find(project => project.id === projectId);
-    console.log("PROJECT DATA", projectData)
     setProject(projectData);
   }, [location]);
   
