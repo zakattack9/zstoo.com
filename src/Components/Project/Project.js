@@ -30,7 +30,6 @@ const Project = props => {
        });
      }
   }, [project]);
-  console.log(project)
   
   return project ? (
     <div className="Project">

@@ -9,7 +9,7 @@ import Spacer from '../Spacer';
 import Skim from '../Skim/Skim';
 import './Projects.scss';
 
-const Projects = () => {
+const Projects = (props) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const projectsTimeline = gsap.timeline({ 
@@ -121,6 +121,7 @@ const Projects = () => {
               desc={project.shortDesc} 
               id={project.id} 
               key={i} 
+              projectClick={props.projectClick}
             />
         )})}
       </div>
