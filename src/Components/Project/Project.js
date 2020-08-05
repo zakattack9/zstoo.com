@@ -14,21 +14,26 @@ const Project = props => {
   const [projectLinkStyles, setProjectLinkStyles] = useState({});
 
   useEffect(() => {
-    const { projectId } = location.state;
-    const projectData = PROJECT_DATA.find(project => project.id === projectId);
+    const projectId = location?.state?.projectId || 1;
+    const projectData = PROJECT_DATA.find(projectObj => projectObj.id === projectId);
     setProject(projectData);
   }, [location]);
   
   useEffect(() => {
-     if (project) {
-       setProjectLinkStyles({
-         color: project.colors.text,
-         textShadow: `-1px 0px 5px ${project.colors.textShadow}`,
-         border: `1px solid ${project.colors.border}`,
-         boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
-       });
-     }
+    if (project) {
+      setProjectLinkStyles({
+        color: project.colors.text,
+        textShadow: `-1px 0px 5px ${project.colors.textShadow}`,
+        border: `1px solid ${project.colors.border}`,
+        boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
+      });
+    }
   }, [project]);
+
+  const nextProject = () => {
+    const nextProject = PROJECT_DATA.find(projectObj => projectObj.id === project.id + 1) || PROJECT_DATA[0];
+    setProject(nextProject);
+  }
   
   return project ? (
     <div className="Project">
@@ -38,7 +43,7 @@ const Project = props => {
         
         {/* MIDDLE SECTION */}
         <div className="Project__title">{project.name}</div>
-        <NavLink className="Project__NavLink Project__NavLink--NextProject" text={`Next\nProject`} lineWidth={15} />
+        <NavLink className="Project__NavLink Project__NavLink--NextProject" text={`Next\nProject`} lineWidth={15} onClick={nextProject} />
         <ProjectId className="Project__id" projectId={project.id} />
        
         {/* GALLERY SECTION */}
