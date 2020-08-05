@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { Project as Abstract, GitHub } from '../../SVGs/SVG';
+import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
 import Skim from '../Skim/Skim';
 import NavLink from '../NavLink/NavLink';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Project.scss';
 
 const Project = props => {
-  const { projectId = 1 } = props;
+  const { projectId = 3 } = props;
   const project = PROJECT_DATA.find(project => project.id === projectId);
+  const projectLinkStyles = {
+    color: project.colors.text,
+    textShadow: `-1px 0px 5px ${project.colors.textShadow}`,
+    border: `1px solid ${project.colors.border}`,
+    boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
+  }
 
   return (
     <div className="Project">
@@ -19,7 +25,7 @@ const Project = props => {
         {/* MIDDLE SECTION */}
         <div className="Project__title">{project.name}</div>
         <NavLink className="Project__NavLink Project__NavLink--NextProject" text={`Next\nProject`} lineWidth={15} />
-        <div className="Project__id">0{project.id}</div>
+        <ProjectId className="Project__id" projectId={project.id} />
        
         {/* GALLERY SECTION */}
         <Skim className="Project__Skim Project__Skim--gallery" type='toLeft' width={10} height={100} />
@@ -30,13 +36,12 @@ const Project = props => {
         </div>
         
         {/* BOTTOM SECTION */}
-        <Skim className="Project__Skim Project__Skim--art" type='project' width={85} height={100} />
-        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" />
+        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" projectId={project.id} />
         <div className="Project__info">
           <div className="Project__description">{project.fullDesc}</div>
           <div className="Project__details">
             <div className="Project__techStack">
-              <div className="Project__detailsText Project__detailsText--title" style={{color: project.color}}>
+              <div className="Project__detailsText Project__detailsText--header" style={{color: project.colors.header}}>
                 {`Tech\nStack`}
               </div>
               {project.techStack.map((tech, i) => {
@@ -44,7 +49,7 @@ const Project = props => {
               })}
             </div>
             <div className="Project__year">
-              <div className="Project__detailsText Project__detailsText--title" style={{color: project.color}}>
+              <div className="Project__detailsText Project__detailsText--header" style={{color: project.colors.header}}>
                 Year
               </div>
               <div className="Project__detailsText Project__detailsText--text">
@@ -52,7 +57,7 @@ const Project = props => {
               </div>
             </div>
             <div className="Project__role">
-              <div className="Project__detailsText Project__detailsText--title" style={{color: project.color}}>
+              <div className="Project__detailsText Project__detailsText--header" style={{color: project.colors.header}}>
                 Role
               </div>
               <div className="Project__detailsText Project__detailsText--text">
@@ -60,14 +65,15 @@ const Project = props => {
               </div>
             </div>
             <div className="Project__link">
-              <div className="Project__linkText">Visit {project.name} &gt; </div>
+              <div className="Project__linkText" style={projectLinkStyles}>Visit Project &gt; </div>
             </div>
           </div>
         </div>
+        <Skim className="Project__Skim Project__Skim--art" type='project' width={85} height={100} />
       </div>
 
       <div className="Project__art">
-        <Abstract className="Project__abstract" pathName="Project__abstract--path" />
+        <Abstract className="Project__abstract" pathName="Project__abstract--path" projectId={project.id} />
       </div>
     </div>
   );

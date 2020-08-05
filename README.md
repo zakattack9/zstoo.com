@@ -41,6 +41,8 @@
   - **Solved: exported abstract glow graphics as web PNGs**
 
 ### TODO
+- convert project id's on home page to use `ProjectId` SVG 
+  - remove `HelveticaBoldOutline.woff` font once converted
 - design desktop views and compatibility
 - UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components

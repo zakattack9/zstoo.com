@@ -233,64 +233,101 @@ export const Projects = props => {
 }
 
 export const Project = props => {
+  const linearGradient = () => {
+    switch (props.projectId) {
+      case 1:
+        return (
+          <>
+            <stop offset=".092%" stopColor="#23A433" />
+            <stop offset="100%" stopColor="#E5F405" />
+          </>
+        );
+      case 2:
+        return (
+          <>
+            <stop offset=".092%" stop-color="#0BB58C" />
+            <stop offset="55.326%" stop-color="#E1BF19" />
+            <stop offset="99.987%" stop-color="#FF902A" />
+          </>
+        );
+      case 3:
+        return (
+          <>
+            <stop offset=".092%" stop-color="#FA056D" />
+            <stop offset="99.987%" stop-color="#FFB200" />
+          </>
+        );
+      case 4:
+        return (
+          <>
+            <stop offset=".092%" stop-color="#6C00FB" />
+            <stop offset="87.542%" stop-color="#DA2E16" />
+            <stop offset="100%" stop-color="#FFB300" />
+          </>
+        );
+      case 5:
+        return (
+          <>
+            <stop offset=".092%" stop-color="#0EDBB4" />
+            <stop offset="68.811%" stop-color="#0066BA" />
+            <stop offset="99.987%" stop-color="#0059DD" />
+          </>
+        );
+
+      default:
+        return (
+          <>
+            <stop offset="0%" stopColor="#C5C5C5" />
+            <stop offset="100%" stopColor="#2F2F2F" />
+          </>
+        );
+    }
+  }
+
   return (
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 377 803" preserveAspectRatio="none">
       <defs>
         <linearGradient id="project-a" x1="70.68%" x2="29.72%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-b" x1="70.373%" x2="30.021%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-c" x1="70.071%" x2="30.317%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-d" x1="69.776%" x2="30.606%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-e" x1="69.45%" x2="30.891%" y1="5.993%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-f" x1="69.486%" x2="30.891%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-g" x1="69.202%" x2="31.17%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-h" x1="68.923%" x2="31.443%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-i" x1="68.649%" x2="31.712%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-j" x1="68.38%" x2="31.976%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-k" x1="68.116%" x2="32.235%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-l" x1="67.856%" x2="32.489%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-m" x1="67.602%" x2="32.739%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
         <linearGradient id="project-n" x1="67.352%" x2="32.984%" y1="5.892%" y2="114.544%">
-          <stop offset=".092%" stopColor="#23A433" />
-          <stop offset="100%" stopColor="#E5F405" />
+          {linearGradient()}
         </linearGradient>
       </defs>
       <g fill="none" fillRule="evenodd" strokeWidth="2" transform="translate(1 1)">
@@ -309,6 +346,22 @@ export const Project = props => {
         <path className={props.pathName} stroke="url(#project-m)" d="M0,780.537695 C42.4052002,752.002924 75.9052002,703.417153 100.5,635.688332 C137.3922,538.153522 100.065049,544.202439 177.059416,429.583868 C254.053783,327.05817 240.710417,357.910845 257.806605,247.238055 C274.902793,139.605153 359.749045,180.427652 375,181.137094" />
         <path className={props.pathName} stroke="url(#project-n)" d="M0,800.537695 C42.4052002,771.438135 75.9052002,722.406182 100.5,654.349787 C137.3922,556.323615 100.065049,562.869687 177.059416,447.225639 C254.053783,343.674464 240.710417,374.704858 257.806605,263.804367 C274.902793,155.943763 359.749045,195.636207 375,196.142524" />
       </g>
+    </svg>
+  );
+}
+
+export const ProjectId = props => {
+  return (
+    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130">
+      <defs>
+        <linearGradient id="gradient" x1="50%" x2="50%" y1="24.901%" y2="78.804%">
+          <stop offset="0%" stop-color="#626262"/>
+          <stop offset="100%" stop-color="#1D1D1D"/>
+        </linearGradient>
+      </defs>
+      <text fill="#49CC59" fill-opacity="0" fill-rule="evenodd" stroke="url(#gradient)" stroke-width="3" font-size="170" font-weight="bold" letter-spacing="10">
+        <tspan x="-2" y="123">0{props.projectId}</tspan>
+      </text>
     </svg>
   );
 }
@@ -449,7 +502,7 @@ export const GitHub = props => {
           <stop stop-color="#20ADB6" offset="99.9076225%"></stop>
         </linearGradient>
       </defs>
-      <path className={props.pathName} fill="none" stroke="url(#contact)" d="M188.574194,295 C170.118145,295 156,309.370747 156,328.299736 C156,343.434739 165.287903,356.386153 178.554435,360.944395 C180.257661,361.258286 180.856452,360.180139 180.856452,359.293056 C180.856452,358.446915 180.816532,353.779493 180.816532,350.913532 C180.816532,350.913532 171.502016,352.960647 169.545968,346.846597 C169.545968,346.846597 168.029032,342.875194 165.846774,341.851637 C165.846774,341.851637 162.799597,339.70899 166.059677,339.749932 C166.059677,339.749932 169.372984,340.022881 171.195968,343.27097 C174.110081,348.538879 178.993548,347.024014 180.896371,346.123283 C181.202419,343.939694 182.067339,342.424829 183.025403,341.524099 C175.587097,340.677958 168.082258,339.572516 168.082258,326.443685 C168.082258,322.690641 169.093548,320.807296 171.222581,318.405347 C170.876613,317.518264 169.745565,313.860752 171.568548,309.13874 C174.349597,308.251657 180.75,312.823547 180.75,312.823547 C183.41129,312.059291 186.272177,311.663515 189.106452,311.663515 C191.940726,311.663515 194.801613,312.059291 197.462903,312.823547 C197.462903,312.823547 203.863306,308.23801 206.644355,309.13874 C208.467339,313.8744 207.33629,317.518264 206.990323,318.405347 C209.119355,320.820943 210.423387,322.704289 210.423387,326.443685 C210.423387,339.613458 202.585887,340.66431 195.147581,341.524099 C196.371774,342.602246 197.409677,344.649361 197.409677,347.856507 C197.409677,352.455692 197.369758,358.146672 197.369758,359.265761 C197.369758,360.152844 197.981855,361.230992 199.671774,360.917101 C212.978226,356.386153 222,343.434739 222,328.299736 C222,309.370747 207.030242,295 188.574194,295 Z" transform="translate(-155 -294)" />
+      <path className={props.pathName} fill="none" stroke={props.projectId ? `url(#${props.projectId})` : "url(#contact)"} d="M188.574194,295 C170.118145,295 156,309.370747 156,328.299736 C156,343.434739 165.287903,356.386153 178.554435,360.944395 C180.257661,361.258286 180.856452,360.180139 180.856452,359.293056 C180.856452,358.446915 180.816532,353.779493 180.816532,350.913532 C180.816532,350.913532 171.502016,352.960647 169.545968,346.846597 C169.545968,346.846597 168.029032,342.875194 165.846774,341.851637 C165.846774,341.851637 162.799597,339.70899 166.059677,339.749932 C166.059677,339.749932 169.372984,340.022881 171.195968,343.27097 C174.110081,348.538879 178.993548,347.024014 180.896371,346.123283 C181.202419,343.939694 182.067339,342.424829 183.025403,341.524099 C175.587097,340.677958 168.082258,339.572516 168.082258,326.443685 C168.082258,322.690641 169.093548,320.807296 171.222581,318.405347 C170.876613,317.518264 169.745565,313.860752 171.568548,309.13874 C174.349597,308.251657 180.75,312.823547 180.75,312.823547 C183.41129,312.059291 186.272177,311.663515 189.106452,311.663515 C191.940726,311.663515 194.801613,312.059291 197.462903,312.823547 C197.462903,312.823547 203.863306,308.23801 206.644355,309.13874 C208.467339,313.8744 207.33629,317.518264 206.990323,318.405347 C209.119355,320.820943 210.423387,322.704289 210.423387,326.443685 C210.423387,339.613458 202.585887,340.66431 195.147581,341.524099 C196.371774,342.602246 197.409677,344.649361 197.409677,347.856507 C197.409677,352.455692 197.369758,358.146672 197.369758,359.265761 C197.369758,360.152844 197.981855,361.230992 199.671774,360.917101 C212.978226,356.386153 222,343.434739 222,328.299736 C222,309.370747 207.030242,295 188.574194,295 Z" transform="translate(-155 -294)" />
     </svg>
   );
 }
