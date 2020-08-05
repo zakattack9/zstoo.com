@@ -14,8 +14,6 @@ const Skim = props => {
   ) : (
     <div className={`${props.className} Skim`} style={styles}></div>
   );
-
-
 }
 
 export default Skim;

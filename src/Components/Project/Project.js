@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
 import ProjectGlow from '../ProjectGlow';

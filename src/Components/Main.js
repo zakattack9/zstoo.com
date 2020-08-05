@@ -9,9 +9,7 @@ import './Main.scss';
 const Main = () => {
   const [projectId, setProjectId] = useState(null);
 
-  const projectClick = (id) => {
-    setProjectId(id);
-  }
+  const projectClick = (id) => setProjectId(id);
 
   if (projectId) {
     return <Redirect push to={{

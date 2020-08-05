@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './index.scss';
 import Main from './Components/Main';
 import Project from './Components/Project/Project';
+import ContactForm from './Components/ContactForm/ContactForm';
+import './index.scss';
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
           </Route>
           <Route path="/project">
             <Project />
+          </Route>
+          <Route path="/contact">
+            <ContactForm />
           </Route>
         </Switch>
       </Router>
