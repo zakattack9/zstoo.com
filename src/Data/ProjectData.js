@@ -74,7 +74,7 @@ const PROJECT_DATA = [
   },
   {
     id: 5,
-    name: "chromaVibez",
+    name: "Chroma Vibez",
     shortDesc: "Finds Spotify playlists based off photos",
     fullDesc: "Stockup is an application leveraging web scraping and APIs to gather news about stocks from various sources.\n\nThe UI is built with React and interacts with a Node.js backend that handles all the parsing of news articles and stock ticker information.",
     techStack: ['Spotify', 'HTML', 'CSS', 'JS'],

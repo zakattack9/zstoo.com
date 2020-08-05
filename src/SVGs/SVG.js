@@ -245,32 +245,32 @@ export const Project = props => {
       case 2:
         return (
           <>
-            <stop offset=".092%" stop-color="#0BB58C" />
-            <stop offset="55.326%" stop-color="#E1BF19" />
-            <stop offset="99.987%" stop-color="#FF902A" />
+            <stop offset=".092%" stopColor="#0BB58C" />
+            <stop offset="55.326%" stopColor="#E1BF19" />
+            <stop offset="99.987%" stopColor="#FF902A" />
           </>
         );
       case 3:
         return (
           <>
-            <stop offset=".092%" stop-color="#FA056D" />
-            <stop offset="99.987%" stop-color="#FFB200" />
+            <stop offset=".092%" stopColor="#FA056D" />
+            <stop offset="99.987%" stopColor="#FFB200" />
           </>
         );
       case 4:
         return (
           <>
-            <stop offset=".092%" stop-color="#6C00FB" />
-            <stop offset="87.542%" stop-color="#DA2E16" />
-            <stop offset="100%" stop-color="#FFB300" />
+            <stop offset=".092%" stopColor="#6C00FB" />
+            <stop offset="87.542%" stopColor="#DA2E16" />
+            <stop offset="100%" stopColor="#FFB300" />
           </>
         );
       case 5:
         return (
           <>
-            <stop offset=".092%" stop-color="#0EDBB4" />
-            <stop offset="68.811%" stop-color="#0066BA" />
-            <stop offset="99.987%" stop-color="#0059DD" />
+            <stop offset=".092%" stopColor="#0EDBB4" />
+            <stop offset="68.811%" stopColor="#0066BA" />
+            <stop offset="99.987%" stopColor="#0059DD" />
           </>
         );
 
@@ -355,11 +355,11 @@ export const ProjectId = props => {
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130">
       <defs>
         <linearGradient id="gradient" x1="50%" x2="50%" y1="24.901%" y2="78.804%">
-          <stop offset="0%" stop-color="#626262"/>
-          <stop offset="100%" stop-color="#1D1D1D"/>
+          <stop offset="0%" stopColor="#626262"/>
+          <stop offset="100%" stopColor="#191919"/>
         </linearGradient>
       </defs>
-      <text fill="#49CC59" fill-opacity="0" fill-rule="evenodd" stroke="url(#gradient)" stroke-width="3" font-size="170" font-weight="bold" letter-spacing="10">
+      <text fill="#49CC59" fillOpacity="0" fillRule="evenodd" stroke="url(#gradient)" strokeWidth="3" fontSize="170" fontWeight="bold" letterSpacing="10">
         <tspan x="-2" y="123">0{props.projectId}</tspan>
       </text>
     </svg>
@@ -482,24 +482,24 @@ export const GitHub = props => {
           <stop offset="100%" stopColor="#C8C8C8" />
         </linearGradient>
         <linearGradient id="1" x1="96.3747885%" y1="9.6278719%" x2="4.94196496%" y2="108.534912%">
-          <stop stop-color="#CEC424" offset="0%"></stop>
-          <stop stop-color="#00550A" offset="99.9076225%"></stop>
+          <stop stopColor="#CEC424" offset="0%"></stop>
+          <stop stopColor="#00550A" offset="99.9076225%"></stop>
         </linearGradient>
         <linearGradient id="2" x1="98.6953695%" y1="7.37999667%" x2="26.9082257%" y2="73.8015301%">
-          <stop stop-color="#F9851A" offset="0.0131967905%"></stop>
-          <stop stop-color="#16A180" offset="100%"></stop>
+          <stop stopColor="#F9851A" offset="0.0131967905%"></stop>
+          <stop stopColor="#16A180" offset="100%"></stop>
         </linearGradient>
         <linearGradient id="3" x1="99.1810498%" y1="6.91827758%" x2="2.0728209%" y2="97.9837388%">
-          <stop stop-color="#FAAF00" offset="0%"></stop>
-          <stop stop-color="#D5005A" offset="99.9076225%"></stop>
+          <stop stopColor="#FAAF00" offset="0%"></stop>
+          <stop stopColor="#D5005A" offset="99.9076225%"></stop>
         </linearGradient>
         <linearGradient id="4" x1="99.5625792%" y1="6.56048968%" x2="2.24035538%" y2="97.8266295%">
-          <stop stop-color="#FF5627" offset="0.0131967905%"></stop>
-          <stop stop-color="#6500EC" offset="99.9076225%"></stop>
+          <stop stopColor="#FF5627" offset="0.0131967905%"></stop>
+          <stop stopColor="#6500EC" offset="99.9076225%"></stop>
         </linearGradient>
         <linearGradient id="5" x1="99.989329%" y1="4.45416229%" x2="19.2141505%" y2="95.3917448%">
-          <stop stop-color="#035EE5" offset="0.0131967905%"></stop>
-          <stop stop-color="#20ADB6" offset="99.9076225%"></stop>
+          <stop stopColor="#035EE5" offset="0.0131967905%"></stop>
+          <stop stopColor="#20ADB6" offset="99.9076225%"></stop>
         </linearGradient>
       </defs>
       <path className={props.pathName} fill="none" stroke={props.projectId ? `url(#${props.projectId})` : "url(#contact)"} d="M188.574194,295 C170.118145,295 156,309.370747 156,328.299736 C156,343.434739 165.287903,356.386153 178.554435,360.944395 C180.257661,361.258286 180.856452,360.180139 180.856452,359.293056 C180.856452,358.446915 180.816532,353.779493 180.816532,350.913532 C180.816532,350.913532 171.502016,352.960647 169.545968,346.846597 C169.545968,346.846597 168.029032,342.875194 165.846774,341.851637 C165.846774,341.851637 162.799597,339.70899 166.059677,339.749932 C166.059677,339.749932 169.372984,340.022881 171.195968,343.27097 C174.110081,348.538879 178.993548,347.024014 180.896371,346.123283 C181.202419,343.939694 182.067339,342.424829 183.025403,341.524099 C175.587097,340.677958 168.082258,339.572516 168.082258,326.443685 C168.082258,322.690641 169.093548,320.807296 171.222581,318.405347 C170.876613,317.518264 169.745565,313.860752 171.568548,309.13874 C174.349597,308.251657 180.75,312.823547 180.75,312.823547 C183.41129,312.059291 186.272177,311.663515 189.106452,311.663515 C191.940726,311.663515 194.801613,312.059291 197.462903,312.823547 C197.462903,312.823547 203.863306,308.23801 206.644355,309.13874 C208.467339,313.8744 207.33629,317.518264 206.990323,318.405347 C209.119355,320.820943 210.423387,322.704289 210.423387,326.443685 C210.423387,339.613458 202.585887,340.66431 195.147581,341.524099 C196.371774,342.602246 197.409677,344.649361 197.409677,347.856507 C197.409677,352.455692 197.369758,358.146672 197.369758,359.265761 C197.369758,360.152844 197.981855,361.230992 199.671774,360.917101 C212.978226,356.386153 222,343.434739 222,328.299736 C222,309.370747 207.030242,295 188.574194,295 Z" transform="translate(-155 -294)" />

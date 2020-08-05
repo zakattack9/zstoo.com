@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Redirect, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
 import ProjectGlow from '../ProjectGlow';
@@ -8,16 +9,30 @@ import PROJECT_DATA from '../../Data/ProjectData';
 import './Project.scss';
 
 const Project = props => {
-  const { projectId = 1 } = props;
-  const project = PROJECT_DATA.find(project => project.id === projectId);
-  const projectLinkStyles = {
-    color: project.colors.text,
-    textShadow: `-1px 0px 5px ${project.colors.textShadow}`,
-    border: `1px solid ${project.colors.border}`,
-    boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
-  }
+  const location = useLocation();
+  const [project, setProject] = useState(null);
+  const [projectLinkStyles, setProjectLinkStyles] = useState({});
 
-  return (
+  useEffect(() => {
+    const { projectId } = location.state;
+    const projectData = PROJECT_DATA.find(project => project.id === projectId);
+    console.log("PROJECT DATA", projectData)
+    setProject(projectData);
+  }, [location]);
+  
+  useEffect(() => {
+     if (project) {
+       setProjectLinkStyles({
+         color: project.colors.text,
+         textShadow: `-1px 0px 5px ${project.colors.textShadow}`,
+         border: `1px solid ${project.colors.border}`,
+         boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
+       });
+     }
+  }, [project]);
+  console.log(project)
+  
+  return project ? (
     <div className="Project">
       <div className="Project__data">
         {/* TOP SECTION */}
@@ -78,7 +93,7 @@ const Project = props => {
         <ProjectGlow className="Project__glow" projectId={project.id} />
       </div>
     </div>
-  );
+  ) : (<></>);
 }
 
 export default Project;
