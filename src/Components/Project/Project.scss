@@ -20,6 +20,16 @@
     // z-index: 2;
     transform: translateY(-50%);
     filter: saturate(120%);
+    // opacity: 0;
+  }
+
+  &__glow {
+    width: 130%;
+    height: 135%;
+    position: absolute;
+    left: -17%;
+    top: -17%;
+    filter: saturate(170%);
   }
 
   &__data {
@@ -177,18 +187,13 @@
   &__linkText {
     font-size: 10.5pt;
     font-style: italic;
-    line-height: 1.7em;
     text-align: center;
     text-transform: uppercase;
+    line-height: 1.7em;
     width: 110%;
     position: absolute;
     bottom: 10%;
     padding: 0.42em 0 0.2em 0;
     border-radius: 50px;
-
-    // color: #AFD560;
-    // text-shadow: -1px 0px 5px #769434;
-    // border: 1px solid #49CC59;
-    // box-shadow: -1px 0px 8px #067c14;
   }
 }

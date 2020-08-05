@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
+import ProjectGlow from '../ProjectGlow';
 import Skim from '../Skim/Skim';
 import NavLink from '../NavLink/NavLink';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Project.scss';
 
 const Project = props => {
-  const { projectId = 3 } = props;
+  const { projectId = 1 } = props;
   const project = PROJECT_DATA.find(project => project.id === projectId);
   const projectLinkStyles = {
     color: project.colors.text,
@@ -74,6 +75,7 @@ const Project = props => {
 
       <div className="Project__art">
         <Abstract className="Project__abstract" pathName="Project__abstract--path" projectId={project.id} />
+        <ProjectGlow className="Project__glow" projectId={project.id} />
       </div>
     </div>
   );
