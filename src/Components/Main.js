@@ -13,7 +13,7 @@ const Main = () => {
 
   if (projectId) {
     return <Redirect push to={{
-      pathname: "/project",
+      pathname: `/project/${projectId}`,
       state: { projectId } 
     }}/>
   }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useLocation, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
 import ProjectGlow from '../ProjectGlow';
@@ -9,20 +9,30 @@ import PROJECT_DATA from '../../Data/ProjectData';
 import './Project.scss';
 
 const Project = props => {
-  const location = useLocation();
   const history = useHistory();
+  const { id } = useParams();
   const [project, setProject] = useState(null);
   const [projectLinkStyles, setProjectLinkStyles] = useState({});
-  const galleryRef = useRef(null);
-  const projectRef = useRef(null);
-  const { id } = useParams();
+  const galleryRef = useRef();
+  const infoRef = useRef();
+  const projectRef = useRef();
+  // immutable refs to store GSAP animations
+  const projectAnimation = useRef();
+  const projectAnimationOut = useRef();
+
+  useEffect(() => {
+    // const { action, location } = history;
+    if (project) {
+      if (projectAnimation.current) projectAnimation.current.pause();
+      if (projectAnimationOut.current) projectAnimationOut.current.pause();
+    }
+  }, [history, history.location]); // eslint-disable-line
   
   useEffect(() => {
-    const projectId = location?.state?.projectId || +id || 1;
-    const projectData = PROJECT_DATA.find(projectObj => projectObj.id === projectId);
+    const projectData = PROJECT_DATA.find(projectObj => projectObj.id === +id);
     if (!projectData) history.push(`/project/1`);
     setProject(projectData);
-  }, [location]);
+  }, [id]); // eslint-disable-line
   
   useEffect(() => {
     if (project) {
@@ -33,7 +43,7 @@ const Project = props => {
         boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
       });
 
-      const projectTimeline = gsap.timeline({});
+      const projectTimeline = gsap.timeline({ paused: true });
       projectTimeline.fromTo('.Project__photo', {
         xPercent: 40,
         opacity: 0,
@@ -117,7 +127,9 @@ const Project = props => {
         opacity: 1,
         xPercent: 0,
       }, 'NavLinkIn');
+      projectAnimation.current = projectTimeline.play();
 
+      // prevents project from quickly displayings before GSAP animation is fully created
       projectRef.current.classList.remove('hide');
     }
   }, [project]);
@@ -125,22 +137,25 @@ const Project = props => {
   const nextProject = () => {
     const nextProject = PROJECT_DATA.find(projectObj => projectObj.id === project.id + 1) || PROJECT_DATA[0];
     const animationComplete = () => {
-      history.push(`/project/${nextProject.id}`);
-      galleryRef.current.scrollLeft = 0;
-      setProject(nextProject);
+      if (history.location.pathname.includes("/project")) {
+        galleryRef.current.scrollLeft = 0;
+        infoRef.current.scrollTop = 0;
+        history.push(`/project/${nextProject.id}`);
+      }
     }
     
     const projectTimelineOut = gsap.timeline({
       onComplete: animationComplete,
+      paused: true,
     });
     projectTimelineOut.to('.Project__NavLink--AllProjects', {
-      duration: 1,
+      duration: 0.8,
       ease: 'ease.inOut',
       opacity: 0,
       xPercent: -20,
     }, 0);
     projectTimelineOut.to('.Project__NavLink--NextProject', {
-      duration: 1,
+      duration: 0.8,
       ease: 'ease.inOut',
       opacity: 0,
       xPercent: 70,
@@ -191,6 +206,7 @@ const Project = props => {
       opacity: 0,
       yPercent: -5,
     }, '<');
+    projectAnimationOut.current = projectTimelineOut.play();
   }
   
   return project ? (
@@ -214,7 +230,7 @@ const Project = props => {
         
         {/* BOTTOM SECTION */}
         <GitHub className="Project__GitHub" pathName="Project__GitHub--path" projectId={project.id} />
-        <div className="Project__info">
+        <div className="Project__info" ref={infoRef}>
           <div className="Project__description">{project.fullDesc}</div>
           <div className="Project__details">
             <div className="Project__techStack">
