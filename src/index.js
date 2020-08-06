@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Main from './Components/Main';
 import Project from './Components/Project/Project';
 import ContactForm from './Components/ContactForm/ContactForm';
@@ -14,8 +14,11 @@ const App = () => {
           <Route path="/" exact>
             <Main />
           </Route>
-          <Route path="/project">
+          <Route path="/project/:id">
             <Project />
+          </Route>
+          <Route path="/project">
+            <Redirect to="/project/1" />
           </Route>
           <Route path="/contact">
             <ContactForm />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory, useParams } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
 import ProjectGlow from '../ProjectGlow';
@@ -10,12 +10,17 @@ import './Project.scss';
 
 const Project = props => {
   const location = useLocation();
+  const history = useHistory();
   const [project, setProject] = useState(null);
   const [projectLinkStyles, setProjectLinkStyles] = useState({});
-
+  const galleryRef = useRef(null);
+  const projectRef = useRef(null);
+  const { id } = useParams();
+  
   useEffect(() => {
-    const projectId = location?.state?.projectId || 1;
+    const projectId = location?.state?.projectId || +id || 1;
     const projectData = PROJECT_DATA.find(projectObj => projectObj.id === projectId);
+    if (!projectData) history.push(`/project/1`);
     setProject(projectData);
   }, [location]);
   
@@ -112,12 +117,16 @@ const Project = props => {
         opacity: 1,
         xPercent: 0,
       }, 'NavLinkIn');
+
+      projectRef.current.classList.remove('hide');
     }
   }, [project]);
 
   const nextProject = () => {
     const nextProject = PROJECT_DATA.find(projectObj => projectObj.id === project.id + 1) || PROJECT_DATA[0];
     const animationComplete = () => {
+      history.push(`/project/${nextProject.id}`);
+      galleryRef.current.scrollLeft = 0;
       setProject(nextProject);
     }
     
@@ -177,7 +186,7 @@ const Project = props => {
       yPercent: 15,
     }, '<0.1');
     projectTimelineOut.to('.Project__info', {
-      duration: 0.8,
+      duration: 1,
       ease: 'power1.inOut',
       opacity: 0,
       yPercent: -5,
@@ -185,7 +194,7 @@ const Project = props => {
   }
   
   return project ? (
-    <div className="Project">
+    <div className="Project hide" ref={projectRef}>
       <div className="Project__data">
         {/* TOP SECTION */}
         <NavLink className="Project__NavLink Project__NavLink--AllProjects" text={`All\nProjects`} lineWidth={25} href='/' left />
@@ -197,7 +206,7 @@ const Project = props => {
        
         {/* GALLERY SECTION */}
         <Skim className="Project__Skim Project__Skim--gallery" type='toLeft' width={10} height={100} />
-        <div className="Project__gallery">
+        <div className="Project__gallery" ref={galleryRef}>
           {project.imageUrls.map((imgUrl, i) => {
             return <img className="Project__photo" key={i} src={`${process.env.PUBLIC_URL}/${imgUrl}`} alt="sample project" />
           })}
