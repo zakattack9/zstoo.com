@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
@@ -29,33 +29,40 @@ const Project = props => {
       });
 
       const projectTimeline = gsap.timeline({});
-      projectTimeline.from('.Project__photo', {
-        duration: 1.5,
-        ease: 'slow.inOut',
+      projectTimeline.fromTo('.Project__photo', {
         xPercent: 40,
         opacity: 0,
+      },{
+        duration: 1.5,
+        ease: 'slow.out',
+        xPercent: 0,
+        opacity: 1,
         stagger: {
           each: 0.2,
           from: 'start'
         }
       }, 0);
-      projectTimeline.from('.Project__title', {
-        duration: 1.6,
-        ease: 'slow.inOut',
+      projectTimeline.fromTo('.Project__title', {
         opacity: 0,
         yPercent: 15,
-      }, '<0.5');
-      projectTimeline.from('.Project__info', {
-        duration: 1.4,
+      }, {
+        duration: 1.6,
         ease: 'slow.inOut',
+        opacity: 1,
+        yPercent: 0,
+      }, '<0.5');
+      projectTimeline.fromTo('.Project__info', {
         opacity: 0,
         yPercent: -5,
+      }, {
+        duration: 1.4,
+        ease: 'slow.inOut',
+        opacity: 1,
+        yPercent: 0,
       }, '<');
-
       projectTimeline.fromTo('.Project__abstract--path', {
         strokeDashoffset: 770,
-      },
-      {
+      }, {
         duration: 2,
         ease: 'power1.out',
         strokeDashoffset: 0,
@@ -64,26 +71,33 @@ const Project = props => {
           from: 'end',
         }
       }, '>-1.5');
-      projectTimeline.from('.Project__GitHub--path', {
+      projectTimeline.fromTo('.Project__GitHub--path', {
+        strokeDashoffset: -395,
+      }, {
         duration: 0.8,
         ease: 'power1.inOut',
-        strokeDashoffset: -395,
+        strokeDashoffset: 0,
       }, '<0.7');
-      projectTimeline.from('.Project__id', {
-        duration: 1.5,
-        ease: 'slow.inOut',
+      projectTimeline.fromTo('.Project__id', {
         opacity: 0,
         xPercent: -5,
+      }, {
+        duration: 1.5,
+        ease: 'slow.inOut',
+        opacity: 1,
+        xPercent: 0,
       }, '<0.5');
-      projectTimeline.from('.Project__glow', {
+      projectTimeline.fromTo('.Project__glow', {
         opacity: 0,
+      }, {
+        duration: 0.5,
+        opacity: 1,
       }, '<0.3');
       projectTimeline.addLabel('NavLinkIn', '<0.2');
       projectTimeline.fromTo('.Project__NavLink--AllProjects', {
         opacity: 0,
         xPercent: -20,
-      },
-      {
+      }, {
         duration: 1,
         ease: 'ease.inOut',
         opacity: 1,
@@ -92,8 +106,7 @@ const Project = props => {
       projectTimeline.fromTo('.Project__NavLink--NextProject', {
         opacity: 0,
         xPercent: 70,
-      }, 
-      {
+      }, {
         duration: 1,
         ease: 'ease.inOut',
         opacity: 1,
@@ -107,6 +120,7 @@ const Project = props => {
     const animationComplete = () => {
       setProject(nextProject);
     }
+    
     const projectTimelineOut = gsap.timeline({
       onComplete: animationComplete,
     });
@@ -115,61 +129,59 @@ const Project = props => {
       ease: 'ease.inOut',
       opacity: 0,
       xPercent: -20,
-    }, 'NavLinkIn');
+    }, 0);
     projectTimelineOut.to('.Project__NavLink--NextProject', {
       duration: 1,
       ease: 'ease.inOut',
       opacity: 0,
       xPercent: 70,
-    }, 'NavLinkIn');
+    }, 0);
+    projectTimelineOut.to('.Project__glow', {
+      duration: 0.5,
+      opacity: 0,
+    }, 0);
     projectTimelineOut.to('.Project__abstract--path', {
       duration: 2,
       ease: 'power1.out',
       strokeDashoffset: -770,
       stagger: {
         each: 0.02,
-        from: 'end',
+        from: 'start',
       }
-    }, '>-1');
-
-    // projectTimelineOut.from('.Project__photo', {
-    //   duration: 1.5,
-    //   ease: 'slow.inOut',
-    //   xPercent: 40,
-    //   opacity: 0,
-    //   stagger: {
-    //     each: 0.2,
-    //     from: 'start'
-    //   }
-    // }, 0);
-    // projectTimelineOut.from('.Project__title', {
-    //   duration: 1.6,
-    //   ease: 'slow.inOut',
-    //   opacity: 0,
-    //   yPercent: 15,
-    // }, '<0.5');
-    // projectTimelineOut.from('.Project__info', {
-    //   duration: 1.4,
-    //   ease: 'slow.inOut',
-    //   opacity: 0,
-    //   yPercent: -5,
-    // }, '<');
-
-    
-    // projectTimelineOut.from('.Project__GitHub--path', {
-    //   duration: 0.8,
-    //   ease: 'power1.inOut',
-    //   strokeDashoffset: -395,
-    // }, '<0.7');
-    // projectTimelineOut.from('.Project__id', {
-    //   duration: 1.5,
-    //   ease: 'slow.inOut',
-    //   opacity: 0,
-    //   xPercent: -5,
-    // }, '<0.5');
-    // projectTimelineOut.from('.Project__glow', {
-    //   opacity: 0,
-    // }, '<0.3');
+    }, '<0.5');
+    projectTimelineOut.to('.Project__GitHub--path', {
+      duration: 0.8,
+      ease: 'power1.inOut',
+      strokeDashoffset: 395,
+    }, '<0.2');
+    projectTimelineOut.to('.Project__id', {
+      duration: 1.5,
+      ease: 'slow.inOut',
+      opacity: 0,
+      xPercent: -5,
+    }, '<0.1');
+    projectTimelineOut.to('.Project__photo', {
+      duration: 1.3,
+      ease: 'power1.inOut',
+      xPercent: 50,
+      opacity: 0,
+      stagger: {
+        each: 0.2,
+        from: 'end'
+      }
+    }, '<0.3');
+    projectTimelineOut.to('.Project__title', {
+      duration: 1,
+      ease: 'power1.inOut',
+      opacity: 0,
+      yPercent: 15,
+    }, '<0.1');
+    projectTimelineOut.to('.Project__info', {
+      duration: 0.8,
+      ease: 'power1.inOut',
+      opacity: 0,
+      yPercent: -5,
+    }, '<');
   }
   
   return project ? (
