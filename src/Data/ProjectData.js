@@ -69,7 +69,7 @@ const PROJECT_DATA = [
       text: '#ff682c',
       textShadow: '#cc3c02',
       border: '#7a1af7',
-      borderShadow: '#521b99',
+      borderShadow: '#6b24c7',
     }
   },
   {

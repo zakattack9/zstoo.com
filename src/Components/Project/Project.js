@@ -27,12 +27,149 @@ const Project = props => {
         border: `1px solid ${project.colors.border}`,
         boxShadow: `-1px 0px 8px ${project.colors.borderShadow}`,
       });
+
+      const projectTimeline = gsap.timeline({});
+      projectTimeline.from('.Project__photo', {
+        duration: 1.5,
+        ease: 'slow.inOut',
+        xPercent: 40,
+        opacity: 0,
+        stagger: {
+          each: 0.2,
+          from: 'start'
+        }
+      }, 0);
+      projectTimeline.from('.Project__title', {
+        duration: 1.6,
+        ease: 'slow.inOut',
+        opacity: 0,
+        yPercent: 15,
+      }, '<0.5');
+      projectTimeline.from('.Project__info', {
+        duration: 1.4,
+        ease: 'slow.inOut',
+        opacity: 0,
+        yPercent: -5,
+      }, '<');
+
+      projectTimeline.fromTo('.Project__abstract--path', {
+        strokeDashoffset: 770,
+      },
+      {
+        duration: 2,
+        ease: 'power1.out',
+        strokeDashoffset: 0,
+        stagger: {
+          each: 0.02,
+          from: 'end',
+        }
+      }, '>-1.5');
+      projectTimeline.from('.Project__GitHub--path', {
+        duration: 0.8,
+        ease: 'power1.inOut',
+        strokeDashoffset: -395,
+      }, '<0.7');
+      projectTimeline.from('.Project__id', {
+        duration: 1.5,
+        ease: 'slow.inOut',
+        opacity: 0,
+        xPercent: -5,
+      }, '<0.5');
+      projectTimeline.from('.Project__glow', {
+        opacity: 0,
+      }, '<0.3');
+      projectTimeline.addLabel('NavLinkIn', '<0.2');
+      projectTimeline.fromTo('.Project__NavLink--AllProjects', {
+        opacity: 0,
+        xPercent: -20,
+      },
+      {
+        duration: 1,
+        ease: 'ease.inOut',
+        opacity: 1,
+        xPercent: 0,
+      }, 'NavLinkIn');
+      projectTimeline.fromTo('.Project__NavLink--NextProject', {
+        opacity: 0,
+        xPercent: 70,
+      }, 
+      {
+        duration: 1,
+        ease: 'ease.inOut',
+        opacity: 1,
+        xPercent: 0,
+      }, 'NavLinkIn');
     }
   }, [project]);
 
   const nextProject = () => {
     const nextProject = PROJECT_DATA.find(projectObj => projectObj.id === project.id + 1) || PROJECT_DATA[0];
-    setProject(nextProject);
+    const animationComplete = () => {
+      setProject(nextProject);
+    }
+    const projectTimelineOut = gsap.timeline({
+      onComplete: animationComplete,
+    });
+    projectTimelineOut.to('.Project__NavLink--AllProjects', {
+      duration: 1,
+      ease: 'ease.inOut',
+      opacity: 0,
+      xPercent: -20,
+    }, 'NavLinkIn');
+    projectTimelineOut.to('.Project__NavLink--NextProject', {
+      duration: 1,
+      ease: 'ease.inOut',
+      opacity: 0,
+      xPercent: 70,
+    }, 'NavLinkIn');
+    projectTimelineOut.to('.Project__abstract--path', {
+      duration: 2,
+      ease: 'power1.out',
+      strokeDashoffset: -770,
+      stagger: {
+        each: 0.02,
+        from: 'end',
+      }
+    }, '>-1');
+
+    // projectTimelineOut.from('.Project__photo', {
+    //   duration: 1.5,
+    //   ease: 'slow.inOut',
+    //   xPercent: 40,
+    //   opacity: 0,
+    //   stagger: {
+    //     each: 0.2,
+    //     from: 'start'
+    //   }
+    // }, 0);
+    // projectTimelineOut.from('.Project__title', {
+    //   duration: 1.6,
+    //   ease: 'slow.inOut',
+    //   opacity: 0,
+    //   yPercent: 15,
+    // }, '<0.5');
+    // projectTimelineOut.from('.Project__info', {
+    //   duration: 1.4,
+    //   ease: 'slow.inOut',
+    //   opacity: 0,
+    //   yPercent: -5,
+    // }, '<');
+
+    
+    // projectTimelineOut.from('.Project__GitHub--path', {
+    //   duration: 0.8,
+    //   ease: 'power1.inOut',
+    //   strokeDashoffset: -395,
+    // }, '<0.7');
+    // projectTimelineOut.from('.Project__id', {
+    //   duration: 1.5,
+    //   ease: 'slow.inOut',
+    //   opacity: 0,
+    //   xPercent: -5,
+    // }, '<0.5');
+    // projectTimelineOut.from('.Project__glow', {
+    //   opacity: 0,
+    // }, '<0.3');
   }
   
   return project ? (

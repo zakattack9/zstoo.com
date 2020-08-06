@@ -4,7 +4,7 @@
   overflow-y: hidden;
   $column-left: 35%;
   $padding-right: 1em; // for description area
-
+  
   &__art {
     width: 100vw;
     height: 100vh;
@@ -17,22 +17,26 @@
     width: 100%;
     position: absolute;
     top: 50%;
-    // z-index: 2;
     transform: translateY(-50%);
     filter: saturate(120%);
-    // opacity: 0;
+    
+    &--path {
+      stroke-dasharray: 770;
+      stroke-dashoffset: 0;
+    }
   }
-
+  
   &__glow {
     width: 130%;
     height: 135%;
     position: absolute;
     left: -17%;
     top: -17%;
-    filter: saturate(170%);
+    filter: saturate(250%);
   }
-
+  
   &__data {
+    overflow-x: hidden;
     max-height: 100%;
     width: 100%;
     position: absolute;
@@ -129,6 +133,7 @@
     margin: 17% 0 0 21%;
 
     &--path {
+      stroke-dasharray: 395;
       stroke-width: 2;
       filter: saturate(200%);
     }
