@@ -10,7 +10,7 @@ const Main = () => {
   const [projectId, setProjectId] = useState(null);
 
   const projectClick = (id) => setProjectId(id);
-
+  // redirect needs to be in topmost component to properly unmount Home, About, and Contact when redirecting away from Projects
   if (projectId) {
     return <Redirect push to={{
       pathname: `/project/${projectId}`,

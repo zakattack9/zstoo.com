@@ -23,6 +23,7 @@ const Project = props => {
   useEffect(() => {
     // const { action, location } = history;
     if (project) {
+      projectRef.current.classList.add('hide');
       if (projectAnimation.current) projectAnimation.current.pause();
       if (projectAnimationOut.current) projectAnimationOut.current.pause();
     }
@@ -108,7 +109,6 @@ const Project = props => {
         duration: 0.5,
         opacity: 1,
       }, '<0.3');
-      projectTimeline.addLabel('NavLinkIn', '<0.2');
       projectTimeline.fromTo('.Project__NavLink--AllProjects', {
         opacity: 0,
         xPercent: -20,
@@ -117,7 +117,7 @@ const Project = props => {
         ease: 'ease.inOut',
         opacity: 1,
         xPercent: 0,
-      }, 'NavLinkIn');
+      }, '<0.2');
       projectTimeline.fromTo('.Project__NavLink--NextProject', {
         opacity: 0,
         xPercent: 70,
@@ -126,7 +126,7 @@ const Project = props => {
         ease: 'ease.inOut',
         opacity: 1,
         xPercent: 0,
-      }, 'NavLinkIn');
+      }, '<');
       projectAnimation.current = projectTimeline.play();
 
       // prevents project from quickly displayings before GSAP animation is fully created
@@ -149,13 +149,13 @@ const Project = props => {
       paused: true,
     });
     projectTimelineOut.to('.Project__NavLink--AllProjects', {
-      duration: 0.8,
+      duration: 0.7,
       ease: 'ease.inOut',
       opacity: 0,
       xPercent: -20,
     }, 0);
     projectTimelineOut.to('.Project__NavLink--NextProject', {
-      duration: 0.8,
+      duration: 0.7,
       ease: 'ease.inOut',
       opacity: 0,
       xPercent: 70,
