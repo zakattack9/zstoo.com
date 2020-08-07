@@ -1,0 +1,103 @@
+.Overlay {
+  height: 100vh;
+  font-size: 12pt;
+  position: relative;
+
+  &__art {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__abstract {
+    width: 130%;
+    filter: saturate(100%);
+  }
+
+  &__glow {
+    width: 150%;
+    filter: saturate(100%);
+  }
+
+  &__iconWrapper {
+    font-size: 12pt;
+    position: fixed;
+    top: 0.75em;
+    right: 0.75em;
+    z-index: 100;
+  }
+
+  &__icon {
+    width: 2em;
+    height: 0.35em;
+    background-color: #DADADA;
+    position: relative;
+
+    &--top {
+      right: 0.5em;
+    }
+
+    &--bottom {
+      top: 0.5em;
+    }
+  }
+
+  &__linkWrapper {
+    z-index: 1;
+    padding-right: 5%;
+  }
+  
+  &__link {
+    font-size: 3em;
+    font-family: "ObjectSans";
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 3px 5px #1C1C1C;
+    color: #DEDEDE;
+    position: relative;
+
+    &--home     { left: 0; }
+    &--projects { left: 0.35em; }
+    &--about    { left: -0.75em; }
+    &--contact  { left: 0.55em; }
+  }
+
+  &__socialIconWrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__socialIcon {
+    height: 1.7em;
+    margin: 0 0.7em;
+    stroke-width: 2;
+
+    &--LinkedIn {
+      stroke-dasharray: 265;
+      stroke-dashoffset: 0;
+    }
+
+    &--GitHub {
+      stroke-dasharray: 395;
+      stroke-dashoffset: 0;
+    }
+
+    &--Medium {
+      stroke-dasharray: 485;
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+// modifer class
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

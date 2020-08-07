@@ -129,7 +129,7 @@ const Project = props => {
       }, '<');
       projectAnimation.current = projectTimeline.play();
 
-      // prevents project from quickly displayings before GSAP animation is fully created
+      // prevents project from quickly displaying before GSAP animation is fully created
       projectRef.current.classList.remove('hide');
     }
   }, [project]);

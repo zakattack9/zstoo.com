@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Main from './Components/Main';
 import Project from './Components/Project/Project';
 import ContactForm from './Components/ContactForm/ContactForm';
+import Overlay from './Components/Overlay/Overlay';
 import './index.scss';
 
 const App = () => {
@@ -22,6 +23,9 @@ const App = () => {
           </Route>
           <Route path="/contact">
             <ContactForm />
+          </Route>
+          <Route path="/overlay">
+            <Overlay />
           </Route>
         </Switch>
       </Router>
