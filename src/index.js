@@ -16,6 +16,15 @@ const App = () => {
           <Route path="/" exact>
             <Main />
           </Route>
+          <Route path="/home" exact>
+            <Main scrollTo="home" />
+          </Route>
+          <Route path="/projects" exact>
+            <Main scrollTo="projects" />
+          </Route>
+          <Route path="/about" exact>
+            <Main scrollTo="about" />
+          </Route>
           <Route path="/project/:id">
             <Project />
           </Route>

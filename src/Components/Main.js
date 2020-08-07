@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 import Home from './Home/Home';
 import Projects from './Projects/Projects';
@@ -6,8 +6,47 @@ import About from './About/About';
 import Contact from './Contact/Contact';
 import './Main.scss';
 
-const Main = () => {
+const Main = props => {
   const [projectId, setProjectId] = useState(null);
+  const [calculated, setCalculated] = useState(false);
+  const scrollPos = useRef({});
+
+  const calculateScrollPos = () => {
+    const mainPos = document.querySelector('.Main').getBoundingClientRect();
+    const projectsPos = document.querySelector('.Projects__wrapper').getBoundingClientRect();
+    const aboutPos = document.querySelector('.About__text--about').getBoundingClientRect();
+    const projectsTop = (mainPos.top * -1) + projectsPos.top;
+    const aboutTop = (mainPos.top * -1) + aboutPos.top;
+    scrollPos.current = {
+      home: 0,
+      projects: projectsTop,
+      about: aboutTop,
+    }
+  }
+
+  window.onresize = (e) => {
+    calculateScrollPos();
+    console.log(scrollPos.current)
+  }
+  
+  useEffect(() => {
+    const { scrollTo } = props;
+    if (calculated) {
+      console.log(scrollPos.current)
+      if (scrollTo === "home") {
+        window.scrollTo(0, scrollPos.current.home);
+      } else if (scrollTo === "projects") {
+        window.scrollTo(0, scrollPos.current.projects);
+      } else if (scrollTo === "about") {
+        window.scrollTo(0, scrollPos.current.about);
+      }
+    }
+  }, [calculated, props, props.scrollTo])
+
+  useEffect(() => {
+    calculateScrollPos();
+    setCalculated(true);
+  }, [])
 
   const projectClick = (id) => setProjectId(id);
   // redirect needs to be in topmost component to properly unmount Home, About, and Contact when redirecting away from Projects

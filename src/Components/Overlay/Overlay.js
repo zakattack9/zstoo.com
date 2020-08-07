@@ -161,13 +161,13 @@ const Overlay = props => {
     </div>
     <div className="Overlay">
       <div className="Overlay__linkWrapper center" ref={linkWrapperRef}>
-        <Link to="/">
+        <Link to="/home">
           <div className="Overlay__link Overlay__link--home" onClick={() => handleOverlay(true)}>Home</div>
         </Link>
-        <Link to="/">
+        <Link to="/projects">
           <div className="Overlay__link Overlay__link--projects" onClick={() => handleOverlay(true)}>Projects</div>
         </Link>
-        <Link to="/">
+        <Link to="/about">
           <div className="Overlay__link Overlay__link--about" onClick={() => handleOverlay(true)}>About</div>
         </Link>
         <Link to="/contact">
