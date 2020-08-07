@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useLocation } from 'react-router-dom';
 import Home from './Home/Home';
 import Projects from './Projects/Projects';
 import About from './About/About';
@@ -9,6 +9,7 @@ import './Main.scss';
 const Main = props => {
   const [projectId, setProjectId] = useState(null);
   const [calculated, setCalculated] = useState(false);
+  const location = useLocation();
   const scrollPos = useRef({});
 
   const calculateScrollPos = () => {
@@ -16,7 +17,7 @@ const Main = props => {
     const projectsPos = document.querySelector('.Projects__wrapper').getBoundingClientRect();
     const aboutPos = document.querySelector('.About__text--about').getBoundingClientRect();
     const projectsTop = (mainPos.top * -1) + projectsPos.top;
-    const aboutTop = (mainPos.top * -1) + aboutPos.top;
+    const aboutTop = (mainPos.top * -1) + aboutPos.top - (window.innerHeight * 0.25);
     scrollPos.current = {
       home: 0,
       projects: projectsTop,
@@ -24,24 +25,20 @@ const Main = props => {
     }
   }
 
-  window.onresize = (e) => {
-    calculateScrollPos();
-    console.log(scrollPos.current)
-  }
+  window.onresize = (e) => calculateScrollPos();
   
   useEffect(() => {
-    const { scrollTo } = props;
+    const { pathname } = location;
     if (calculated) {
-      console.log(scrollPos.current)
-      if (scrollTo === "home") {
+      if (pathname === "/home") {
         window.scrollTo(0, scrollPos.current.home);
-      } else if (scrollTo === "projects") {
+      } else if (pathname === "/projects") {
         window.scrollTo(0, scrollPos.current.projects);
-      } else if (scrollTo === "about") {
+      } else if (pathname === "/about") {
         window.scrollTo(0, scrollPos.current.about);
       }
     }
-  }, [calculated, props, props.scrollTo])
+  }, [calculated, location, location.pathname])
 
   useEffect(() => {
     calculateScrollPos();
