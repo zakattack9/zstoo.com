@@ -44,6 +44,10 @@ const Contact = () => {
       }
     }, 0);
 
+    const aTagParams = {
+      duration: 0,
+      pointerEvents: 'none',
+    };
     const iconParams = {
       duration: 0.5,
       ease: 'power1.out',
@@ -59,6 +63,9 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: -265,
     }, '<0.5');
+    contactTimeline.from('.Contact__icon-aTag--LinkedIn', {
+      ...aTagParams,
+    }, '<');
     contactTimeline.from('.Contact__iconText--LinkedIn', {
       ...iconTextParams
     }, '<');
@@ -66,6 +73,9 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: 265,
     }, '>0.5');
+    contactTimeline.to('.Contact__icon-aTag--LinkedIn', {
+      ...aTagParams,
+    }, '<');
     contactTimeline.to('.Contact__iconText--LinkedIn', {
       ...iconTextParams
     }, '<');
@@ -74,6 +84,9 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: -395,
     }, '>');
+    contactTimeline.from('.Contact__icon-aTag--GitHub', {
+      ...aTagParams,
+    }, '<');
     contactTimeline.from('.Contact__iconText--GitHub', {
       ...iconTextParams
     }, '<');
@@ -81,6 +94,9 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: 395,
     }, '>0.5');
+    contactTimeline.to('.Contact__icon-aTag--GitHub', {
+      ...aTagParams,
+    }, '<');
     contactTimeline.to('.Contact__iconText--GitHub', {
       ...iconTextParams
     }, '<');
@@ -89,6 +105,9 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: -485,
     }, '>');
+    contactTimeline.from('.Contact__icon-aTag--Medium', {
+      ...aTagParams,
+    }, '<');
     contactTimeline.from('.Contact__iconText--Medium', {
       ...iconTextParams
     }, '<');
@@ -96,6 +115,9 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: 485,
     }, '>0.5');
+    contactTimeline.to('.Contact__icon-aTag--Medium', {
+      ...aTagParams,
+    }, '<');
     contactTimeline.to('.Contact__iconText--Medium', {
       ...iconTextParams
     }, '<');
@@ -160,13 +182,13 @@ const Contact = () => {
     <div className="Contact" ref={contactRef}>
       <div className="Contact__pin" ref={pinRef}>
         <div className="Contact__wrapper">
-          <LinkedIn className="Contact__icon Contact__icon--LinkedIn" pathName="Contact__LinkedIn--path" />
+          <LinkedIn className="Contact__icon Contact__icon--LinkedIn" aTagName="Contact__icon-aTag Contact__icon-aTag--LinkedIn" pathName="Contact__LinkedIn--path" />
           <div className="Contact__iconText Contact__iconText--LinkedIn">View my full<br/>resume on LinkedIn</div>
 
-          <GitHub className="Contact__icon Contact__icon--GitHub" pathName="Contact__GitHub--path" />
+          <GitHub className="Contact__icon Contact__icon--GitHub" aTagName="Contact__icon-aTag Contact__icon-aTag--GitHub" pathName="Contact__GitHub--path" />
           <div className="Contact__iconText Contact__iconText--GitHub">Browse all my<br/>projects on GitHub</div>
 
-          <Medium className="Contact__icon Contact__icon--Medium" pathName="Contact__Medium--path" />
+          <Medium className="Contact__icon Contact__icon--Medium" aTagName="Contact__icon-aTag Contact__icon-aTag--Medium" pathName="Contact__Medium--path" />
           <div className="Contact__iconText Contact__iconText--Medium">Check out my<br/>articles on Medium</div>
         </div>
 

@@ -11,6 +11,7 @@
   &__art {
     height: 100vh;
     position: relative;
+    z-index: 0;
   }
   
   &__abstract {
@@ -46,15 +47,17 @@
     grid-template-areas: 
       "icon"
       "text";
+    z-index: 1;
   }
 
   &__icon {
-    // height: 100%;
     height: 3.7em;
-    position: absolute;
-    grid-area: icon;
-    justify-self: center;
-    align-self: end;
+    
+    &-aTag {
+      justify-self: center;
+      align-self: end;
+      grid-area: icon;
+    }
 
     &--LinkedIn {
       stroke-dasharray: 265;
