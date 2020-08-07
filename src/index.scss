@@ -66,3 +66,8 @@ a {
 .App {
   height: 100%;
 }
+
+// modifier classes
+.preventScroll {
+  overflow-y: hidden;
+}

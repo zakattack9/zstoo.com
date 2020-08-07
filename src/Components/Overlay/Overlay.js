@@ -10,21 +10,22 @@ const Overlay = props => {
   const [isOpen, setIsOpen] = useState(false);
   const iconAnimation = useRef();
   const overlayAnimation = useRef();
-
-  const handleOverlay = () => {
-    setIsOpen(!isOpen);
-  }
-
+  
+  const handleOverlay = () => setIsOpen(!isOpen);
+  
   useEffect(() => {
     if (iconAnimation.current) {
       iconAnimation.current.pause();
       overlayAnimation.current.pause();
       if (isOpen) {
+        document.querySelector('body').classList.add('preventScroll');
         iconAnimation.current.play();
         overlayAnimation.current.play();
       } else  {
         iconAnimation.current.reverse();
-        overlayAnimation.current.reverse();
+        overlayAnimation.current.reverse().then(() => {
+          document.querySelector('body').classList.remove('preventScroll');
+        });
       }
     }
   }, [isOpen]);
@@ -89,7 +90,7 @@ const Overlay = props => {
       y: -15,
       opacity: 0,
     }, {
-      duration: 0.6,
+      duration: 0.5,
       ease: 'ease.inOut',
       skewX: 0,
       skewY: 0,
@@ -100,28 +101,6 @@ const Overlay = props => {
         from: 'start',
       }
     }, '>');
-    overlayTimeline.addLabel('socialIcon', '<0.4');
-    overlayTimeline.fromTo('.Overlay__socialIcon--GitHub', {
-      strokeDashoffset: -395,
-    }, {
-      duration: 0.7,
-      ease: 'power1.inOut',
-      strokeDashoffset: 0,
-    }, 'socialIcon');
-    overlayTimeline.fromTo('.Overlay__socialIcon--Medium', {
-      strokeDashoffset: -485,
-    }, {
-      duration: 0.7,
-      ease: 'power1.inOut',
-      strokeDashoffset: 0,
-    }, 'socialIcon');
-    overlayTimeline.fromTo('.Overlay__socialIcon--LinkedIn', {
-      strokeDashoffset: -265,
-    }, {
-      duration: 0.7,
-      ease: 'power1.inOut',
-      strokeDashoffset: 0,
-    }, 'socialIcon');
     overlayTimeline.fromTo('.Overlay__abstract--path', {
       strokeDashoffset: 770,
     }, {
@@ -133,13 +112,35 @@ const Overlay = props => {
         from: 'center',
       }
     }, '<0.2');
+    overlayTimeline.addLabel('socialIcon', '<0.2');
     overlayTimeline.fromTo('.Overlay__glow', {
       opacity: 0,
     }, {
       duration: 1.2,
       ease: 'ease.inOut',
       opacity: 1,
-    }, '>-0.4');
+    }, '>-0.5');
+    overlayTimeline.fromTo('.Overlay__socialIcon--GitHub', {
+      strokeDashoffset: -395,
+    }, {
+      duration: 0.6,
+      ease: 'power1.inOut',
+      strokeDashoffset: 0,
+    }, 'socialIcon');
+    overlayTimeline.fromTo('.Overlay__socialIcon--Medium', {
+      strokeDashoffset: -485,
+    }, {
+      duration: 0.6,
+      ease: 'power1.inOut',
+      strokeDashoffset: 0,
+    }, 'socialIcon');
+    overlayTimeline.fromTo('.Overlay__socialIcon--LinkedIn', {
+      strokeDashoffset: -265,
+    }, {
+      duration: 0.6,
+      ease: 'power1.inOut',
+      strokeDashoffset: 0,
+    }, 'socialIcon');
     overlayAnimation.current = overlayTimeline;
   }, []);
 
@@ -149,7 +150,7 @@ const Overlay = props => {
       <div className="Overlay__icon Overlay__icon--bottom"></div>
     </div>
     <div className="Overlay">
-      <div className="Overlay__linkWrapper">
+      <div className="Overlay__linkWrapper center">
         <Link to="/">
           <div className="Overlay__link Overlay__link--home">Home</div>
         </Link>
