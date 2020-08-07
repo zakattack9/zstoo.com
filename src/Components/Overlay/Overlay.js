@@ -10,8 +10,16 @@ const Overlay = props => {
   const [isOpen, setIsOpen] = useState(false);
   const iconAnimation = useRef();
   const overlayAnimation = useRef();
+  const linkWrapperRef = useRef();
+  const iconWrapperRef = useRef();
   
-  const handleOverlay = () => setIsOpen(!isOpen);
+  const handleOverlay = (clickedLink) => {
+    if (clickedLink) {
+      iconWrapperRef.current.classList.add('preventClick');
+      linkWrapperRef.current.classList.add('preventClick');
+    }
+    setIsOpen(!isOpen);
+  }
   
   useEffect(() => {
     if (iconAnimation.current) {
@@ -25,6 +33,8 @@ const Overlay = props => {
         iconAnimation.current.reverse();
         overlayAnimation.current.reverse().then(() => {
           document.querySelector('body').classList.remove('preventScroll');
+          iconWrapperRef.current.classList.remove('preventClick');
+          linkWrapperRef.current.classList.remove('preventClick');
         });
       }
     }
@@ -116,10 +126,10 @@ const Overlay = props => {
     overlayTimeline.fromTo('.Overlay__glow', {
       opacity: 0,
     }, {
-      duration: 1.2,
+      duration: 0.5,
       ease: 'ease.inOut',
       opacity: 1,
-    }, '>-0.5');
+    }, '>-0.3');
     overlayTimeline.fromTo('.Overlay__socialIcon--GitHub', {
       strokeDashoffset: -395,
     }, {
@@ -145,23 +155,23 @@ const Overlay = props => {
   }, []);
 
   return <>
-    <div className="Overlay__iconWrapper" onClick={handleOverlay}>
+    <div className="Overlay__iconWrapper" onClick={() => handleOverlay(false)} ref={iconWrapperRef}>
       <div className="Overlay__icon Overlay__icon--top"></div>
       <div className="Overlay__icon Overlay__icon--bottom"></div>
     </div>
     <div className="Overlay">
-      <div className="Overlay__linkWrapper center">
+      <div className="Overlay__linkWrapper center" ref={linkWrapperRef}>
         <Link to="/">
-          <div className="Overlay__link Overlay__link--home">Home</div>
+          <div className="Overlay__link Overlay__link--home" onClick={() => handleOverlay(true)}>Home</div>
         </Link>
         <Link to="/">
-          <div className="Overlay__link Overlay__link--projects">Projects</div>
+          <div className="Overlay__link Overlay__link--projects" onClick={() => handleOverlay(true)}>Projects</div>
         </Link>
         <Link to="/">
-          <div className="Overlay__link Overlay__link--about">About</div>
+          <div className="Overlay__link Overlay__link--about" onClick={() => handleOverlay(true)}>About</div>
         </Link>
-        <Link to="/">
-          <div className="Overlay__link Overlay__link--contact">Contact</div>
+        <Link to="/contact">
+          <div className="Overlay__link Overlay__link--contact" onClick={() => handleOverlay(true)}>Contact</div>
         </Link>
       </div>
 
