@@ -11,6 +11,7 @@ const App = () => {
   return (
     <div className="App">
       <Router basename={process.env.PUBLIC_URL}>
+        <Overlay />
         <Switch>
           <Route path="/" exact>
             <Main />
@@ -23,9 +24,6 @@ const App = () => {
           </Route>
           <Route path="/contact">
             <ContactForm />
-          </Route>
-          <Route path="/overlay">
-            <Overlay />
           </Route>
         </Switch>
       </Router>

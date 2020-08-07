@@ -1,28 +1,56 @@
+@import '../../Utils/variables.scss';
+
 .Overlay {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   font-size: 12pt;
-  position: relative;
+  position: fixed;
+  overflow: hidden;
+  z-index: 99;
+  display: grid;
+  grid-template-rows: 90% auto;
+  grid-template-areas: 
+    "links"
+    "socials";
+  
+  &__backgroundCover {
+    width: 100%;
+    height: 100vh;
+    background-color: $background-color;
+    position: fixed;
+    top: 0;
+    z-index: 98;
+  }
 
   &__art {
+    grid-area: links;
     height: 100vh;
     position: relative;
     overflow: hidden;
+    z-index: 1;
   }
 
   &__abstract {
     width: 130%;
     filter: saturate(100%);
+
+    &--path {
+      stroke-dasharray: 770;
+    }
   }
 
   &__glow {
     width: 150%;
-    filter: saturate(100%);
+    top: 48% !important;
+    filter: saturate(150%);
   }
 
   &__iconWrapper {
     font-size: 12pt;
+    height: 2em;
+    width: 2em;
     position: fixed;
-    top: 0.75em;
+    top: 1em;
     right: 0.75em;
     z-index: 100;
   }
@@ -43,8 +71,11 @@
   }
 
   &__linkWrapper {
-    z-index: 1;
+    z-index: 2;
     padding-right: 5%;
+    height: min-content;
+    grid-area: links;
+    align-self: center;
   }
   
   &__link {
@@ -65,11 +96,12 @@
   }
 
   &__socialIconWrapper {
+    grid-area: socials;
+    align-self: center;
     width: 100%;
-    position: absolute;
-    bottom: 5%;
     display: flex;
     justify-content: center;
+    z-index: 1;
   }
 
   &__socialIcon {
@@ -77,19 +109,16 @@
     margin: 0 0.7em;
     stroke-width: 2;
 
-    &--LinkedIn {
-      stroke-dasharray: 265;
-      stroke-dashoffset: 0;
-    }
-
     &--GitHub {
       stroke-dasharray: 395;
-      stroke-dashoffset: 0;
     }
 
     &--Medium {
       stroke-dasharray: 485;
-      stroke-dashoffset: 0;
+    }
+
+    &--LinkedIn {
+      stroke-dasharray: 265;
     }
   }
 }
