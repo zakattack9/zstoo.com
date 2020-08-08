@@ -44,9 +44,9 @@ const Contact = () => {
       }
     }, 0);
 
-    const aTagParams = {
+    const aTagParams = { 
       duration: 0,
-      pointerEvents: 'none',
+      pointerEvents: 'none' 
     };
     const iconParams = {
       duration: 0.5,

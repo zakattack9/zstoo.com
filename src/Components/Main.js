@@ -13,19 +13,28 @@ const Main = props => {
   const scrollPos = useRef({});
 
   const calculateScrollPos = () => {
-    const mainPos = document.querySelector('.Main').getBoundingClientRect();
-    const projectsPos = document.querySelector('.Projects__wrapper').getBoundingClientRect();
-    const aboutPos = document.querySelector('.About__text--about').getBoundingClientRect();
-    const projectsTop = (mainPos.top * -1) + projectsPos.top;
-    const aboutTop = (mainPos.top * -1) + aboutPos.top - (window.innerHeight * 0.25);
-    scrollPos.current = {
-      home: 0,
-      projects: projectsTop,
-      about: aboutTop,
+    const main = document.querySelector('.Main');
+    const project = document.querySelector('.Projects__wrapper');
+    const about = document.querySelector('.About__text--about');
+
+    if (main && project && about) {
+      const mainPos = main.getBoundingClientRect();
+      const projectsPos = project.getBoundingClientRect();
+      const aboutPos = about.getBoundingClientRect();
+      const projectsTop = (mainPos.top * -1) + projectsPos.top;
+      const aboutTop = (mainPos.top * -1) + aboutPos.top - (window.innerHeight * 0.25);
+      scrollPos.current = {
+        home: 0,
+        projects: projectsTop,
+        about: aboutTop,
+      }
     }
   }
 
-  window.onresize = (e) => calculateScrollPos();
+  window.onresize = (e) => {
+    // wait for ScrollTrigger to recalculate positioning
+    setTimeout(() => { calculateScrollPos() }, 201);
+  }
   
   useEffect(() => {
     const { pathname } = location;
@@ -48,7 +57,7 @@ const Main = props => {
   const projectClick = (id) => setProjectId(id);
   // redirect needs to be in topmost component to properly unmount Home, About, and Contact when redirecting away from Projects
   if (projectId) {
-    return <Redirect push to={{
+    return <Redirect push from='/' to={{
       pathname: `/project/${projectId}`,
       state: { projectId } 
     }}/>

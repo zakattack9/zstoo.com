@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Zak from '../../SVGs/ZAK.svg';
 import Glow from '../../Images/HomeGlow.png';
 import { Home as Abstract, Headline } from '../../SVGs/SVG';
+import NavLink from '../NavLink/NavLink';
 import './Home.scss';
 
 const Home = () => {
@@ -87,6 +88,17 @@ const Home = () => {
         // markers: true,
       }
     });
+    homeTimeline.to('.Home__NavLink', {
+      duration: 0.6,
+      ease: 'power2.in',
+      xPercent: 100,
+      opacity: 0,
+      pointerEvents: 'auto',
+      stagger: {
+        each: 0.1,
+        from: 'start'
+      }
+    }, 0);
     homeTimeline.to('.Home__glow', {
       duration: 0.6, 
       ease: 'power2.inOut',
@@ -127,6 +139,11 @@ const Home = () => {
           <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
         </div>
         <Headline className="Home__headline" />
+      </div>
+      <div className="Home__navigation">
+        <NavLink className="Home__NavLink Home__NavLink--projects" text="Projects" lineWidth={30} href='/projects' color='#A1A1A1' />
+        <NavLink className="Home__NavLink Home__NavLink--about" text="About" lineWidth={50} href='/about' color='#A1A1A1' />
+        <NavLink className="Home__NavLink Home__NavLink--contact" text="Contact" lineWidth={40} href='/contact' color='#A1A1A1' />
       </div>
     </div>
   );

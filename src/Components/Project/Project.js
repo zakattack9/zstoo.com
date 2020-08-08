@@ -229,7 +229,7 @@ const Project = props => {
         </div>
         
         {/* BOTTOM SECTION */}
-        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" projectId={project.id} />
+        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" aTagName="Project__GitHub--aTag" projectId={project.id} />
         <div className="Project__info" ref={infoRef}>
           <div className="Project__description">{project.fullDesc}</div>
           <div className="Project__details">

@@ -68,4 +68,19 @@
     stroke-dasharray: 130;
     stroke-dashoffset: 0;
   }
+
+  &__navigation {
+    overflow-x: hidden;
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  
+  &__NavLink {
+    text-align: right;
+    margin: 0.4em 0;
+    align-self: flex-end;
+  }
 }
