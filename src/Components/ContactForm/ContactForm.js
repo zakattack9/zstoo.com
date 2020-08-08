@@ -6,16 +6,25 @@ import './ContactForm.scss';
 
 const ContactForm = () => {
   const initFormData = () => ({
-    name:    { value: '', error: false },
-    email:   { value: '', error: false },
-    subject: { value: '', error: false },
-    message: { value: '', error: false },
+    name:    { value: '', error: true },
+    email:   { value: '', error: true },
+    subject: { value: '', error: true },
+    message: { value: '', error: true },
   });
   const [formData, setFormData] = useState(initFormData());
+  const [formError, setFormError] = useState({ error: true, fields: [] });
+  const [errorMsg, setErrorMsg] = useState('');
 
+  const submitForm = () => {
+
+  }
+  
   const handleFormClick = (e) => {
-    console.log('clicked')
     e.preventDefault();
+    Object.keys(formData).forEach((field) => {
+      const inputField = document.querySelector(`.ContactForm__input--${field}`);
+      inputField.classList.remove('fade', 'hasError');
+    });
   }
 
   const handleFormInput = (e, field) => {
@@ -31,13 +40,36 @@ const ContactForm = () => {
     const inputField = document.querySelector(`.ContactForm__input--${field}`);
     inputField.classList.toggle('noError', !error);
     setFormData({ ...formData, [field]: { value, error }});
-    console.log(field, value, error)
   }
 
   const handleFormSubmit = (e) => {
-    console.log('SUBMITTED FORM', e);
     e.preventDefault();
+    if (formError.error) {
+      Object.keys(formData).forEach((field) => {
+        const fieldHasError = formError.fields.indexOf(field) >= 0;
+        const inputField = document.querySelector(`.ContactForm__input--${field}`);
+        inputField.classList.toggle('fade', !fieldHasError);
+        inputField.classList.toggle('hasError', fieldHasError);
+      });
+
+      if (formError.fields.includes('email')) {
+        setErrorMsg('Please enter a valid email');
+      } else {
+        setErrorMsg('Please fill out all empty fields');
+      }
+    } else {
+
+    }
   }
+
+  useEffect(() => {
+    const fields = Object.keys(formData).reduce((errFields, field) => {
+      if (formData[field].error) errFields.push(field);
+      return errFields;
+    }, []);
+    const error = fields.length === 0 ? false : true;
+    setFormError({ error, fields });
+  }, [formData]);
 
   // contactFormTimeline.from('.ContactForm__input', {
   //   duration: 1.8,
@@ -56,7 +88,7 @@ const ContactForm = () => {
   return (
     <div className="ContactForm">
       <form className="ContactForm__form" onSubmit={handleFormSubmit}>
-        <LetsTalk className="ContactForm__LetsTalk" pathName="ContactForm__LetsTalk--path" fill="#161616" gradient="contact"/>
+        <LetsTalk className="ContactForm__LetsTalk" pathName="ContactForm__LetsTalk--path" fill="#161616" gradient={formError.error ? "contact" : "contactForm"}/>
         <input 
           className="ContactForm__input ContactForm__input--name"
           type="text" 
@@ -88,7 +120,10 @@ const ContactForm = () => {
           onClick={handleFormClick}
           onChange={(e) => handleFormInput(e, 'message')} 
         />
-        <input className="ContactForm__input--send" type="submit" value="Send" />
+        <div className="ContactForm__sendWrapper">
+          <div className="ContactForm__errorMessage">{errorMsg}</div>
+          <input className="ContactForm__input--send" type="submit" value="Send" />
+        </div>
       </form>
 
       <div className="ContactForm__art">
