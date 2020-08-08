@@ -213,7 +213,7 @@ const Project = props => {
     <div className="Project hide" ref={projectRef}>
       <div className="Project__data">
         {/* TOP SECTION */}
-        <NavLink className="Project__NavLink Project__NavLink--AllProjects" text={`All\nProjects`} lineWidth={25} href='/' left />
+        <NavLink className="Project__NavLink Project__NavLink--AllProjects" text={`All\nProjects`} lineWidth={25} href='/projects' left />
         
         {/* MIDDLE SECTION */}
         <div className="Project__title">{project.name}</div>

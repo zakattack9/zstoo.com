@@ -1,6 +1,7 @@
 .Home {
   font-size: 12pt;
   height: 100vh;
+  z-index: 3;
 
   &__wrapper {
     font-size: 13pt; // modify to scale for screen sizes

@@ -127,13 +127,12 @@
   }
 
   &__GitHub {
-    // width: 100px;
-    width: 20%;
-    margin: 17% 0 0 21%;
-    
     &--aTag {
       grid-area: github;
       z-index: 5;
+      width: 20%;
+      height: min-content;
+      margin: 17% 0 0 21%;
     }
 
     &--path {
