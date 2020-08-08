@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Contact as Abstract, LetsTalk } from '../../SVGs/SVG';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ContactForm.scss';
 
 const ContactForm = () => {
@@ -15,15 +14,34 @@ const ContactForm = () => {
   const [formError, setFormError] = useState({ error: true, fields: [] });
   const [errorMsg, setErrorMsg] = useState('');
 
-  const submitForm = () => {
-
+  const submitForm = async () => {
+    const { name, email, subject, message } = formData;
+    const URL = "https://5bstnxh46j.execute-api.us-west-2.amazonaws.com/dev/contact";
+    try {
+      const response = await fetch(URL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8"'
+        },
+        body: JSON.stringify({
+          "name": name.value,
+          "email": email.value,
+          "subject": subject.value,
+          "message": message.value,
+        })
+      });
+      console.log(response);
+    } catch (err) {
+      console.error(err);
+    }
   }
   
   const handleFormClick = (e) => {
-    e.preventDefault();
     Object.keys(formData).forEach((field) => {
       const inputField = document.querySelector(`.ContactForm__input--${field}`);
       inputField.classList.remove('fade', 'hasError');
+      setErrorMsg('');
     });
   }
 
@@ -51,14 +69,13 @@ const ContactForm = () => {
         inputField.classList.toggle('fade', !fieldHasError);
         inputField.classList.toggle('hasError', fieldHasError);
       });
-
-      if (formError.fields.includes('email')) {
+      if (formError.fields.length === 1 && formError.fields.includes('email')) {
         setErrorMsg('Please enter a valid email');
       } else {
         setErrorMsg('Please fill out all empty fields');
       }
     } else {
-
+      submitForm();
     }
   }
 
