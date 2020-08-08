@@ -47,7 +47,7 @@
     grid-template-areas: 
       "icon"
       "text";
-    z-index: 1;
+    z-index: 3;
   }
 
   &__icon {
@@ -94,6 +94,7 @@
     top: 55%;
     left: 10%;
     transform: translateY(-50%);
+    z-index: 2;
   }
 
   &__LetsTalk {

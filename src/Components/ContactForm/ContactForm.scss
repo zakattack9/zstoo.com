@@ -1,43 +1,67 @@
 .ContactForm {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+
+  &__art {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+  
+  &__abstract {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%) scale(1.75) skewY(0deg);
+    opacity: 0.5;
+    filter: saturate(200%);
+
+    &--path {
+      stroke-dasharray: 1122;
+      stroke-dashoffset: 0;
+      transition: 1s;
+    }
+  }
 
   &__form {
     width: 85%;
-    margin: 0 auto;
     font-size: 11pt;
-    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
   }
 
-  &__title {
-    font-family: "ObjectSans";
-    font-weight: bold;
-    font-style: italic;
-    text-transform: uppercase;
-    font-size: 2.6em;
+  &__LetsTalk {
+    height: 4.7em;
+    padding-bottom: 0.3em;
   }
 
   &__input {
+    font-size: 11.5pt;
     width: 100%;
     margin: 0 auto;
     font-family: "ObjectSans";
     color: #C8C8C8;
     border: 1px double transparent;
-    border-radius: 3px;
+    border-radius: 4px;
     background-image: linear-gradient(#131313, #131313),
                       linear-gradient(90deg, #CECECE, #3B3B3B);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     box-sizing: border-box;
 
-    padding: 1.2em;
+    padding: 1em;
     margin: 0.5em 0;
     outline: none;
     resize: none;
     box-shadow: 3px 4px 5px #121212;
 
     &--message {
-      min-height: 5em;
+      min-height: 9em;
     }
 
     &--send {
@@ -52,5 +76,10 @@
       margin-left: auto;
     }
   }
+}
 
+// modifier class
+.noError {
+  background-image: linear-gradient(#131313, #131313),
+                    linear-gradient(90deg, #00FFBF, #FF13E0 75%, #FF1B7C);
 }

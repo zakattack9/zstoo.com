@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/ContactGlow.png';
@@ -195,7 +196,9 @@ const Contact = () => {
         <div className="Contact__info">
           <LetsTalk className="Contact__LetsTalk" pathName="Contact__LetsTalk--path" />
           <div className="Contact__contactText">Ready to start a project or currently looking to hire? Send me an email at sakata.zak@gmail.com or head over to my contact page with the button below</div>
-          <ContactButton className="Contact__ContactButton" pathName="Contact__ContactButton--path" />
+          <Link to="/contact">
+            <ContactButton className="Contact__ContactButton" pathName="Contact__ContactButton--path" />
+          </Link>
         </div>
 
         <div className="Contact__art">
