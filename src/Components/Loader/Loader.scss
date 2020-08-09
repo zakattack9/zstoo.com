@@ -1,0 +1,23 @@
+.Loader {
+  font-size: 10pt;
+  width: 6em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__ZLogo {
+    width: 100%;
+    position: relative;
+
+    &--path-1 {
+      // stroke-dasharray: 490; 
+      stroke-dasharray: 125;
+    }
+
+    &--path-2 {
+      // stroke-dasharray: 425;
+      stroke-dasharray: 115;
+    }
+  }
+}

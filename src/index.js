@@ -5,6 +5,7 @@ import Main from './Components/Main';
 import Project from './Components/Project/Project';
 import ContactForm from './Components/ContactForm/ContactForm';
 import Overlay from './Components/Overlay/Overlay';
+import Loader from './Components/Loader/Loader';
 import './index.scss';
 
 const App = () => {
@@ -34,6 +35,9 @@ const App = () => {
           <Route path="/contact">
             <ContactForm />
           </Route>
+          <Router path="/loader">
+            <Loader />
+          </Router>
         </Switch>
       </Router>
     </div>
