@@ -38,6 +38,10 @@
   &__LetsTalk {
     height: 4.7em;
     padding-bottom: 0.3em;
+
+    &--path {
+      stroke-dasharray: 100;
+    }
   }
 
   &__sendWrapper {
@@ -70,18 +74,18 @@
     &--message {
       min-height: 9em;
     }
-
-    &--send {
-      grid-area: sendBtn;
-      align-self: center;
-      font-size: 1.18em;
-      font-family: "ObjectSans";
-      font-weight: bold;
-      font-style: italic;
-      background: none;
-      color: #9D9D9D;
-      border: none;
-    }
+  }
+  
+  &__send {
+    grid-area: sendBtn;
+    align-self: center;
+    font-size: 1.18em;
+    font-family: "ObjectSans";
+    font-weight: bold;
+    font-style: italic;
+    background: none;
+    color: #9D9D9D;
+    border: none;
   }
 
   &__errorMessage {

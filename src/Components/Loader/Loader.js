@@ -4,10 +4,12 @@ import { ZLogo } from '../../SVGs/SVG';
 import './Loader.scss';
 
 const Loader = props => {
+  const { pause = false } = props;
   useEffect(() => {
     const loaderAnimation = gsap.timeline({
       repeat: -1,
       yoyo: true,
+      paused: pause,
     });
 
     const logoOuter = gsap.timeline({});
@@ -87,12 +89,16 @@ const Loader = props => {
     }, '>');
 
     loaderAnimation.add(logoOuter, 0);
-    loaderAnimation.add(logoInner, 0.1);
+    loaderAnimation.add(logoInner, 0);
   }, [])
 
   return (
-    <div className="Loader">
-      <ZLogo className="Loader__ZLogo" pathName1="Loader__ZLogo--path-1" pathName2="Loader__ZLogo--path-2"/>
+    <div className={`Loader ${props.className}`}>
+      <ZLogo 
+        className="Loader__ZLogo" 
+        pathName1="Loader__ZLogo--path-1" 
+        pathName2="Loader__ZLogo--path-2"
+      />
     </div>
   );
 }

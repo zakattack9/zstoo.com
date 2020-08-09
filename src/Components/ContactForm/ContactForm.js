@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Contact as Abstract, LetsTalk } from '../../SVGs/SVG';
+import Loader from '../Loader/Loader';
 import './ContactForm.scss';
 
 const ContactForm = () => {
@@ -13,6 +14,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState(initFormData());
   const [formError, setFormError] = useState({ error: true, fields: [] });
   const [errorMsg, setErrorMsg] = useState('');
+  const [pauseLoader, setPauseLoader] = useState(true);
 
   const submitForm = async () => {
     const { name, email, subject, message } = formData;
@@ -49,7 +51,7 @@ const ContactForm = () => {
     const value = e.target.value;
     let error = false;
     if (field.match('name|subject|message')) {
-      error = value ? false : true;
+      error = value.trim() ? false : true;
     } else if (field.match('email')) {
       const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       error = !emailRegex.test(value.toLowerCase());
@@ -88,19 +90,33 @@ const ContactForm = () => {
     setFormError({ error, fields });
   }, [formData]);
 
-  // contactFormTimeline.from('.ContactForm__input', {
-  //   duration: 1.8,
-  //   backgroundImage: 'linear-gradient(#5F5F5F, #000000), linear-gradient(90deg, #000000, #000000)',
-  //   opacity: 0,
-  //   y: 10,
-  //   skewY: -10,
-  //   skewX: -10,
-  //   scale: 0.9,
-  //   stagger: {
-  //     each: 0.4,
-  //     from: 'end'
-  //   },
-  // }, '<0.2');
+  useEffect(() => {
+    const contactFormTimeline = gsap.timeline({});
+    contactFormTimeline.from('.ContactForm__LetsTalk--path', {
+      duration: 1.5,
+      ease: 'power2.inOut',
+      strokeDashoffset: -100,
+      opacity: 0,
+    }, 0);
+    contactFormTimeline.from('.ContactForm__input', {
+      duration: 0.5,
+      ease: 'ease.inOut',
+      opacity: 0,
+      scale: 0.95,
+      stagger: {
+        each: 0.15,
+        from: 'start'
+      },
+    }, '<0.2');
+    contactFormTimeline.from('.ContactForm__send', {
+      duration: 1,
+      ease: 'ease.inOut',
+      opacity: 0,
+      scale: 0.95,
+    }, '>');
+
+  }, []);
+
 
   return (
     <div className="ContactForm">
@@ -139,9 +155,19 @@ const ContactForm = () => {
         />
         <div className="ContactForm__sendWrapper">
           <div className="ContactForm__errorMessage">{errorMsg}</div>
-          <input className="ContactForm__input--send" type="submit" value="Send" />
+          <input className="ContactForm__send" type="submit" value="Send" />
         </div>
       </form>
+
+      <Loader className="ContactForm__Loader" pause={pauseLoader} />
+
+      <div className="ContactForm__success">
+
+      </div>
+
+      <div className="ContactForm__failure">
+        
+      </div>
 
       <div className="ContactForm__art">
         <Abstract className="ContactForm__abstract" pathName="ContactForm__abstract--path" gradient="contactForm" />
