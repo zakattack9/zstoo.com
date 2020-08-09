@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Contact as Abstract, LetsTalk } from '../../SVGs/SVG';
 import Loader from '../Loader/Loader';
@@ -15,6 +15,7 @@ const ContactForm = () => {
   const [formError, setFormError] = useState({ error: true, fields: [] });
   const [errorMsg, setErrorMsg] = useState('');
   const [pauseLoader, setPauseLoader] = useState(true);
+  const contactFormAnimation = useRef();
 
   const submitForm = async () => {
     const { name, email, subject, message } = formData;
@@ -77,6 +78,10 @@ const ContactForm = () => {
         setErrorMsg('Please fill out all empty fields');
       }
     } else {
+      contactFormAnimation.current.reverse(0).then(() => {
+        document.querySelector('.ContactForm__Loader').classList.remove('hide');
+        setPauseLoader(false);
+      });
       submitForm();
     }
   }
@@ -97,24 +102,36 @@ const ContactForm = () => {
       ease: 'power2.inOut',
       strokeDashoffset: -100,
       opacity: 0,
+      pointerEvents: 'none',
     }, 0);
     contactFormTimeline.from('.ContactForm__input', {
-      duration: 0.5,
-      ease: 'ease.inOut',
+      duration: 0.6,
+      ease: 'power1.inOut',
       opacity: 0,
       scale: 0.95,
+      y: 5,
+      transition: 0,
       stagger: {
         each: 0.15,
         from: 'start'
       },
-    }, '<0.2');
+      pointerEvents: 'none',
+    }, '<0.4');
     contactFormTimeline.from('.ContactForm__send', {
-      duration: 1,
-      ease: 'ease.inOut',
+      duration: 0.6,
+      ease: 'power1.inOut',
       opacity: 0,
       scale: 0.95,
-    }, '>');
-
+      y: 5,
+      pointerEvents: 'none',
+    }, '>-0.2');
+    contactFormTimeline.from('.ContactForm__abstract--path', {
+      duration: 1,
+      ease: 'power1.inOut',
+      strokeDashoffset: 1122,
+      pointerEvents: 'none',
+    }, '<-1');
+    contactFormAnimation.current = contactFormTimeline;
   }, []);
 
 
@@ -159,7 +176,7 @@ const ContactForm = () => {
         </div>
       </form>
 
-      <Loader className="ContactForm__Loader" pause={pauseLoader} />
+      <Loader className="ContactForm__Loader hide" pause={pauseLoader} />
 
       <div className="ContactForm__success">
 

@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useRef} from 'react';
 import { gsap } from 'gsap';
 import { ZLogo } from '../../SVGs/SVG';
 import './Loader.scss';
 
 const Loader = props => {
   const { pause = false } = props;
+  const loaderAnimation = useRef();
+
   useEffect(() => {
-    const loaderAnimation = gsap.timeline({
+    const loaderTimeline = gsap.timeline({
       repeat: -1,
       yoyo: true,
       paused: pause,
@@ -88,9 +90,15 @@ const Loader = props => {
       stroke: '#FF000B',
     }, '>');
 
-    loaderAnimation.add(logoOuter, 0);
-    loaderAnimation.add(logoInner, 0);
+    loaderTimeline.add(logoOuter, 0);
+    loaderTimeline.add(logoInner, 0);
+    loaderAnimation.current = loaderTimeline;
   }, [])
+
+  useEffect(() => {
+    if (!pause) loaderAnimation.current.play();
+    else loaderAnimation.current.pause();
+  }, [pause])
 
   return (
     <div className={`Loader ${props.className}`}>
