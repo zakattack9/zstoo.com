@@ -52,6 +52,7 @@ const Main = props => {
   useEffect(() => {
     calculateScrollPos();
     setCalculated(true);
+    document.querySelector('.Main').classList.remove('hide');
   }, [])
 
   const projectClick = (id) => setProjectId(id);
@@ -64,7 +65,7 @@ const Main = props => {
   }
 
   return (
-    <div className="Main">
+    <div className="Main hide">
       <Home />
       <Projects projectClick={projectClick} />
       <About />

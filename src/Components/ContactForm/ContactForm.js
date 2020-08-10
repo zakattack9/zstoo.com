@@ -22,7 +22,7 @@ const ContactForm = () => {
     const { name, email, subject, message } = formData;
     const URL = "https://5bstnxh46j.execute-api.us-west-2.amazonaws.com/dev/contact";
     try {
-      const response = await fetch(URL, {
+      await fetch(URL, {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -35,12 +35,10 @@ const ContactForm = () => {
           "message": message.value,
         })
       });
-      // console.log(response);
       setPauseLoader(true);
       document.querySelector('.ContactForm__Loader').classList.add('hide');
       document.querySelector('.ContactForm__success').classList.remove('hide');
     } catch (err) {
-      // console.error(err);
       setPauseLoader(true);
       document.querySelector('.ContactForm__Loader').classList.add('hide');
       document.querySelector('.ContactForm__failure').classList.remove('hide');
@@ -109,7 +107,6 @@ const ContactForm = () => {
       ease: 'power2.inOut',
       strokeDashoffset: -100,
       opacity: 0,
-      pointerEvents: 'none',
     }, 0);
     contactFormTimeline.from('.ContactForm__input', {
       duration: 0.5,
@@ -129,21 +126,21 @@ const ContactForm = () => {
       ease: 'power1.inOut',
       opacity: 0,
       scale: 0.95,
-      y: 5,
       pointerEvents: 'none',
+      y: 5,
     }, '>-0.2');
     contactFormTimeline.from('.ContactForm__abstract--path', {
       duration: 1,
       ease: 'power1.inOut',
       strokeDashoffset: 1122,
-      pointerEvents: 'none',
     }, '<-1');
     contactFormAnimation.current = contactFormTimeline;
+    document.querySelector('.ContactForm').classList.remove('hide');
   }, []);
 
 
   return (
-    <div className="ContactForm">
+    <div className="ContactForm hide">
       <form className="ContactForm__form" onSubmit={handleFormSubmit}>
         <LetsTalk className="ContactForm__LetsTalk" pathName="ContactForm__LetsTalk--path" fill="#161616" gradient={formError.error ? "contact" : "contactForm"}/>
         <input 
