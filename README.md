@@ -33,9 +33,9 @@
 - Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens; consequently this will cause ScrollTrigger to reverse any animatons up to that point
 - Finder better way to target browser specific animations instead of user-agent
 - ~Laggy/stuttering animations on Firefox (mobile)~
-  -**Solved: fixed by removing `filter: saturate(___%)` from SVGs due to high GPU resources; may also need `rotation: 0.01` on elements as suggested by [GSAP](https://greensock.com/forums/topic/12760-animation-slowjerky-not-smooth-in-firefox/)**
+  - **Solved: fixed by removing `filter: saturate(___%)` from SVGs due to high GPU resources; may also need `rotation: 0.01` on elements as suggested by [GSAP](https://greensock.com/forums/topic/12760-animation-slowjerky-not-smooth-in-firefox/)**
 - ~when an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements onto the screen; this is due to the slight delay between the component being rendered and GSAP animation being fully created upon mount~
-  -**Solved: added a `hide` class with `opacity: 0; pointer-events: none` to component which is removed upon mount (after GSAP animation has been created)**
+  - **Solved: added a `hide` class with `opacity: 0; pointer-events: none` to component which is removed upon mount (after GSAP animation has been created)**
 - ~improve `scrollTo` functinoality for `Main` component upon resizing viewport~
   - **Solved: added a timeout to the `calculateScrollPos` function that waits untill ScrollTrigger finishes recalculating the positioning of elements (ScrollTrigger [waits](https://greensock.com/docs/v3/Plugins/ScrollTrigger) 200ms after a window resize occurs before recalculation)**
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
@@ -48,13 +48,13 @@
   - **Solved: exported abstract glow graphics as web PNGs**
 
 ### TODO
+- preload packages with webpack during loading screen
 - convert project id's on home page to use `ProjectId` SVG 
   - remove `HelveticaBoldOutline.woff` font once converted
 - design desktop views and compatibility
 - UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
-- create pipeline for deployment
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
 - ~link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)~
 - implement cleanup for gsap timelines and scrollscene objects
@@ -64,7 +64,7 @@
   - *N/A since migration to GSAP ScrollTrigger*
 
 ### Stretch Goals
-- preload packages with loading screen
+- create pipeline for deployment
 - easter eggs
   - mode that can be enabled at the end of website
 - ~rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated~
