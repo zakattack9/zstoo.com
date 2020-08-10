@@ -27,15 +27,19 @@
 **no longer using partly due to inactive development and the migration to GSAP ScrollTrigger*
 
 ### Optimization Issues
-- Weird animation and layout behavior on Safari
+
 - Pause animations when playing overlay animation
-- Fix spacing between Skills title and first section title
-- Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens; consequently this will cause ScrollTrigger to reverse any animatons up to that point
 - Finder better way to target browser specific animations instead of user-agent
+- ~Fix spacing between Skills title and first skill section title~
+  - **Ignored: this bug usually occurs when the page is refreshed near the about page——not a huge issue as it's visually a minor UI inconvenience**
+- ~Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens due to the viewport height resizing; consequently, this will cause ScrollTrigger to reverse any animatons up to that point~
+  - **Solved: separated contact form to a seperate page without any scroll binded animations**
+- ~Weird animation and layout behavior on Safari~
+  - **Solved: fixed by using `stroke-dasharray: ___ ___` with two identical numerical values when using `stroke-dashoffset` with a negative value; Safari does not work nicely with negative values** 
 - ~Laggy/stuttering animations on Firefox (mobile)~
   - **Solved: fixed by removing `filter: saturate(___%)` from SVGs due to high GPU resources; may also need `rotation: 0.01` on elements as suggested by [GSAP](https://greensock.com/forums/topic/12760-animation-slowjerky-not-smooth-in-firefox/)**
-- ~when an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements onto the screen; this is due to the slight delay between the component being rendered and GSAP animation being fully created upon mount~
-  - **Solved: added a `hide` class with `opacity: 0; pointer-events: none` to component which is removed upon mount (after GSAP animation has been created)**
+- ~when an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements into view on the screen; this is due to the slight delay between the component being rendered and the GSAP animation not being fully created upon mounting the component~
+  - **Solved: added a `hide` class with `opacity: 0; pointer-events: none;` to component (class is removed upon mount after GSAP animation has been created)**
 - ~improve `scrollTo` functinoality for `Main` component upon resizing viewport~
   - **Solved: added a timeout to the `calculateScrollPos` function that waits untill ScrollTrigger finishes recalculating the positioning of elements (ScrollTrigger [waits](https://greensock.com/docs/v3/Plugins/ScrollTrigger) 200ms after a window resize occurs before recalculation)**
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
