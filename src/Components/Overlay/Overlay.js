@@ -152,6 +152,7 @@ const Overlay = props => {
       strokeDashoffset: 0,
     }, 'socialIcon');
     overlayAnimation.current = overlayTimeline;
+    document.querySelector('.Overlay').classList.remove('hide');
   }, []);
 
   return <>
@@ -159,7 +160,7 @@ const Overlay = props => {
       <div className="Overlay__icon Overlay__icon--top"></div>
       <div className="Overlay__icon Overlay__icon--bottom"></div>
     </div>
-    <div className="Overlay">
+    <div className="Overlay hide">
       <div className="Overlay__linkWrapper center" ref={linkWrapperRef}>
         <Link to="/home">
           <div className="Overlay__link Overlay__link--home" onClick={() => handleOverlay(true)}>Home</div>

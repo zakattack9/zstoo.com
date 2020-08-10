@@ -29,6 +29,7 @@
     filter: saturate(100%);
 
     &--path {
+      will-change: stroke-dashoffset;
       stroke-dasharray: 770 770;
     }
   }
@@ -123,5 +124,10 @@
 }
 
 .preventClick {
+  pointer-events: none;
+}
+
+.hide {
+  opacity: 0;
   pointer-events: none;
 }
