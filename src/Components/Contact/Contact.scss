@@ -57,6 +57,7 @@
       justify-self: center;
       align-self: end;
       grid-area: icon;
+      pointer-events: auto;
     }
 
     &--LinkedIn {

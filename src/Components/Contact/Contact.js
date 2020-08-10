@@ -64,8 +64,10 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: -265,
     }, '<0.5');
-    contactTimeline.from('.Contact__icon-aTag--LinkedIn', {
+    contactTimeline.fromTo('.Contact__icon-aTag--LinkedIn', {
       ...aTagParams,
+    }, {
+      pointerEvents: 'auto',
     }, '<');
     contactTimeline.from('.Contact__iconText--LinkedIn', {
       ...iconTextParams
@@ -74,19 +76,21 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: 265,
     }, '>0.5');
-    contactTimeline.to('.Contact__icon-aTag--LinkedIn', {
-      ...aTagParams,
-    }, '<');
     contactTimeline.to('.Contact__iconText--LinkedIn', {
       ...iconTextParams
     }, '<');
+    contactTimeline.to('.Contact__icon-aTag--LinkedIn', {
+      ...aTagParams,
+    }, '>');
 
     contactTimeline.from('.Contact__icon--GitHub', {
       ...iconParams,
       strokeDashoffset: -395,
     }, '>');
-    contactTimeline.from('.Contact__icon-aTag--GitHub', {
+    contactTimeline.fromTo('.Contact__icon-aTag--GitHub', {
       ...aTagParams,
+    }, {
+      pointerEvents: 'auto',
     }, '<');
     contactTimeline.from('.Contact__iconText--GitHub', {
       ...iconTextParams
@@ -95,19 +99,21 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: 395,
     }, '>0.5');
-    contactTimeline.to('.Contact__icon-aTag--GitHub', {
-      ...aTagParams,
-    }, '<');
     contactTimeline.to('.Contact__iconText--GitHub', {
       ...iconTextParams
     }, '<');
+    contactTimeline.to('.Contact__icon-aTag--GitHub', {
+      ...aTagParams,
+    }, '>');
 
     contactTimeline.from('.Contact__icon--Medium', {
       ...iconParams,
       strokeDashoffset: -485,
     }, '>');
-    contactTimeline.from('.Contact__icon-aTag--Medium', {
+    contactTimeline.fromTo('.Contact__icon-aTag--Medium', {
       ...aTagParams,
+    }, {
+      pointerEvents: 'auto', 
     }, '<');
     contactTimeline.from('.Contact__iconText--Medium', {
       ...iconTextParams
@@ -116,12 +122,12 @@ const Contact = () => {
       ...iconParams,
       strokeDashoffset: 485,
     }, '>0.5');
-    contactTimeline.to('.Contact__icon-aTag--Medium', {
-      ...aTagParams,
-    }, '<');
     contactTimeline.to('.Contact__iconText--Medium', {
       ...iconTextParams
     }, '<');
+    contactTimeline.to('.Contact__icon-aTag--Medium', {
+      ...aTagParams,
+    }, '>');
 
     const contactInfoTimeline = gsap.timeline({
       scrollTrigger: {
