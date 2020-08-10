@@ -85,11 +85,13 @@ const About = () => {
       filter: 'opacity(0%)',
       scale: 0.84,
     }, 0);
-    skillsTimeline.to('.About__abstract--path', {
+    skillsTimeline.fromTo('.About__abstract--path', {
+      strokeDasharray: '1333 1333',
+    }, {
       duration: 2,
       ease: 'power1.inOut',
       xPercent: 30,
-      strokeDasharray: 800,
+      strokeDasharray: '800 800',
       strokeDashoffset: -100,
       stagger: {
         each: 0.1,
@@ -138,7 +140,7 @@ const About = () => {
     aboutTimelineOut.to('.About__abstract--path', {
       duration: 4,
       ease: 'power2.inOut',
-      strokeDasharray: 1333,
+      strokeDasharray: '1333 1333',
       strokeDashoffset: 1333,
       stagger: {
         each: 0.07,

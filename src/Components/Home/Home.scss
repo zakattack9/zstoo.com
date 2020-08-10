@@ -51,7 +51,7 @@
     }
 
     &--path {
-      stroke-dasharray: 239;
+      stroke-dasharray: 239 239;
       stroke-dashoffset: 0;
     }
   }
@@ -66,7 +66,7 @@
 
   &__headline {
     width: 14em;
-    stroke-dasharray: 130;
+    stroke-dasharray: 130 130;
     stroke-dashoffset: 0;
   }
 

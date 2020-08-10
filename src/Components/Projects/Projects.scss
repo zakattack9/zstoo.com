@@ -18,8 +18,8 @@
     filter: saturate(200%);
     
     &--path {
-      stroke-dasharray: 745;
-      stroke-dashoffset: -745;
+      stroke-dasharray: 745 745;
+      // stroke-dashoffset: -745;
     }
   }
 

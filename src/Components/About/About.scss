@@ -26,8 +26,8 @@
     filter: saturate(200%);
 
     &--path {
-      stroke-dasharray: 1333;
-      stroke-dashoffset: 0;
+      stroke-dasharray: 1333 1333;
+      // stroke-dashoffset: 0;
     }
   }
 
@@ -59,7 +59,7 @@
     align-self: end;
 
     &--path {
-      stroke-dasharray: 1540;
+      stroke-dasharray: 1540 1540;
       stroke-dashoffset: 0;
     }
   }
@@ -74,7 +74,7 @@
     align-self: end;
 
     &--path {
-      stroke-dasharray: 850;
+      stroke-dasharray: 850 850;
       stroke-dashoffset: -850; // comment out to make visible
     }
   }

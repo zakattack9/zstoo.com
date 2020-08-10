@@ -19,7 +19,7 @@
     filter: saturate(200%);
 
     &--path {
-      stroke-dasharray: 1122;
+      stroke-dasharray: 1122 1122;
       stroke-dashoffset: 0;
     }
   }
@@ -39,7 +39,7 @@
     padding-bottom: 0.3em;
 
     &--path {
-      stroke-dasharray: 100;
+      stroke-dasharray: 100 100;
     }
   }
 
@@ -69,7 +69,6 @@
     resize: none;
     box-shadow: 3px 4px 5px #121212;
     pointer-events: auto;
-    transition: 0.2s;
 
     &--message {
       min-height: 9em;
@@ -123,11 +122,10 @@
 
 .ReturnHomeBtn {
   width: 8.5em;
-  border-radius: 50px;
   border: 1px double transparent;
   border-radius: 50px;
   background-image: linear-gradient(#131313, #131313),
-  linear-gradient(90deg, #EA1A39, #3C1DF2);
+                    linear-gradient(90deg, #EA1A39, #3C1DF2);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   box-sizing: border-box;
@@ -151,6 +149,7 @@
 }
 
 .fade {
+  transition: 0.2s;
   color: #3b3b3b;
   background-image: linear-gradient(#131313, #131313),
                     linear-gradient(90deg, #005e46, #530048 75%, #5e0029);

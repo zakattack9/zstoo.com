@@ -23,7 +23,10 @@ const Projects = (props) => {
         // markers: true,
       }
     });
-    projectsTimeline.to('.Projects__abstract--path', {
+    projectsTimeline.fromTo('.Projects__abstract--path', {
+      strokeDashoffset: -745,
+      y: 0,
+    }, {
       duration: 1.5,
       ease: 'power1.inOut',
       strokeDashoffset: 0,

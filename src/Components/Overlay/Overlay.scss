@@ -29,7 +29,7 @@
     filter: saturate(100%);
 
     &--path {
-      stroke-dasharray: 770;
+      stroke-dasharray: 770 770;
     }
   }
 
@@ -101,15 +101,15 @@
     stroke-width: 2;
 
     &--GitHub {
-      stroke-dasharray: 395;
+      stroke-dasharray: 395 395;
     }
 
     &--Medium {
-      stroke-dasharray: 485;
+      stroke-dasharray: 485 485;
     }
 
     &--LinkedIn {
-      stroke-dasharray: 265;
+      stroke-dasharray: 265 265;
     }
   }
 }

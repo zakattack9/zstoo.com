@@ -22,7 +22,7 @@
     filter: saturate(200%);
 
     &--path {
-      stroke-dasharray: 1122;
+      stroke-dasharray: 1122 1122;
       stroke-dashoffset: 0;
     }
   }
@@ -60,17 +60,17 @@
     }
 
     &--LinkedIn {
-      stroke-dasharray: 265;
+      stroke-dasharray: 265 265;
       stroke-dashoffset: 0;
     }
 
     &--GitHub {
-      stroke-dasharray: 395;
+      stroke-dasharray: 395 395;
       stroke-dashoffset: 0;
     }
 
     &--Medium {
-      stroke-dasharray: 485;
+      stroke-dasharray: 485 485;
       stroke-dashoffset: 0;
     }
   }
@@ -102,7 +102,7 @@
     margin-bottom: 0.5em;
 
     &--path {
-      stroke-dasharray: 100;
+      stroke-dasharray: 100 100;
       stroke-dashoffset: 0;
     }
   }
@@ -118,7 +118,7 @@
     width: 7.5em;
 
     &--path {
-      stroke-dasharray: 195;
+      stroke-dasharray: 195 195;
       stroke-dashoffset: 0;
     }
   }

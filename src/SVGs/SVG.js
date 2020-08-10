@@ -369,7 +369,7 @@ export const ProjectId = props => {
           <stop offset="100%" stopColor="#191919" />
         </linearGradient>
       </defs>
-      <text fill="#49CC59" fillOpacity="0" fillRule="evenodd" stroke="url(#gradient)" strokeWidth="3" fontSize="170" fontWeight="bold" letterSpacing="10">
+      <text fill="#0c0c0c" fillOpacity="1" fillRule="evenodd" stroke="url(#gradient)" strokeWidth="3" fontSize="170" fontWeight="bold" letterSpacing="10">
         <tspan x="-2" y="123">0{props.projectId}</tspan>
       </text>
     </svg>

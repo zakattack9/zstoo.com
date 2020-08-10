@@ -32,7 +32,7 @@
 - Fix spacing between Skills title and first section title
 - Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens; consequently this will cause ScrollTrigger to reverse any animatons up to that point
 - ~improve `scrollTo` functinoality for `Main` component upon resizing viewport~
-  - fixed by adding a timeout to the `calculateScrollPos` function that waits untill ScrollTrigger finishes recalculating the positioning of elements (ScrollTrigger [waits](https://greensock.com/docs/v3/Plugins/ScrollTrigger) 200ms after a window resize occurs before recalculation)
+  - **Solved: added a timeout to the `calculateScrollPos` function that waits untill ScrollTrigger finishes recalculating the positioning of elements (ScrollTrigger [waits](https://greensock.com/docs/v3/Plugins/ScrollTrigger) 200ms after a window resize occurs before recalculation)**
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
   - **Solved: used `filter: opacity(0%)` to prevent animation of the same `opacity` property**
 - ~Jumping pins on page refresh (can be reset by switching tabs)~

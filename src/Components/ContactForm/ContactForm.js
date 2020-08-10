@@ -114,7 +114,6 @@ const ContactForm = () => {
       opacity: 0,
       scale: 0.95,
       y: 5,
-      transition: 0,
       stagger: {
         each: 0.1,
         from: 'start'
