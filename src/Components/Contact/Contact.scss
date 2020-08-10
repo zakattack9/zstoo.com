@@ -19,7 +19,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    filter: saturate(200%);
+    // filter: saturate(200%);
 
     &--path {
       stroke-dasharray: 1122 1122;

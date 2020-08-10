@@ -28,9 +28,12 @@
 
 ### Optimization Issues
 - Weird animation and layout behavior on Safari
-- Laggy/stuttering animations on Firefox (mobile)
+- Pause animations when playing overlay animation
 - Fix spacing between Skills title and first section title
 - Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens; consequently this will cause ScrollTrigger to reverse any animatons up to that point
+- Finder better way to target browser specific animations instead of user-agent
+- ~Laggy/stuttering animations on Firefox (mobile)~
+  -**Solved: fixed by removing `filter: saturate(___%)` from SVGs due to high GPU resources; may also need `rotation: 0.01` on elements as suggested by [GSAP](https://greensock.com/forums/topic/12760-animation-slowjerky-not-smooth-in-firefox/)**
 - ~when an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements onto the screen; this is due to the slight delay between the component being rendered and GSAP animation being fully created upon mount~
   -**Solved: added a `hide` class with `opacity: 0; pointer-events: none` to component which is removed upon mount (after GSAP animation has been created)**
 - ~improve `scrollTo` functinoality for `Main` component upon resizing viewport~

@@ -26,7 +26,7 @@
 
   &__abstract {
     width: 130%;
-    filter: saturate(100%);
+    // filter: saturate(100%);
 
     &--path {
       will-change: stroke-dashoffset;
@@ -37,7 +37,7 @@
   &__glow {
     width: 150%;
     top: 47.5% !important;
-    filter: saturate(150%);
+    // filter: saturate(150%);
   }
 
   &__iconWrapper {

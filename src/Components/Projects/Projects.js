@@ -11,6 +11,7 @@ import './Projects.scss';
 
 const Projects = (props) => {
   useEffect(() => {
+    const isFirefox = (navigator.userAgent.indexOf('Firefox') !== -1);
     gsap.registerPlugin(ScrollTrigger);
     const projectsTimeline = gsap.timeline({ 
       scrollTrigger: {
@@ -30,7 +31,7 @@ const Projects = (props) => {
       duration: 1.5,
       ease: 'power1.inOut',
       strokeDashoffset: 0,
-      y: 250,
+      y: !isFirefox ? 250 : 0,
       stagger: {
         each: 0.03,
         from: 'start'

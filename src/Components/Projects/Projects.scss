@@ -15,7 +15,7 @@
     height: 100%;
     position: absolute;
     right: 0;
-    filter: saturate(200%);
+    // filter: saturate(200%);
     
     &--path {
       stroke-dasharray: 745 745;
@@ -27,7 +27,7 @@
     height: 40em;
     position: absolute;
     top: -2.6em;
-    filter: saturate(120%);
+    // filter: saturate(120%);
   }
 
   &__wrapper {

@@ -17,7 +17,7 @@
     left: 10%;
     transform: translateY(-50%) scale(1.75) skewY(0deg);
     opacity: 0.5;
-    filter: saturate(200%);
+    // filter: saturate(200%);
 
     &--path {
       stroke-dasharray: 1122 1122;
