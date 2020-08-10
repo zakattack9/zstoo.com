@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Contact as Abstract, LetsTalk } from '../../SVGs/SVG';
 import Loader from '../Loader/Loader';
@@ -34,9 +35,15 @@ const ContactForm = () => {
           "message": message.value,
         })
       });
-      console.log(response);
+      // console.log(response);
+      setPauseLoader(true);
+      document.querySelector('.ContactForm__Loader').classList.add('hide');
+      document.querySelector('.ContactForm__success').classList.remove('hide');
     } catch (err) {
-      console.error(err);
+      // console.error(err);
+      setPauseLoader(true);
+      document.querySelector('.ContactForm__Loader').classList.add('hide');
+      document.querySelector('.ContactForm__failure').classList.remove('hide');
     }
   }
   
@@ -63,7 +70,7 @@ const ContactForm = () => {
     setFormData({ ...formData, [field]: { value, error }});
   }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (formError.error) {
       Object.keys(formData).forEach((field) => {
@@ -81,8 +88,8 @@ const ContactForm = () => {
       contactFormAnimation.current.reverse(0).then(() => {
         document.querySelector('.ContactForm__Loader').classList.remove('hide');
         setPauseLoader(false);
+        submitForm();
       });
-      submitForm();
     }
   }
 
@@ -105,14 +112,14 @@ const ContactForm = () => {
       pointerEvents: 'none',
     }, 0);
     contactFormTimeline.from('.ContactForm__input', {
-      duration: 0.6,
+      duration: 0.5,
       ease: 'power1.inOut',
       opacity: 0,
       scale: 0.95,
       y: 5,
       transition: 0,
       stagger: {
-        each: 0.15,
+        each: 0.1,
         from: 'start'
       },
       pointerEvents: 'none',
@@ -178,12 +185,15 @@ const ContactForm = () => {
 
       <Loader className="ContactForm__Loader hide" pause={pauseLoader} />
 
-      <div className="ContactForm__success">
-
+      <div className="ContactForm__success hide">
+        Submitted contact information successfully, we'll be in touch soon!
+        <ReturnHomeBtn />
       </div>
 
-      <div className="ContactForm__failure">
-        
+      <div className="ContactForm__failure hide">
+        Unfortunately something went wrong, please send me an email instead at <br/> 
+        <a className="ContactForm__failure--email" href="mailto:sakata.zak@gmail.com">sakata.zak@gmail.com</a>
+        <ReturnHomeBtn />
       </div>
 
       <div className="ContactForm__art">
@@ -194,3 +204,13 @@ const ContactForm = () => {
 }
 
 export default ContactForm;
+
+const ReturnHomeBtn = props => {
+  return (
+    <Link to="/">
+      <div className="ReturnHomeBtn">
+        Homepage
+      </div>
+    </Link>
+  );
+}

@@ -93,7 +93,7 @@ const Loader = props => {
     loaderTimeline.add(logoOuter, 0);
     loaderTimeline.add(logoInner, 0);
     loaderAnimation.current = loaderTimeline;
-  }, [])
+  }, []) // eslint-disable-line
 
   useEffect(() => {
     if (!pause) loaderAnimation.current.play();
