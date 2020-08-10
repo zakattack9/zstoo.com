@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8bc7ef519c89784b7b243bfae98e533d",
+    "revision": "adec02c8bafd9ec6bc7f01236fb2f532",
     "url": "/zstoo.com/index.html"
   },
   {
-    "revision": "1f3bb1f71c98e68243f4",
-    "url": "/zstoo.com/static/css/main.a6eec588.chunk.css"
+    "revision": "08dcdec16026bc4cd325",
+    "url": "/zstoo.com/static/css/main.f685e239.chunk.css"
   },
   {
     "revision": "e67dafd633f7e5337332",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/2.31bf9a29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1f3bb1f71c98e68243f4",
-    "url": "/zstoo.com/static/js/main.9ecc0e5a.chunk.js"
+    "revision": "08dcdec16026bc4cd325",
+    "url": "/zstoo.com/static/js/main.489e8b61.chunk.js"
   },
   {
     "revision": "7dc7f47025beddf04cc7",
