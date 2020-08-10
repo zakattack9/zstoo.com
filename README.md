@@ -31,6 +31,8 @@
 - Laggy/stuttering animations on Firefox (mobile)
 - Fix spacing between Skills title and first section title
 - Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens; consequently this will cause ScrollTrigger to reverse any animatons up to that point
+- ~when an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements onto the screen; this is due to the slight delay between the component being rendered and GSAP animation being fully created upon mount~
+  -**Solved: added a `hide` class with `opacity: 0; pointer-events: none` to component which is removed upon mount (after GSAP animation has been created)**
 - ~improve `scrollTo` functinoality for `Main` component upon resizing viewport~
   - **Solved: added a timeout to the `calculateScrollPos` function that waits untill ScrollTrigger finishes recalculating the positioning of elements (ScrollTrigger [waits](https://greensock.com/docs/v3/Plugins/ScrollTrigger) 200ms after a window resize occurs before recalculation)**
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
