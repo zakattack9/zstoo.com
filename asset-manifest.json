@@ -1,28 +1,33 @@
 {
   "files": {
-    "main.css": "/zstoo.com/static/css/main.cb3bfb93.chunk.css",
-    "main.js": "/zstoo.com/static/js/main.b94742b8.chunk.js",
-    "main.js.map": "/zstoo.com/static/js/main.b94742b8.chunk.js.map",
+    "main.css": "/zstoo.com/static/css/main.a6eec588.chunk.css",
+    "main.js": "/zstoo.com/static/js/main.9ecc0e5a.chunk.js",
+    "main.js.map": "/zstoo.com/static/js/main.9ecc0e5a.chunk.js.map",
     "runtime-main.js": "/zstoo.com/static/js/runtime-main.29fef2bd.js",
     "runtime-main.js.map": "/zstoo.com/static/js/runtime-main.29fef2bd.js.map",
-    "static/js/2.5193f222.chunk.js": "/zstoo.com/static/js/2.5193f222.chunk.js",
-    "static/js/2.5193f222.chunk.js.map": "/zstoo.com/static/js/2.5193f222.chunk.js.map",
+    "static/js/2.31bf9a29.chunk.js": "/zstoo.com/static/js/2.31bf9a29.chunk.js",
+    "static/js/2.31bf9a29.chunk.js.map": "/zstoo.com/static/js/2.31bf9a29.chunk.js.map",
     "index.html": "/zstoo.com/index.html",
-    "precache-manifest.9e9d1e781d157ae55a68c9b79c91bd5b.js": "/zstoo.com/precache-manifest.9e9d1e781d157ae55a68c9b79c91bd5b.js",
+    "precache-manifest.5178ef589a67bc8bb839ce69b7d20087.js": "/zstoo.com/precache-manifest.5178ef589a67bc8bb839ce69b7d20087.js",
     "service-worker.js": "/zstoo.com/service-worker.js",
-    "static/css/main.cb3bfb93.chunk.css.map": "/zstoo.com/static/css/main.cb3bfb93.chunk.css.map",
-    "static/js/2.5193f222.chunk.js.LICENSE.txt": "/zstoo.com/static/js/2.5193f222.chunk.js.LICENSE.txt",
+    "static/css/main.a6eec588.chunk.css.map": "/zstoo.com/static/css/main.a6eec588.chunk.css.map",
+    "static/js/2.31bf9a29.chunk.js.LICENSE.txt": "/zstoo.com/static/js/2.31bf9a29.chunk.js.LICENSE.txt",
     "static/media/AboutGlow.png": "/zstoo.com/static/media/AboutGlow.bf120f7d.png",
     "static/media/ContactGlow.png": "/zstoo.com/static/media/ContactGlow.dbc36e44.png",
     "static/media/index.scss": "/zstoo.com/static/media/ObjectSansSlanted.e86d10ee.woff",
     "static/media/HomeGlow.png": "/zstoo.com/static/media/HomeGlow.00a27232.png",
-    "static/media/ProjectsGlow.png": "/zstoo.com/static/media/ProjectsGlow.c95e3e53.png",
+    "static/media/OverlayGlow.png": "/zstoo.com/static/media/OverlayGlow.71fc5f45.png",
+    "static/media/Project1Glow.png": "/zstoo.com/static/media/Project1Glow.63d3fb2e.png",
+    "static/media/Project2Glow.png": "/zstoo.com/static/media/Project2Glow.6bc89e87.png",
+    "static/media/Project3Glow.png": "/zstoo.com/static/media/Project3Glow.2ada5fcb.png",
+    "static/media/Project4Glow.png": "/zstoo.com/static/media/Project4Glow.a2220790.png",
+    "static/media/Project5Glow.png": "/zstoo.com/static/media/Project5Glow.8aa366a0.png",
     "static/media/ZAK.svg": "/zstoo.com/static/media/ZAK.df800b5a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.29fef2bd.js",
-    "static/js/2.5193f222.chunk.js",
-    "static/css/main.cb3bfb93.chunk.css",
-    "static/js/main.b94742b8.chunk.js"
+    "static/js/2.31bf9a29.chunk.js",
+    "static/css/main.a6eec588.chunk.css",
+    "static/js/main.9ecc0e5a.chunk.js"
   ]
 }

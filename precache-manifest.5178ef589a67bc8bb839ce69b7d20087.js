@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9aba391247c69e988a0bf1b81b7c9d81",
+    "revision": "8bc7ef519c89784b7b243bfae98e533d",
     "url": "/zstoo.com/index.html"
   },
   {
-    "revision": "7f1581deb1f6bd47a38f",
-    "url": "/zstoo.com/static/css/main.cb3bfb93.chunk.css"
+    "revision": "1f3bb1f71c98e68243f4",
+    "url": "/zstoo.com/static/css/main.a6eec588.chunk.css"
   },
   {
-    "revision": "eea0d17a4cbd9ef03d3b",
-    "url": "/zstoo.com/static/js/2.5193f222.chunk.js"
+    "revision": "e67dafd633f7e5337332",
+    "url": "/zstoo.com/static/js/2.31bf9a29.chunk.js"
   },
   {
     "revision": "c5ca6e11834f65a36393766aadfd4db6",
-    "url": "/zstoo.com/static/js/2.5193f222.chunk.js.LICENSE.txt"
+    "url": "/zstoo.com/static/js/2.31bf9a29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7f1581deb1f6bd47a38f",
-    "url": "/zstoo.com/static/js/main.b94742b8.chunk.js"
+    "revision": "1f3bb1f71c98e68243f4",
+    "url": "/zstoo.com/static/js/main.9ecc0e5a.chunk.js"
   },
   {
     "revision": "7dc7f47025beddf04cc7",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dbc36e44277debdde68884620f4404c3",
     "url": "/zstoo.com/static/media/ContactGlow.dbc36e44.png"
+  },
+  {
+    "revision": "2925cc7663b00232e9869504a3a1b35e",
+    "url": "/zstoo.com/static/media/HelveticaBold.2925cc76.woff"
   },
   {
     "revision": "100a064d3918bd26402a821d0a8a39c8",
@@ -56,8 +60,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/media/ObjectSansSlanted.e86d10ee.woff"
   },
   {
-    "revision": "c95e3e538c383ccab3a7af7712547e3f",
-    "url": "/zstoo.com/static/media/ProjectsGlow.c95e3e53.png"
+    "revision": "71fc5f45096be37c6130b1da211c23ca",
+    "url": "/zstoo.com/static/media/OverlayGlow.71fc5f45.png"
+  },
+  {
+    "revision": "63d3fb2e616a4a6d637522483fdf1e35",
+    "url": "/zstoo.com/static/media/Project1Glow.63d3fb2e.png"
+  },
+  {
+    "revision": "6bc89e875af3d980da6ae992c3192d09",
+    "url": "/zstoo.com/static/media/Project2Glow.6bc89e87.png"
+  },
+  {
+    "revision": "2ada5fcba8a42e4f1a1471a04dfa6390",
+    "url": "/zstoo.com/static/media/Project3Glow.2ada5fcb.png"
+  },
+  {
+    "revision": "a2220790713d11838719dd3be1958e21",
+    "url": "/zstoo.com/static/media/Project4Glow.a2220790.png"
+  },
+  {
+    "revision": "8aa366a09a679d93cfdf18adc9fa1f6b",
+    "url": "/zstoo.com/static/media/Project5Glow.8aa366a0.png"
   },
   {
     "revision": "df800b5a29ef43d248304a7adba05a6b",
