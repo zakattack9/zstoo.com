@@ -29,9 +29,9 @@
 ### Optimization Issues
 
 - Pause animations when playing overlay animation
-- Finder better way to target browser specific animations instead of user-agent
+- Find a better way to target browser specific animations instead of user-agent
 - ~Fix spacing between Skills title and first skill section title~
-  - **Ignored: this bug usually occurs when the page is refreshed near the about page——not a huge issue as it's visually a minor UI inconvenience**
+  - **Ignored: this bug usually occurs when the page is refreshed near the about page—not a huge issue as it's visually a minor UI inconvenience**
 - ~Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens due to the viewport height resizing; consequently, this will cause ScrollTrigger to reverse any animatons up to that point~
   - **Solved: separated contact form to a seperate page without any scroll binded animations**
 - ~Weird animation and layout behavior on Safari~
@@ -52,7 +52,8 @@
   - **Solved: exported abstract glow graphics as web PNGs**
 
 ### TODO
-- preload packages with webpack during loading screen
+- add loading screen while preloading packages
+- code split and implement lazy loading
 - convert project id's on home page to use `ProjectId` SVG 
   - remove `HelveticaBoldOutline.woff` font once converted
 - design desktop views and compatibility
@@ -69,6 +70,7 @@
 
 ### Stretch Goals
 - create pipeline for deployment
+- eject app from CRA and customize webpack config
 - easter eggs
   - mode that can be enabled at the end of website
 - ~rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated~
