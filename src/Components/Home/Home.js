@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Zak from '../../SVGs/ZAK.svg';
 import Glow from '../../Images/HomeGlow.png';
-import { Home as Abstract, Headline } from '../../SVGs/SVG';
+import { Home as Abstract, Headline, Zak } from '../../SVGs/SVG';
 import NavLink from '../NavLink/NavLink';
 import './Home.scss';
 
@@ -43,9 +42,21 @@ const Home = () => {
       opacity: 0,
       y: -8,
     }, '<0.5');
-
+    homeLoadAnimation.from('.Home__NavLink', {
+      duration: 0.8,
+      ease: 'power1.out',
+      yPercent: -25,
+      filter: 'opacity(0)',
+      pointerEvents: 'auto',
+      stagger: {
+        each: 0.1,
+        from: 'start'
+      }
+    }, '<0.3');
+    
+    const homeLoadAnimationDuration = homeLoadAnimation.duration();
     const homeLoopAnimation = gsap.timeline({
-      delay: 1.3,
+      delay: homeLoadAnimationDuration - 0.9,
       repeat: -1,
       yoyo: true,
     });
@@ -134,7 +145,7 @@ const Home = () => {
         <div className="Home__art">
           <img className="Home__glow Home__glow--back" src={Glow} alt="abstract glow art"/>
           <Abstract className="Home__abstract Home__abstract--back" pathName="Home__abstract--path" />
-          <img className="Home__zak" src={Zak} alt="Zak"/>
+          <Zak className="Home__zak" />
           <img className="Home__glow Home__glow--front" src={Glow} alt="abstract glow art"/>
           <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
         </div>

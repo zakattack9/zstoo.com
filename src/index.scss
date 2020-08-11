@@ -1,13 +1,6 @@
 @import './Utils/variables.scss';
 
 @font-face {
-  font-family: "HelveticaBoldOutline";
-  src: url("./Fonts/HelveticaBoldOutline.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "HelveticaBold";
   src: url("./Fonts/HelveticaBold.woff") format("woff");
   font-weight: normal;
@@ -70,4 +63,9 @@ a {
 // modifier classes
 .preventScroll {
   overflow-y: hidden;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
 }

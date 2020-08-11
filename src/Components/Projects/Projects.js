@@ -5,8 +5,6 @@ import { Projects as Abstract } from '../../SVGs/SVG';
 import PROJECT_DATA from '../../Data/ProjectData';
 import ProjectLink from './ProjectLink';
 import Spacer from '../Spacer';
-// import Glow from '../../Images/ProjectsGlow.png';
-// import Skim from '../Skim/Skim';
 import './Projects.scss';
 
 const Projects = (props) => {
@@ -46,12 +44,6 @@ const Projects = (props) => {
         from: 'end'
       }
     }, 1.5);
-    // projectsTimeline.from('.Projects__glow', {
-    //   duration: 0.5, 
-    //   ease: 'power2.inOut',
-    //   opacity: 1,
-    //   scale: 0.84,
-    // }, 0.4);
 
     gsap.utils.toArray('.ProjectLink').forEach((project, i) => {
       gsap.from(project, {
@@ -95,21 +87,11 @@ const Projects = (props) => {
       });
     });
 
-    // gsap.from('.Projects__Skim', { 
-    //   opacity: 0,
-    //   scrollTrigger: {
-    //     trigger: '.Projects__Skim',
-    //     toggleActions: 'play complete complete reverse',
-    //     end: 'bottom -100%',
-    //     pin: true,
-    //     pinSpacing: false,
-    //     markers: true,
-    //   }
-    // });
+    document.querySelector('.Projects').classList.remove('hide');
   }, []);
 
   return (
-    <div className="Projects">
+    <div className="Projects hide">
       <div className="Projects__art">
         <Abstract className="Projects__abstract" pathName="Projects__abstract--path" />
         {/* <img className="Projects__glow" src={Glow} alt="abstract glow art"/> */}
