@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Overlay as Abstract } from '../../SVGs/SVG';
 import { LinkedIn, GitHub, Medium } from '../../SVGs/SVG';
@@ -7,18 +8,20 @@ import Glow from '../../Images/OverlayGlow.png';
 import './Overlay.scss';
 
 const Overlay = props => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const iconAnimation = useRef();
   const overlayAnimation = useRef();
   const linkWrapperRef = useRef();
   const iconWrapperRef = useRef();
   
-  const handleOverlay = (clickedLink) => {
-    if (clickedLink) {
+  const handleOverlay = (preventClick, open) => {
+    if (preventClick) {
       iconWrapperRef.current.classList.add('preventClick');
       linkWrapperRef.current.classList.add('preventClick');
     }
-    setIsOpen(!isOpen);
+    const openState = open ? open : !isOpen;
+    setIsOpen(openState);
   }
   
   useEffect(() => {
@@ -39,6 +42,11 @@ const Overlay = props => {
       }
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const { pathname } = location;
+    if (isOpen && pathname) handleOverlay(true, false);
+  }, [location.pathname]); // eslint-disable-line
 
   useEffect(() => {
     const overlayIconTimeline = gsap.timeline({ paused: true });

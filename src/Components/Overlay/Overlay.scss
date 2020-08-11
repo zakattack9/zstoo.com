@@ -29,8 +29,8 @@
     // filter: saturate(100%);
 
     &--path {
-      will-change: stroke-dashoffset;
       stroke-dasharray: 770 770;
+      stroke-dasharray: 770;
     }
   }
 

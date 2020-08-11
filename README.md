@@ -31,7 +31,7 @@
 - Pause animations when playing overlay animation
 - Find a better way to target browser specific animations instead of user-agent
 - ~Fix spacing between Skills title and first skill section title~
-  - **Ignored: this bug usually occurs when the page is refreshed near the about page—not a huge issue as it's visually a minor UI inconvenience**
+  - **Soved: used a function for the _start_ property of the Skills component ScrollTrigger pin that grabs the `clientHeight` of `.About__wrapper` and sets this to the second parameter of the _start_ property**
 - ~Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens due to the viewport height resizing; consequently, this will cause ScrollTrigger to reverse any animatons up to that point~
   - **Solved: separated contact form to a seperate page without any scroll binded animations**
 - ~Weird animation and layout behavior on Safari~
