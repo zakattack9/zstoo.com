@@ -2,11 +2,11 @@ import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
 // import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Overlay from './Components/Overlay/Overlay';
 import Loader from './Components/Loader/Loader';
 import './index.scss';
 
 const Main = lazy(() => import('./Components/Main'));
+const Overlay = lazy(() => import('./Components/Overlay/Overlay'));
 const Project = lazy(() => import('./Components/Project/Project'));
 const ContactForm = lazy(() => import('./Components/ContactForm/ContactForm'));
 
