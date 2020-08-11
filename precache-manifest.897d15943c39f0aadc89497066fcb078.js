@@ -1,67 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8327c2c0aa09bf94ac2c59766f16c6e1",
+    "revision": "6bf45a3f7d6ce587054f809c81077567",
     "url": "/zstoo.com/index.html"
   },
   {
-    "revision": "5dbabffb6618c165ac23",
-    "url": "/zstoo.com/static/css/2.5c266927.chunk.css"
+    "revision": "cfe748092013fa455ad5",
+    "url": "/zstoo.com/static/css/main.6a954ba9.chunk.css"
   },
   {
-    "revision": "364de2d15da473b422ee",
-    "url": "/zstoo.com/static/css/4.cb221a0c.chunk.css"
+    "revision": "2812f2c7ec19d1743066",
+    "url": "/zstoo.com/static/js/2.b5b6ab05.chunk.js"
   },
   {
-    "revision": "8dbb4f4525f247beee2c",
-    "url": "/zstoo.com/static/css/5.d40a0b93.chunk.css"
+    "revision": "81fc4a5d5bd295e7dda24772a5f5a9ff",
+    "url": "/zstoo.com/static/js/2.b5b6ab05.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6e684799993f569ece33",
-    "url": "/zstoo.com/static/css/6.6a6c1977.chunk.css"
+    "revision": "cfe748092013fa455ad5",
+    "url": "/zstoo.com/static/js/main.e80f567d.chunk.js"
   },
   {
-    "revision": "db3aaf6db409dda0d90c",
-    "url": "/zstoo.com/static/css/main.78764f4e.chunk.css"
-  },
-  {
-    "revision": "5dbabffb6618c165ac23",
-    "url": "/zstoo.com/static/js/2.bb8539b8.chunk.js"
-  },
-  {
-    "revision": "7af12efd549314d85b1a",
-    "url": "/zstoo.com/static/js/3.4d6d5e8f.chunk.js"
-  },
-  {
-    "revision": "f5327a3e8204f21ff1b2e5af38bc59ba",
-    "url": "/zstoo.com/static/js/3.4d6d5e8f.chunk.js.LICENSE.txt"
-  },
-  {
-    "revision": "364de2d15da473b422ee",
-    "url": "/zstoo.com/static/js/4.63dcf1e5.chunk.js"
-  },
-  {
-    "revision": "8dbb4f4525f247beee2c",
-    "url": "/zstoo.com/static/js/5.a4e5b729.chunk.js"
-  },
-  {
-    "revision": "6e684799993f569ece33",
-    "url": "/zstoo.com/static/js/6.3d9a39ba.chunk.js"
-  },
-  {
-    "revision": "dcf30b4c4cee7f992113",
-    "url": "/zstoo.com/static/js/7.3351e49d.chunk.js"
-  },
-  {
-    "revision": "3ec5e1234bf41ee19d1f00f65d122e16",
-    "url": "/zstoo.com/static/js/7.3351e49d.chunk.js.LICENSE.txt"
-  },
-  {
-    "revision": "db3aaf6db409dda0d90c",
-    "url": "/zstoo.com/static/js/main.b7dc6b08.chunk.js"
-  },
-  {
-    "revision": "c1d5fcfd828f782d881f",
-    "url": "/zstoo.com/static/js/runtime-main.a3494078.js"
+    "revision": "bddda338487d6e5d494e",
+    "url": "/zstoo.com/static/js/runtime-main.b31137a2.js"
   },
   {
     "revision": "bf120f7d17afd5feee4a6f2aa956d1a3",
