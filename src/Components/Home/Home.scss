@@ -6,7 +6,7 @@
   &__wrapper {
     font-size: 13pt; // modify to scale for screen sizes
     position: relative;
-    top: 50%;
+    top: 47%;
     transform: translateY(-50%);
     display: flex;
     flex-flow: column nowrap;
@@ -73,7 +73,7 @@
   &__navigation {
     overflow-x: hidden;
     position: absolute;
-    bottom: 10%;
+    bottom: 14%;
     right: 0;
     display: flex;
     flex-flow: column nowrap;
@@ -85,5 +85,14 @@
     align-self: flex-end;
     filter: opacity(1);
     pointer-events: auto;
+  }
+
+  &__scrollMsg {
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+    font-style: italic;
+    color: rgb(97, 97, 97);
   }
 }

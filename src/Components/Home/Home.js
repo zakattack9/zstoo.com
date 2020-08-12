@@ -11,7 +11,10 @@ const Home = () => {
   const { overlayOpen } = useContext(OverlayContext);
   const homeRef = useRef();
   const loopAnimation = useRef();
+  const scrollMsgLoopAnimation = useRef();
+  const scrollMsgAnimationOut = useRef();
   const completedAnimation = useRef(0);
+  const scrollMsgScrollDistance = 90;
 
   const controlAnimation = (progress) => {
     if (progress === 1) {
@@ -20,6 +23,14 @@ const Home = () => {
       loopAnimation.current.play();
     } else if (progress.toFixed(3) >= 0.001) {
       loopAnimation.current.tweenTo('start');
+    }
+  }
+
+  const windowScroll = () => {
+    if (window.scrollY > scrollMsgScrollDistance) {
+      scrollMsgAnimationOut.current.play().then(() => {
+        scrollMsgLoopAnimation.current.kill();
+      });
     }
   }
 
@@ -39,17 +50,17 @@ const Home = () => {
     const isFirefox = (navigator.userAgent.indexOf('Firefox') !== -1);
     gsap.registerPlugin(ScrollTrigger);
     const homeLoadAnimation = gsap.timeline();
+    homeLoadAnimation.from('.Home__glow', {
+      duration: 1.6, 
+      ease: 'ease.out',
+      filter: isFirefox ? '' : 'blur(100px)',
+      visibility: isFirefox ? 'hidden' : '',
+    }, 0);
     homeLoadAnimation.from('.Home__zak', {
       duration: 0.9,
       ease: 'ease.inOut', 
       scale: 1.17,
-    }, 0.3);
-    homeLoadAnimation.from('.Home__glow', {
-      duration: 1.6, 
-      ease: 'ease.out',
-      filter: isFirefox ? '' : 'blur(150px)',
-      visibility: isFirefox ? 'hidden' : '',
-    }, 0.3);
+    }, 0.2);
     homeLoadAnimation.from('.Home__abstract--path', {
       duration: 0.8,
       ease: 'ease.in',
@@ -91,10 +102,10 @@ const Home = () => {
     homeLoopAnimation.to('.Home__abstract', {
       duration: 1.8,
       ease: 'slow.out',
-      y: -7,
+      y: -8,
     }, 0.1);
     homeLoopAnimation.to('.Home__zak', {
-      duration: 1.9,
+      duration: 1.5,
       ease: 'ease.inOut',
       y: -12,
     }, 0);
@@ -107,6 +118,50 @@ const Home = () => {
       y: -7,
     }, 0.05);
     loopAnimation.current = homeLoopAnimation;
+
+    const scrollMsgIn = gsap.from('.Home__scrollMsg', {
+      paused: window.scrollY > scrollMsgScrollDistance,
+      duration: 0.6,
+      delay: homeLoadAnimationDuration - 0.45,
+      ease: 'power2.out',
+      opacity: 0,
+      y: 4,
+    });
+    const scrolllMsgInDuration = scrollMsgIn.duration();
+    const scrollMsgAnimation = gsap.timeline({
+      delay: homeLoadAnimationDuration + scrolllMsgInDuration - 0.45,
+      repeat: -1,
+    });
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.4,
+      ease: 'power2.out',
+      y: -3,
+    }, '>');
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.1,
+      ease: 'linear',
+      color: 'rgb(153, 153, 153)',
+    }, '>');
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.8,
+      ease: 'elastic.out',
+      y: 4,
+    }, '<');
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.25,
+      ease: 'linear',
+      y: 0,
+      color: 'rgb(97, 97, 97)',
+    }, '>0.4');
+    scrollMsgLoopAnimation.current = scrollMsgAnimation;
+    const scrollMsgOut = gsap.to('.Home__scrollMsg', {
+      paused: window.scrollY <= scrollMsgScrollDistance,
+      duration: 0.6,
+      ease: 'power2.out',
+      opacity: 0,
+    });
+    scrollMsgAnimationOut.current = scrollMsgOut;
+    window.addEventListener('scroll', windowScroll);
 
     const homeTimeline = gsap.timeline({ 
       scrollTrigger: {
@@ -176,6 +231,7 @@ const Home = () => {
         <NavLink className="Home__NavLink Home__NavLink--about" text="About" lineWidth={50} href='/about' color='#A1A1A1' />
         <NavLink className="Home__NavLink Home__NavLink--contact" text="Contact" lineWidth={40} href='/contact' color='#A1A1A1' />
       </div>
+      <div className="Home__scrollMsg">Keep Scrolling</div>
     </div>
   );
 }
