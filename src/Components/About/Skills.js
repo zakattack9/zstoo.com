@@ -10,7 +10,8 @@ const Skills = (props) => {
   const pinRef = useRef(null);
   
   const calcPinStart = () => {
-    const aboutWrapperHeight = document.querySelector('.About__wrapper').clientHeight;
+    const aboutWrapper = document.querySelector('.About__wrapper');
+    const aboutWrapperHeight = aboutWrapper ? aboutWrapper.clientHeight : '25%';
     return `top ${aboutWrapperHeight}`;
   }
 
@@ -146,7 +147,6 @@ const Skills = (props) => {
     skillsSectionMain.add(skillsSection1to2, '>0.7');
     skillsSectionMain.add(skillsSection2, '>-0.2');
     skillsSectionMain.add(skillsSectionOut, '>1');
-
   }, []);
   
   const skills = (skillsArr) => {

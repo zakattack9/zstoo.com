@@ -86,12 +86,10 @@ const Projects = (props) => {
         }
       });
     });
-
-    document.querySelector('.Projects').classList.remove('hide');
   }, []);
 
   return (
-    <div className="Projects hide">
+    <div className="Projects">
       <div className="Projects__art">
         <Abstract className="Projects__abstract" pathName="Projects__abstract--path" />
         {/* <img className="Projects__glow" src={Glow} alt="abstract glow art"/> */}

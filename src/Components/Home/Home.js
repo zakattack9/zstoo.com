@@ -27,20 +27,20 @@ const Home = () => {
   }, [overlayOpen]);
   
   useEffect(() => {
+    const isFirefox = (navigator.userAgent.indexOf('Firefox') !== -1);
     gsap.registerPlugin(ScrollTrigger);
     const homeLoadAnimation = gsap.timeline();
     homeLoadAnimation.from('.Home__zak', {
       duration: 0.9,
       ease: 'ease.inOut', 
       scale: 1.17,
-    }, 0);
+    }, 0.3);
     homeLoadAnimation.from('.Home__glow', {
       duration: 1.6, 
       ease: 'ease.out',
-      // opacity: 0,
-      filter: 'blur(150px)',
-      // visibility: 'hidden',
-    }, 0);
+      filter: isFirefox ? '' : 'blur(150px)',
+      visibility: isFirefox ? 'hidden' : '',
+    }, 0.3);
     homeLoadAnimation.from('.Home__abstract--path', {
       duration: 0.8,
       ease: 'ease.in',

@@ -56,6 +56,12 @@ a {
   text-decoration: none;
 }
 
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  outline-style: none;
+}
+
 .App {
   min-height: 100%;
 }
