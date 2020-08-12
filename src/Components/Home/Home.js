@@ -11,9 +11,12 @@ const Home = () => {
   const { overlayOpen } = useContext(OverlayContext);
   const homeRef = useRef();
   const loopAnimation = useRef();
+  const completedAnimation = useRef(0);
 
   const controlAnimation = (progress) => {
-    if (progress.toFixed(3) < 0.001) {
+    if (progress === 1) {
+      completedAnimation.current = progress;
+    } if (progress.toFixed(3) < 0.001) {
       loopAnimation.current.play();
     } else if (progress.toFixed(3) >= 0.001) {
       loopAnimation.current.tweenTo('start');
@@ -21,8 +24,15 @@ const Home = () => {
   }
 
   useEffect(() => {
+    console.log(completedAnimation.current);
     if (loopAnimation.current) {
-      loopAnimation.current[overlayOpen ? 'pause' : 'play']();
+      if (overlayOpen) {
+        loopAnimation.current.pause();
+      } else {
+        if (!completedAnimation.current) {
+          loopAnimation.current.play();
+        }
+      }
     }
   }, [overlayOpen]);
   
@@ -146,7 +156,7 @@ const Home = () => {
       duration: 0.5,
       ease: 'power2.in', 
       opacity: 0,
-      y: 70,
+      yPercent: 140,
     }, '<0.8');
   }, []); // eslint-disable-line
 
