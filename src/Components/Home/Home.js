@@ -156,7 +156,7 @@ const Home = () => {
       duration: 0.5,
       ease: 'power2.in', 
       opacity: 0,
-      yPercent: 140,
+      yPercent: 130,
     }, '<0.8');
   }, []); // eslint-disable-line
 
