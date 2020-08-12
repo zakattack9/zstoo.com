@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8be2bf207668d14d480582f434a9307d",
+    "revision": "ffbdcfe3b4bd9c624d4aad37bed9693b",
     "url": "/zstoo.com/index.html"
   },
   {
-    "revision": "b7448a49d140bdcc93e8",
+    "revision": "5f01aedc656f601ff9ad",
     "url": "/zstoo.com/static/css/0.a36fda9d.chunk.css"
   },
   {
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/css/6.5bc0c7ce.chunk.css"
   },
   {
-    "revision": "7cc44beb1eaa39bf4670",
-    "url": "/zstoo.com/static/css/7.cd072b0a.chunk.css"
+    "revision": "e85489216e9fad3ea901",
+    "url": "/zstoo.com/static/css/7.729488d6.chunk.css"
   },
   {
     "revision": "6cf364ededbbd9de9243",
     "url": "/zstoo.com/static/css/main.bc6a1438.chunk.css"
   },
   {
-    "revision": "b7448a49d140bdcc93e8",
-    "url": "/zstoo.com/static/js/0.c861c12d.chunk.js"
+    "revision": "5f01aedc656f601ff9ad",
+    "url": "/zstoo.com/static/js/0.07ce7e1b.chunk.js"
   },
   {
     "revision": "9ddc59024f97c5d99746",
@@ -52,7 +52,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/6.6b87bfa4.chunk.js"
   },
   {
-    "revision": "7cc44beb1eaa39bf4670",
+    "revision": "e85489216e9fad3ea901",
     "url": "/zstoo.com/static/js/7.32649f1d.chunk.js"
   },
   {
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/main.6120fc2e.chunk.js"
   },
   {
-    "revision": "20485d2df4110903ed3b",
-    "url": "/zstoo.com/static/js/runtime-main.d8e8bed8.js"
+    "revision": "3d42803f6dfb7d743c88",
+    "url": "/zstoo.com/static/js/runtime-main.e94f427f.js"
   },
   {
     "revision": "bf120f7d17afd5feee4a6f2aa956d1a3",
