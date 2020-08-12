@@ -1,8 +1,8 @@
 {
   "files": {
-    "static/css/0.a36fda9d.chunk.css": "/zstoo.com/static/css/0.a36fda9d.chunk.css",
-    "static/js/0.a63f5656.chunk.js": "/zstoo.com/static/js/0.a63f5656.chunk.js",
-    "static/js/0.a63f5656.chunk.js.map": "/zstoo.com/static/js/0.a63f5656.chunk.js.map",
+    "static/css/0.eff14575.chunk.css": "/zstoo.com/static/css/0.eff14575.chunk.css",
+    "static/js/0.83415f73.chunk.js": "/zstoo.com/static/js/0.83415f73.chunk.js",
+    "static/js/0.83415f73.chunk.js.map": "/zstoo.com/static/js/0.83415f73.chunk.js.map",
     "static/css/1.08327373.chunk.css": "/zstoo.com/static/css/1.08327373.chunk.css",
     "static/js/1.a4cddc02.chunk.js": "/zstoo.com/static/js/1.a4cddc02.chunk.js",
     "static/js/1.a4cddc02.chunk.js.map": "/zstoo.com/static/js/1.a4cddc02.chunk.js.map",
@@ -11,8 +11,8 @@
     "main.css": "/zstoo.com/static/css/main.715d6d33.chunk.css",
     "main.js": "/zstoo.com/static/js/main.37c36bb8.chunk.js",
     "main.js.map": "/zstoo.com/static/js/main.37c36bb8.chunk.js.map",
-    "runtime-main.js": "/zstoo.com/static/js/runtime-main.55b1e465.js",
-    "runtime-main.js.map": "/zstoo.com/static/js/runtime-main.55b1e465.js.map",
+    "runtime-main.js": "/zstoo.com/static/js/runtime-main.e481f353.js",
+    "runtime-main.js.map": "/zstoo.com/static/js/runtime-main.e481f353.js.map",
     "static/js/5.51c4d14a.chunk.js": "/zstoo.com/static/js/5.51c4d14a.chunk.js",
     "static/js/5.51c4d14a.chunk.js.map": "/zstoo.com/static/js/5.51c4d14a.chunk.js.map",
     "static/css/6.5bc0c7ce.chunk.css": "/zstoo.com/static/css/6.5bc0c7ce.chunk.css",
@@ -25,9 +25,9 @@
     "static/js/8.77346f1b.chunk.js": "/zstoo.com/static/js/8.77346f1b.chunk.js",
     "static/js/8.77346f1b.chunk.js.map": "/zstoo.com/static/js/8.77346f1b.chunk.js.map",
     "index.html": "/zstoo.com/index.html",
-    "precache-manifest.5a065c98e2d9496164af62a27cb9eea4.js": "/zstoo.com/precache-manifest.5a065c98e2d9496164af62a27cb9eea4.js",
+    "precache-manifest.caa7af7edf255427bc944dc327dc7350.js": "/zstoo.com/precache-manifest.caa7af7edf255427bc944dc327dc7350.js",
     "service-worker.js": "/zstoo.com/service-worker.js",
-    "static/css/0.a36fda9d.chunk.css.map": "/zstoo.com/static/css/0.a36fda9d.chunk.css.map",
+    "static/css/0.eff14575.chunk.css.map": "/zstoo.com/static/css/0.eff14575.chunk.css.map",
     "static/css/1.08327373.chunk.css.map": "/zstoo.com/static/css/1.08327373.chunk.css.map",
     "static/css/6.5bc0c7ce.chunk.css.map": "/zstoo.com/static/css/6.5bc0c7ce.chunk.css.map",
     "static/css/7.c688c36c.chunk.css.map": "/zstoo.com/static/css/7.c688c36c.chunk.css.map",
@@ -48,7 +48,7 @@
     "static/media/Project5Glow.png": "/zstoo.com/static/media/Project5Glow.8aa366a0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.55b1e465.js",
+    "static/js/runtime-main.e481f353.js",
     "static/js/5.51c4d14a.chunk.js",
     "static/css/main.715d6d33.chunk.css",
     "static/js/main.37c36bb8.chunk.js"
