@@ -6,10 +6,11 @@ import { OverlayContext } from './Utils/OverlayContext';
 import Loader from './Components/Loader/Loader';
 import './index.scss';
 
-const Main = lazy(() => import('./Components/Main'));
+const Main = lazy(() => import('./Components/Main/Main'));
 const Overlay = lazy(() => import('./Components/Overlay/Overlay'));
 const Project = lazy(() => import('./Components/Project/Project'));
 const ContactForm = lazy(() => import('./Components/ContactForm/ContactForm'));
+const Error404 = lazy(() => import('./Components/Error404/Error404'));
 
 const App = () => {
   const [overlayOpen, setOverlayOpen] = useState(false);
@@ -22,33 +23,37 @@ const App = () => {
           <OverlayContext.Provider value={value}>
             <Overlay />
             <Switch>
-              <Route path="/" exact>
+              <Route exact path="/">
                 <Main />
               </Route>
-              <Route path="/home" exact>
+              <Route exact path="/home">
                 <Main scrollTo="home" />
               </Route>
-              <Route path="/projects" exact>
+              <Route exact path="/projects">
                 <Main scrollTo="projects" />
               </Route>
-              <Route path="/about" exact>
+              <Route exact path="/about">
                 <Main scrollTo="about" />
               </Route>
 
-              <Route path="/project/:id">
+              <Route exact path="/project/:id">
                 <Project />
               </Route>
-              <Route path="/project">
+              <Route exact path="/project">
                 <Redirect to="/project/1" />
               </Route>
 
-              <Route path="/contact">
+              <Route exact path="/contact">
                 <ContactForm />
               </Route>
 
-              <Router path="/loader">
+              <Route path="/loader">
                 <Loader />
-              </Router>
+              </Route>
+
+              <Route>
+                <Error404 />
+              </Route>
             </Switch>
           </OverlayContext.Provider>
         </Suspense>

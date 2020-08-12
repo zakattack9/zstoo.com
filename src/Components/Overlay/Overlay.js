@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Glow from '../../Images/OverlayGlow.png';
 import './Overlay.scss';
 const ContactForm = lazyPreload(() => import('../ContactForm/ContactForm'));
-const Main = lazyPreload(() => import('../Main'));
+const Main = lazyPreload(() => import('../Main/Main'));
 
 const Overlay = props => {
   const { setOverlayOpen } = useContext(OverlayContext);

@@ -24,7 +24,6 @@ const Home = () => {
   }
 
   useEffect(() => {
-    console.log(completedAnimation.current);
     if (loopAnimation.current) {
       if (overlayOpen) {
         loopAnimation.current.pause();

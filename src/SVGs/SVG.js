@@ -55,18 +55,18 @@ export const Error404 = props => {
         </linearGradient>
       </defs>
       <g fill="none" fillRule="evenodd" strokeWidth="2" transform="translate(1 1)">
-        <line x2="375" y1="352.436" y2="206.892" stroke="url(#404-a)" />
-        <line x2="375" y1="320.396" y2="199.117" stroke="url(#404-b)" />
-        <line x2="375" y1="288.357" y2="191.342" stroke="url(#404-c)" />
-        <line x2="375" y1="256.317" y2="183.567" stroke="url(#404-d)" />
-        <line x2="375" y1="224.277" y2="175.792" stroke="url(#404-e)" />
-        <line x2="375" y1="192.238" y2="168.018" stroke="url(#404-f)" />
-        <line x2="375" y1="160.198" y2="160.243" stroke="url(#404-g)" />
-        <line x2="375" y1="128.158" y2="152.468" stroke="url(#404-h)" />
-        <line x2="375" y1="96.119" y2="144.693" stroke="url(#404-i)" />
-        <line x2="375" y1="64.079" y2="136.918" stroke="url(#404-j)" />
-        <line x2="375" y1="32.04" y2="129.143" stroke="url(#404-k)" />
-        <line x2="375" y2="121.368" stroke="url(#404-l)" />
+        <line className={props.pathName} x2="375" y1="352.436" y2="206.892" stroke="url(#404-a)" />
+        <line className={props.pathName} x2="375" y1="320.396" y2="199.117" stroke="url(#404-b)" />
+        <line className={props.pathName} x2="375" y1="288.357" y2="191.342" stroke="url(#404-c)" />
+        <line className={props.pathName} x2="375" y1="256.317" y2="183.567" stroke="url(#404-d)" />
+        <line className={props.pathName} x2="375" y1="224.277" y2="175.792" stroke="url(#404-e)" />
+        <line className={props.pathName} x2="375" y1="192.238" y2="168.018" stroke="url(#404-f)" />
+        <line className={props.pathName} x2="375" y1="160.198" y2="160.243" stroke="url(#404-g)" />
+        <line className={props.pathName} x2="375" y1="128.158" y2="152.468" stroke="url(#404-h)" />
+        <line className={props.pathName} x2="375" y1="96.119" y2="144.693" stroke="url(#404-i)" />
+        <line className={props.pathName} x2="375" y1="64.079" y2="136.918" stroke="url(#404-j)" />
+        <line className={props.pathName} x2="375" y1="32.04" y2="129.143" stroke="url(#404-k)" />
+        <line className={props.pathName} x2="375" y2="121.368" stroke="url(#404-l)" />
       </g>
     </svg>
   );
