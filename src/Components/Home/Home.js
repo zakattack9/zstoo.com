@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
+import { OverlayContext } from '../../Utils/OverlayContext';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/HomeGlow.png';
@@ -7,8 +8,24 @@ import NavLink from '../NavLink/NavLink';
 import './Home.scss';
 
 const Home = () => {
-  const homeRef = useRef(null);
+  const { overlayOpen } = useContext(OverlayContext);
+  const homeRef = useRef();
+  const loopAnimation = useRef();
 
+  const controlAnimation = (progress) => {
+    if (progress.toFixed(3) < 0.001) {
+      loopAnimation.current.play();
+    } else if (progress.toFixed(3) >= 0.001) {
+      loopAnimation.current.tweenTo('start');
+    }
+  }
+
+  useEffect(() => {
+    if (loopAnimation.current) {
+      loopAnimation.current[overlayOpen ? 'pause' : 'play']();
+    }
+  }, [overlayOpen]);
+  
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const homeLoadAnimation = gsap.timeline();
@@ -53,6 +70,7 @@ const Home = () => {
         from: 'start'
       }
     }, '<0.3');
+    if (overlayOpen) homeLoadAnimation.progress(1, false);
     
     const homeLoadAnimationDuration = homeLoadAnimation.duration();
     const homeLoopAnimation = gsap.timeline({
@@ -79,14 +97,7 @@ const Home = () => {
       filter: 'opacity(50%)',
       y: -7,
     }, 0.05);
-    const controlAnimation = (progress) => {
-      if (progress.toFixed(3) < 0.001) {
-        homeLoopAnimation.play();
-      }
-      if (progress.toFixed(3) >= 0.001) {
-        homeLoopAnimation.tweenTo('start');
-      }
-    }
+    loopAnimation.current = homeLoopAnimation;
 
     const homeTimeline = gsap.timeline({ 
       scrollTrigger: {
@@ -137,7 +148,7 @@ const Home = () => {
       opacity: 0,
       y: 70,
     }, '<0.8');
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <div className="Home" ref={homeRef}>

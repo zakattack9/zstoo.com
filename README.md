@@ -53,6 +53,7 @@
 
 ### TODO
 - add loading screen while preloading packages
+- optimize laggy animations
 - test if keeping project images in public folder slows down load time
 - code split and implement lazy loading
 - design desktop views and compatibility

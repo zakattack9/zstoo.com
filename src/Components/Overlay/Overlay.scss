@@ -30,7 +30,7 @@
 
     &--path {
       stroke-dasharray: 770 770;
-      stroke-dasharray: 770;
+      stroke-dashoffset: 770;
     }
   }
 
@@ -81,6 +81,7 @@
     text-shadow: 0 3px 5px #1C1C1C;
     color: #DEDEDE;
     position: relative;
+    opacity: 0;
 
     &--home     { left: 0; }
     &--projects { left: 0.35em; }

@@ -1,13 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { OverlayContext } from '../../Utils/OverlayContext';
 import { useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
+import { lazyPreload } from '../../Utils/lazyPreload';
 import { Overlay as Abstract } from '../../SVGs/SVG';
 import { LinkedIn, GitHub, Medium } from '../../SVGs/SVG';
 import { Link } from 'react-router-dom';
 import Glow from '../../Images/OverlayGlow.png';
 import './Overlay.scss';
+const ContactForm = lazyPreload(() => import('../ContactForm/ContactForm'));
+const Main = lazyPreload(() => import('../Main'));
 
 const Overlay = props => {
+  const { setOverlayOpen } = useContext(OverlayContext);
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const iconAnimation = useRef();
@@ -21,6 +26,11 @@ const Overlay = props => {
       linkWrapperRef.current.classList.add('preventClick');
     }
     const openState = open ? open : !isOpen;
+    // start preloading other routes when overlay is opened
+    if (openState) {
+      ContactForm.preload();
+      Main.preload();
+    }
     setIsOpen(openState);
   }
   
@@ -32,16 +42,18 @@ const Overlay = props => {
         document.querySelector('body').classList.add('preventScroll');
         iconAnimation.current.play();
         overlayAnimation.current.play();
+        setOverlayOpen(true);
       } else  {
         iconAnimation.current.reverse();
         overlayAnimation.current.reverse().then(() => {
           document.querySelector('body').classList.remove('preventScroll');
           iconWrapperRef.current.classList.remove('preventClick');
           linkWrapperRef.current.classList.remove('preventClick');
+          setOverlayOpen(false)
         });
       }
     }
-  }, [isOpen]);
+  }, [isOpen]); // eslint-disable-line
 
   useEffect(() => {
     const { pathname } = location;

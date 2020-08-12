@@ -1,7 +1,8 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import ReactDOM from 'react-dom';
 // import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { OverlayContext } from './Utils/OverlayContext';
 import Loader from './Components/Loader/Loader';
 import './index.scss';
 
@@ -11,40 +12,45 @@ const Project = lazy(() => import('./Components/Project/Project'));
 const ContactForm = lazy(() => import('./Components/ContactForm/ContactForm'));
 
 const App = () => {
+  const [overlayOpen, setOverlayOpen] = useState(false);
+  const value = {overlayOpen, setOverlayOpen};
+
   return (
     <div className="App">
       <Router basename={process.env.PUBLIC_URL}>
-        <Suspense fallback={<Loader/>}>
-          <Overlay />
-          <Switch>
-            <Route path="/" exact>
-              <Main />
-            </Route>
-            <Route path="/home" exact>
-              <Main scrollTo="home" />
-            </Route>
-            <Route path="/projects" exact>
-              <Main scrollTo="projects" />
-            </Route>
-            <Route path="/about" exact>
-              <Main scrollTo="about" />
-            </Route>
+        <Suspense fallback={<Loader />}>
+          <OverlayContext.Provider value={value}>
+            <Overlay />
+            <Switch>
+              <Route path="/" exact>
+                <Main />
+              </Route>
+              <Route path="/home" exact>
+                <Main scrollTo="home" />
+              </Route>
+              <Route path="/projects" exact>
+                <Main scrollTo="projects" />
+              </Route>
+              <Route path="/about" exact>
+                <Main scrollTo="about" />
+              </Route>
 
-            <Route path="/project/:id">
-              <Project />
-            </Route>
-            <Route path="/project">
-              <Redirect to="/project/1" />
-            </Route>
+              <Route path="/project/:id">
+                <Project />
+              </Route>
+              <Route path="/project">
+                <Redirect to="/project/1" />
+              </Route>
 
-            <Route path="/contact">
-              <ContactForm />
-            </Route>
+              <Route path="/contact">
+                <ContactForm />
+              </Route>
 
-            <Router path="/loader">
-              <Loader />
-            </Router>
-          </Switch>
+              <Router path="/loader">
+                <Loader />
+              </Router>
+            </Switch>
+          </OverlayContext.Provider>
         </Suspense>
       </Router>
     </div>
