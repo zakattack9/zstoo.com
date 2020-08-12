@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
-import Home from './Home/Home';
-import Projects from './Projects/Projects';
-import About from './About/About';
-import Contact from './Contact/Contact';
+import Home from '../Home/Home';
+import Projects from '../Projects/Projects';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
 import './Main.scss';
 
 const Main = props => {
@@ -16,7 +16,7 @@ const Main = props => {
     const main = document.querySelector('.Main');
     const project = document.querySelector('.Projects__wrapper');
     const about = document.querySelector('.About__text--about');
-
+    // prevents error when this function is called on unmount
     if (main && project && about) {
       const mainPos = main.getBoundingClientRect();
       const projectsPos = project.getBoundingClientRect();
@@ -29,6 +29,7 @@ const Main = props => {
         about: aboutTop,
       }
     }
+    setCalculated(true);
   }
 
   window.onresize = (e) => {
@@ -51,7 +52,6 @@ const Main = props => {
 
   useEffect(() => {
     calculateScrollPos();
-    setCalculated(true);
     document.querySelector('.Main').classList.remove('hide');
   }, [])
 

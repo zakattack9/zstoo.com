@@ -1,30 +1,66 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
+import { OverlayContext } from '../../Utils/OverlayContext';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Zak from '../../SVGs/ZAK.svg';
 import Glow from '../../Images/HomeGlow.png';
-import { Home as Abstract, Headline } from '../../SVGs/SVG';
+import { Home as Abstract, Headline, Zak } from '../../SVGs/SVG';
 import NavLink from '../NavLink/NavLink';
 import './Home.scss';
 
 const Home = () => {
-  const homeRef = useRef(null);
+  const { overlayOpen } = useContext(OverlayContext);
+  const homeRef = useRef();
+  const loopAnimation = useRef();
+  const scrollMsgLoopAnimation = useRef();
+  const scrollMsgAnimationOut = useRef();
+  const completedAnimation = useRef(0);
+  const scrollMsgScrollDistance = 90;
+
+  const controlAnimation = (progress) => {
+    if (progress === 1) {
+      completedAnimation.current = progress;
+    } if (progress.toFixed(3) < 0.001) {
+      loopAnimation.current.play();
+    } else if (progress.toFixed(3) >= 0.001) {
+      loopAnimation.current.tweenTo('start');
+    }
+  }
+
+  const windowScroll = () => {
+    if (window.scrollY > scrollMsgScrollDistance) {
+      scrollMsgAnimationOut.current.play().then(() => {
+        scrollMsgLoopAnimation.current.kill();
+      });
+    }
+  }
 
   useEffect(() => {
+    if (loopAnimation.current) {
+      if (overlayOpen) {
+        loopAnimation.current.pause();
+      } else {
+        if (!completedAnimation.current) {
+          loopAnimation.current.play();
+        }
+      }
+    }
+  }, [overlayOpen]);
+  
+  useEffect(() => {
+    const isFirefox = (navigator.userAgent.indexOf('Firefox') !== -1);
     gsap.registerPlugin(ScrollTrigger);
     const homeLoadAnimation = gsap.timeline();
+    homeLoadAnimation.from('.Home__glow', {
+      duration: 1.6, 
+      ease: 'ease.out',
+      filter: isFirefox ? '' : 'blur(100px)',
+      visibility: isFirefox ? 'hidden' : '',
+    }, 0);
     homeLoadAnimation.from('.Home__zak', {
       duration: 0.9,
       ease: 'ease.inOut', 
       scale: 1.17,
-    }, 0);
-    homeLoadAnimation.from('.Home__glow', {
-      duration: 1.6, 
-      ease: 'ease.out',
-      // opacity: 0,
-      filter: 'blur(150px)',
-      // visibility: 'hidden',
-    }, 0);
+    }, 0.2);
     homeLoadAnimation.from('.Home__abstract--path', {
       duration: 0.8,
       ease: 'ease.in',
@@ -43,9 +79,22 @@ const Home = () => {
       opacity: 0,
       y: -8,
     }, '<0.5');
-
+    homeLoadAnimation.from('.Home__NavLink', {
+      duration: 0.8,
+      ease: 'power1.out',
+      yPercent: -25,
+      filter: 'opacity(0)',
+      pointerEvents: 'auto',
+      stagger: {
+        each: 0.1,
+        from: 'start'
+      }
+    }, '<0.3');
+    if (overlayOpen) homeLoadAnimation.progress(1, false);
+    
+    const homeLoadAnimationDuration = homeLoadAnimation.duration();
     const homeLoopAnimation = gsap.timeline({
-      delay: 1.3,
+      delay: homeLoadAnimationDuration - 0.9,
       repeat: -1,
       yoyo: true,
     });
@@ -53,10 +102,10 @@ const Home = () => {
     homeLoopAnimation.to('.Home__abstract', {
       duration: 1.8,
       ease: 'slow.out',
-      y: -7,
+      y: -8,
     }, 0.1);
     homeLoopAnimation.to('.Home__zak', {
-      duration: 1.9,
+      duration: 1.5,
       ease: 'ease.inOut',
       y: -12,
     }, 0);
@@ -68,14 +117,51 @@ const Home = () => {
       filter: 'opacity(50%)',
       y: -7,
     }, 0.05);
-    const controlAnimation = (progress) => {
-      if (progress.toFixed(3) < 0.001) {
-        homeLoopAnimation.play();
-      }
-      if (progress.toFixed(3) >= 0.001) {
-        homeLoopAnimation.tweenTo('start');
-      }
-    }
+    loopAnimation.current = homeLoopAnimation;
+
+    const scrollMsgIn = gsap.from('.Home__scrollMsg', {
+      paused: window.scrollY > scrollMsgScrollDistance,
+      duration: 0.6,
+      delay: homeLoadAnimationDuration - 0.45,
+      ease: 'power2.out',
+      opacity: 0,
+      y: 4,
+    });
+    const scrolllMsgInDuration = scrollMsgIn.duration();
+    const scrollMsgAnimation = gsap.timeline({
+      delay: homeLoadAnimationDuration + scrolllMsgInDuration - 0.45,
+      repeat: -1,
+    });
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.4,
+      ease: 'power2.out',
+      y: -3,
+    }, '>');
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.1,
+      ease: 'linear',
+      color: 'rgb(153, 153, 153)',
+    }, '>');
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.8,
+      ease: 'elastic.out',
+      y: 4,
+    }, '<');
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.25,
+      ease: 'linear',
+      y: 0,
+      color: 'rgb(97, 97, 97)',
+    }, '>0.4');
+    scrollMsgLoopAnimation.current = scrollMsgAnimation;
+    const scrollMsgOut = gsap.to('.Home__scrollMsg', {
+      paused: window.scrollY <= scrollMsgScrollDistance,
+      duration: 0.6,
+      ease: 'power2.out',
+      opacity: 0,
+    });
+    scrollMsgAnimationOut.current = scrollMsgOut;
+    window.addEventListener('scroll', windowScroll);
 
     const homeTimeline = gsap.timeline({ 
       scrollTrigger: {
@@ -124,9 +210,9 @@ const Home = () => {
       duration: 0.5,
       ease: 'power2.in', 
       opacity: 0,
-      y: 70,
+      yPercent: 130,
     }, '<0.8');
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <div className="Home" ref={homeRef}>
@@ -134,7 +220,7 @@ const Home = () => {
         <div className="Home__art">
           <img className="Home__glow Home__glow--back" src={Glow} alt="abstract glow art"/>
           <Abstract className="Home__abstract Home__abstract--back" pathName="Home__abstract--path" />
-          <img className="Home__zak" src={Zak} alt="Zak"/>
+          <Zak className="Home__zak" />
           <img className="Home__glow Home__glow--front" src={Glow} alt="abstract glow art"/>
           <Abstract className="Home__abstract Home__abstract--front" pathName="Home__abstract--path" />
         </div>
@@ -145,6 +231,7 @@ const Home = () => {
         <NavLink className="Home__NavLink Home__NavLink--about" text="About" lineWidth={50} href='/about' color='#A1A1A1' />
         <NavLink className="Home__NavLink Home__NavLink--contact" text="Contact" lineWidth={40} href='/contact' color='#A1A1A1' />
       </div>
+      <div className="Home__scrollMsg">Keep Scrolling</div>
     </div>
   );
 }

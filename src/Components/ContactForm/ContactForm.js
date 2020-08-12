@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { OverlayContext } from '../../Utils/OverlayContext';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { Contact as Abstract, LetsTalk } from '../../SVGs/SVG';
@@ -6,6 +7,7 @@ import Loader from '../Loader/Loader';
 import './ContactForm.scss';
 
 const ContactForm = () => {
+  const { overlayOpen } = useContext(OverlayContext);
   const initFormData = () => ({
     name:    { value: '', error: true },
     email:   { value: '', error: true },
@@ -133,9 +135,10 @@ const ContactForm = () => {
       ease: 'power1.inOut',
       strokeDashoffset: 1122,
     }, '<-1');
+    if (overlayOpen) contactFormTimeline.progress(1, false);
     contactFormAnimation.current = contactFormTimeline;
     document.querySelector('.ContactForm').classList.remove('hide');
-  }, []);
+  }, []); // eslint-disable-line
 
 
   return (

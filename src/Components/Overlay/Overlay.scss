@@ -31,12 +31,14 @@
     &--path {
       will-change: stroke-dashoffset;
       stroke-dasharray: 770 770;
+      stroke-dashoffset: 770;
     }
   }
 
   &__glow {
     width: 150%;
     top: 47.5% !important;
+    opacity: 0;
     // filter: saturate(150%);
   }
 
@@ -80,6 +82,7 @@
     text-shadow: 0 3px 5px #1C1C1C;
     color: #DEDEDE;
     position: relative;
+    opacity: 0;
 
     &--home     { left: 0; }
     &--projects { left: 0.35em; }
@@ -124,10 +127,5 @@
 }
 
 .preventClick {
-  pointer-events: none;
-}
-
-.hide {
-  opacity: 0;
   pointer-events: none;
 }

@@ -218,7 +218,7 @@ const Project = props => {
         {/* MIDDLE SECTION */}
         <div className="Project__title">{project.name}</div>
         <NavLink className="Project__NavLink Project__NavLink--NextProject" text={`Next\nProject`} lineWidth={15} onClick={nextProject} />
-        <ProjectId className="Project__id" projectId={project.id} />
+        <ProjectId className="Project__id" projectId={`0${project.id}`} />
        
         {/* GALLERY SECTION */}
         <Skim className="Project__Skim Project__Skim--gallery" type='toLeft' width={10} height={100} />

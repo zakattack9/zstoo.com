@@ -8,13 +8,19 @@ import './Skills.scss';
 const Skills = (props) => {
   const skillsRef = useRef(null);
   const pinRef = useRef(null);
+  
+  const calcPinStart = () => {
+    const aboutWrapper = document.querySelector('.About__wrapper');
+    const aboutWrapperHeight = aboutWrapper ? aboutWrapper.clientHeight : '25%';
+    return `top ${aboutWrapperHeight}`;
+  }
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
       trigger: pinRef.current,
       endTrigger: skillsRef.current,
-      start: 'top 25%', // second param must be same as ".About__wrapper" height in About.scss
+      start: calcPinStart,
       end: 'bottom 0%',
       pin: true,
       pinSpacing: false,
@@ -141,7 +147,6 @@ const Skills = (props) => {
     skillsSectionMain.add(skillsSection1to2, '>0.7');
     skillsSectionMain.add(skillsSection2, '>-0.2');
     skillsSectionMain.add(skillsSectionOut, '>1');
-
   }, []);
   
   const skills = (skillsArr) => {

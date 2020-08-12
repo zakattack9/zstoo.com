@@ -31,7 +31,7 @@
 - Pause animations when playing overlay animation
 - Find a better way to target browser specific animations instead of user-agent
 - ~Fix spacing between Skills title and first skill section title~
-  - **Ignored: this bug usually occurs when the page is refreshed near the about page—not a huge issue as it's visually a minor UI inconvenience**
+  - **Soved: used a function for the _start_ property of the Skills component ScrollTrigger pin that grabs the `clientHeight` of `.About__wrapper` and sets this to the second parameter of the _start_ property**
 - ~Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens due to the viewport height resizing; consequently, this will cause ScrollTrigger to reverse any animatons up to that point~
   - **Solved: separated contact form to a seperate page without any scroll binded animations**
 - ~Weird animation and layout behavior on Safari~
@@ -53,19 +53,21 @@
 
 ### TODO
 - add loading screen while preloading packages
+- optimize laggy animations
+- test if keeping project images in public folder slows down load time
 - code split and implement lazy loading
-- convert project id's on home page to use `ProjectId` SVG 
-  - remove `HelveticaBoldOutline.woff` font once converted
 - design desktop views and compatibility
 - UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
+- ~convert project id's on home page to use `ProjectId` SVG~
+  - remove `HelveticaBoldOutline.woff` font once converted
 - ~link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)~
-- implement cleanup for gsap timelines and scrollscene objects
+- ~implement cleanup for gsap timelines and scrollscene objects~
   - **Solved: use React hook to destroy scrollscene**
   - *N/A since migration to GSAP ScrollTrigger*
-- remove all `addIndicators` from scrollscene imports before prod deploy
+- ~remove all `addIndicators` from scrollscene imports before prod~ deploy
   - *N/A since migration to GSAP ScrollTrigger*
 
 ### Stretch Goals
