@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5bbd2aa60856bb1d467b8a633d2d62a7",
+    "revision": "215065e5a6ff796eb382ce19a3e4d2eb",
     "url": "/zstoo.com/index.html"
   },
   {
-    "revision": "c8c8ca2ae99f734173b5",
-    "url": "/zstoo.com/static/css/0.eff14575.chunk.css"
+    "revision": "f9fd0e6074575abd9058",
+    "url": "/zstoo.com/static/css/0.2f91c666.chunk.css"
   },
   {
     "revision": "50a91179dd9296f356d7",
     "url": "/zstoo.com/static/css/1.08327373.chunk.css"
   },
   {
-    "revision": "089628515aa01b753eb6",
+    "revision": "d05f9d91c7407e5fcd67",
     "url": "/zstoo.com/static/css/6.5bc0c7ce.chunk.css"
   },
   {
@@ -24,12 +24,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/css/8.729488d6.chunk.css"
   },
   {
-    "revision": "8d801d10be03d50f36fa",
+    "revision": "85ebc2fd93f27ea7ae59",
     "url": "/zstoo.com/static/css/main.715d6d33.chunk.css"
   },
   {
-    "revision": "c8c8ca2ae99f734173b5",
-    "url": "/zstoo.com/static/js/0.83415f73.chunk.js"
+    "revision": "f9fd0e6074575abd9058",
+    "url": "/zstoo.com/static/js/0.61e7e4eb.chunk.js"
   },
   {
     "revision": "50a91179dd9296f356d7",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/5.51c4d14a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "089628515aa01b753eb6",
-    "url": "/zstoo.com/static/js/6.b5a7acfa.chunk.js"
+    "revision": "d05f9d91c7407e5fcd67",
+    "url": "/zstoo.com/static/js/6.f097662f.chunk.js"
   },
   {
     "revision": "02a2bea233a174e429ad",
@@ -64,12 +64,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/8.77346f1b.chunk.js"
   },
   {
-    "revision": "8d801d10be03d50f36fa",
-    "url": "/zstoo.com/static/js/main.37c36bb8.chunk.js"
+    "revision": "85ebc2fd93f27ea7ae59",
+    "url": "/zstoo.com/static/js/main.e1c6cf68.chunk.js"
   },
   {
-    "revision": "55b8d9e7ae6adbff3aed",
-    "url": "/zstoo.com/static/js/runtime-main.e481f353.js"
+    "revision": "b6ee9328980b0fcece40",
+    "url": "/zstoo.com/static/js/runtime-main.42577e91.js"
   },
   {
     "revision": "bf120f7d17afd5feee4a6f2aa956d1a3",
