@@ -5,6 +5,7 @@ import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
 import ProjectGlow from '../ProjectGlow';
 import Skim from '../Skim/Skim';
 import NavLink from '../NavLink/NavLink';
+import PreRenderProject from './PreRenderProject';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Project.scss';
 
@@ -12,6 +13,7 @@ const Project = props => {
   const history = useHistory();
   const { id } = useParams();
   const [project, setProject] = useState(null);
+  const [nextProjectData, setNextProjectData] = useState(null);
   const [projectLinkStyles, setProjectLinkStyles] = useState({});
   const galleryRef = useRef();
   const infoRef = useRef();
@@ -136,6 +138,7 @@ const Project = props => {
 
   const nextProject = () => {
     const nextProject = PROJECT_DATA.find(projectObj => projectObj.id === project.id + 1) || PROJECT_DATA[0];
+    setNextProjectData(nextProject);
     const animationComplete = () => {
       if (history.location.pathname.includes("/project")) {
         galleryRef.current.scrollLeft = 0;
@@ -271,6 +274,7 @@ const Project = props => {
         <Abstract className="Project__abstract" pathName="Project__abstract--path" projectId={project.id} />
         <ProjectGlow className="Project__glow" projectId={project.id} />
       </div>
+      <PreRenderProject project={nextProjectData} />
     </div>
   ) : (<></>);
 }
