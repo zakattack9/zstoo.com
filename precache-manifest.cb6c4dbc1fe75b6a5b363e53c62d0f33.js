@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "215065e5a6ff796eb382ce19a3e4d2eb",
+    "revision": "b4bfd4e7fc52052bd41a7a711e6cb43c",
     "url": "/zstoo.com/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/css/1.08327373.chunk.css"
   },
   {
-    "revision": "d05f9d91c7407e5fcd67",
+    "revision": "c39e5476bc4823805687",
     "url": "/zstoo.com/static/css/6.5bc0c7ce.chunk.css"
   },
   {
@@ -20,11 +20,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/css/7.c688c36c.chunk.css"
   },
   {
-    "revision": "bce8366548a8130c2e64",
+    "revision": "16968793ae1c9fe749f9",
     "url": "/zstoo.com/static/css/8.729488d6.chunk.css"
   },
   {
-    "revision": "85ebc2fd93f27ea7ae59",
+    "revision": "f26c1aba12427d19d33a",
     "url": "/zstoo.com/static/css/main.715d6d33.chunk.css"
   },
   {
@@ -52,24 +52,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/5.51c4d14a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d05f9d91c7407e5fcd67",
-    "url": "/zstoo.com/static/js/6.f097662f.chunk.js"
+    "revision": "c39e5476bc4823805687",
+    "url": "/zstoo.com/static/js/6.d3c8d7cb.chunk.js"
   },
   {
     "revision": "02a2bea233a174e429ad",
     "url": "/zstoo.com/static/js/7.de3959ae.chunk.js"
   },
   {
-    "revision": "bce8366548a8130c2e64",
-    "url": "/zstoo.com/static/js/8.77346f1b.chunk.js"
+    "revision": "16968793ae1c9fe749f9",
+    "url": "/zstoo.com/static/js/8.5c3651ad.chunk.js"
   },
   {
-    "revision": "85ebc2fd93f27ea7ae59",
-    "url": "/zstoo.com/static/js/main.e1c6cf68.chunk.js"
+    "revision": "f26c1aba12427d19d33a",
+    "url": "/zstoo.com/static/js/main.f9d2ced0.chunk.js"
   },
   {
-    "revision": "b6ee9328980b0fcece40",
-    "url": "/zstoo.com/static/js/runtime-main.42577e91.js"
+    "revision": "5e65738eaf006a3f604e",
+    "url": "/zstoo.com/static/js/runtime-main.c30cb5ec.js"
   },
   {
     "revision": "bf120f7d17afd5feee4a6f2aa956d1a3",
