@@ -500,8 +500,9 @@ export const GitHub = props => {
   const gradient = props.projectId ? `url(#${props.projectId})` 
                   : props.gradient ? `url(#${props.gradient})` 
                   : "url(#default)";
+  const githubLink = props.githubLink || 'https://github.com/zakattack9/';
   return (
-    <a className={props.aTagName} href="https://github.com/zakattack9/" target="_blank" rel="noopener noreferrer">
+    <a className={props.aTagName} href={githubLink} target="_blank" rel="noopener noreferrer">
       <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 68">
         <defs>
           <linearGradient id="default" x1="50%" x2="50%" y1="0%" y2="50%">

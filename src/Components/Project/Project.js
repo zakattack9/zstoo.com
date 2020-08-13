@@ -229,7 +229,7 @@ const Project = props => {
         </div>
         
         {/* BOTTOM SECTION */}
-        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" aTagName="Project__GitHub--aTag" projectId={project.id} />
+        <GitHub className="Project__GitHub" pathName="Project__GitHub--path" aTagName="Project__GitHub--aTag" projectId={project.id} githubLink={project.githubLink} />
         <div className="Project__info" ref={infoRef}>
           <div className="Project__description">{project.fullDesc}</div>
           <div className="Project__details">
@@ -258,7 +258,9 @@ const Project = props => {
               </div>
             </div>
             <div className="Project__link">
-              <div className="Project__linkText" style={projectLinkStyles}>Visit Project &gt; </div>
+              <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
+                <div className="Project__linkText" style={projectLinkStyles}>Visit Project &gt; </div>
+               </a>
             </div>
           </div>
         </div>

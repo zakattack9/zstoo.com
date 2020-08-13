@@ -12,25 +12,17 @@ const Home = () => {
   const homeRef = useRef();
   const loopAnimation = useRef();
   const scrollMsgLoopAnimation = useRef();
-  const scrollMsgAnimationOut = useRef();
   const completedAnimation = useRef(0);
-  const scrollMsgScrollDistance = 90;
 
   const controlAnimation = (progress) => {
     if (progress === 1) {
       completedAnimation.current = progress;
     } if (progress.toFixed(3) < 0.001) {
       loopAnimation.current.play();
+      scrollMsgLoopAnimation.current.play();
     } else if (progress.toFixed(3) >= 0.001) {
-      loopAnimation.current.tweenTo('start');
-    }
-  }
-
-  const windowScroll = () => {
-    if (window.scrollY > scrollMsgScrollDistance) {
-      scrollMsgAnimationOut.current.play().then(() => {
-        scrollMsgLoopAnimation.current.kill();
-      });
+      loopAnimation.current.tweenTo(0);
+      scrollMsgLoopAnimation.current.tweenTo(0);
     }
   }
 
@@ -98,7 +90,6 @@ const Home = () => {
       repeat: -1,
       yoyo: true,
     });
-    homeLoopAnimation.addLabel('start', 0);
     homeLoopAnimation.to('.Home__abstract', {
       duration: 1.8,
       ease: 'slow.out',
@@ -119,49 +110,23 @@ const Home = () => {
     }, 0.05);
     loopAnimation.current = homeLoopAnimation;
 
-    const scrollMsgIn = gsap.from('.Home__scrollMsg', {
-      paused: window.scrollY > scrollMsgScrollDistance,
-      duration: 0.6,
-      delay: homeLoadAnimationDuration - 0.45,
-      ease: 'power2.out',
-      opacity: 0,
-      y: 4,
-    });
-    const scrolllMsgInDuration = scrollMsgIn.duration();
     const scrollMsgAnimation = gsap.timeline({
-      delay: homeLoadAnimationDuration + scrolllMsgInDuration - 0.45,
+      delay: homeLoadAnimationDuration - 0.45,
       repeat: -1,
+      yoyo: true,
     });
-    scrollMsgAnimation.to('.Home__scrollMsg', {
-      duration: 0.4,
-      ease: 'power2.out',
-      y: -3,
-    }, '>');
-    scrollMsgAnimation.to('.Home__scrollMsg', {
-      duration: 0.1,
-      ease: 'linear',
-      color: 'rgb(153, 153, 153)',
-    }, '>');
-    scrollMsgAnimation.to('.Home__scrollMsg', {
-      duration: 0.8,
-      ease: 'elastic.out',
-      y: 4,
-    }, '<');
-    scrollMsgAnimation.to('.Home__scrollMsg', {
-      duration: 0.25,
-      ease: 'linear',
-      y: 0,
-      color: 'rgb(97, 97, 97)',
-    }, '>0.4');
-    scrollMsgLoopAnimation.current = scrollMsgAnimation;
-    const scrollMsgOut = gsap.to('.Home__scrollMsg', {
-      paused: window.scrollY <= scrollMsgScrollDistance,
-      duration: 0.6,
-      ease: 'power2.out',
+    scrollMsgAnimation.fromTo('.Home__scrollMsg', {
       opacity: 0,
-    });
-    scrollMsgAnimationOut.current = scrollMsgOut;
-    window.addEventListener('scroll', windowScroll);
+    }, {
+      duration: 1.3,
+      ease: 'power1.out',
+      opacity: 1,
+    }, 0);
+    scrollMsgAnimation.to('.Home__scrollMsg', {
+      duration: 0.7,
+      opacity: 1,
+    }, '>');
+    scrollMsgLoopAnimation.current = scrollMsgAnimation;
 
     const homeTimeline = gsap.timeline({ 
       scrollTrigger: {
