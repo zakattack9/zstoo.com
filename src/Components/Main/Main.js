@@ -28,13 +28,8 @@ const Main = props => {
         projects: projectsTop,
         about: aboutTop,
       }
+      setCalculated(true);
     }
-    setCalculated(true);
-  }
-
-  window.onresize = (e) => {
-    // wait for ScrollTrigger to recalculate positioning
-    setTimeout(() => { calculateScrollPos() }, 201);
   }
   
   useEffect(() => {
@@ -53,6 +48,10 @@ const Main = props => {
   useEffect(() => {
     calculateScrollPos();
     document.querySelector('.Main').classList.remove('hide');
+    window.addEventListener('resize', () => {
+      // wait for ScrollTrigger to recalculate positioning
+      setTimeout(() => { calculateScrollPos() }, 201);
+    });
   }, [])
 
   const projectClick = (id) => setProjectId(id);

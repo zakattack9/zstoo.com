@@ -111,14 +111,14 @@ const Home = () => {
     loopAnimation.current = homeLoopAnimation;
 
     const scrollMsgAnimation = gsap.timeline({
-      delay: homeLoadAnimationDuration - 0.45,
+      delay: homeLoadAnimationDuration - 0.5,
       repeat: -1,
       yoyo: true,
     });
     scrollMsgAnimation.fromTo('.Home__scrollMsg', {
       opacity: 0,
     }, {
-      duration: 1.3,
+      duration: 1.2,
       ease: 'power1.out',
       opacity: 1,
     }, 0);

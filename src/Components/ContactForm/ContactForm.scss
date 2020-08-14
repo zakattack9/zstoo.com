@@ -1,6 +1,6 @@
 .ContactForm {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
 
   &__art {
@@ -15,7 +15,7 @@
     width: 100%;
     top: 50%;
     left: 10%;
-    transform: translateY(-50%) scale(1.75) skewY(0deg);
+    transform: translateY(-50%) scale(1.75);
     opacity: 0.5;
     // filter: saturate(200%);
 
@@ -72,7 +72,7 @@
     pointer-events: auto;
 
     &--message {
-      min-height: 9em;
+      height: 10em;
     }
   }
   

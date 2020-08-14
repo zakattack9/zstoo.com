@@ -5,8 +5,8 @@ import ProjectGlow from '../ProjectGlow';
 const PreRenderProject = props => {
   const { project = null } = props;
   const styles = {
-    width: '100%',
-    height: '100%',
+    width: '0%',
+    height: '0%',
     overflow: 'hidden',
     pointerEvents: 'none',
     opacity: 0,
