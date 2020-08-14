@@ -28,8 +28,10 @@
 
 ### Optimization Issues
 
-- Pause animations when playing overlay animation
 - Find a better way to target browser specific animations instead of user-agent
+- Fix scroll
+- ~Pause animations when playing overlay animation~
+  - **Solved: used React context to create a global variable that determines whether the overlay is open or closed from any component**
 - ~Fix spacing between Skills title and first skill section title~
   - **Soved: used a function for the _start_ property of the Skills component ScrollTrigger pin that grabs the `clientHeight` of `.About__wrapper` and sets this to the second parameter of the _start_ property**
 - ~Clicking on a form input on mobile will cause the page to scroll up when the keyboard opens due to the viewport height resizing; consequently, this will cause ScrollTrigger to reverse any animatons up to that point~
@@ -52,17 +54,18 @@
   - **Solved: exported abstract glow graphics as web PNGs**
 
 ### TODO
-- add loading screen while preloading packages
 - optimize laggy animations
-- test if keeping project images in public folder slows down load time
-- code split and implement lazy loading
 - design desktop views and compatibility
 - UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
+- ~test if keeping project images in public folder slows down load time~
+  - does not slow down load time but is preloaded when switching to the next project using `PreRenderProject` component
+- ~add loading screen while preloading packages (used React Suspense)~
+- ~code split and implement lazy loading~
 - ~convert project id's on home page to use `ProjectId` SVG~
-  - remove `HelveticaBoldOutline.woff` font once converted
+  - ~remove `HelveticaBoldOutline.woff` font once converted~
 - ~link zaksakata.com/photogrpahy under subdomain (photos.zaksakata.com)~
 - ~implement cleanup for gsap timelines and scrollscene objects~
   - **Solved: use React hook to destroy scrollscene**

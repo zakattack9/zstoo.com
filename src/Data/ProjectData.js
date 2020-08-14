@@ -41,7 +41,7 @@ const PROJECT_DATA = [
   {
     id: 3,
     name: "Power Outage Tracker",
-    shortDesc: "Tracks nearby facilities for risk of power outages",
+    shortDesc: "Tracks facilities for risk of power outages",
     fullDesc: "Helps track the risk of multiple facilities undergoing a power outage through a nice graphical visualization using D3.js.\n\nPower outage risk and status is determined through a combination of factors including data from PowerOutage API, user submitted outage reports, and the latest weather data in the area.",
     techStack: ['React', 'D3.js', 'AWS', 'CSS'],
     githubLink: 'https://github.com/zakattack9/SF-Hack',
@@ -60,7 +60,7 @@ const PROJECT_DATA = [
   {
     id: 4,
     name: "Zak Sakata Photos",
-    shortDesc: "My photography website",
+    shortDesc: "My photography and videography portfolio",
     fullDesc: "Personal website showcasing my photography and videography portfolio. It’s built with various libraries including AOS, Masonry.js, and TwentyTwenty.\n\nThe site is deployed in a static AWS S3 bucket with the contact page using DynamoDB to store contact messages and AWS SNS to push out notifications to my devices.",
     techStack: ['Bootstrap', 'jQuery', 'HTML', 'AWS'],
     githubLink: 'https://github.com/zakattack9/photos.zaksakata.com',
@@ -79,7 +79,7 @@ const PROJECT_DATA = [
   {
     id: 5,
     name: "Chroma Vibez",
-    shortDesc: "Finds Spotify playlists based off photos",
+    shortDesc: "Finds Spotify playlists based off mood and color",
     fullDesc: "A unique twist on music and color, with the driving thought of what color would sound like?\n\nUsers can upload any picture that is then processed through a color recognition algorithm that helps Chroma Vibez determine what Spotify playlist to return based off the mood and colors of the picture uploaded.",
     techStack: ['Spotify', 'HTML', 'CSS', 'JS'],
     githubLink: 'https://github.com/zakattack9/chromaVibez',
