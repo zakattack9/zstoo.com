@@ -170,9 +170,13 @@ const About = () => {
       </div>
       <Spacer height={50} />
       <div className="About__text About__text--about" ref={aboutTextRef}>
-        After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
-        <br/><br/>
-        After discovering coding two years ago, I've been determined to improve my skills every day as both a developer and UI/UX designer. I've had amazing experiences teaching coding to students, competing in hackathons, and collaborating with many other knowledgable individuals. I'm passionate, always ready for a challenge, and open to new experiences.
+      Hello I’m Zak, a driven web developer with four years of experience in development, serverless applications, project collaboration, and a keen devotion to continuously refining my skills. I’m knowledgeable in UI/UX design and digital media editing, always putting an emphasis on quality and building a seamless user experience.
+      <br/><br/>
+      During my first internship in high school, I worked part-time for <span className="About__text--about-DevLeague">DevLeague</span> as a teaching assistant educating students of all ages from intermediate to high school levels on front-end web development while additionally creating projects for students to work on.
+      <br/><br/>
+      Currently, I’m a two year intern at <span className="About__text--about-StateFarm">State Farm</span> working part-time during the college semesters and full-time in the summer. I’ve had the chance to float around various teams within the company working on a large scope of projects including vulnerability scanners, chatbots, and a substantial React application. 
+      <br/><br/>
+      I’ve had the privilege in collaborating with many knowledgeable individuals and am always ready for a new challenge or opportunity.
       </div>
       <Spacer height={100} /> 
       <div className="About__text About__text--skills" ref={skillsTextRef}>
