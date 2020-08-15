@@ -172,7 +172,7 @@ const About = () => {
       <div className="About__text About__text--about" ref={aboutTextRef}>
       Hello I’m Zak, a driven web developer with four years of experience in development, serverless applications, project collaboration, and a keen devotion to continuously refining my skills. I’m knowledgeable in UI/UX design and digital media editing, always putting an emphasis on quality and building a seamless user experience.
       <br/><br/>
-      During my first internship in high school, I worked part-time for <span className="About__text--about-DevLeague">DevLeague</span> as a teaching assistant educating students of all ages from intermediate to high school levels on front-end web development while additionally creating projects for students to work on.
+      During my first internship in high school, I worked part-time for <span className="About__text--about-DevLeague">DevLeague</span> as a teaching assistant educating students ranging from intermediate to high school levels on front-end web development while additionally creating projects for students to work on.
       <br/><br/>
       As a full-time college junior, I’m a two year intern at <span className="About__text--about-StateFarm">State Farm</span> working part-time during the school year and full-time in the summer. I’ve had the chance to float around various teams within the company working on a large scope of projects including vulnerability scanners, chatbots, and a substantial React application.
       <br/><br/>
