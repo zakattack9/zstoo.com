@@ -29,7 +29,7 @@
 ### Optimization Issues
 
 - Find a better way to target browser specific animations instead of user-agent
-- Fix scroll
+- When scrolling past about section and then navigating to `/about` using the overlay, the layout may imporperly load
 - ~Pause animations when playing overlay animation~
   - **Solved: used React context to create a global variable that determines whether the overlay is open or closed from any component**
 - ~Fix spacing between Skills title and first skill section title~
@@ -40,9 +40,9 @@
   - **Solved: fixed by using `stroke-dasharray: ___ ___` with two identical numerical values when using `stroke-dashoffset` with a negative value; Safari does not work nicely with negative values** 
 - ~Laggy/stuttering animations on Firefox (mobile)~
   - **Solved: fixed by removing `filter: saturate(___%)` from SVGs due to high GPU resources; may also need `rotation: 0.01` on elements as suggested by [GSAP](https://greensock.com/forums/topic/12760-animation-slowjerky-not-smooth-in-firefox/)**
-- ~when an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements into view on the screen; this is due to the slight delay between the component being rendered and the GSAP animation not being fully created upon mounting the component~
+- ~When an unmounted component mounts with a GSAP animation, the component may "flash" if the animation is set to animate elements into view on the screen; this is due to the slight delay between the component being rendered and the GSAP animation not being fully created upon mounting the component~
   - **Solved: added a `hide` class with `opacity: 0; pointer-events: none;` to component (class is removed upon mount after GSAP animation has been created)**
-- ~improve `scrollTo` functinoality for `Main` component upon resizing viewport~
+- ~Improve `scrollTo` functinoality for `Main` component upon resizing viewport~
   - **Solved: added a timeout to the `calculateScrollPos` function that waits untill ScrollTrigger finishes recalculating the positioning of elements (ScrollTrigger [waits](https://greensock.com/docs/v3/Plugins/ScrollTrigger) 200ms after a window resize occurs before recalculation)**
 - ~About section abstract glow stays pinned and visible when scrolling too fast~
   - **Solved: used `filter: opacity(0%)` to prevent animation of the same `opacity` property**
@@ -55,13 +55,14 @@
 
 ### TODO
 - optimize laggy animations
+- clean up CSS with Sass at-rules and vars
 - design desktop views and compatibility
 - UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
 - ~test if keeping project images in public folder slows down load time~
-  - does not slow down load time but is preloaded when switching to the next project using `PreRenderProject` component
+  - does not slow down initial load time but is preloaded when switching to the next project using `PreRenderProject` component
 - ~add loading screen while preloading packages (used React Suspense)~
 - ~code split and implement lazy loading~
 - ~convert project id's on home page to use `ProjectId` SVG~
@@ -75,7 +76,7 @@
 
 ### Stretch Goals
 - create pipeline for deployment
-- eject app from CRA and customize webpack config
 - easter eggs
   - mode that can be enabled at the end of website
+- eject app from CRA and customize webpack config
 - ~rebuild with [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) if ScrollMagic gets depreciated~

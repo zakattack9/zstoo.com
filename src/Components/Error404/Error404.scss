@@ -1,3 +1,6 @@
+@import "../../Utils/variables.scss";
+@import "../../Utils/mixins.scss";
+
 .Error404 {
   height: 100vh;
   font-size: 11pt;
@@ -37,7 +40,6 @@
   }
   
   &__message {
-    font-family: "ObjectSans";
     font-weight: bold;
     font-style: italic;
     text-align: center;
@@ -65,7 +67,7 @@
 
   &__subMessage {
     width: 102.5%;
-    color: #858585;
+    color: $secondary-text-color;
     font-style: italic;
     text-align: center;
     position: absolute;
@@ -74,18 +76,12 @@
 
   &__homeButton {
     width: 10em;
-    border: 1px double transparent;
-    border-radius: 50px;
-    background-image: linear-gradient(#131313, #131313),
-                      linear-gradient(90deg, #EA1A39, #3C1DF2);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    box-sizing: border-box;
+    @include gradient-border(#131313, #EA1A39, #3C1DF2);
     
     font-size: 12pt;
     font-style: italic;
     text-align: center;
-    color: #C0C0C0;
+    color: $primary-text-color;
     padding: 0.6em 0.5em;
     position: absolute;
     bottom: 28vw;

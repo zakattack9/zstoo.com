@@ -362,7 +362,7 @@ export const Project = props => {
 
 export const ProjectId = props => {
   return (
-    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130">
+    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
       <defs>
         <linearGradient id="gradient" x1="50%" x2="50%" y1="24.901%" y2="78.804%">
           <stop offset="0%" stopColor="#626262" />

@@ -1,7 +1,9 @@
+@import "../../Utils/variables.scss";
+@import "../../Utils/mixins.scss";
+
 .Project {
   height: 100%;
   font-size: 11pt;
-  // overflow-y: hidden;
   $column-left: 35%;
   $padding-right: 1em; // for description area
   overflow-x: hidden;
@@ -16,9 +18,7 @@
   &__abstract {
     height: 125%;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    @include vertically-center;
     // filter: saturate(120%);
     
     &--path {
@@ -44,7 +44,6 @@
     z-index: 1;
     display: grid;
     grid-template-rows: 20% 10% 25% auto;
-    // grid-template-rows: 20vh 10vh 25vh 45vh;
     grid-template-columns: $column-left auto;
     grid-template-areas: 
       "top top"
@@ -192,7 +191,7 @@
     &--text {
       line-height: 1.15em;
       font-style: italic;
-      color: #a5a5a5;
+      color: $secondary-text-color;
     }
   }
 

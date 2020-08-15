@@ -1,4 +1,5 @@
 @import '../../Utils/variables.scss';
+@import '../../Utils/mixins.scss';
 
 .Overlay {
   width: 100%;
@@ -55,7 +56,7 @@
   &__icon {
     width: 2em;
     height: 0.35em;
-    background-color: #DADADA;
+    background-color: $primary-text-color;
     position: relative;
 
     &--top {
@@ -74,13 +75,12 @@
   
   &__link {
     font-size: 3em;
-    font-family: "ObjectSans";
     font-weight: bold;
     font-style: italic;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 3px 5px #1C1C1C;
-    color: #DEDEDE;
+    color: $primary-text-color;
     position: relative;
     opacity: 0;
 
@@ -120,10 +120,7 @@
 
 // modifer class
 .center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  @include center;
 }
 
 .preventClick {

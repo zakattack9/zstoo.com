@@ -1,3 +1,5 @@
+@import "../../Utils/variables.scss";
+
 .ProjectLink {
   margin-bottom: 1.7em;
   display: grid;
@@ -11,18 +13,16 @@
   &__name {
     grid-area: name;
     font-size: 30pt;
-    font-family: "ObjectSans";
     font-weight: bold;
     font-style: italic;
-    color: #E3E3E3;
+    color: $primary-text-color;
   }
 
   &__shortDesc {
     grid-area: desc;
     font-size: 10pt;
-    font-family: "ObjectSans";
     font-style: italic;
-    color: #D3D3D3;
+    color: $primary-text-color;
     margin-top: 0.4em;
     line-height: 1.2em;
   }
@@ -37,13 +37,13 @@
   }
   
   &__line {
-    border-top: solid #999999 1px;
+    border-top: solid $secondary-text-color 1px;
     height: 1px;
   }
 
   &__id {
     font-family: "HelveticaBold";
-    color: #AAAAAA;
+    color: $secondary-text-color;
     width: 3.8em;
     position: absolute;
     top: 0.7em;

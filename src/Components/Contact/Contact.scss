@@ -1,3 +1,5 @@
+@import "../../Utils/mixins.scss";
+
 .Contact {
   font-size: 12pt;
 
@@ -16,9 +18,7 @@
   
   &__abstract {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    @include vertically-center;
     // filter: saturate(200%);
 
     &--path {
@@ -29,9 +29,7 @@
 
   &__glow {
     width: 120%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    @include vertically-center;
     left: -10%;
     opacity: 0;
   }
@@ -77,8 +75,6 @@
   }
 
   &__iconText {
-    color: #9e9e9e;
-    font-family: "ObjectSans";
     font-size: 11pt;
     text-align: center;
     line-height: 1.3em;
@@ -109,9 +105,7 @@
   }
 
   &__contactText {
-    font-family: "ObjectSans";
     line-height: 1.3em;
-    color: #B2B2B2;
   }
 
   &__ContactButton {

@@ -1,18 +1,19 @@
+@import "../../Utils/variables.scss";
+
 .NavLink {
   font-size: 11pt;
   height: min-content;
   display: grid;
 
   &__line {
-    background-color: #DDDDDD;
+    background-color: $primary-text-color;
     width: 100%;
     height: 1px;
     align-self: center;
   }
 
   &__text {
-    color: #DDDDDD;
-    font-family: "ObjectSans";
+    color: $primary-text-color;
     font-style: italic;
     text-transform: uppercase;
     white-space: pre-line;
