@@ -1,38 +1,38 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a41d5a357bfbddd6690327431bb1cb9",
+    "revision": "3da26f54c29fdcfc4037c6b9e4a45def",
     "url": "/zstoo.com/index.html"
   },
   {
-    "revision": "00d9f514ddf0b4e8b755",
-    "url": "/zstoo.com/static/css/0.50c1992a.chunk.css"
+    "revision": "fc349be427839d564896",
+    "url": "/zstoo.com/static/css/0.723efc51.chunk.css"
   },
   {
-    "revision": "b3f9b7b4ef5018e4f81d",
-    "url": "/zstoo.com/static/css/1.04a3885b.chunk.css"
+    "revision": "ca428d30fa95c252e108",
+    "url": "/zstoo.com/static/css/1.8d48af32.chunk.css"
   },
   {
-    "revision": "63a7bb5a2a3db8507548",
-    "url": "/zstoo.com/static/css/6.5bc0c7ce.chunk.css"
+    "revision": "824d035eb4518a09ab1e",
+    "url": "/zstoo.com/static/css/6.486ee740.chunk.css"
   },
   {
-    "revision": "02a2bea233a174e429ad",
-    "url": "/zstoo.com/static/css/7.c688c36c.chunk.css"
+    "revision": "2ee6336a37ca8d984f04",
+    "url": "/zstoo.com/static/css/7.0a668699.chunk.css"
   },
   {
-    "revision": "16968793ae1c9fe749f9",
-    "url": "/zstoo.com/static/css/8.729488d6.chunk.css"
+    "revision": "95e4b67cf078478d560e",
+    "url": "/zstoo.com/static/css/8.c9435659.chunk.css"
   },
   {
-    "revision": "f26c1aba12427d19d33a",
-    "url": "/zstoo.com/static/css/main.715d6d33.chunk.css"
+    "revision": "c945c244e2ba7d8d7a40",
+    "url": "/zstoo.com/static/css/main.f61ccc9f.chunk.css"
   },
   {
-    "revision": "00d9f514ddf0b4e8b755",
-    "url": "/zstoo.com/static/js/0.598cf4a9.chunk.js"
+    "revision": "fc349be427839d564896",
+    "url": "/zstoo.com/static/js/0.f9bf3e0c.chunk.js"
   },
   {
-    "revision": "b3f9b7b4ef5018e4f81d",
+    "revision": "ca428d30fa95c252e108",
     "url": "/zstoo.com/static/js/1.a4cddc02.chunk.js"
   },
   {
@@ -52,24 +52,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zstoo.com/static/js/5.51c4d14a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "63a7bb5a2a3db8507548",
-    "url": "/zstoo.com/static/js/6.899c4bb1.chunk.js"
+    "revision": "824d035eb4518a09ab1e",
+    "url": "/zstoo.com/static/js/6.c0c15cf7.chunk.js"
   },
   {
-    "revision": "02a2bea233a174e429ad",
+    "revision": "2ee6336a37ca8d984f04",
     "url": "/zstoo.com/static/js/7.de3959ae.chunk.js"
   },
   {
-    "revision": "16968793ae1c9fe749f9",
+    "revision": "95e4b67cf078478d560e",
     "url": "/zstoo.com/static/js/8.5c3651ad.chunk.js"
   },
   {
-    "revision": "f26c1aba12427d19d33a",
-    "url": "/zstoo.com/static/js/main.f9d2ced0.chunk.js"
+    "revision": "c945c244e2ba7d8d7a40",
+    "url": "/zstoo.com/static/js/main.4f02b784.chunk.js"
   },
   {
-    "revision": "811cb325cdf0358951e7",
-    "url": "/zstoo.com/static/js/runtime-main.4378b2e8.js"
+    "revision": "b8102e0c3ea21f9c6271",
+    "url": "/zstoo.com/static/js/runtime-main.a44c1696.js"
   },
   {
     "revision": "bf120f7d17afd5feee4a6f2aa956d1a3",
