@@ -79,8 +79,8 @@ const PROJECT_DATA = [
   {
     id: 5,
     name: "Chroma Vibez",
-    shortDesc: "Finds Spotify playlists based off mood and color",
-    fullDesc: "A unique twist on music and color, with the driving thought of what color would sound like?\n\nUsers can upload any picture that is then processed through a color recognition algorithm that helps Chroma Vibez determine what Spotify playlist to return based off the mood and colors of the picture uploaded.",
+    shortDesc: "Finds Spotify playlists based on an uploaded photo",
+    fullDesc: "A unique twist on music and color, with the driving thought of what would color sound like?\n\nUsers can upload any picture that is then processed through a color recognition algorithm that helps Chroma Vibez determine what Spotify playlist to return based off the mood and colors of the picture.",
     techStack: ['Spotify', 'HTML', 'CSS', 'JS'],
     githubLink: 'https://github.com/zakattack9/chromaVibez',
     projectLink: 'https://zakattack9.github.io/chromaVibez/index.html',
