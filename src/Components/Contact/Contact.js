@@ -201,7 +201,7 @@ const Contact = () => {
 
         <div className="Contact__info">
           <LetsTalk className="Contact__LetsTalk" pathName="Contact__LetsTalk--path" />
-          <div className="Contact__contactText">Ready to start a project or currently looking to hire? Send me an email at sakata.zak@gmail.com or head over to my contact page with the button below</div>
+          <div className="Contact__contactText">Ready to start a project or currently looking to hire? Send me an email at <a className="Contact__contactText--email" href="mailto:sakata.zak@gmail.com">sakata.zak@gmail.com</a> or head over to my contact page with the button below</div>
           <Link to="/contact">
             <ContactButton className="Contact__ContactButton" pathName="Contact__ContactButton--path" />
           </Link>

@@ -1,3 +1,4 @@
+@import "../../Utils/variables.scss";
 @import "../../Utils/mixins.scss";
 
 .Contact {
@@ -91,7 +92,7 @@
     top: 55%;
     left: 10%;
     transform: translateY(-50%);
-    z-index: 2;
+    z-index: 3;
   }
 
   &__LetsTalk {
@@ -106,6 +107,11 @@
 
   &__contactText {
     line-height: 1.3em;
+
+    &--email {
+      text-decoration: underline;
+      color: $primary-text-color;
+    }
   }
 
   &__ContactButton {
