@@ -43,7 +43,7 @@
     font-weight: bold;
     font-style: italic;
     text-align: center;
-    text-shadow: 7px 3px 20px #121212;
+    text-shadow: 7px 3px 20px $shadow-color;
 
     &--statusCode {
       justify-self: start;

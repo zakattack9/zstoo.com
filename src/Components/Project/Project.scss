@@ -126,7 +126,7 @@
     height: 100%;
     display: inline-block;
     margin-right: 5%;
-    box-shadow: 6px 6px 8px 0 rgba(0,0,0,0.67);
+    box-shadow: 6px 6px 8px 0 $shadow-color;
   }
 
   &__GitHub {

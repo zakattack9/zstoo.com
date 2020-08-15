@@ -79,7 +79,7 @@
     font-style: italic;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 3px 5px #1C1C1C;
+    text-shadow: 3px 3px 10px $shadow-color;
     color: $primary-text-color;
     position: relative;
     opacity: 0;

@@ -174,7 +174,7 @@ const About = () => {
       <br/><br/>
       During my first internship in high school, I worked part-time for <span className="About__text--about-DevLeague">DevLeague</span> as a teaching assistant educating students of all ages from intermediate to high school levels on front-end web development while additionally creating projects for students to work on.
       <br/><br/>
-      Currently, I’m a two year intern at <span className="About__text--about-StateFarm">State Farm</span> working part-time during the college semesters and full-time in the summer. I’ve had the chance to float around various teams within the company working on a large scope of projects including vulnerability scanners, chatbots, and a substantial React application. 
+      As a full-time college junior, I’m a two year intern at <span className="About__text--about-StateFarm">State Farm</span> working part-time during the school year and full-time in the summer. I’ve had the chance to float around various teams within the company working on a large scope of projects including vulnerability scanners, chatbots, and a substantial React application.
       <br/><br/>
       I’ve had the privilege to collaborate with many knowledgeable individuals and am always ready for a new challenge or opportunity.
       </div>
