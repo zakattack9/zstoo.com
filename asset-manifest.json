@@ -1,8 +1,8 @@
 {
   "files": {
     "static/css/0.ed30976a.chunk.css": "/zstoo.com/static/css/0.ed30976a.chunk.css",
-    "static/js/0.0c2ac30d.chunk.js": "/zstoo.com/static/js/0.0c2ac30d.chunk.js",
-    "static/js/0.0c2ac30d.chunk.js.map": "/zstoo.com/static/js/0.0c2ac30d.chunk.js.map",
+    "static/js/0.1effcffc.chunk.js": "/zstoo.com/static/js/0.1effcffc.chunk.js",
+    "static/js/0.1effcffc.chunk.js.map": "/zstoo.com/static/js/0.1effcffc.chunk.js.map",
     "static/css/1.8d48af32.chunk.css": "/zstoo.com/static/css/1.8d48af32.chunk.css",
     "static/js/1.a4cddc02.chunk.js": "/zstoo.com/static/js/1.a4cddc02.chunk.js",
     "static/js/1.a4cddc02.chunk.js.map": "/zstoo.com/static/js/1.a4cddc02.chunk.js.map",
@@ -11,8 +11,8 @@
     "main.css": "/zstoo.com/static/css/main.f61ccc9f.chunk.css",
     "main.js": "/zstoo.com/static/js/main.4f02b784.chunk.js",
     "main.js.map": "/zstoo.com/static/js/main.4f02b784.chunk.js.map",
-    "runtime-main.js": "/zstoo.com/static/js/runtime-main.8bdc8b1d.js",
-    "runtime-main.js.map": "/zstoo.com/static/js/runtime-main.8bdc8b1d.js.map",
+    "runtime-main.js": "/zstoo.com/static/js/runtime-main.f0bc31aa.js",
+    "runtime-main.js.map": "/zstoo.com/static/js/runtime-main.f0bc31aa.js.map",
     "static/js/5.51c4d14a.chunk.js": "/zstoo.com/static/js/5.51c4d14a.chunk.js",
     "static/js/5.51c4d14a.chunk.js.map": "/zstoo.com/static/js/5.51c4d14a.chunk.js.map",
     "static/css/6.486ee740.chunk.css": "/zstoo.com/static/css/6.486ee740.chunk.css",
@@ -25,7 +25,7 @@
     "static/js/8.5c3651ad.chunk.js": "/zstoo.com/static/js/8.5c3651ad.chunk.js",
     "static/js/8.5c3651ad.chunk.js.map": "/zstoo.com/static/js/8.5c3651ad.chunk.js.map",
     "index.html": "/zstoo.com/index.html",
-    "precache-manifest.521fa7dcb30b0cfcd698246d3c319a83.js": "/zstoo.com/precache-manifest.521fa7dcb30b0cfcd698246d3c319a83.js",
+    "precache-manifest.f08b68ac1d75de2b489d99389f80859e.js": "/zstoo.com/precache-manifest.f08b68ac1d75de2b489d99389f80859e.js",
     "service-worker.js": "/zstoo.com/service-worker.js",
     "static/css/0.ed30976a.chunk.css.map": "/zstoo.com/static/css/0.ed30976a.chunk.css.map",
     "static/css/1.8d48af32.chunk.css.map": "/zstoo.com/static/css/1.8d48af32.chunk.css.map",
@@ -48,7 +48,7 @@
     "static/media/Project5Glow.png": "/zstoo.com/static/media/Project5Glow.8aa366a0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8bdc8b1d.js",
+    "static/js/runtime-main.f0bc31aa.js",
     "static/js/5.51c4d14a.chunk.js",
     "static/css/main.f61ccc9f.chunk.css",
     "static/js/main.4f02b784.chunk.js"
