@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectGlow from '../ProjectGlow';
+import ProjectGlow from './ProjectGlow';
 
 // use this component to render all static assets of the next project
 const PreRenderProject = props => {

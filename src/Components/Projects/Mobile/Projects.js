@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Projects as Abstract } from '../../SVGs/SVG';
-import PROJECT_DATA from '../../Data/ProjectData';
-import ProjectLink from './ProjectLink';
-import Spacer from '../Spacer';
+import { Projects as Abstract } from '../../../SVGs/SVG';
+import PROJECT_DATA from '../../../Data/ProjectData';
+import ProjectLink from '../../ProjectLink/ProjectLink';
+import Spacer from '../../Spacer';
 import './Projects.scss';
 
 const Projects = (props) => {

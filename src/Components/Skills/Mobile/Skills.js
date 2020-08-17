@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SKILL_LIST from '../../Data/SkillList';
-import Spacer from '../Spacer';
+import SKILL_LIST from '../../../Data/SkillList';
+import Spacer from '../../Spacer';
 import './Skills.scss';
 
 const Skills = (props) => {

@@ -8,7 +8,7 @@ import './index.scss';
 
 const Main = lazy(() => import('./Components/Main/Main'));
 const Overlay = lazy(() => import('./Components/Overlay/Overlay'));
-const Project = lazy(() => import('./Components/Project/Project'));
+const Project = lazy(() => import('./Components/Project/Mobile/Project'));
 const ContactForm = lazy(() => import('./Components/ContactForm/ContactForm'));
 const Error404 = lazy(() => import('./Components/Error404/Error404'));
 

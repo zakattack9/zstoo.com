@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Glow from '../../Images/AboutGlow.png';
-import { About as Abstract, ZakSakata, Skills as SkillsTitle } from '../../SVGs/SVG';
-import Skills from './Skills';
-import Spacer from '../Spacer';
-import Skim from '../Skim/Skim';
+import Glow from '../../../Images/AboutGlow.png';
+import { About as Abstract, ZakSakata, Skills as SkillsTitle } from '../../../SVGs/SVG';
+import Skills from '../../Skills/Mobile/Skills';
+import Spacer from '../../Spacer';
+import Skim from '../../Skim/Skim';
 import './About.scss';
 
 const About = () => {

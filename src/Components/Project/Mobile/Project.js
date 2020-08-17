@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { Project as Abstract, GitHub, ProjectId } from '../../SVGs/SVG';
-import ProjectGlow from '../ProjectGlow';
-import Skim from '../Skim/Skim';
-import NavLink from '../NavLink/NavLink';
-import PreRenderProject from './PreRenderProject';
-import PROJECT_DATA from '../../Data/ProjectData';
+import { Project as Abstract, GitHub, ProjectId } from '../../../SVGs/SVG';
+import PROJECT_DATA from '../../../Data/ProjectData';
+import ProjectGlow from '../../ProjectGlow';
+import Skim from '../../Skim/Skim';
+import NavLink from '../../NavLink/NavLink';
+import PreRenderProject from '../../PreRenderProject';
 import './Project.scss';
 
 const Project = props => {
