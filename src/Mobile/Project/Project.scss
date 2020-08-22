@@ -1,0 +1,210 @@
+@import "../../Utils/variables.scss";
+@import "../../Utils/mixins.scss";
+
+.Project {
+  height: 100%;
+  font-size: 11pt;
+  $column-left: 35%;
+  $padding-right: 1em; // for description area
+  overflow-x: hidden;
+  
+  &__art {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  &__abstract {
+    height: 125%;
+    width: 100%;
+    @include vertically-center;
+    // filter: saturate(120%);
+    
+    &--path {
+      stroke-dasharray: 770 770;
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  &__glow {
+    width: 130%;
+    height: 135%;
+    position: absolute;
+    left: -17%;
+    top: -17%;
+    // filter: saturate(250%);
+  }
+  
+  &__data {
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 20% 10% 25% auto;
+    grid-template-columns: $column-left auto;
+    grid-template-areas: 
+      "top top"
+      "middle middle"
+      "gallery gallery"
+      "github description";
+  }
+
+  &__NavLink {
+    font-size: 10pt;
+    z-index: 5;
+    user-select: none;
+
+    &--AllProjects {
+      grid-area: top;
+      align-self: start;
+      position: relative;
+      top: 1.3em;
+    }
+
+    &--NextProject {
+      grid-area: middle;
+      grid-column: 2;
+      align-self: end;
+      margin-left: auto;
+      padding-bottom: 7.5%;
+    }
+  }
+
+  &__Skim {
+    position: absolute;
+    z-index: 5;
+    
+    &--gallery {
+      grid-area: gallery;
+      right: 0;
+    }
+
+    &--art {
+      grid-column: 1 / 3;
+      grid-row: 1 / 5;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    grid-area: middle;
+    z-index: 3;
+    font-size: 22pt;
+    font-weight: bold;
+    font-style: italic;
+    align-self: end;
+    padding: 0em 35% 4% 1em;
+    // text-decoration: underline;
+  }
+
+  &__id {
+    grid-area: top;
+    align-self: start;
+    z-index: 2;
+
+    font-family: "HelveticaBold" !important;
+    width: 53%;
+    position: absolute;
+    left: -10%;
+    top: 40%;
+  }
+
+  &__gallery {
+    height: 100%;
+    grid-area: gallery;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-left: 5%;
+    z-index: 4;
+  }
+
+  &__photo {
+    height: 100%;
+    display: inline-block;
+    margin-right: 5%;
+    box-shadow: 6px 6px 8px 0 $shadow-color;
+  }
+
+  &__GitHub {
+    &--aTag {
+      grid-area: github;
+      z-index: 5;
+      width: 20%;
+      height: min-content;
+      margin: 17% 0 0 21%;
+    }
+
+    &--path {
+      stroke-dasharray: 395 395;
+      stroke-width: 2;
+      // filter: saturate(200%);
+    }
+  }
+
+  &__info {
+    grid-area: description;
+    grid-column: 1 / 3;
+    z-index: 3;
+    overflow-y: auto;
+    padding: 1.3em 0em 2em $column-left;
+  }
+
+  &__description {
+    font-size: 11pt;
+    white-space: pre-line;
+    line-height: 1.25em;
+    padding-right: $padding-right;
+  }
+
+  &__details {
+    padding-top: 1.5em;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr $padding-right;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+      "tech year role padding"
+      "tech link link link" ;
+  }
+
+  &__techStack { grid-area: tech; }
+  &__year { grid-area: year; }
+  &__role { grid-area: role; }
+  &__link { 
+    grid-area: link; 
+    position: relative;
+  }
+
+  &__detailsText {
+    font-size: 10pt;
+
+    &--header {
+      text-transform: uppercase;
+      white-space: pre-line;
+      padding-bottom: 0.3em;
+    }
+
+    &--text {
+      line-height: 1.15em;
+      font-style: italic;
+      color: $secondary-text-color;
+    }
+  }
+
+  &__linkText {
+    font-size: 10.5pt;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.7em;
+    width: 110%;
+    position: absolute;
+    bottom: 10%;
+    padding: 0.42em 0 0.2em 0;
+    border-radius: 50px;
+  }
+}

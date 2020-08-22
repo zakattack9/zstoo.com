@@ -1,0 +1,119 @@
+@import '../../Utils/variables.scss';
+
+.About {
+  font-size: 12pt;
+  position: relative;
+
+  &__pin {
+    font-size: 12pt; // modify for smaller screen sizes
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__art {
+    position: relative;
+    top: -35vh;
+    height: 100vh;
+  }
+
+  &__abstract {
+    width: 35%;
+    position: absolute;
+    top: -12%;
+    left: 7%;
+    // filter: saturate(200%);
+
+    &--path {
+      stroke-dasharray: 1333 1333;
+      // stroke-dashoffset: 0;
+    }
+  }
+
+  &__glow {
+    width: 51%;
+    position: absolute;
+    top: -14%;
+    left: 0%;
+    // filter: saturate(150%);
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 25%; // modify to change placement of "ZAK SAKATA" w/skim and art
+    display: grid;
+    grid-template-rows: auto 25px;
+    grid-template-areas:
+      "main"
+      "skim";
+  }
+
+  &__ZakSakata {
+    width: 63%;
+    position: relative;
+    left: 30%;
+    z-index: 2;
+    // filter: saturate(200%);
+    grid-area: main;
+    align-self: end;
+
+    &--path {
+      stroke-dasharray: 1540 1540;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  &__SkillsTitle {
+    width: 50%;
+    position: relative;
+    left: 36%;
+    z-index: 2;
+    // filter: saturate(200%);
+    grid-area: main;
+    align-self: end;
+
+    &--path {
+      stroke-dasharray: 850 850;
+      stroke-dashoffset: -850; // comment out to make visible
+    }
+  }
+  
+  &__SkimCover {
+    z-index: 0;
+    background-color: $background-color;
+    grid-area: main;
+  }
+
+  &__Skim {
+    z-index: 0;
+    grid-area: skim;
+  }
+  
+  &__text {
+    font-size: 11pt;
+    line-height: 1.3em;
+    position: relative;
+    z-index: -2;
+
+    &--about {
+      width: 50%;
+      left: 45%;
+
+      &-DevLeague {
+        color: #0481a0;
+      }
+
+      &-StateFarm {
+        color: #ce3b40;
+        white-space: nowrap;
+      }
+    }
+
+    &--skills {
+      width: 45%;
+      left: 50%;
+    }
+  }
+
+}
