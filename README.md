@@ -60,6 +60,7 @@
 - UI testing with Enzyme and Jest
 - ensure all GSAP animations have necessary `refs` to their respective components
 - create mixins for css properties with vendor prefixes
+- refactor `Main.js` component as an HOC? to prevent duplicate code?
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
 - ~test if keeping project images in public folder slows down load time~
   - does not slow down initial load time but is preloaded when switching to the next project using `PreRenderProject` component

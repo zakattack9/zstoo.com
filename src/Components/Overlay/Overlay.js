@@ -8,8 +8,8 @@ import { LinkedIn, GitHub, Medium } from '../../SVGs/SVG';
 import { Link } from 'react-router-dom';
 import Glow from '../../Images/OverlayGlow.png';
 import './Overlay.scss';
-const ContactForm = lazyPreload(() => import('../ContactForm/Mobile/ContactForm'));
-const Main = lazyPreload(() => import('../Main/Main'));
+const ContactForm = lazyPreload(() => import('../../Mobile/ContactForm/ContactForm'));
+const Main = lazyPreload(() => import('../../Mobile/Main/Main'));
 
 const Overlay = props => {
   const { setOverlayOpen } = useContext(OverlayContext);
