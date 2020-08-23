@@ -2,33 +2,41 @@ import React, { Suspense, lazy, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 // import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { OverlayContext } from './Utils/OverlayContext';
 import Loader from './Components/Loader/Loader';
+import { OverlayContext } from './Utils/OverlayContext';
+import isMobile from './Utils/isMobile';
 import './index.scss';
 
 // lazy import components shared on desktop and mobile
 const Overlay = lazy(() => import('./Components/Overlay/Overlay'));
 const Error404 = lazy(() => import('./Components/Error404/Error404'));
 
+const determineView = () => isMobile() ? 'Mobile' : 'Desktop';
+
+// lazy import components that change for either desktop or mobile view
+let view = determineView();
+let Main, Project, ContactForm;
+const setViewComponents = () => {
+  Main = lazy(() => import(`./${view}/Main/Main`));
+  Project = lazy(() => import(`./${view}/Project/Project`));
+  ContactForm = lazy(() => import(`./${view}/ContactForm/ContactForm`));
+}
+setViewComponents();
+
 const App = () => {
-  const [view, setView] = useState('Mobile');
+  const [currentView, setCurrentView] = useState(determineView());
   const [overlayOpen, setOverlayOpen] = useState(false);
   const value = {overlayOpen, setOverlayOpen};
-
-  // lazy import correct components for either desktop or mobile view
-  const Main = lazy(() => import(`./${view}/Main/Main`));
-  const Project = lazy(() => import(`./${view}/Project/Project`));
-  const ContactForm = lazy(() => import(`./${view}/ContactForm/ContactForm`));
-
-  const determineView = () => {
-    const MIN_DESKTOP_WIDTH = 700;
-    setView(window.innerWidth < MIN_DESKTOP_WIDTH ? 'Mobile' : 'Desktop');
-  };
   
   useEffect(() => {
-    determineView();
-    window.addEventListener('resize', determineView);
-  }, []);
+    window.addEventListener('resize', () => {
+      if (currentView !== determineView()) {
+        view = determineView();
+        setViewComponents();
+        setCurrentView(determineView());
+      }
+    });
+  }, [currentView]);
 
   return (
     <div className="App">

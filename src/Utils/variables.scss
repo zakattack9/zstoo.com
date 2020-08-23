@@ -4,3 +4,12 @@ $primary-text-color: #C8C8C8;
 $secondary-text-color: #9e9e9e;
 $shadow-color: rgba(0,0,0,0.67);
 $error-color: #D80460;
+
+$MIN_DESKTOP_WIDTH: 700;
+$min-desktop-width: $MIN_DESKTOP_WIDTH + "px";
+$max-mobile-width: $MIN_DESKTOP_WIDTH - 1 + "px";
+
+// exported variables to be accessed via importing in JS
+:export {
+  MIN_DESKTOP_WIDTH: $MIN_DESKTOP_WIDTH;
+}

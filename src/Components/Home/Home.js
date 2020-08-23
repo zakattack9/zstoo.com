@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Glow from '../../Images/HomeGlow.png';
 import { Home as Abstract, Headline, Zak } from '../../SVGs/SVG';
 import NavLink from '../NavLink/NavLink';
+import isMobile from '../../Utils/isMobile';
 import './Home.scss';
 
 const Home = () => {
@@ -142,7 +143,8 @@ const Home = () => {
     homeTimeline.to('.Home__NavLink', {
       duration: 0.6,
       ease: 'power2.in',
-      xPercent: 100,
+      xPercent: isMobile() ? 100 : '',
+      y: !isMobile() ? -30 : '',
       opacity: 0,
       pointerEvents: 'auto',
       stagger: {
@@ -191,11 +193,18 @@ const Home = () => {
         </div>
         <Headline className="Home__headline" />
       </div>
-      <div className="Home__navigation">
+
+      <div className="Home__navigation Home__navigation--mobile">
         <NavLink className="Home__NavLink Home__NavLink--projects" text="Projects" lineWidth={30} href='/projects' color='#A1A1A1' />
         <NavLink className="Home__NavLink Home__NavLink--about" text="About" lineWidth={50} href='/about' color='#A1A1A1' />
         <NavLink className="Home__NavLink Home__NavLink--contact" text="Contact" lineWidth={40} href='/contact' color='#A1A1A1' />
       </div>
+      <div className="Home__navigation Home__navigation--desktop">
+        <NavLink className="Home__NavLink Home__NavLink--projects" text="Projects" lineWidth={0} href='/projects' color='#A1A1A1' />
+        <NavLink className="Home__NavLink Home__NavLink--about" text="About" lineWidth={0} href='/about' color='#A1A1A1' />
+        <NavLink className="Home__NavLink Home__NavLink--contact" text="Contact" lineWidth={0} href='/contact' color='#A1A1A1' />
+      </div>
+      
       <div className="Home__scrollMsg">Keep Scrolling</div>
     </div>
   );

@@ -65,6 +65,10 @@
 
     &--bottom {
       top: 0.5em;
+
+      @include desktop-styles {
+        height: 0.4em;
+      }
     }
   }
 

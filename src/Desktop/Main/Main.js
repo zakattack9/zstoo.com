@@ -1,10 +1,15 @@
 import React from 'react';
+import Home from '../../Components/Home/Home';
+import Projects from '../Projects/Projects';
+import About from '../About/About';
 import './Main.scss';
 
 const Main = () => {
   return (
     <div className="Main">
-      this is the main page for desktop
+      <Home />
+      <Projects />
+      <About />
     </div>
   );
 }

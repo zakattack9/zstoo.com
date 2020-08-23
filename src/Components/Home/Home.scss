@@ -1,3 +1,5 @@
+@import "../../Utils/mixins.scss";
+
 .Home {
   font-size: 12pt;
   height: 100vh;
@@ -11,6 +13,10 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+
+    @include desktop-styles {
+      font-size: 18pt;
+    }
   }
 
   &__art {
@@ -71,12 +77,36 @@
   }
 
   &__navigation {
-    overflow-x: hidden;
-    position: absolute;
-    bottom: 14%;
-    right: 0;
     display: flex;
-    flex-flow: column nowrap;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    
+    &--mobile {
+      overflow-x: hidden;
+      right: 0;
+      bottom: 14%;
+      flex-flow: column nowrap;
+
+      @include mobile-styles {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &--desktop {
+      font-size: 12pt;
+      width: 19em;
+      left: 1.5em;
+      top: 0.6em;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      @include desktop-styles {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
   }
   
   &__NavLink {
@@ -95,5 +125,9 @@
     text-align: center;
     font-style: italic;
     color: rgb(97, 97, 97);
+
+    @include desktop-styles {
+      bottom: 5%;
+    }
   }
 }
