@@ -47,6 +47,7 @@
     background-size: cover;
     $borderRadius: 5px;
     filter: brightness(1) grayscale(0%);
+    z-index: 1;
 
     &--1 {
       background-position-x: 40%;
@@ -102,6 +103,7 @@
     width: 8em;
     position: relative;
     z-index: -1;
+    opacity: 0;
 
     &--1 {
       top: 25%;
@@ -138,23 +140,23 @@
     &--2, &--4       { margin-bottom: 0.2em; }
 
     &--1 {
-      height: 30%;
+      height: 35%;
     }
 
     &--2 {
-      height: 15%;
+      height: 30%;
     }
 
     &--3 {
-      height: 20%;
+      height: 30%;
     }
 
     &--4 {
-      height: 35%;
+      height: 40%;
     }
 
     &--5 {
-      height: 35%;
+      height: 40%;
     }
   }
 

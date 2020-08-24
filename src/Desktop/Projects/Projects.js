@@ -5,6 +5,34 @@ import { ProjectId } from '../../SVGs/SVG';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Projects.scss';
 
+// generates distances for project slices to move based on hovered project
+const generateDistanceMap = () => {
+  const DISTANCE_INTERVAL = 15;
+  const directionMap = [...new Array(PROJECT_DATA.length)].map((v, i) => {
+    return i % 2 === 0 ? -1 : 1;
+  });
+  const length = directionMap.length;
+  const centerIndex = Math.floor(length / 2);
+
+  return directionMap.map((direction, i) => {
+    const distanceArr = new Array(length);
+    let distance = direction * DISTANCE_INTERVAL;
+    distanceArr[i] = distance;
+    
+    const numLoops = centerIndex + Math.abs(i - centerIndex);
+    for (let j = 1; j <= numLoops; j++) {
+      const extraDistance = j === 1 ? 10 : 0; // for more fluid animation
+      if (direction < 0) distance += DISTANCE_INTERVAL * 2 + extraDistance;
+      else distance -= DISTANCE_INTERVAL * 2 + extraDistance;
+
+      if (i + j < length) distanceArr[i + j] = distance; 
+      if (i - j >= 0) distanceArr[i - j] = distance;
+    }
+    return distanceArr;
+  });
+}
+const DISTANCE_MAP = [0, ...generateDistanceMap()]; // index 1 based since IDs start at 1
+
 const Projects = () => {
   const projectData = PROJECT_DATA.map((project, i) => {
     const styles = { backgroundImage: `url(${process.env.PUBLIC_URL}/${project.imageUrls[0]})` };
@@ -21,137 +49,54 @@ const Projects = () => {
   });
 
   const projectHoverIn = (e) => {
-    const id = e.target.id;
+    const id = +e.target.id;
     console.log("IN", e.target.id)
-    const darkenedStyles = {
-      filter: 'brightness(0.5) grayscale(60%)'
+    const photoStyles = {
+      filter: 'brightness(0.45) grayscale(70%)'
     };
-
-    if (+id === 1) {
-      gsap.to(`.Projects__photo--1`, {
-        y: -15,
-      });
-      gsap.to(`.Projects__photo--2`, {
-        y: 25,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--3`, {
-        y: 55,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--4`, {
-        y: 40,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--5`, {
-        y: 15,
-        ...darkenedStyles,
-      });
-    } else if (+id === 2) {
-      gsap.to(`.Projects__photo--1`, {
-        y: -35,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--2`, {
-        y: 15,
-      });
-      gsap.to(`.Projects__photo--3`, {
-        y: -50,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--4`, {
-        y: -30,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--5`, {
-        y: -10,
-        ...darkenedStyles,
-      });
-    } else if (+id === 3) {
-      gsap.to(`.Projects__photo--1`, {
-        y: 50,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--2`, {
-        y: 30,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--3`, {
-        y: -15,
-      });
-      gsap.to(`.Projects__photo--4`, {
-        y: 60,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--5`, {
-        y: 35,
-        ...darkenedStyles,
-      });
-    } else if (+id === 4) {
-      gsap.to(`.Projects__photo--1`, {
-        y: -30,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--2`, {
-        y: -10,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--3`, {
-        y: -50,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--4`, {
-        y: 15,
-      });
-      gsap.to(`.Projects__photo--5`, {
-        y: -30,
-        ...darkenedStyles,
-      });
-    } else if (+id === 5) {
-      gsap.to(`.Projects__photo--1`, {
-        y: 50,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--2`, {
-        y: 30,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--3`, {
-        y: 60,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--4`, {
-        y: 40,
-        ...darkenedStyles,
-      });
-      gsap.to(`.Projects__photo--5`, {
-        y: -15,
-      });
-    }
+    const infoStyles = {
+      opacity: 0,
+    };
+    
+    DISTANCE_MAP[id].forEach((distance, i) => {
+      if (id === i + 1) {
+        gsap.to(`.Projects__photo--${i + 1}`, {
+          y: distance,
+        });
+        gsap.to(`.Projects__info--${i + 1}`, {
+          y: -distance,
+          scale: 1.1,
+        });
+      } else {
+        gsap.to(`.Projects__photo--${i + 1}`, {
+          y: distance,
+          ...photoStyles,
+        });
+        gsap.to(`.Projects__info--${i + 1}`, {
+          y: distance,
+          ...infoStyles,
+        });
+      }
+    });
   }
 
   const projectHoverOut = (e) => {
     console.log("OUT", e.target)
     const revertedStyles = {
       y: 0,
-      filter: 'brightness(1) grayscale(0%)'
+      filter: 'brightness(1) grayscale(0%)',
+      scale: 1,
+      opacity: 1,
     };
 
-    gsap.to(`.Projects__photo--1`, {
-      ...revertedStyles,
-    })
-    gsap.to(`.Projects__photo--2`, {
-      ...revertedStyles,
-    })
-    gsap.to(`.Projects__photo--3`, {
-      ...revertedStyles,
-    })
-    gsap.to(`.Projects__photo--4`, {
-      ...revertedStyles,
-    })
-    gsap.to(`.Projects__photo--5`, {
-      ...revertedStyles,
-    })
+    for (let i = 1; i <= PROJECT_DATA.length; i++) {
+      gsap.to(`.Projects__photo--${i}`, {
+        ...revertedStyles,
+      });
+      gsap.to(`.Projects__info--${i}`, {
+        ...revertedStyles,
+      });
+    }
   }
 
   useEffect(() => {
