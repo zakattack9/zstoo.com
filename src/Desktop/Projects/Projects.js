@@ -101,15 +101,9 @@ const Projects = () => {
 
   useEffect(() => {
     document.querySelectorAll('.Projects__photo').forEach(el => {
-      el.addEventListener('mouseenter', (e) => {
-        projectHoverIn(e);
-      })
-
-      el.addEventListener('mouseleave', (e) => {
-        projectHoverOut(e);
-      })
+      el.addEventListener('mouseenter', (e) => projectHoverIn(e));
+      el.addEventListener('mouseleave', (e) => projectHoverOut(e));
     });
-    console.log(document.querySelectorAll('.Projects__photo'))
   }, []);
 
   return (
