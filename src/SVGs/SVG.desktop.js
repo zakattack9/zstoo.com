@@ -5,11 +5,11 @@ export const Projects = props => {
     <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1444 1199">
       <defs>
         <linearGradient id="projectsdesktop-a" x1="101.762%" x2="0%" y1="32.952%" y2="74.511%">
-          <stop offset="0%" stop-color="#17FF4A" />
-          <stop offset="100%" stop-color="#00AC91" />
+          <stop offset="0%" stopColor="#17FF4A" />
+          <stop offset="100%" stopColor="#00AC91" />
         </linearGradient>
       </defs>
-      <g fill="none" fill-rule="evenodd" stroke="url(#projectsdesktop-a)" stroke-width="3" transform="matrix(1 0 0 -1 2 1198)">
+      <g fill="none" fillRule="evenodd" stroke="url(#projectsdesktop-a)" strokeWidth="3" transform="matrix(1 0 0 -1 2 1198)">
         <path className={props.pathName} d="M0,876.986454 C21.215051,713.503058 109.175694,607.424487 263.881929,558.750742 C495.941282,485.740125 754.372342,623.104885 1072.43617,437.125626 C1284.47872,313.139453 1407,167.430911 1440,0" />
         <path className={props.pathName} d="M0,896.986454 C21.215051,733.503058 109.175694,627.424487 263.881929,578.750742 C495.941282,505.740125 754.372342,643.104885 1072.43617,457.125626 C1284.47872,333.139453 1407,187.430911 1440,20" />
         <path className={props.pathName} d="M0,916.986454 C21.215051,753.503058 109.175694,647.424487 263.881929,598.750742 C495.941282,525.740125 754.372342,663.104885 1072.43617,477.125626 C1284.47872,353.139453 1407,207.430911 1440,40" />

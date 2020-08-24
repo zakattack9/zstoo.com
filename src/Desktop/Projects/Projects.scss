@@ -46,6 +46,7 @@
   &__photo {
     background-size: cover;
     $borderRadius: 5px;
+    filter: brightness(1) grayscale(0%);
 
     &--1 {
       background-position-x: 40%;
@@ -73,42 +74,6 @@
       border-radius: 0 $borderRadius $borderRadius 0;
       grid-area: project5Photo;
     }
-
-    // &--1:hover {
-    //   transform: translateY(-10%);
-    // }
-
-    // &--1:hover ~ &--2 {
-    //   transform: translateY(10%);
-    //   filter: brightness(0.5) grayscale(60%);
-    // }
-
-    // &--1:hover ~ &--3 {
-    //   transform: translateY(25%);
-    //   filter: brightness(0.5) grayscale(60%);
-    // }
-
-    // &--1:hover ~ &--4 {
-    //   transform: translateY(20%);
-    //   filter: brightness(0.5) grayscale(60%);
-    // }
-
-    // &--1:hover ~ &--5 {
-    //   transform: translateY(15%);
-    //   filter: brightness(0.5) grayscale(60%);
-    // }
-
-    // &--1:hover {
-    //   transform: translateY(10%);
-    // }
-
-    // &--1:hover ~ &--0 {
-    //   transform: translateY(-10%);
-    // }
-
-    // &--1:hover ~ &--2 {
-    //   transform: translateY(-10%);
-    // }
   }
 
   &__info {
