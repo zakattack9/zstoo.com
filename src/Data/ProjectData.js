@@ -8,7 +8,7 @@ const PROJECT_DATA = [
     techStack: ['React', 'CSS', 'Node.js', 'Heroku'],
     githubLink: 'https://github.com/zakattack9/stockup',
     projectLink: 'http://stockup.zaksakata.com',
-    imageUrls: ['images/projects/stockup1.png', 'images/projects/stockup1.png'],
+    imageUrls: ['images/projects/stockup1.png', 'images/projects/stockup2.png', 'images/projects/stockup3.png'],
     year: 2019,
     role: 'Full Stack',
     colors: {

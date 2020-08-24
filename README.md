@@ -27,7 +27,6 @@
 **no longer using partly due to inactive development and the migration to GSAP ScrollTrigger*
 
 ### Optimization Issues
-
 - Find a better way to target browser specific animations instead of user-agent
 - When scrolling past about section and then navigating to `/about` using the overlay, the layout may imporperly load
 - ~Pause animations when playing overlay animation~
@@ -62,6 +61,8 @@
 - create mixins for css properties with vendor prefixes
 - refactor `Main.js` component as an HOC? to prevent duplicate code?
 - move and host zaksakata.com/photogrpahy in a seperate s3 bucket
+- figure out a better way to render mobile and desktop views to prevent memory leaks
+- split mobile SVGs into separate file (keep `SVG.js` for shared SVGs)
 - ~test if keeping project images in public folder slows down load time~
   - does not slow down initial load time but is preloaded when switching to the next project using `PreRenderProject` component
 - ~add loading screen while preloading packages (used React Suspense)~

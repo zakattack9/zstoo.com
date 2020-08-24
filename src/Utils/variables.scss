@@ -8,8 +8,10 @@ $error-color: #D80460;
 $MIN_DESKTOP_WIDTH: 700;
 $min-desktop-width: $MIN_DESKTOP_WIDTH + "px";
 $max-mobile-width: $MIN_DESKTOP_WIDTH - 1 + "px";
+$min-tablet-width: 768px;
+$max-tablet-width: 1024px;
 
-// exported variables to be accessed via importing in JS
+// exported variables to be imported in JS
 :export {
   MIN_DESKTOP_WIDTH: $MIN_DESKTOP_WIDTH;
 }

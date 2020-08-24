@@ -144,7 +144,7 @@ const Home = () => {
       duration: 0.6,
       ease: 'power2.in',
       xPercent: isMobile() ? 100 : '',
-      y: !isMobile() ? -30 : '',
+      y: isMobile() ? '' : -30,
       opacity: 0,
       pointerEvents: 'auto',
       stagger: {

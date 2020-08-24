@@ -36,6 +36,12 @@
   }
 }
 
+@mixin tablet-styles {
+  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
+    @content;
+  }
+}
+
 @mixin mobile-styles {
   @media (max-width: $max-mobile-width) {
     @content;
