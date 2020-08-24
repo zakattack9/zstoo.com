@@ -30,6 +30,19 @@
     }
   }
 
+  &__projectAbstract {
+    @include center;
+
+    &--1 {
+      width: 101%;
+
+      &--path {
+        stroke-dasharray: 2735;
+        stroke-dashoffset: 2735;
+      }
+    }
+  }
+
   &__wrapper {
     @include center;
     width: 50%;

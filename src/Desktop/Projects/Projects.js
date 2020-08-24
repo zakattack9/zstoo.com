@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import { gsap } from 'gsap';
-import { Projects as Abstract } from '../../SVGs/SVG.desktop';
+import { Projects as Abstract, Project1 } from '../../SVGs/SVG.desktop';
 import { ProjectId } from '../../SVGs/SVG';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Projects.scss';
@@ -78,6 +78,20 @@ const Projects = () => {
         });
       }
     });
+
+    gsap.to(`.Projects__abstract--path`, {
+      duration: 0.8,
+      strokeDashoffset: -1850,
+      opacity: 0,
+    });
+
+    if (id === 1) {
+      console.log('ye')
+      gsap.to(`.Projects__projectAbstract--1--path`, {
+        strokeDashoffset: 0,
+        duration: 1,
+      });
+    }
   }
 
   const projectHoverOut = (e) => {
@@ -89,6 +103,12 @@ const Projects = () => {
       opacity: 1,
     };
 
+    gsap.to(`.Projects__abstract--path`, {
+      duration: 1,
+      strokeDashoffset: 0,
+      opacity: 1,
+    });
+
     for (let i = 1; i <= PROJECT_DATA.length; i++) {
       gsap.to(`.Projects__photo--${i}`, {
         ...revertedStyles,
@@ -97,6 +117,11 @@ const Projects = () => {
         ...revertedStyles,
       });
     }
+
+    gsap.to(`.Projects__projectAbstract--1--path`, {
+      strokeDashoffset: 2735,
+      duration: 1,
+    });
   }
 
   useEffect(() => {
@@ -110,6 +135,7 @@ const Projects = () => {
     <div className="Projects">
       <div className="Projects__art">
         <Abstract className="Projects__abstract" pathName="Projects__abstract--path" />
+        <Project1 className="Projects__projectAbstract Projects__projectAbstract--1" pathName="Projects__projectAbstract--1--path" />
       </div>
       <div className="Projects__wrapper">
         {projectData}
