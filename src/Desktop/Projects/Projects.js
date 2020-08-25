@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import { gsap } from 'gsap';
-import { Projects as Abstract, Project1 } from '../../SVGs/SVG.desktop';
+import { Projects as Abstract, Project1, Project2, Project3, Project4, Project5 } from '../../SVGs/SVG.desktop';
 import { ProjectId } from '../../SVGs/SVG';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Projects.scss';
@@ -32,6 +32,7 @@ const generateDistanceMap = () => {
   });
 }
 const DISTANCE_MAP = [0, ...generateDistanceMap()]; // index 1 based since IDs start at 1
+const STROKE_DASH_OFFSET_MAP = [2735, 5150, 2680, 2440, 2760];
 
 const Projects = () => {
   const projectData = PROJECT_DATA.map((project, i) => {
@@ -50,7 +51,6 @@ const Projects = () => {
 
   const projectHoverIn = (e) => {
     const id = +e.target.id;
-    console.log("IN", e.target.id)
     const photoStyles = {
       filter: 'brightness(0.45) grayscale(70%)'
     };
@@ -78,36 +78,27 @@ const Projects = () => {
         });
       }
     });
+    
+    gsap.to(`.Projects__projectAbstract--${id}--path`, {
+      strokeDashoffset: 0,
+      duration: 1,
+      opacity: 1,
+    });
 
     gsap.to(`.Projects__abstract--path`, {
-      duration: 0.8,
+      duration: 1,
       strokeDashoffset: -1850,
       opacity: 0,
     });
-
-    if (id === 1) {
-      console.log('ye')
-      gsap.to(`.Projects__projectAbstract--1--path`, {
-        strokeDashoffset: 0,
-        duration: 1,
-      });
-    }
   }
 
   const projectHoverOut = (e) => {
-    console.log("OUT", e.target)
     const revertedStyles = {
       y: 0,
       filter: 'brightness(1) grayscale(0%)',
       scale: 1,
       opacity: 1,
     };
-
-    gsap.to(`.Projects__abstract--path`, {
-      duration: 1,
-      strokeDashoffset: 0,
-      opacity: 1,
-    });
 
     for (let i = 1; i <= PROJECT_DATA.length; i++) {
       gsap.to(`.Projects__photo--${i}`, {
@@ -118,9 +109,18 @@ const Projects = () => {
       });
     }
 
-    gsap.to(`.Projects__projectAbstract--1--path`, {
-      strokeDashoffset: 2735,
+    STROKE_DASH_OFFSET_MAP.forEach((offset, i) => {
+      gsap.to(`.Projects__projectAbstract--${i + 1}--path`, {
+        strokeDashoffset: offset,
+        duration: 1,
+        opacity: 0,
+      });
+    });
+
+    gsap.to(`.Projects__abstract--path`, {
       duration: 1,
+      strokeDashoffset: 0,
+      opacity: 1,
     });
   }
 
@@ -136,6 +136,10 @@ const Projects = () => {
       <div className="Projects__art">
         <Abstract className="Projects__abstract" pathName="Projects__abstract--path" />
         <Project1 className="Projects__projectAbstract Projects__projectAbstract--1" pathName="Projects__projectAbstract--1--path" />
+        <Project2 className="Projects__projectAbstract Projects__projectAbstract--2" pathName="Projects__projectAbstract--2--path" />
+        <Project3 className="Projects__projectAbstract Projects__projectAbstract--3" pathName="Projects__projectAbstract--3--path" />
+        <Project4 className="Projects__projectAbstract Projects__projectAbstract--4" pathName="Projects__projectAbstract--4--path" />
+        <Project5 className="Projects__projectAbstract Projects__projectAbstract--5" pathName="Projects__projectAbstract--5--path" />
       </div>
       <div className="Projects__wrapper">
         {projectData}

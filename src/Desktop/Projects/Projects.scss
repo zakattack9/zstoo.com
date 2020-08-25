@@ -27,6 +27,7 @@
     
     &--path {
       stroke-dasharray: 1850;
+      stroke-dashoffset: 0;
     }
   }
 
@@ -35,10 +36,41 @@
 
     &--1 {
       width: 101%;
-
       &--path {
-        stroke-dasharray: 2735;
+        stroke-dasharray: 2735 2735;
         stroke-dashoffset: 2735;
+      }
+    }
+
+    &--2 {
+      height: 125%;
+      &--path {
+        stroke-dasharray: 5150 5150;
+        stroke-dashoffset: 5150;
+      }
+    }
+
+    &--3 {
+      width: 100%;
+      &--path {
+        stroke-dasharray: 2680 2680;
+        stroke-dashoffset: 2680;
+      }
+    }
+
+    &--4 {
+      height: 135%;
+      &--path {
+        stroke-dasharray: 2440 2440;
+        stroke-dashoffset: 2440;
+      }
+    }
+
+    &--5 {
+      width: 102%;
+      &--path {
+        stroke-dasharray: 2760 2760;
+        stroke-dashoffset: 2760;
       }
     }
   }
