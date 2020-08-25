@@ -34,22 +34,50 @@ export const Projects = props => {
 
 export const Project1 = props => {
   return (
-    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1443 806">
+    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 803">
       <defs>
-        <linearGradient id="project1desktop-a" x1="96.629%" x2="4.688%" y1="40.54%" y2="63.687%">
+        <linearGradient id="project3desktop-a" x1="99.575%" x2="1.531%" y1="39.5%" y2="61.718%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-b" x1="99.575%" x2="1.531%" y1="39.821%" y2="61.36%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-c" x1="99.575%" x2="1.531%" y1="40.137%" y2="61.007%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-d" x1="99.575%" x2="1.531%" y1="40.448%" y2="60.66%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-e" x1="99.575%" x2="1.531%" y1="40.755%" y2="60.318%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-f" x1="99.575%" x2="1.531%" y1="41.056%" y2="59.982%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-g" x1="99.575%" x2="1.531%" y1="41.352%" y2="59.651%">
+          <stop offset=".092%" stopColor="#35D148" />
+          <stop offset="100%" stopColor="#F1E311" />
+        </linearGradient>
+        <linearGradient id="project3desktop-h" x1="99.575%" x2="1.531%" y1="41.643%" y2="59.326%">
           <stop offset=".092%" stopColor="#35D148" />
           <stop offset="100%" stopColor="#F1E311" />
         </linearGradient>
       </defs>
-      <g fill="none" fillRule="evenodd" stroke="url(#project1desktop-a)" strokeWidth="3" transform="translate(2 1)">
-        <path className={props.pathName} d="M0,5.68434189e-14 C36.2522785,306.049231 108.071441,404.185928 215.457487,294.410092 C376.536556,129.746338 845.385717,-17.4129397 757.913491,68.6637031 C670.441265,154.740346 277.822127,620.039946 712.974265,434.25 C1148.1264,248.460054 883.968512,741.642431 1081.81618,652.14365 C1213.71462,592.477795 1333.10923,586.513246 1440,634.25" />
-        <path className={props.pathName} d="M0,20 C36.2522785,326.049231 108.071441,424.185928 215.457487,314.410092 C376.536556,149.746338 845.385717,2.58706033 757.913491,88.6637031 C670.441265,174.740346 277.822127,640.039946 712.974265,454.25 C1148.1264,268.460054 883.968512,761.642431 1081.81618,672.14365 C1213.71462,612.477795 1333.10923,606.513246 1440,654.25" />
-        <path className={props.pathName} d="M0,40 C36.2522785,346.049231 108.071441,444.185928 215.457487,334.410092 C376.536556,169.746338 845.385717,22.5870603 757.913491,108.663703 C670.441265,194.740346 277.822127,660.039946 712.974265,474.25 C1148.1264,288.460054 883.968512,781.642431 1081.81618,692.14365 C1213.71462,632.477795 1333.10923,626.513246 1440,674.25" />
-        <path className={props.pathName} d="M0,60 C36.2522785,366.049231 108.071441,464.185928 215.457487,354.410092 C376.536556,189.746338 845.385717,42.5870603 757.913491,128.663703 C670.441265,214.740346 277.822127,680.039946 712.974265,494.25 C1148.1264,308.460054 883.968512,801.642431 1081.81618,712.14365 C1213.71462,652.477795 1333.10923,646.513246 1440,694.25" />
-        <path className={props.pathName} d="M0,80 C36.2522785,386.049231 108.071441,484.185928 215.457487,374.410092 C376.536556,209.746338 845.385717,62.5870603 757.913491,148.663703 C670.441265,234.740346 277.822127,700.039946 712.974265,514.25 C1148.1264,328.460054 883.968512,821.642431 1081.81618,732.14365 C1213.71462,672.477795 1333.10923,666.513246 1440,714.25" />
-        <path className={props.pathName} d="M0,100 C36.2522785,406.049231 108.071441,504.185928 215.457487,394.410092 C376.536556,229.746338 845.385717,82.5870603 757.913491,168.663703 C670.441265,254.740346 277.822127,720.039946 712.974265,534.25 C1148.1264,348.460054 883.968512,841.642431 1081.81618,752.14365 C1213.71462,692.477795 1333.10923,686.513246 1440,734.25" />
-        <path className={props.pathName} d="M0,120 C36.2522785,426.049231 108.071441,524.185928 215.457487,414.410092 C376.536556,249.746338 845.385717,102.58706 757.913491,188.663703 C670.441265,274.740346 277.822127,740.039946 712.974265,554.25 C1148.1264,368.460054 883.968512,861.642431 1081.81618,772.14365 C1213.71462,712.477795 1333.10923,706.513246 1440,754.25" />
-        <path className={props.pathName} d="M0,140 C36.2522785,446.049231 108.071441,544.185928 215.457487,434.410092 C376.536556,269.746338 845.385717,122.58706 757.913491,208.663703 C670.441265,294.740346 277.822127,760.039946 712.974265,574.25 C1148.1264,388.460054 883.968512,881.642431 1081.81618,792.14365 C1213.71462,732.477795 1333.10923,726.513246 1440,774.25" />
+      <g fill="none" fillRule="evenodd" strokeWidth="3" transform="translate(1 6)">
+        <polyline className={props.pathName} stroke="url(#project3desktop-a)" points="0 636.422 136.897 517.796 196.831 674.765 886 0 699.356 495.584 1438 133.413" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-b)" points="0 650.456 136.897 533.897 196.831 691.77 886 27.405 699.356 520.172 1438 169.149" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-c)" points="0 664.491 136.897 549.997 196.831 708.775 886 54.811 699.356 544.761 1438 204.885" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-d)" points="0 678.525 136.897 566.098 196.831 725.78 886 82.216 699.356 569.35 1438 240.621" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-e)" points="0 692.559 136.897 582.198 196.831 742.785 886 109.622 699.356 593.938 1438 276.357" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-f)" points="0 706.594 136.897 598.298 196.831 759.79 886 137.027 699.356 618.527 1438 312.093" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-g)" points="0 720.628 136.897 614.399 196.831 776.795 886 164.433 699.356 643.116 1438 347.829" />
+        <polyline className={props.pathName} stroke="url(#project3desktop-h)" points="0 734.663 136.897 630.499 196.831 793.799 886 191.838 699.356 667.705 1438 383.565" />
       </g>
     </svg>
   );
@@ -79,50 +107,22 @@ export const Project2 = props => {
 
 export const Project3 = props => {
   return (
-    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 803">
+    <svg className={props.className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1443 806">
       <defs>
-        <linearGradient id="project3desktop-a" x1="99.575%" x2="1.531%" y1="39.5%" y2="61.718%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-b" x1="99.575%" x2="1.531%" y1="39.821%" y2="61.36%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-c" x1="99.575%" x2="1.531%" y1="40.137%" y2="61.007%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-d" x1="99.575%" x2="1.531%" y1="40.448%" y2="60.66%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-e" x1="99.575%" x2="1.531%" y1="40.755%" y2="60.318%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-f" x1="99.575%" x2="1.531%" y1="41.056%" y2="59.982%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-g" x1="99.575%" x2="1.531%" y1="41.352%" y2="59.651%">
-          <stop offset=".092%" stopColor="#FA056D" />
-          <stop offset="99.987%" stopColor="#FFB200" />
-        </linearGradient>
-        <linearGradient id="project3desktop-h" x1="99.575%" x2="1.531%" y1="41.643%" y2="59.326%">
+        <linearGradient id="project1desktop-a" x1="96.629%" x2="4.688%" y1="40.54%" y2="63.687%">
           <stop offset=".092%" stopColor="#FA056D" />
           <stop offset="99.987%" stopColor="#FFB200" />
         </linearGradient>
       </defs>
-      <g fill="none" fillRule="evenodd" strokeWidth="3" transform="translate(1 6)">
-        <polyline className={props.pathName} stroke="url(#project3desktop-a)" points="0 636.422 136.897 517.796 196.831 674.765 886 0 699.356 495.584 1438 133.413" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-b)" points="0 650.456 136.897 533.897 196.831 691.77 886 27.405 699.356 520.172 1438 169.149" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-c)" points="0 664.491 136.897 549.997 196.831 708.775 886 54.811 699.356 544.761 1438 204.885" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-d)" points="0 678.525 136.897 566.098 196.831 725.78 886 82.216 699.356 569.35 1438 240.621" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-e)" points="0 692.559 136.897 582.198 196.831 742.785 886 109.622 699.356 593.938 1438 276.357" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-f)" points="0 706.594 136.897 598.298 196.831 759.79 886 137.027 699.356 618.527 1438 312.093" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-g)" points="0 720.628 136.897 614.399 196.831 776.795 886 164.433 699.356 643.116 1438 347.829" />
-        <polyline className={props.pathName} stroke="url(#project3desktop-h)" points="0 734.663 136.897 630.499 196.831 793.799 886 191.838 699.356 667.705 1438 383.565" />
+      <g fill="none" fillRule="evenodd" stroke="url(#project1desktop-a)" strokeWidth="3" transform="matrix(1 0 0 -1 2 805)">
+        <path className={props.pathName} d="M0,5.68434189e-14 C36.2522785,306.049231 108.071441,404.185928 215.457487,294.410092 C376.536556,129.746338 845.385717,-17.4129397 757.913491,68.6637031 C670.441265,154.740346 277.822127,620.039946 712.974265,434.25 C1148.1264,248.460054 883.968512,741.642431 1081.81618,652.14365 C1213.71462,592.477795 1333.10923,586.513246 1440,634.25" />
+        <path className={props.pathName} d="M0,20 C36.2522785,326.049231 108.071441,424.185928 215.457487,314.410092 C376.536556,149.746338 845.385717,2.58706033 757.913491,88.6637031 C670.441265,174.740346 277.822127,640.039946 712.974265,454.25 C1148.1264,268.460054 883.968512,761.642431 1081.81618,672.14365 C1213.71462,612.477795 1333.10923,606.513246 1440,654.25" />
+        <path className={props.pathName} d="M0,40 C36.2522785,346.049231 108.071441,444.185928 215.457487,334.410092 C376.536556,169.746338 845.385717,22.5870603 757.913491,108.663703 C670.441265,194.740346 277.822127,660.039946 712.974265,474.25 C1148.1264,288.460054 883.968512,781.642431 1081.81618,692.14365 C1213.71462,632.477795 1333.10923,626.513246 1440,674.25" />
+        <path className={props.pathName} d="M0,60 C36.2522785,366.049231 108.071441,464.185928 215.457487,354.410092 C376.536556,189.746338 845.385717,42.5870603 757.913491,128.663703 C670.441265,214.740346 277.822127,680.039946 712.974265,494.25 C1148.1264,308.460054 883.968512,801.642431 1081.81618,712.14365 C1213.71462,652.477795 1333.10923,646.513246 1440,694.25" />
+        <path className={props.pathName} d="M0,80 C36.2522785,386.049231 108.071441,484.185928 215.457487,374.410092 C376.536556,209.746338 845.385717,62.5870603 757.913491,148.663703 C670.441265,234.740346 277.822127,700.039946 712.974265,514.25 C1148.1264,328.460054 883.968512,821.642431 1081.81618,732.14365 C1213.71462,672.477795 1333.10923,666.513246 1440,714.25" />
+        <path className={props.pathName} d="M0,100 C36.2522785,406.049231 108.071441,504.185928 215.457487,394.410092 C376.536556,229.746338 845.385717,82.5870603 757.913491,168.663703 C670.441265,254.740346 277.822127,720.039946 712.974265,534.25 C1148.1264,348.460054 883.968512,841.642431 1081.81618,752.14365 C1213.71462,692.477795 1333.10923,686.513246 1440,734.25" />
+        <path className={props.pathName} d="M0,120 C36.2522785,426.049231 108.071441,524.185928 215.457487,414.410092 C376.536556,249.746338 845.385717,102.58706 757.913491,188.663703 C670.441265,274.740346 277.822127,740.039946 712.974265,554.25 C1148.1264,368.460054 883.968512,861.642431 1081.81618,772.14365 C1213.71462,712.477795 1333.10923,706.513246 1440,754.25" />
+        <path className={props.pathName} d="M0,140 C36.2522785,446.049231 108.071441,544.185928 215.457487,434.410092 C376.536556,269.746338 845.385717,122.58706 757.913491,208.663703 C670.441265,294.740346 277.822127,760.039946 712.974265,574.25 C1148.1264,388.460054 883.968512,881.642431 1081.81618,792.14365 C1213.71462,732.477795 1333.10923,726.513246 1440,774.25" />
       </g>
     </svg>
   );

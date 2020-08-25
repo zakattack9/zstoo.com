@@ -52,7 +52,7 @@ const Projects = () => {
   const projectHoverIn = (e) => {
     const id = +e.target.id;
     const photoStyles = {
-      filter: 'brightness(0.45) grayscale(70%)'
+      filter: 'brightness(0.45) grayscale(70%)',
     };
     const infoStyles = {
       opacity: 0,
@@ -80,8 +80,14 @@ const Projects = () => {
     });
     
     gsap.to(`.Projects__projectAbstract--${id}--path`, {
-      strokeDashoffset: 0,
       duration: 1,
+      strokeDashoffset: 0,
+      opacity: 1,
+    });
+
+    gsap.to(`.Projects__id--${id}`, {
+      duration: 0.5,
+      delay: 0.4,
       opacity: 1,
     });
 
@@ -90,6 +96,7 @@ const Projects = () => {
       strokeDashoffset: -1850,
       opacity: 0,
     });
+    
   }
 
   const projectHoverOut = (e) => {
@@ -106,6 +113,10 @@ const Projects = () => {
       });
       gsap.to(`.Projects__info--${i}`, {
         ...revertedStyles,
+      });
+      gsap.to(`.Projects__id--${i}`, {
+        duration: 0.5,
+        opacity: 0,
       });
     }
 

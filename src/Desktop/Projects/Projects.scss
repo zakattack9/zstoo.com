@@ -37,11 +37,11 @@
     &--1 {
       height: 100%;
       &--path {
-        stroke-dasharray: 2735 2735;
-        stroke-dashoffset: 2735;
+        stroke-dasharray: 2680 2680;
+        stroke-dashoffset: 2680;
       }
     }
-
+    
     &--2 {
       height: 125%;
       &--path {
@@ -49,12 +49,12 @@
         stroke-dashoffset: 5150;
       }
     }
-
+    
     &--3 {
       height: 100%;
       &--path {
-        stroke-dasharray: 2680 2680;
-        stroke-dashoffset: 2680;
+        stroke-dasharray: 2735 2735;
+        stroke-dashoffset: 2735;
       }
     }
 
@@ -149,33 +149,33 @@
   &__id {
     font-family: "HelveticaBold";
     width: 8em;
-    position: relative;
+    position: absolute;
     z-index: -1;
     opacity: 0;
 
     &--1 {
-      top: 25%;
-      left: -60%;
+      top: 20%;
+      left: -75%;
     }
 
     &--2 {
-      top: -20%;
-      left: -60%;
+      top: 25%;
+      left: -90%;
     }
 
     &--3 {
       top: 20%;
-      left: 10%;
+      left: 65%;
     }
 
     &--4 {
-      top: -20%;
-      left: 60%;
+      top: 25%;
+      left: 70%;
     }
 
     &--5 {
-      top: 40%;
-      left: 75%
+      top: 20%;
+      left: 65%
     }
   }
 
