@@ -99,9 +99,9 @@
   &__photo {
     background-size: cover;
     $borderRadius: 5px;
-    filter: brightness(1) grayscale(0%);
+    filter: brightness(1) grayscale(0%) opacity(100%);
     z-index: 1;
-    opacity: 0;
+    // opacity: 0;
 
     &--1 {
       background-position-x: 40%;
@@ -202,6 +202,20 @@
     &--3 { height: 30%; }
     &--4 { height: 40%; }
     &--5 { height: 40%; }
+  }
+
+  &__message {
+    font-size: 16pt;
+    font-style: italic;
+    white-space: pre-wrap;
+    line-height: 1.2em;
+    color: $secondary-text-color;
+    text-shadow: 3px 0 5px $shadow-color;
+    position: absolute;
+    bottom: 3%;
+    left: 2%;
+    z-index: -1;
+    opacity: 0;
   }
 
 }
