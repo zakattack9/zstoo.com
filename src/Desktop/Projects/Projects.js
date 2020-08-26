@@ -2,12 +2,13 @@ import React, { useEffect, Fragment } from 'react';
 import { gsap } from 'gsap';
 import { Projects as Abstract, Project1, Project2, Project3, Project4, Project5 } from '../../SVGs/SVG.desktop';
 import { ProjectId } from '../../SVGs/SVG';
+import Spacer from '../../Components/Spacer';
 import PROJECT_DATA from '../../Data/ProjectData';
 import './Projects.scss';
 
 // generates distances for project slices to move based on hovered project
 const generateDistanceMap = () => {
-  const DISTANCE_INTERVAL = 15;
+  const DISTANCE_INTERVAL = 15; // change for animation distance 
   const directionMap = [...new Array(PROJECT_DATA.length)].map((v, i) => {
     return i % 2 === 0 ? -1 : 1;
   });
@@ -81,14 +82,16 @@ const Projects = () => {
     
     gsap.to(`.Projects__projectAbstract--${id}--path`, {
       duration: 1,
+      ease: 'power1.inOut',
       strokeDashoffset: 0,
       opacity: 1,
     });
 
     gsap.to(`.Projects__id--${id}`, {
       duration: 0.5,
-      delay: 0.4,
+      delay: 0.3,
       opacity: 1,
+      x: -5,
     });
 
     gsap.to(`.Projects__abstract--path`, {
@@ -96,7 +99,6 @@ const Projects = () => {
       strokeDashoffset: -1850,
       opacity: 0,
     });
-    
   }
 
   const projectHoverOut = (e) => {
@@ -116,14 +118,17 @@ const Projects = () => {
       });
       gsap.to(`.Projects__id--${i}`, {
         duration: 0.5,
+        delay: 0.3,
         opacity: 0,
+        x: 0,
       });
     }
 
     STROKE_DASH_OFFSET_MAP.forEach((offset, i) => {
       gsap.to(`.Projects__projectAbstract--${i + 1}--path`, {
-        strokeDashoffset: offset,
         duration: 1,
+        ease: 'power1.inOut',
+        strokeDashoffset: offset,
         opacity: 0,
       });
     });

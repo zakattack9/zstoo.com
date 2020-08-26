@@ -35,7 +35,8 @@
     @include center;
 
     &--1 {
-      height: 100%;
+      // height: 100%;
+      width: 100%;
       &--path {
         stroke-dasharray: 2680 2680;
         stroke-dashoffset: 2680;
@@ -51,7 +52,8 @@
     }
     
     &--3 {
-      height: 100%;
+      // height: 100%;
+      width: 100.5%;
       &--path {
         stroke-dasharray: 2735 2735;
         stroke-dashoffset: 2735;
@@ -67,7 +69,8 @@
     }
 
     &--5 {
-      height: 135%;
+      // height: 135%;
+      width: 102%;
       &--path {
         stroke-dasharray: 2760 2760;
         stroke-dashoffset: 2760;
@@ -155,12 +158,12 @@
 
     &--1 {
       top: 20%;
-      left: -75%;
+      right: 45%;
     }
 
     &--2 {
       top: 25%;
-      left: -90%;
+      right: 55%;
     }
 
     &--3 {
