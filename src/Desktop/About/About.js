@@ -5,7 +5,7 @@ import './About.scss';
 const About = () => {
   return (
     <div className="About">
-      <Spacer height={100} />
+      <Spacer height={150} />
     </div>
   );
 }

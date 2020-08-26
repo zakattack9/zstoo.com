@@ -39,12 +39,12 @@ const Projects = () => {
   const projectsRef = useRef();
   const pinRef = useRef();
   const inEndRef = useRef();
-  const outStateRef = useRef();
+  const outStartRef = useRef();
 
   const projectHoverIn = (e) => {
     const id = +e.target.id;
     const photoStyles = {
-      filter: 'brightness(0.45) grayscale(70%)',
+      filter: 'brightness(0.4) grayscale(70%)',
     };
     const infoStyles = {
       opacity: 0,
@@ -132,6 +132,7 @@ const Projects = () => {
   }
 
   const addEventListeners = () => {
+    console.log('adding')
     document.querySelectorAll('.Projects__photo').forEach(el => {
       el.addEventListener('mouseenter', projectHoverIn);
       el.addEventListener('mouseleave', projectHoverOut);
@@ -139,6 +140,7 @@ const Projects = () => {
   }
 
   const removeEventListeners = () => {
+    console.log('removing')
     document.querySelectorAll('.Projects__photo').forEach(el => {
       el.removeEventListener('mouseenter', projectHoverIn);
       el.removeEventListener('mouseleave', projectHoverOut);
@@ -147,7 +149,6 @@ const Projects = () => {
   }
 
   useEffect(() => {
-
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
       trigger: pinRef.current,
@@ -166,8 +167,8 @@ const Projects = () => {
         scrub: 1,
         onLeave: addEventListeners,
         onEnterBack: removeEventListeners,
-        id: 'projectsIn',
-        markers: true,
+        id: 'projects-in',
+        // markers: true,
       }
     });
     projectsTimelineIn.fromTo('.Projects__abstract--path', {
@@ -207,6 +208,56 @@ const Projects = () => {
       });
       projectsTimelineIn.add(infoIn, 'projects');
     });
+
+    const projectsTimelineOut = gsap.timeline({
+      scrollTrigger: {
+        trigger: outStartRef.current,
+        endTrigger: projectsRef.current,
+        start: 'top 0%',
+        scrub: 1,
+        onEnter: removeEventListeners,
+        onLeaveBack: addEventListeners,
+        id: 'projects-out',
+        // markers: true,
+      }
+    });
+    projectsTimelineOut.fromTo('.Projects__abstract--path', {
+      strokeDashoffset: 0,
+    }, {
+      duration: 0.6,
+      ease: 'power1.inOut',
+      strokeDashoffset: -1850,
+      stagger: {
+        each: 0.01,
+        from: 'edges'
+      }
+    }, 0);
+    projectsTimelineOut.addLabel('projects', '<0.5');
+
+    DIRECTION_MAP.forEach((direction, i) => {
+      const infoIn = gsap.fromTo(`.Projects__info--${i + 1}`, {
+        yPercent: 0,
+        opacity: 1,
+      }, {
+        duration: 1,
+        ease: 'power2.inOut',
+        yPercent: direction * -50,
+        opacity: 0,
+      });
+      projectsTimelineOut.add(infoIn, 'projects');
+      
+      const photoIn = gsap.fromTo(`.Projects__photo--${i + 1}`, {
+        opacity: 1,
+        yPercent: 0,
+      }, {
+        duration: 1,
+        delay: 0.4,
+        ease: 'power1.inOut',
+        opacity: 0,
+        yPercent: direction * 15,
+      });
+      projectsTimelineOut.add(photoIn, 'projects');
+    });
   }, []); //eslint-disable-line
 
   const projectData = PROJECT_DATA.map((project, i) => {
@@ -237,11 +288,12 @@ const Projects = () => {
         <div className="Projects__wrapper">
           {projectData}
         </div>
+        <div className="Projects__message">Click on a project</div>
       </div>
       <Spacer height={60} />
       <span id="Projects__trigger--inEnd" ref={inEndRef}></span>
-      <Spacer height={50} /> {/* space to buffer scrolling before animating out */}
-      <span id="Projects__trigger--outStart" ref={outStateRef}></span>
+      <Spacer height={40} color="blue" /> {/* space to buffer scrolling before animating out */}
+      <span id="Projects__trigger--outStart" ref={outStartRef}></span>
       <Spacer height={100} />
     </div>
   );
