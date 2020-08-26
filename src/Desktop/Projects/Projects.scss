@@ -3,9 +3,14 @@
 
 .Projects {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  // height: 100vh;
   z-index: 5;
+  
+  &__pin {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
 
   &__art {
     width: 100%;
@@ -27,7 +32,7 @@
     
     &--path {
       stroke-dasharray: 1850;
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 1850;
     }
   }
 
@@ -96,6 +101,7 @@
     $borderRadius: 5px;
     filter: brightness(1) grayscale(0%);
     z-index: 1;
+    opacity: 0;
 
     &--1 {
       background-position-x: 40%;
@@ -130,6 +136,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    opacity: 0;
 
     &--1, &--3, &--5 { justify-content: flex-end; }
     &--2, &--4       { justify-content: flex-start; }
