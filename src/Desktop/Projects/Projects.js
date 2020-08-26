@@ -131,11 +131,22 @@ const Projects = () => {
     });
   }
 
-  useEffect(() => {
+  const addEventListeners = () => {
     document.querySelectorAll('.Projects__photo').forEach(el => {
-      el.addEventListener('mouseenter', (e) => projectHoverIn(e));
-      el.addEventListener('mouseleave', (e) => projectHoverOut(e));
+      el.addEventListener('mouseenter', projectHoverIn);
+      el.addEventListener('mouseleave', projectHoverOut);
     });
+  }
+
+  const removeEventListeners = () => {
+    document.querySelectorAll('.Projects__photo').forEach(el => {
+      el.removeEventListener('mouseenter', projectHoverIn);
+      el.removeEventListener('mouseleave', projectHoverOut);
+    });
+    projectHoverOut();
+  }
+
+  useEffect(() => {
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
@@ -153,6 +164,8 @@ const Projects = () => {
         endTrigger: inEndRef.current,
         start: 'top 0%',
         scrub: 1,
+        onLeave: addEventListeners,
+        onEnterBack: removeEventListeners,
         id: 'projectsIn',
         markers: true,
       }
@@ -160,12 +173,12 @@ const Projects = () => {
     projectsTimelineIn.fromTo('.Projects__abstract--path', {
       strokeDashoffset: 1850,
     }, {
-      duration: 0.5,
+      duration: 0.6,
       ease: 'power1.inOut',
       strokeDashoffset: 0,
       stagger: {
-        each: 0.05,
-        from: 'end'
+        each: 0.01,
+        from: 'center'
       }
     }, 0);
     projectsTimelineIn.addLabel('projects', '<0.5');
@@ -179,7 +192,6 @@ const Projects = () => {
         ease: 'power1.inOut',
         yPercent: 0,
         opacity: 1,
-        pointerEvents: 'none',
       });
       projectsTimelineIn.add(photoIn, 'projects');
 
@@ -194,15 +206,8 @@ const Projects = () => {
         opacity: 1,
       });
       projectsTimelineIn.add(infoIn, 'projects');
-
-      const photoFinish = gsap.to(`.Projects__photo--${i + 1}`, {
-        duration: 0,
-        pointerEvents: 'auto',
-      });
-      projectsTimelineIn.add(photoFinish, '>');
     });
-
-  }, []);
+  }, []); //eslint-disable-line
 
   const projectData = PROJECT_DATA.map((project, i) => {
     const styles = { backgroundImage: `url(${process.env.PUBLIC_URL}/${project.imageUrls[0]})` };
