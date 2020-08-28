@@ -12,12 +12,12 @@
 
     &--path-1 {
       // stroke-dasharray: 490; 
-      stroke-dasharray: 125;
+      stroke-dasharray: 125 125;
     }
 
     &--path-2 {
       // stroke-dasharray: 425;
-      stroke-dasharray: 115;
+      stroke-dasharray: 115 115;
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect , useRef} from 'react';
+import React, { useEffect , useRef } from 'react';
 import { gsap } from 'gsap';
 import { ZLogo } from '../../SVGs/SVG';
 import './Loader.scss';

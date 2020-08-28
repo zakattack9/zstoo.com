@@ -42,26 +42,28 @@ const Error404 = props => {
 
   return (
     <div className="Error404">
-      <div className="Error404__art">
-        <Abstract className="Error404__abstract" pathName="Error404__abstract--path" />
-        <img className="Error404__glow" src={Glow} alt="abstract glow art"/>
-        <div className="Error404__messageWrapper">
-          <div className="Error404__message Error404__message--statusCode">
-            4<span className="Error404__message--0">0</span>4
-          </div>
-          <div className="Error404__message Error404__message--text">
-            page not found
+      <div className="Error404__wrapper">
+        <div className="Error404__art">
+          <Abstract className="Error404__abstract" pathName="Error404__abstract--path" />
+          <img className="Error404__glow" src={Glow} alt="abstract glow art"/>
+          <div className="Error404__messageWrapper">
+            <div className="Error404__message Error404__message--statusCode">
+              4<span className="Error404__message--0">0</span>4
+            </div>
+            <div className="Error404__message Error404__message--text">
+              page not found
+            </div>
           </div>
         </div>
-      </div>
-      <div className="Error404__subMessage">
-        well this shouldn't <br /> happen.
-      </div>
-      <Link to="/">
-        <div className="Error404__homeButton">
-          Back to Safety
+        <div className="Error404__subMessage">
+          well this shouldn't <br /> happen.
         </div>
-      </Link>
+        <Link to="/">
+          <div className="Error404__homeButton">
+            Back to Safety
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }
