@@ -57,15 +57,15 @@
 - design desktop views and compatibility
 - UI testing with Enzyme and Jest
 - refactor AWS lambdas with TypeScript
-- rebuild reusable hooks into custom hooks
+- pull reusable hooks into their own custom hooks
 - ensure all GSAP animations have necessary `refs` to their respective components
+- figure out a better way to render mobile and desktop views to prevent memory leaks
+- split mobile SVGs into separate file (keep `SVG.js` for shared SVGs)
 - ~clean up CSS with Sass at-rules and vars~
 - ~create mixins for css properties with vendor prefixes~
   - not needed, webpack takes care of this already with `create-react-app`
 - ~move and host zaksakata.com/photogrpahy in a seperate s3 bucket~
-  - hosted from GitHub repository
-- figure out a better way to render mobile and desktop views to prevent memory leaks
-- split mobile SVGs into separate file (keep `SVG.js` for shared SVGs)
+  - hosted from GitHub repository instead
 - ~test if keeping project images in public folder slows down load time~
   - does not slow down initial load time but is preloaded when switching to the next project using `PreRenderProject` component
 - ~add loading screen while preloading packages (used React Suspense)~
