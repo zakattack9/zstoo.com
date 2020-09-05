@@ -51,29 +51,29 @@ const Projects = () => {
       opacity: 0,
     };
     
-    DISTANCE_MAP[id].forEach((distance, i) => {
-      if (id === i + 1) {
-        gsap.to(`.Projects__photo--${i + 1}`, {
-          y: distance,
-        });
-        gsap.to(`.Projects__info--${i + 1}`, {
-          y: -distance,
-          scale: 1.1,
-        });
-      } else {
-        gsap.to(`.Projects__photo--${i + 1}`, {
-          y: distance,
-          ...photoStyles,
-        });
-        gsap.to(`.Projects__info--${i + 1}`, {
-          y: distance,
-          ...infoStyles,
-        });
-      }
-    });
+    // DISTANCE_MAP[id].forEach((distance, i) => {
+    //   if (id === i + 1) {
+    //     gsap.to(`.Projects__photo--${i + 1}`, {
+    //       y: distance,
+    //     });
+    //     gsap.to(`.Projects__info--${i + 1}`, {
+    //       y: -distance,
+    //       scale: 1.1,
+    //     });
+    //   } else {
+    //     gsap.to(`.Projects__photo--${i + 1}`, {
+    //       y: distance,
+    //       ...photoStyles,
+    //     });
+    //     gsap.to(`.Projects__info--${i + 1}`, {
+    //       y: distance,
+    //       ...infoStyles,
+    //     });
+    //   }
+    // });
     
     gsap.to(`.Projects__projectAbstract--${id}--path`, {
-      duration: 1,
+      duration: 3,
       ease: 'power1.inOut',
       strokeDashoffset: 0,
       opacity: 1,
@@ -189,7 +189,8 @@ const Projects = () => {
         trigger: projectsRef.current,
         endTrigger: inEndRef.current,
         start: 'top 0%',
-        scrub: 1,
+        // scrub: 1,
+        scrub: 0,
         onLeave: addEventListeners,
         onEnterBack: removeEventListeners,
         id: 'projects-in',
@@ -197,15 +198,17 @@ const Projects = () => {
       }
     });
     projectsTimelineIn.fromTo('.Projects__abstract--path', {
-      strokeDashoffset: 1850,
+      // strokeDashoffset: 1850,
+      opacity: 0,
     }, {
       duration: 0.6,
       ease: 'power1.inOut',
-      strokeDashoffset: 0,
-      stagger: {
-        each: 0.01,
-        from: 'center'
-      }
+      opacity: 1,
+      // strokeDashoffset: 0,
+      // stagger: {
+      //   each: 0.01,
+      //   from: 'center'
+      // }
     }, 0);
     projectsTimelineIn.addLabel('projects', '<0.5');
 
@@ -239,7 +242,8 @@ const Projects = () => {
         trigger: outStartRef.current,
         endTrigger: projectsRef.current,
         start: 'top 0%',
-        scrub: 1,
+        // scrub: 1,
+        scrub: 0,
         onEnter: removeEventListeners,
         onLeaveBack: addEventListeners,
         id: 'projects-out',
