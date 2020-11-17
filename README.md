@@ -1,4 +1,4 @@
-## ZakSakata.com v2.0 coming soon...
+## [ZakSakata.com v2.0 coming soon...](https://zaksakata.com)
 
 ### Tech Stack
 - [GreenSock (GSAP)](https://greensock.com/docs/v3)
